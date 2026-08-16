@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>AulaNexo · Prototipo 0.0.63</title>
+<title>AulaNexo · Prototipo 0.0.65</title>
 <style>
 :root{
   --bg:#f5f7fb;--card:#fff;--text:#1f2937;--muted:#6b7280;--line:#e5e7eb;
@@ -926,6 +926,7 @@ nav.app-nav button[data-view].active{background:var(--primary-soft);color:#3730a
 .generated061-meta{font-size:10.5px;color:#6b7280;margin-top:4px;line-height:1.35}
 .generated061-actions{display:flex;gap:6px;flex-wrap:wrap;margin-top:10px}
 .generated061-empty{border:1px dashed #c7d2fe;background:#f8faff;border-radius:14px;padding:16px;text-align:center;font-size:12px;color:#6b7280}
+.resource-generated-badge{display:inline-flex;align-items:center;gap:5px;background:#eef2ff;color:#4338ca;border:1px solid #c7d2fe;border-radius:999px;padding:4px 8px;font-size:11px;font-weight:850;margin-top:7px}.resource-card.generated-aulanexo{border-color:#c7d2fe;background:linear-gradient(180deg,#fff,#fafaff)}
 
 .resource061-modal{max-width:940px!important}
 .resource061-editor-wrap{display:grid;grid-template-columns:minmax(0,1fr) 260px;gap:14px;margin-top:14px}
@@ -984,12 +985,30 @@ nav.app-nav button[data-view].active{background:var(--primary-soft);color:#3730a
 .r063-ticket{max-width:680px;margin:auto}
 @media print{.r063-mission,.r063-header,.r063-goal,.r063-exit,.r063-reading{-webkit-print-color-adjust:exact;print-color-adjust:exact}}
 
+
+
+/* ===== AULANEXO_GENERATOR_064 · VARIEDAD PEDAGÓGICA POR ASIGNATURA ===== */
+.r064-oral{border:2px dashed #bfdbfe;background:#f8fbff;border-radius:14px;padding:12px;margin-top:9px;font-size:11px;color:#475569}
+.r064-oral strong{color:#1d4ed8}.r064-checks{display:grid;gap:7px;margin-top:10px}.r064-check{border:1px solid #dbe2ea;background:#fff;border-radius:10px;padding:8px 10px;font-size:11px}
+.r064-wordbank{display:flex;gap:7px;flex-wrap:wrap;margin-top:10px}.r064-chip{border:1px solid #c7d2fe;background:#eef2ff;color:#3730a3;border-radius:999px;padding:6px 10px;font-size:11px;font-weight:800}
+.r064-match{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:10px}.r064-match-col{display:grid;gap:7px}.r064-match-item{border:1px solid #dbe2ea;border-radius:10px;padding:8px;background:#fff;font-size:11px;min-height:36px}.r064-match-arrow{text-align:center;color:#94a3b8;font-size:10px;margin-top:5px}
+.r064-sequence{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:10px}.r064-step{border:1px dashed #94a3b8;border-radius:12px;min-height:64px;padding:8px;font-size:10px;color:#64748b;background:#fff}.r064-step b{display:block;color:#4f46e5;margin-bottom:4px}
+.r064-table{width:100%;border-collapse:collapse;margin-top:10px;font-size:10.5px}.r064-table th,.r064-table td{border:1px solid #d1d5db;padding:8px;min-height:32px}.r064-table th{background:#f8fafc;color:#475569}
+.r064-numberline{margin-top:13px;padding:8px 4px 18px}.r064-numberline-track{height:3px;background:#64748b;position:relative;margin:18px 6px 0}.r064-numberline-dots{display:flex;justify-content:space-between;transform:translateY(-8px)}.r064-numberline-dot{width:14px;height:14px;border:2px solid #64748b;background:#fff;border-radius:50%}.r064-numberline-labels{display:flex;justify-content:space-between;font-size:9px;color:#64748b;margin-top:7px}
+.r064-sort{display:flex;gap:7px;flex-wrap:wrap;margin-top:10px}.r064-sort-card{min-width:70px;min-height:42px;border:1px dashed #94a3b8;background:#fff;border-radius:10px;padding:8px;font-size:10.5px;text-align:center}.r064-sort-zones{display:grid;grid-template-columns:1fr 1fr;gap:9px;margin-top:9px}.r064-sort-zone{border:2px dashed #cbd5e1;border-radius:12px;min-height:80px;padding:9px;font-size:10px;color:#64748b;background:#fafafa}
+.r064-canvas{height:145px;border:2px dashed #cbd5e1;border-radius:14px;margin-top:9px;position:relative;background:linear-gradient(#fff,#fcfcff)}.r064-canvas::after{content:'Dibuja o representa aquí';position:absolute;inset:0;display:grid;place-items:center;color:#a1a1aa;font-size:10px}
+.r064-sentence{display:grid;gap:7px;margin-top:10px}.r064-sentence-line{border-bottom:1.5px solid #94a3b8;min-height:28px}.r064-self{display:flex;gap:7px;flex-wrap:wrap;margin-top:10px}.r064-self span{border:1px solid #e5e7eb;border-radius:999px;padding:6px 9px;background:#fff;font-size:10.5px}
+.r064-minihelp{font-size:10px;color:#64748b;background:#f8fafc;border-radius:9px;padding:7px 9px;margin-top:8px}
+.r064-oa-note{border-left:4px solid #a78bfa;background:#faf7ff;border-radius:10px;padding:9px 11px;margin:9px 0 14px;font-size:10px;color:#5b4b7d;line-height:1.45}
+@media(max-width:620px){.r064-match,.r064-sort-zones{grid-template-columns:1fr}.r064-sequence{grid-template-columns:1fr}}
+@media print{.r064-oral,.r064-check,.r064-chip,.r064-match-item,.r064-step,.r064-sort-card,.r064-sort-zone,.r064-oa-note{-webkit-print-color-adjust:exact;print-color-adjust:exact}}
+
 </style>
 </head>
 <body>
 <header>
   <div class="header-wrap">
-    <div><h1>AulaNexo</h1><div class="subtitle">Prototipo 0.0.63 · Recursos adaptados por Curso y OA</div></div>
+    <div><h1>AulaNexo</h1><div class="subtitle">Prototipo 0.0.65 · Biblioteca unificada de recursos</div></div>
     <div class="header-actions"><button id="menuToggle" class="menu-toggle">☰ Menú</button><span class="current-section-pill">Sección: <strong id="currentSectionLabel">Curso</strong></span><span class="active-course-pill">Curso activo: <strong id="headerCourseName">Sin curso</strong></span><span id="cloudStatus" class="cloud-pill" data-state="offline">☁️ Sin conectar</span><button id="cloudConnectBtn" class="secondary">👤 Mi cuenta</button><button id="downloadBackup">⬇ Respaldo</button><button id="loadBackupBtn">⬆ Cargar respaldo</button><input id="backupFile" type="file" accept="application/json" hidden></div>
   </div>
 </header>
@@ -1415,7 +1434,7 @@ nav.app-nav button[data-view].active{background:var(--primary-soft);color:#3730a
 
     <div class="resource-layout">
       <div class="card">
-        <div class="row between"><div><h2>Biblioteca de recursos</h2><div class="small">Sube tus propios archivos —PDF, Word, imágenes, presentaciones, videos y otros materiales— y vincúlalos directamente con una unidad y un OA.</div></div><span id="resourceCount" class="resource-count">0 recursos</span></div>
+        <div class="row between"><div><h2>Agregar recurso propio</h2><div class="small">Sube un PDF, Word, imagen, presentación, video u otro material que ya tengas y vincúlalo con una unidad y un OA.</div></div><span id="resourceCount" class="resource-count">0 recursos</span></div>
         <div class="resource-help section-gap"><strong>La idea es reutilizar, no volver a buscar.</strong><br>Los archivos se guardan de forma privada en tu cuenta y sus datos se sincronizan entre computador y móvil. Puedes asociarlos a todo el curso o a un grupo de apoyo específico.</div>
         <div class="field section-gap"><label>Asignatura</label><select id="resourceSubjectSelect"></select></div>
         <div class="resource-filter-grid section-gap">
@@ -1440,14 +1459,14 @@ nav.app-nav button[data-view].active{background:var(--primary-soft);color:#3730a
         <div class="row section-gap"><button id="saveResource" class="primary">Guardar recurso</button><button id="cancelResourceEdit" class="ghost hidden">Cancelar edición</button></div>
       </div>
       <div class="card">
-        <div class="row between"><div><h2>Recursos guardados</h2><div class="small">Se muestran los recursos del nivel activo. Puedes filtrar por asignatura, unidad y OA usando los selectores de la izquierda.</div></div></div>
+        <div class="row between"><div><h2>Recursos guardados</h2><div class="small">Aquí se reúnen tanto los materiales creados con AulaNexo como los archivos que tú subas. Puedes filtrarlos por asignatura, unidad y OA.</div></div></div>
         <div class="field section-gap"><label>Buscar en la biblioteca</label><input id="resourceSearch" type="search" placeholder="Buscar por título, tipo o notas..."></div>
         <div id="resourceList" class="resource-list section-gap"></div>
       </div>
     </div>
   </section>
 
-  <div class="footer">AulaNexo 0.0.63 · evaluación, seguimiento curricular, planificación, recursos, tutorial y asistente Nexo.</div>
+  <div class="footer">AulaNexo 0.0.65 · evaluación, seguimiento curricular, planificación, recursos, tutorial y asistente Nexo.</div>
 
   <section id="view-tutorial" class="view">
     <div class="tutorial-hero">
@@ -3452,17 +3471,26 @@ function renderResources(){
   const oa=resourceSelectedOAObj(ctx);oaBox.innerHTML=oa?`<strong>OA ${String(oa.number).padStart(2,'0')}</strong>${esc(oa.text)}`:`<strong>${esc(ctx.unit?.name||'Unidad')}</strong>El recurso quedará asociado a la unidad completa. Si quieres, selecciona un OA específico.`;
   const search=(document.getElementById('resourceSearch')?.value||'').trim().toLowerCase();
   let rows=(state.resources||[]).filter(r=>Number(r.grade)===ctx.grade&&r.subject===ctx.subject&&String(r.unitId)===String(ctx.unit?.id||''));
-  if(selectedResourceOA!=='')rows=rows.filter(r=>String(r.oaNumber||'')===String(selectedResourceOA));
+  if(selectedResourceOA!=='')rows=rows.filter(r=>Array.isArray(r.oaNumbers)?r.oaNumbers.map(String).includes(String(selectedResourceOA)):String(r.oaNumber||'')===String(selectedResourceOA));
   if(search)rows=rows.filter(r=>[r.title,r.type,r.notes,r.unitName,r.oaText,resourceAudienceLabel(r.audience)].join(' ').toLowerCase().includes(search));
   rows.sort((a,b)=>(b.updatedAt||b.createdAt||'').localeCompare(a.updatedAt||a.createdAt||''));
   count.textContent=`${rows.length} recurso${rows.length===1?'':'s'}`;
-  list.innerHTML=rows.length?rows.map(r=>`<div class="resource-card"><div class="resource-card-head"><div><div class="resource-card-title">${resourceIcon(r.type)} ${esc(r.title)}</div><div class="resource-card-meta">${esc(r.type)} · ${esc(r.unitName||'Unidad')}${r.oaNumber?` · OA ${String(r.oaNumber).padStart(2,'0')}`:''}</div><span class="resource-tag ${resourceAudienceClass(r.audience)}">${esc(resourceAudienceLabel(r.audience))}</span></div></div>${r.filePath?`<div class="resource-file-meta"><span class="resource-file-badge">📎 ${esc(fileTypeLabel(r.fileName,r.fileType))}</span><span class="resource-file-name">${esc(r.fileName||'Archivo')}</span><span>${esc(formatFileSize(r.fileSize))}</span></div>`:''}${r.notes?`<div class="resource-card-notes">${esc(r.notes)}</div>`:''}<div class="resource-card-actions">${r.filePath?`<button class="secondary" data-resource-file="${r.id}">📎 Abrir archivo</button>`:''}${r.url?`<button class="secondary" data-resource-open="${r.id}">Abrir enlace</button>`:''}<button class="ghost" data-resource-plan="${r.id}">Usar en planificación</button><button class="ghost" data-resource-copy="${r.id}">Copiar</button><button class="ghost" data-resource-edit="${r.id}">Editar</button><button class="danger" data-resource-delete="${r.id}">Eliminar</button></div></div>`).join(''):'<div class="resource-empty">No hay recursos guardados para este filtro. Agrega el primero desde el formulario.</div>';
+  list.innerHTML=rows.length?rows.map(r=>{
+    const generated=!!r.generatedByAulaNexo;
+    const oaNums=Array.isArray(r.oaNumbers)&&r.oaNumbers.length?r.oaNumbers:(r.oaNumber?[Number(r.oaNumber)]:[]);
+    const oaLabel=oaNums.length?' · '+oaNums.map(n=>'OA '+String(n).padStart(2,'0')).join(', '):'';
+    const generatedBadge=generated?'<span class="resource-generated-badge">✨ Creado con AulaNexo</span>':'';
+    const generatedActions=generated?`<button class="secondary" data-resource-generated-edit="${r.id}">Abrir / Editar</button>`:'';
+    const standardEdit=generated?'':`<button class="ghost" data-resource-edit="${r.id}">Editar</button>`;
+    return `<div class="resource-card${generated?' generated-aulanexo':''}"><div class="resource-card-head"><div><div class="resource-card-title">${generated?'✨':resourceIcon(r.type)} ${esc(r.title)}</div><div class="resource-card-meta">${esc(r.type)} · ${esc(r.unitName||'Unidad')}${oaLabel}</div>${generatedBadge}<span class="resource-tag ${resourceAudienceClass(r.audience)}">${esc(resourceAudienceLabel(r.audience))}</span></div></div>${r.filePath?`<div class="resource-file-meta"><span class="resource-file-badge">📎 ${esc(fileTypeLabel(r.fileName,r.fileType))}</span><span class="resource-file-name">${esc(r.fileName||'Archivo')}</span><span>${esc(formatFileSize(r.fileSize))}</span></div>`:''}${r.notes&&!generated?`<div class="resource-card-notes">${esc(r.notes)}</div>`:''}<div class="resource-card-actions">${generatedActions}${r.filePath?`<button class="secondary" data-resource-file="${r.id}">📎 Abrir archivo</button>`:''}${r.url?`<button class="secondary" data-resource-open="${r.id}">Abrir enlace</button>`:''}<button class="ghost" data-resource-plan="${r.id}">Usar en planificación</button><button class="ghost" data-resource-copy="${r.id}">Copiar</button>${standardEdit}<button class="danger" data-resource-delete="${r.id}">Eliminar</button></div></div>`;
+  }).join(''):'<div class="resource-empty">No hay recursos guardados para este filtro. Crea uno con AulaNexo o agrega tu propio archivo.</div>';
+  list.querySelectorAll('[data-resource-generated-edit]').forEach(b=>b.onclick=()=>{if(typeof window.openGeneratedResource061==='function')window.openGeneratedResource061(b.dataset.resourceGeneratedEdit)});
   list.querySelectorAll('[data-resource-file]').forEach(b=>b.onclick=()=>{const r=state.resources.find(x=>x.id===b.dataset.resourceFile);openResourceFile(r)});
   list.querySelectorAll('[data-resource-open]').forEach(b=>b.onclick=()=>{const r=state.resources.find(x=>x.id===b.dataset.resourceOpen);if(r?.url)window.open(r.url,'_blank','noopener')});
   list.querySelectorAll('[data-resource-copy]').forEach(b=>b.onclick=async()=>{const r=state.resources.find(x=>x.id===b.dataset.resourceCopy);if(!r)return;const txt=`${r.title}\n${r.type}\n${r.subject} · ${r.unitName}${r.oaNumber?` · OA ${r.oaNumber}`:''}\nUso: ${resourceAudienceLabel(r.audience)}${r.fileName?`\nArchivo: ${r.fileName}`:''}${r.url?`\n${r.url}`:''}${r.notes?`\n${r.notes}`:''}`;try{await navigator.clipboard.writeText(txt);alert('Recurso copiado.')}catch{prompt('Copia el recurso:',txt)}});
   list.querySelectorAll('[data-resource-edit]').forEach(b=>b.onclick=()=>{const r=state.resources.find(x=>x.id===b.dataset.resourceEdit);if(!r)return;editingResourceId=r.id;selectedResourceSubject=r.subject;selectedResourceUnit=String(r.unitId||'');selectedResourceOA=r.oaNumber==null?'':String(r.oaNumber);renderResources();document.getElementById('resourceFormTitle').textContent='Editar recurso';document.getElementById('resourceType').value=r.type;document.getElementById('resourceAudience').value=r.audience;document.getElementById('resourceTitle').value=r.title;document.getElementById('resourceUrl').value=r.url||'';document.getElementById('resourceNotes').value=r.notes||'';document.getElementById('resourceFileInfo').textContent=r.filePath?`Archivo actual: ${r.fileName} · ${formatFileSize(r.fileSize)}. Elige otro solo si quieres reemplazarlo.`:'Este recurso todavía no tiene un archivo adjunto.';document.getElementById('cancelResourceEdit').classList.remove('hidden');document.getElementById('saveResource').textContent='Guardar cambios';window.scrollTo({top:0,behavior:'smooth'})});
   list.querySelectorAll('[data-resource-delete]').forEach(b=>b.onclick=async()=>{const r=state.resources.find(x=>x.id===b.dataset.resourceDelete);if(!r||!confirm(`¿Eliminar “${r.title}”?${r.filePath?' También se eliminará su archivo de la nube.':''}`))return;if(r.filePath){try{await deleteResourceFile(r.filePath)}catch(e){if(!confirm('No se pudo eliminar el archivo de la nube: '+e.message+'\n\n¿Quieres eliminar igualmente el registro de la biblioteca?'))return}}state.resources=state.resources.filter(x=>x.id!==r.id);if(editingResourceId===r.id)resetResourceForm();save();renderResources()});
-  list.querySelectorAll('[data-resource-plan]').forEach(b=>b.onclick=()=>{const r=state.resources.find(x=>x.id===b.dataset.resourcePlan);if(!r)return;const course=activeCourse();if(!course)return;selectedPlanningSubject=r.subject;selectedPlanningUnit=String(r.unitId||'');const oas=unitObjectivesFor(course.level,r.subject,r.unitId);selectedPlanningOA=r.oaNumber?String(r.oaNumber):String(oas[0]?.number||'');planningMode='class';const line=[r.title,r.fileName?`Archivo: ${r.fileName}`:'',r.url].filter(Boolean).join(' · ');planningDraft.materials=[planningDraft.materials,line].filter(Boolean).join('\n');switchView('planning')});
+  list.querySelectorAll('[data-resource-plan]').forEach(b=>b.onclick=()=>{const r=state.resources.find(x=>x.id===b.dataset.resourcePlan);if(!r)return;const course=activeCourse();if(!course)return;selectedPlanningSubject=r.subject;selectedPlanningUnit=String(r.unitId||'');const oas=unitObjectivesFor(course.level,r.subject,r.unitId);selectedPlanningOA=(Array.isArray(r.oaNumbers)&&r.oaNumbers.length)?String(r.oaNumbers[0]):(r.oaNumber?String(r.oaNumber):String(oas[0]?.number||''));planningMode='class';const line=[r.title,r.fileName?`Archivo: ${r.fileName}`:'',r.url].filter(Boolean).join(' · ');planningDraft.materials=[planningDraft.materials,line].filter(Boolean).join('\n');switchView('planning')});
 }
 async function saveResourceFromForm(){
   const ctx=resourceCurrentContext();if(!ctx||!ctx.unit)return alert('Selecciona un curso, asignatura y unidad.');
@@ -4140,7 +4168,7 @@ function close(){document.getElementById('libModal059').classList.add('hidden')}
       <div>
         <div class="small" style="font-weight:850;color:#4f46e5">CREAR CON AULANEXO</div>
         <h2>Nuevo Recurso Pedagógico</h2>
-        <div class="small">AulaNexo adapta el material al Curso y a los OA que selecciones.</div>
+        <div class="small">AulaNexo adapta la complejidad, el tipo de actividad y el apoyo visual al Curso, la Asignatura y los OA que selecciones.</div>
       </div>
       <button id="resourceCreatorClose060" class="ghost" type="button">Cerrar</button>
     </div>
@@ -4188,7 +4216,7 @@ function close(){document.getElementById('libModal059').classList.add('hidden')}
     </div>
 
     <div class="resources060-ready">
-      <b>Generación automática:</b> completa los datos y presiona <strong>Generar Recurso</strong>. AulaNexo creará el material en una hoja editable para guardarlo o descargarlo.
+      <b>Generación adaptativa:</b> AulaNexo usa el Curso, la Asignatura y los OA seleccionados para variar la complejidad y el tipo de actividades. Luego podrás editar, guardar o descargar el material.
     </div>
 
     <div class="row end section-gap">
@@ -4242,7 +4270,8 @@ function close(){document.getElementById('libModal059').classList.add('hidden')}
 
     const existingTitle=document.createElement('div');
     existingTitle.className='resources060-existing-title';
-    existingTitle.textContent='Biblioteca de Recursos';
+    existingTitle.textContent='';
+    existingTitle.style.display='none';
 
     pedagogical.appendChild(hero);
     pedagogical.appendChild(existingTitle);
@@ -4472,99 +4501,370 @@ function close(){document.getElementById('libModal059').classList.add('hidden')}
     return String(d.topic||'el tema trabajado').trim()||'el tema trabajado';
   }
 
-  function playfulTask061(icon,title,text,kind){
-    const extra=kind==='draw'
-      ?'<div class="r063-draw"><span>✏️ Espacio para dibujar</span></div>'
-      :kind==='short'
-        ?'<div class="r063-shortlines"><span></span><span></span></div>'
-        :kind==='choice'
-          ?'<div class="r063-choices">☐ Sí &nbsp;&nbsp; ☐ A veces &nbsp;&nbsp; ☐ Aún estoy aprendiendo</div>'
-          :answerBox061();
-    return '<div class="r063-mission"><div class="r063-mission-title"><span>'+icon+'</span><b>'+esc061(title)+'</b></div><p>'+esc061(text)+'</p>'+extra+'</div>';
+  function task061(icon,title,text,kind='lines',data={}){
+    return {icon,title,text,kind,...data};
+  }
+
+  function taskExtra061(t){
+    const kind=t.kind||'lines';
+    if(kind==='draw')return '<div class="r064-canvas"></div>';
+    if(kind==='lines'){
+      const n=Math.max(1,Math.min(6,Number(t.lines||2)));
+      return '<div class="r064-sentence">'+Array.from({length:n},()=>'<div class="r064-sentence-line"></div>').join('')+'</div>';
+    }
+    if(kind==='oral')return '<div class="r064-oral"><strong>💬 Respuesta oral:</strong> conversa con un compañero, explica tu idea y escucha la suya.</div>';
+    if(kind==='checks'){
+      const ops=(t.options&&t.options.length?t.options:['Opción A','Opción B','Opción C']);
+      return '<div class="r064-checks">'+ops.map(x=>'<div class="r064-check">☐ '+esc061(x)+'</div>').join('')+'</div>';
+    }
+    if(kind==='wordbank'){
+      const ops=(t.options&&t.options.length?t.options:['Palabra 1','Palabra 2','Palabra 3']);
+      return '<div class="r064-wordbank">'+ops.map(x=>'<span class="r064-chip">'+esc061(x)+'</span>').join('')+'</div><div class="r064-sentence"><div class="r064-sentence-line"></div></div>';
+    }
+    if(kind==='match'){
+      const left=t.left||['Elemento 1','Elemento 2','Elemento 3'];
+      const right=t.right||['Respuesta A','Respuesta B','Respuesta C'];
+      return '<div class="r064-match"><div class="r064-match-col">'+left.map(x=>'<div class="r064-match-item">'+esc061(x)+'</div>').join('')+'</div><div class="r064-match-col">'+right.map(x=>'<div class="r064-match-item">'+esc061(x)+'</div>').join('')+'</div></div><div class="r064-match-arrow">Une con una línea cada elemento con su respuesta.</div>';
+    }
+    if(kind==='sequence'){
+      const labels=t.labels||['Primero','Después','Al final'];
+      return '<div class="r064-sequence">'+labels.map((x,i)=>'<div class="r064-step"><b>'+(i+1)+'. '+esc061(x)+'</b></div>').join('')+'</div>';
+    }
+    if(kind==='table'){
+      const heads=t.heads||['Observo','Pienso'];
+      const rows=Math.max(2,Math.min(5,Number(t.rows||3)));
+      return '<table class="r064-table"><thead><tr>'+heads.map(h=>'<th>'+esc061(h)+'</th>').join('')+'</tr></thead><tbody>'+Array.from({length:rows},()=>'<tr>'+heads.map(()=>'<td>&nbsp;</td>').join('')+'</tr>').join('')+'</tbody></table>';
+    }
+    if(kind==='numberline'){
+      const max=Number(t.max||10), marks=Math.max(6,Math.min(11,Number(t.marks||11)));
+      const vals=Array.from({length:marks},(_,i)=>Math.round((max/(marks-1))*i));
+      return '<div class="r064-numberline"><div class="r064-numberline-track"><div class="r064-numberline-dots">'+vals.map(()=>'<span class="r064-numberline-dot"></span>').join('')+'</div></div><div class="r064-numberline-labels">'+vals.map(v=>'<span>'+v+'</span>').join('')+'</div></div>';
+    }
+    if(kind==='sort'){
+      const cards=t.cards||['Ejemplo 1','Ejemplo 2','Ejemplo 3','Ejemplo 4'];
+      const zones=t.zones||['Grupo A','Grupo B'];
+      return '<div class="r064-sort">'+cards.map(x=>'<div class="r064-sort-card">'+esc061(x)+'</div>').join('')+'</div><div class="r064-sort-zones">'+zones.map(x=>'<div class="r064-sort-zone"><b>'+esc061(x)+'</b></div>').join('')+'</div>';
+    }
+    if(kind==='self'){
+      const ops=t.options||['😊 Lo logré','😐 Estoy practicando','🙋 Necesito ayuda'];
+      return '<div class="r064-self">'+ops.map(x=>'<span>☐ '+esc061(x)+'</span>').join('')+'</div>';
+    }
+    return answerBox061();
+  }
+
+  function playfulTask061(icon,title,text,kind,data){
+    const t=typeof icon==='object'?icon:task061(icon,title,text,kind,data||{});
+    return '<div class="r063-mission"><div class="r063-mission-title"><span>'+esc061(t.icon||'⭐')+'</span><b>'+esc061(t.title||'Actividad')+'</b></div><p>'+esc061(t.text||'')+'</p>'+taskExtra061(t)+(t.tip?'<div class="r064-minihelp">💡 '+esc061(t.tip)+'</div>':'')+'</div>';
+  }
+
+  function oaWords061(d){
+    return norm061((d.oaDetails||[]).map(o=>o.text).join(' '));
+  }
+  function has061(text,...words){return words.some(w=>text.includes(norm061(w)))}
+
+  function languageTasks061(d,g,topic,oa){
+    if(has061(oa, 'silaba','conciencia fonologica')||has061(topic,'silab'))return [
+      task061('👏','Palmea las sílabas','Di palabras del tema y da una palmada por cada sílaba.','oral'),
+      task061('🔎','Busca la sílaba inicial','Elige una palabra y escribe o marca con qué sílaba comienza.','wordbank',{options:['ma','me','mi','mo','mu']}),
+      task061('🧩','Arma una palabra','Ordena las sílabas y forma una palabra.','sequence',{labels:['Sílaba 1','Sílaba 2','Palabra completa']}),
+      task061('🎨','Dibuja y nombra','Dibuja una palabra trabajada y escribe lo que puedas de su nombre.','draw')
+    ];
+    if(has061(oa,'leer','comprender','texto','lectura')){
+      if(g<=2)return [
+        task061('👀','Antes de leer','Mira el título o las imágenes del texto. Cuenta de qué crees que tratará.','oral'),
+        task061('🔎','Encuentra una pista','Busca en el texto una palabra o parte que te ayude a comprender.','lines',{lines:1}),
+        task061('🎨','Lo que entendí','Dibuja la parte o idea que recuerdas mejor.','draw'),
+        task061('💬','Cuéntalo','Explica oralmente qué ocurrió o qué aprendiste del texto.','oral')
+      ];
+      if(g<=4)return [
+        task061('🔎','Idea principal','Escribe con tus palabras de qué trata principalmente el texto.','lines',{lines:2}),
+        task061('🧩','Ordena la información','Organiza tres ideas importantes en el orden que aparecen.','sequence'),
+        task061('💡','Busca evidencia','Copia una frase o dato del texto que apoye tu respuesta.','lines',{lines:2}),
+        task061('🤔','Piensa un poco más','Escribe una conclusión que puedas obtener a partir de lo leído.','lines',{lines:3})
+      ];
+      return [
+        task061('🔎','Analiza','Identifica la idea central y dos ideas que la apoyan.','table',{heads:['Idea central','Evidencia'],rows:3}),
+        task061('🧠','Infiere','Formula una inferencia y señala qué pistas del texto la sustentan.','lines',{lines:3}),
+        task061('⚖️','Evalúa','Explica el propósito, punto de vista o efecto de una parte del texto.','lines',{lines:4}),
+        task061('✍️','Responde con evidencia','Construye una respuesta completa usando información explícita del texto.','lines',{lines:4})
+      ];
+    }
+    if(has061(oa,'escribir','escritura','redact','producir texto'))return g<=2?[
+      task061('💭','Piensa tu idea','Cuenta oralmente qué quieres comunicar antes de escribir.','oral'),
+      task061('🧩','Ordena tu mensaje','Piensa qué dirás primero, después y al final.','sequence'),
+      task061('✍️','Escribe a tu manera','Escribe palabras o una oración breve sobre '+topic+'.','lines',{lines:3}),
+      task061('👀','Revisa','Mira tu trabajo: ¿se entiende lo que quisiste comunicar?','self')
+    ]:[
+      task061('💭','Planifica','Anota propósito, destinatario e ideas principales.','table',{heads:['¿Para qué?','¿Para quién?','Ideas'],rows:2}),
+      task061('✍️','Redacta','Escribe un primer borrador sobre '+topic+'.','lines',{lines:g<=4?4:6}),
+      task061('🔎','Revisa','Comprueba claridad, orden de ideas, vocabulario y convenciones de escritura.','checks',{options:['Las ideas se entienden','Hay un orden claro','Revisé palabras y puntuación']}),
+      task061('✨','Mejora','Reescribe una parte para que quede más clara o precisa.','lines',{lines:3})
+    ];
+    return g<=2?[
+      task061('🗣️','Habla y escucha','Cuenta una idea sobre '+topic+' y escucha la idea de otra persona.','oral'),
+      task061('🔎','Busca una palabra','Elige una palabra importante del tema.','wordbank',{options:['Palabra','Dibujo','Idea']}),
+      task061('🎨','Representa','Dibuja una escena, palabra o idea relacionada con '+topic+'.','draw'),
+      task061('⭐','Mi aprendizaje','Cuenta algo nuevo que aprendiste.','self')
+    ]:[
+      task061('🔎','Identifica','Escribe una idea importante relacionada con '+topic+'.','lines',{lines:2}),
+      task061('🧩','Organiza','Ordena tres ideas para comunicar tu respuesta con claridad.','sequence'),
+      task061('✍️','Explica','Desarrolla una respuesta usando vocabulario del tema.','lines',{lines:g<=4?3:4}),
+      task061('⭐','Revisa y mejora','Agrega un ejemplo o evidencia que haga más completa tu respuesta.','lines',{lines:2})
+    ];
+  }
+
+  function mathTasks061(d,g,topic,oa){
+    const t=norm061(topic);
+    if(has061(oa,'adicion','sumar','suma')||has061(t,'suma','adicion')){
+      if(g===1)return [
+        task061('🎲','Cuenta y suma','Resuelve 3 + 2. Puedes dibujar objetos para ayudarte.','draw'),
+        task061('🧩','Completa','4 + ___ = 6. Escribe el número que falta.','lines',{lines:1}),
+        task061('🚂','Salta en la recta','Parte en 2 y avanza 3 saltos. ¿A qué número llegas?','numberline',{max:10,marks:11}),
+        task061('⭐','Crea tu suma','Elige dos números pequeños y dibuja una suma con ellos.','draw')
+      ];
+      if(g===2)return [
+        task061('🎲','Calcula','Resuelve 8 + 5 y muestra cómo lo pensaste.','draw'),
+        task061('🧩','Número escondido','12 + ___ = 18. Encuentra el número que falta.','lines',{lines:1}),
+        task061('🧠','Dos caminos','Muestra dos formas diferentes de resolver una suma.','table',{heads:['Estrategia 1','Estrategia 2'],rows:2}),
+        task061('🚀','Problema breve','Crea o resuelve una situación cotidiana donde sea necesario sumar.','lines',{lines:3})
+      ];
+    }
+    if(has061(oa,'sustraccion','restar','resta')||has061(t,'resta','sustraccion'))return g<=2?[
+      task061('🍎','Quita y cuenta','Tenías 8 objetos y quitaste 3. Dibuja lo que ocurre y escribe cuántos quedan.','draw'),
+      task061('🧩','Número escondido','10 − ___ = 6. Encuentra el número que falta.','lines',{lines:1}),
+      task061('🚂','Retrocede en la recta','Parte en 9 y retrocede 4 saltos. Marca dónde terminas.','numberline',{max:10,marks:11}),
+      task061('⭐','Explica','Cuenta oralmente cómo supiste la respuesta.','oral')
+    ]:[
+      task061('🧮','Calcula','Resuelve una sustracción relacionada con el tema y registra el procedimiento.','lines',{lines:3}),
+      task061('🔎','Verifica','Comprueba tu resultado usando una estrategia diferente.','lines',{lines:2}),
+      task061('🧠','Problema','Resuelve una situación en la que debas decidir qué operación usar.','lines',{lines:4}),
+      task061('⭐','Justifica','Explica por qué tu respuesta tiene sentido.','lines',{lines:2})
+    ];
+    if(has061(oa,'multiplic','tablas')||has061(t,'multiplic'))return g<=4?[
+      task061('🟦','Forma grupos','Representa 3 grupos de 4 elementos y escribe la multiplicación.','draw'),
+      task061('🔢','Completa','Escribe dos sumas repetidas y su multiplicación equivalente.','table',{heads:['Suma repetida','Multiplicación'],rows:2}),
+      task061('🎯','Calcula','Resuelve 4 × 3 y 5 × 2 usando una estrategia.','lines',{lines:2}),
+      task061('🚀','Aplica','Resuelve un problema breve de grupos iguales.','lines',{lines:3})
+    ]:[
+      task061('🧮','Resuelve','Calcula y registra el procedimiento de dos multiplicaciones.','lines',{lines:4}),
+      task061('🔎','Estima','Antes de calcular, estima aproximadamente el resultado.','table',{heads:['Estimación','Resultado'],rows:2}),
+      task061('🧠','Problema','Resuelve una situación que requiera multiplicación y explica la estrategia.','lines',{lines:4}),
+      task061('⭐','Comprueba','Verifica el resultado con una estrategia distinta.','lines',{lines:3})
+    ];
+    if(has061(oa,'division','dividir','cociente')||has061(t,'division'))return [
+      task061('🍪','Reparte','Representa un reparto en grupos iguales.','draw'),
+      task061('🧩','Relaciona','Une una división con la multiplicación que permite comprobarla.','match',{left:['12 ÷ 3','20 ÷ 4','18 ÷ 6'],right:['3 × 6','4 × 5','3 × 4']}),
+      task061('🧮','Calcula','Resuelve divisiones y registra la estrategia usada.','lines',{lines:3}),
+      task061('🚀','Problema','Resuelve una situación de reparto o agrupación.','lines',{lines:4})
+    ];
+    if(has061(oa,'patron','secuencia')||has061(t,'patron','secuencia'))return [
+      task061('🔁','Continúa el patrón','Observa una secuencia y completa los elementos que siguen.','sequence',{labels:['Elemento 1','Elemento 2','Elemento 3']}),
+      task061('🔎','Descubre la regla','Explica qué cambia o se repite en el patrón.','lines',{lines:g<=2?1:2}),
+      task061('🎨','Crea','Inventa un patrón propio usando figuras, números o colores.','draw'),
+      task061('⭐','Desafío','Cambia una parte del patrón y explica qué ocurre.','oral')
+    ];
+    if(has061(oa,'figura','geometr','forma','angulo','poligono')||has061(t,'figura','geometr'))return g<=2?[
+      task061('🔎','Detective de formas','Busca en tu entorno objetos que tengan formas geométricas.','oral'),
+      task061('🎨','Dibuja','Dibuja dos formas diferentes y marca algo que las distinga.','draw'),
+      task061('🧩','Clasifica','Separa las formas según una característica que puedas observar.','sort',{cards:['Forma 1','Forma 2','Forma 3','Forma 4'],zones:['Grupo 1','Grupo 2']}),
+      task061('⭐','Cuenta lo que ves','Explica oralmente en qué se parecen y en qué son diferentes.','oral')
+    ]:[
+      task061('🔎','Identifica propiedades','Registra características de las figuras o cuerpos trabajados.','table',{heads:['Figura / cuerpo','Propiedades'],rows:3}),
+      task061('⚖️','Compara','Compara dos figuras usando vocabulario geométrico.','lines',{lines:3}),
+      task061('🎨','Construye o representa','Haz un dibujo, esquema o construcción que cumpla condiciones dadas.','draw'),
+      task061('🧠','Justifica','Explica por qué tu representación cumple las condiciones.','lines',{lines:3})
+    ];
+    if(has061(oa,'medir','medida','longitud','masa','tiempo','capacidad')||has061(t,'medida','longitud','tiempo'))return [
+      task061('👀','Estima primero','Antes de medir, escribe o señala tu estimación.','lines',{lines:1}),
+      task061('📏','Mide y registra','Completa la tabla con tus mediciones.','table',{heads:['Objeto','Estimación','Medición'],rows:3}),
+      task061('⚖️','Compara','Indica cuál medida es mayor, menor o igual.','lines',{lines:2}),
+      task061('⭐','Explica','Cuenta qué unidad o instrumento fue útil y por qué.','lines',{lines:g<=2?1:3})
+    ];
+    if(has061(oa,'dato','grafico','tabla','estadistic')||has061(t,'grafico','datos'))return [
+      task061('📋','Organiza los datos','Registra información en una tabla.','table',{heads:['Categoría','Cantidad'],rows:4}),
+      task061('📊','Representa','Dibuja un gráfico simple con los datos registrados.','draw'),
+      task061('🔎','Lee la información','Escribe una conclusión que puedas obtener del gráfico.','lines',{lines:g<=4?2:3}),
+      task061('❓','Pregunta','Escribe una pregunta que se pueda responder usando los datos.','lines',{lines:2})
+    ];
+    return g<=2?[
+      task061('🔢','Representa','Muestra una idea matemática de '+topic+' usando dibujos, objetos o números.','draw'),
+      task061('🧩','Completa','Resuelve un ejemplo breve relacionado con '+topic+'.','lines',{lines:1}),
+      task061('🎲','Prueba otra forma','Busca una segunda manera de obtener o comprobar tu respuesta.','oral'),
+      task061('⭐','Cuenta tu estrategia','Explica oralmente qué hiciste primero y qué hiciste después.','oral')
+    ]:[
+      task061('🧮','Resuelve','Resuelve una situación relacionada con '+topic+' y muestra el procedimiento.','lines',{lines:3}),
+      task061('🔎','Representa','Usa un esquema, tabla, dibujo o expresión matemática para mostrar tu idea.','draw'),
+      task061('🧠','Compara estrategias','Explica dos posibles estrategias y elige una.','table',{heads:['Estrategia A','Estrategia B'],rows:2}),
+      task061('⭐','Justifica','Explica por qué tu resultado es razonable.','lines',{lines:3})
+    ];
+  }
+
+  function scienceTasks061(d,g,topic,oa){
+    if(has061(oa,'sentido','audicion','vista','olfato','gusto','tacto')||has061(topic,'sentido','audicion'))return [
+      task061('👂','Ubica','Dibuja o señala en el cuerpo dónde se encuentra el sentido que estás estudiando.','draw'),
+      task061('🔊','Explora','Nombra ejemplos de información que recibimos a través de ese sentido.','oral'),
+      task061('🛡️','Cuida tu cuerpo','Marca acciones que ayudan a proteger ese sentido.','checks',{options:['Usar hábitos de cuidado','Evitar situaciones de riesgo','Pedir ayuda a un adulto cuando corresponda']}),
+      task061('⭐','Compromiso','Dibuja o escribe una acción de cuidado que puedas practicar.','draw')
+    ];
+    if(has061(oa,'animal','planta','seres vivos','semilla','fruto','flor','tallo','raiz'))return g<=2?[
+      task061('👀','Observa','Mira un ser vivo, imagen o muestra e identifica algo que puedas ver.','oral'),
+      task061('🧩','Clasifica','Agrupa los ejemplos según una característica observable.','sort',{cards:['Ejemplo 1','Ejemplo 2','Ejemplo 3','Ejemplo 4'],zones:['Grupo A','Grupo B']}),
+      task061('🎨','Dibuja con detalle','Representa un ser vivo y señala una característica importante.','draw'),
+      task061('💚','Cuídalo','Cuenta una acción que ayude a proteger a los seres vivos.','oral')
+    ]:[
+      task061('🔬','Observa y registra','Anota características observables y evidencia.','table',{heads:['Observación','Evidencia'],rows:3}),
+      task061('🧩','Clasifica','Propón un criterio de clasificación y organiza ejemplos.','table',{heads:['Criterio','Ejemplos'],rows:3}),
+      task061('⚖️','Compara','Explica semejanzas y diferencias entre dos ejemplos.','lines',{lines:3}),
+      task061('🧠','Concluye','Escribe una conclusión basada en tus observaciones.','lines',{lines:3})
+    ];
+    if(has061(oa,'material','propiedad','fuerza','calor','agua','luz'))return [
+      task061('🔎','Explora','Observa materiales u objetos y registra una propiedad.','table',{heads:['Material','Propiedad observada'],rows:3}),
+      task061('🧩','Clasifica','Agrupa los materiales según una propiedad elegida.','sort',{cards:['Material 1','Material 2','Material 3','Material 4'],zones:['Grupo A','Grupo B']}),
+      task061('🧪','Predice','¿Qué crees que ocurrirá al aplicar la acción o condición estudiada?','lines',{lines:g<=2?1:2}),
+      task061('💡','Compara con lo observado','Registra qué ocurrió y compáralo con tu predicción.','table',{heads:['Predije','Observé'],rows:2})
+    ];
+    if(has061(oa,'dia','noche','estacion','sol','luna','ciclo'))return [
+      task061('🌞','Observa cambios','Registra o dibuja algo que cambia durante el ciclo estudiado.','draw'),
+      task061('🕒','Ordena','Organiza tres momentos del ciclo en orden.','sequence'),
+      task061('🔎','Compara','Indica una diferencia entre dos momentos del ciclo.','lines',{lines:g<=2?1:2}),
+      task061('🌱','Conecta','Cuenta cómo ese cambio puede relacionarse con los seres vivos o el ambiente.','oral')
+    ];
+    return g<=2?[
+      task061('👀','Explora','Observa algo relacionado con '+topic+' y cuenta qué notas.','oral'),
+      task061('🎨','Registra','Dibuja lo que observaste e incluye un detalle importante.','draw'),
+      task061('🧩','Compara','Cuenta una semejanza o diferencia entre dos ejemplos.','oral'),
+      task061('⭐','Conclusión','Completa oralmente: “Aprendí que…”','self',{options:['😊 Lo entendí','😐 Quiero practicar','🙋 Necesito ayuda']})
+    ]:[
+      task061('🔬','Observa y registra','Registra datos u observaciones relacionadas con '+topic+'.','table',{heads:['Observación','Detalle / evidencia'],rows:3}),
+      task061('🧠','Explica','Relaciona tus observaciones con el aprendizaje trabajado.','lines',{lines:3}),
+      task061('⚖️','Compara','Identifica una semejanza y una diferencia entre dos casos.','table',{heads:['Semejanza','Diferencia'],rows:2}),
+      task061('⭐','Concluye','Formula una conclusión basada en evidencia.','lines',{lines:3})
+    ];
+  }
+
+  function historyTasks061(d,g,topic,oa){
+    if(has061(oa,'dia','semana','mes','antes','despues','ayer','hoy','mañana','secuenciar'))return [
+      task061('🕒','Pon en orden','Ordena tres momentos o acontecimientos.','sequence'),
+      task061('📅','Ubica en el tiempo','Relaciona una actividad con el momento en que ocurre.','match',{left:['Antes','Ahora','Después'],right:['Situación 1','Situación 2','Situación 3']}),
+      task061('🎨','Mi secuencia','Dibuja tres momentos de una actividad cotidiana en orden.','draw'),
+      task061('💬','Cuenta la historia','Explica oralmente qué ocurrió primero y qué ocurrió después.','oral')
+    ];
+    if(has061(oa,'mapa','plano','ubicacion','chile','cordillera','oceano','paisaje'))return g<=2?[
+      task061('🗺️','Mira y ubica','Observa un mapa o plano e identifica un lugar señalado.','oral'),
+      task061('🧭','Sigue indicaciones','Usa palabras como arriba, abajo, derecha, izquierda, delante o detrás para describir una ubicación.','oral'),
+      task061('🎨','Dibuja un plano simple','Representa un lugar cercano e incluye dos puntos de referencia.','draw'),
+      task061('⭐','Explica tu ruta','Cuenta cómo irías desde un punto a otro.','oral')
+    ]:[
+      task061('🗺️','Localiza','Ubica los elementos solicitados en un mapa o representación espacial.','draw'),
+      task061('🔎','Describe','Usa vocabulario geográfico para describir la ubicación o el paisaje.','lines',{lines:3}),
+      task061('⚖️','Compara espacios','Compara dos lugares usando criterios geográficos.','table',{heads:['Lugar A','Lugar B'],rows:3}),
+      task061('🧠','Interpreta','Explica qué información comunica la representación utilizada.','lines',{lines:3})
+    ];
+    if(has061(oa,'familia','identidad','costumbre','tradicion','simbolo','comunidad'))return [
+      task061('💬','Conversa','Cuenta una experiencia, tradición o característica vinculada con '+topic+'.','oral'),
+      task061('🎨','Representa','Dibuja un ejemplo importante para ti o tu comunidad.','draw'),
+      task061('🔎','Observa y compara','Encuentra una semejanza y una diferencia entre dos experiencias o expresiones.','table',{heads:['Se parecen en','Son diferentes en'],rows:2}),
+      task061('❤️','Valora','Explica por qué es importante respetar distintas formas de vida, historias o tradiciones.','oral')
+    ];
+    if(has061(oa,'norma','respeto','responsabilidad','derecho','deber','convivencia'))return [
+      task061('🤝','Elige una buena acción','Marca conductas que favorecen una convivencia respetuosa.','checks',{options:['Escuchar a los demás','Cuidar espacios y materiales','Cumplir acuerdos del grupo']}),
+      task061('🎭','¿Qué harías?','Piensa en una situación de convivencia y cuenta cómo podrías resolverla respetuosamente.','oral'),
+      task061('🧩','Relaciona','Une cada responsabilidad con una acción concreta.','match',{left:['Respeto','Responsabilidad','Cuidado'],right:['Acción A','Acción B','Acción C']}),
+      task061('⭐','Mi compromiso','Escribe o dibuja una acción que practicarás.','draw')
+    ];
+    return g<=2?[
+      task061('👀','Observa y cuenta','Mira una imagen, objeto o relato relacionado con '+topic+' y cuenta qué notas.','oral'),
+      task061('🎨','Representa','Dibuja una idea importante.','draw'),
+      task061('🕒','Ordena','Organiza hechos, lugares o acciones en una secuencia simple.','sequence'),
+      task061('⭐','Conecta','Cuenta cómo se relaciona este aprendizaje con tu vida o comunidad.','oral')
+    ]:[
+      task061('🔎','Identifica evidencia','Registra información importante sobre '+topic+'.','table',{heads:['Información','Fuente / evidencia'],rows:3}),
+      task061('🕒','Organiza','Ordena hechos, procesos o ideas relevantes.','sequence'),
+      task061('⚖️','Compara','Compara dos contextos, perspectivas o situaciones.','table',{heads:['Caso A','Caso B'],rows:3}),
+      task061('🧠','Explica','Construye una explicación usando evidencia.','lines',{lines:4})
+    ];
+  }
+
+  function actionSubjectTasks061(d,g,topic,oa,subject){
+    if(subject.includes('artes'))return [
+      task061('👀','Observa','Mira referentes, objetos o elementos relacionados con '+topic+' y comenta qué te llama la atención.','oral'),
+      task061('🎨','Explora materiales','Prueba líneas, formas, colores o texturas antes de crear.','draw'),
+      task061('🖌️','Crea','Realiza una propuesta visual que exprese una idea o emoción.','draw'),
+      task061('💬','Aprecia','Explica algo que te gusta de tu trabajo y algo que podrías seguir explorando.','oral')
+    ];
+    if(subject.includes('musica'))return [
+      task061('👂','Escucha','Reconoce sonidos, ritmos o elementos que puedas distinguir.','oral'),
+      task061('🥁','Imita y crea','Reproduce un patrón y luego crea una variación.','sequence',{labels:['Escucho','Repito','Creo']}),
+      task061('🎵','Representa','Usa símbolos, palabras o dibujos para registrar lo que escuchaste.','draw'),
+      task061('💬','Comparte','Cuenta cómo cambió la música o qué sensación te produjo.','oral')
+    ];
+    if(subject.includes('educacion fisica'))return [
+      task061('🏃','Prepárate','Recuerda una acción de seguridad antes de comenzar.','checks',{options:['Escuchar instrucciones','Cuidar el espacio','Usar correctamente los materiales']}),
+      task061('🎯','Desafío motor','Realiza la habilidad o juego propuesto, respetando tu ritmo y el de los demás.','oral'),
+      task061('🔁','Prueba de nuevo','Repite el movimiento cambiando una condición: dirección, velocidad, objeto o recorrido.','oral'),
+      task061('❤️','¿Cómo se sintió mi cuerpo?','Reconoce una sensación corporal después de la actividad.','self',{options:['😊 Me sentí bien','😐 Necesito descansar','💧 Necesito hidratarme']})
+    ];
+    if(subject.includes('tecnologia'))return [
+      task061('🔎','Detecta una necesidad','Describe el problema o necesidad que quieres resolver.','lines',{lines:g<=2?1:3}),
+      task061('💡','Imagina soluciones','Dibuja dos ideas posibles.','draw'),
+      task061('🛠️','Planifica','Ordena los pasos para construir o desarrollar tu solución.','sequence'),
+      task061('✅','Evalúa','Marca qué funcionó y qué podrías mejorar.','table',{heads:['Funcionó bien','Podría mejorar'],rows:2})
+    ];
+    if(subject.includes('orientacion'))return [
+      task061('💭','Piensa en ti','Reconoce una experiencia, emoción, fortaleza o necesidad relacionada con '+topic+'.','oral'),
+      task061('🤝','Escucha otra mirada','Conversa respetuosamente con otra persona y escucha su punto de vista.','oral'),
+      task061('🎭','¿Qué harías?','Propón una respuesta respetuosa ante una situación relacionada con el tema.','lines',{lines:g<=2?1:3}),
+      task061('⭐','Mi próximo paso','Elige una acción concreta que puedas practicar.','self')
+    ];
+    if(subject.includes('ingles'))return g<=4?[
+      task061('👂','Listen & point','Escucha palabras o expresiones del tema y señala la imagen o elemento correspondiente.','oral'),
+      task061('🔤','Word bank','Practica vocabulario breve relacionado con '+topic+'.','wordbank',{options:['word 1','word 2','word 3','word 4']}),
+      task061('💬','Say it','Usa una palabra o expresión en una respuesta oral breve.','oral'),
+      task061('✍️','Write','Completa una palabra, frase u oración breve.','lines',{lines:2})
+    ]:[
+      task061('📖','Read / listen','Identifica información principal en un texto oral o escrito breve.','lines',{lines:2}),
+      task061('🔤','Vocabulary','Registra vocabulario útil del tema.','table',{heads:['Word / expression','Meaning / example'],rows:4}),
+      task061('💬','Communicate','Responde o intercambia información usando expresiones del tema.','lines',{lines:3}),
+      task061('✍️','Create','Escribe un texto breve aplicando el vocabulario o estructura trabajada.','lines',{lines:4})
+    ];
+    return null;
   }
 
   function adaptiveTasks061(d){
     const g=gradeNumber061(d);
     const topic=topicText061(d);
     const subject=norm061(d.subject);
-    const oaText=norm061((d.oaDetails||[]).map(o=>o.text).join(' '));
-    const low=g<=2, mid=g<=4, upper=g<=6;
-
-    if(subject.includes('matemat') && (norm061(topic).includes('suma')||norm061(topic).includes('adicion')||oaText.includes('adicion'))){
-      if(g===1)return [
-        ['🎲','Cuenta y marca','Resuelve 3 + 2. Puedes usar tus dedos, dibujos o porotos.','short'],
-        ['🧩','Completa','Hay 4 estrellas y llegan 2 más. ¿Cuántas hay ahora?','short'],
-        ['🎨','Dibuja','Representa con dibujos una suma que dé 6.','draw'],
-        ['⭐','Reto final','Elige dos números pequeños y crea tu propia suma.','short']
-      ];
-      if(g===2)return [
-        ['🎲','Calcula','Resuelve 8 + 5 y explica con un dibujo cómo lo pensaste.','draw'],
-        ['🧩','Completa','12 + ___ = 18. Encuentra el número que falta.','short'],
-        ['🚀','Desafío','Inventa un problema de suma con una situación cotidiana.','short'],
-        ['⭐','Reto final','Compara dos estrategias para resolver una suma.','short']
-      ];
-    }
-
-    if(subject.includes('matemat') && (norm061(topic).includes('resta')||norm061(topic).includes('sustraccion')||oaText.includes('sustraccion'))){
-      if(g<=2)return [
-        ['🎲','Quita y cuenta','Tenías 8 fichas y quitaste 3. ¿Cuántas quedan?','short'],
-        ['🧩','Completa','10 − ___ = 6.','short'],
-        ['🎨','Dibuja','Representa con dibujos una resta.','draw'],
-        ['⭐','Reto final','Cuenta oralmente cómo supiste la respuesta.','choice']
-      ];
-    }
-
-    if((subject.includes('lenguaje')||subject.includes('lengua')) && (norm061(topic).includes('silab')||oaText.includes('silab'))){
-      if(g<=2)return [
-        ['👏','Palmea','Di tres palabras del tema y da una palmada por cada sílaba.','choice'],
-        ['🔎','Descubre','Elige una palabra y marca su sílaba inicial.','short'],
-        ['🧩','Ordena','Escribe o arma con tarjetas una palabra separada en sílabas.','short'],
-        ['🎨','Dibuja','Dibuja una palabra trabajada y escribe su primera sílaba.','draw']
-      ];
-    }
-
-    if(subject.includes('ciencias') && g<=2 && (oaText.includes('sentido')||norm061(topic).includes('sentido')||norm061(topic).includes('audicion'))){
-      return [
-        ['👂','Escucha y marca','¿Con qué parte del cuerpo escuchamos? Marca o señala la respuesta.','short'],
-        ['🔊','Detective de sonidos','Nombra dos sonidos que puedas escuchar en la sala o en casa.','choice'],
-        ['🛡️','Cuido mis oídos','Dibuja una acción que ayuda a cuidar la audición.','draw'],
-        ['⭐','Reto final','Cuenta a un compañero una forma de proteger tus oídos.','choice']
-      ];
-    }
-
-    if(low){
-      return [
-        ['👀','Mira y piensa','Observa o recuerda algo relacionado con '+topic+'. Cuéntalo con tus palabras.','choice'],
-        ['🎨','Dibuja','Haz un dibujo que muestre una idea importante sobre '+topic+'.','draw'],
-        ['🧩','Une o marca','Elige una idea correcta sobre '+topic+' y márcala con una estrella.','short'],
-        ['💬','Cuenta lo aprendido','Explica oralmente qué aprendiste hoy sobre '+topic+'.','choice']
-      ];
-    }
-
-    if(mid){
-      return [
-        ['🔎','Descubre','Escribe una idea importante sobre '+topic+'.','short'],
-        ['🧩','Relaciona','Conecta '+topic+' con un ejemplo de tu vida o de la Clase.','short'],
-        ['🎯','Aplica','Resuelve una situación breve usando lo que aprendiste sobre '+topic+'.','short'],
-        ['⭐','Reto final','Escribe una pregunta que te ayude a seguir aprendiendo.','short']
-      ];
-    }
-
-    if(upper){
-      return [
-        ['🔎','Identifica','Explica la idea principal relacionada con '+topic+'.','short'],
-        ['⚖️','Compara','Compara dos ejemplos, casos o situaciones vinculadas con '+topic+'.','short'],
-        ['🧠','Aplica','Usa lo aprendido para resolver una situación nueva.','short'],
-        ['⭐','Reto final','Justifica una conclusión usando una evidencia o ejemplo.','short']
-      ];
-    }
-
+    const oa=oaWords061(d);
+    if(subject.includes('matemat'))return mathTasks061(d,g,topic,oa);
+    if(subject.includes('lenguaje')||subject.includes('lengua y literatura'))return languageTasks061(d,g,topic,oa);
+    if(subject.includes('ciencias'))return scienceTasks061(d,g,topic,oa);
+    if(subject.includes('historia'))return historyTasks061(d,g,topic,oa);
+    const action=actionSubjectTasks061(d,g,topic,oa,subject);
+    if(action)return action;
+    if(g<=2)return [
+      task061('👀','Mira y piensa','Observa o recuerda algo relacionado con '+topic+'. Cuéntalo con tus palabras.','oral'),
+      task061('🎨','Dibuja','Haz un dibujo que muestre una idea importante sobre '+topic+'.','draw'),
+      task061('🧩','Organiza','Ordena tres ideas o acciones relacionadas con el aprendizaje.','sequence'),
+      task061('⭐','Cuenta lo aprendido','Explica oralmente qué aprendiste hoy.','self')
+    ];
+    if(g<=4)return [
+      task061('🔎','Descubre','Escribe una idea importante sobre '+topic+'.','lines',{lines:2}),
+      task061('🧩','Relaciona','Conecta el aprendizaje con un ejemplo.','table',{heads:['Lo aprendido','Mi ejemplo'],rows:2}),
+      task061('🎯','Aplica','Resuelve una situación breve usando lo aprendido.','lines',{lines:3}),
+      task061('⭐','Cierra','Escribe qué te resultó más fácil y qué necesitas seguir practicando.','lines',{lines:2})
+    ];
+    if(g<=6)return [
+      task061('🔎','Identifica','Explica la idea principal relacionada con '+topic+'.','lines',{lines:3}),
+      task061('⚖️','Compara','Compara dos ejemplos o situaciones.','table',{heads:['Caso A','Caso B'],rows:3}),
+      task061('🧠','Aplica','Usa lo aprendido para resolver una situación nueva.','lines',{lines:4}),
+      task061('⭐','Justifica','Apoya una conclusión con un ejemplo o evidencia.','lines',{lines:3})
+    ];
     return [
-      ['🔎','Analiza','Identifica las ideas centrales y relaciones relevantes sobre '+topic+'.','short'],
-      ['🧠','Interpreta','Explica qué implicancias tiene este aprendizaje en una situación concreta.','short'],
-      ['⚖️','Argumenta','Formula una respuesta y justifícala con evidencia, conceptos o ejemplos.','short'],
-      ['🚀','Transfiere','Aplica lo aprendido a un caso nuevo y propone una posible solución.','short'],
-      ['⭐','Síntesis','Resume el aprendizaje en una idea central y una pregunta para profundizar.','short']
+      task061('🔎','Analiza','Identifica ideas centrales, relaciones y evidencia relevante sobre '+topic+'.','table',{heads:['Idea / relación','Evidencia'],rows:3}),
+      task061('🧠','Interpreta','Explica qué implicancias tiene este aprendizaje en una situación concreta.','lines',{lines:4}),
+      task061('⚖️','Argumenta','Formula una respuesta y justifícala con evidencia, conceptos o ejemplos.','lines',{lines:5}),
+      task061('🚀','Transfiere','Aplica lo aprendido a un caso nuevo y propone una posible solución.','lines',{lines:5}),
+      task061('⭐','Síntesis','Resume el aprendizaje en una idea central y formula una pregunta para profundizar.','lines',{lines:3})
     ];
   }
 
@@ -4572,13 +4872,17 @@ function close(){document.getElementById('libModal059').classList.add('hidden')}
     const g=gradeNumber061(d);
     const oa=oaSummary061(d);
     const title=esc061(d.title||d.type||'Recurso');
+    const oaText=(d.oaDetails||[]).map(o=>'OA '+String(o.number).padStart(2,'0')+': '+o.text).join(' · ');
+    const stage=g<=2?'Actividades breves, visuales, orales y manipulables, con escritura muy acotada.':g<=4?'Actividades guiadas, aplicación breve y escritura progresiva.':g<=6?'Aplicación, comparación y explicación con mayor autonomía.':'Análisis, argumentación, transferencia y síntesis.';
     return '<div class="r063-header">'+
       '<div class="r063-kicker">✨ AULANEXO · APRENDEMOS HACIENDO</div>'+
       '<h1>'+title+'</h1>'+
       '<div class="r063-topic">🌟 '+esc061(topicText061(d))+'</div>'+
       '</div>'+
       '<div class="r061-meta"><b>Curso:</b> '+esc061(d.grade)+' &nbsp; · &nbsp; <b>Asignatura:</b> '+esc061(d.subject)+(d.unit?' &nbsp; · &nbsp; <b>Unidad:</b> '+esc061(d.unit):'')+(oa?'<br><b>OA:</b> '+esc061(oa):'')+'</div>'+
-      '<div class="r063-goal"><span>🎯</span><div><b>Hoy aprenderemos</b><br>'+esc061(g<=2?'Exploraremos '+topicText061(d)+' con actividades cortas, visuales y entretenidas.':'Trabajaremos '+topicText061(d)+' mediante desafíos adecuados a este Curso.')+'</div></div>';
+      '<div class="r063-goal"><span>🎯</span><div><b>Hoy aprenderemos</b><br>'+esc061('Trabajaremos '+topicText061(d)+' con una propuesta adecuada para '+d.grade+'.')+'</div></div>'+
+      '<div class="r064-minihelp"><b>Enfoque para este curso:</b> '+esc061(stage)+'</div>'+
+      (oaText?'<div class="r064-oa-note"><b>Vinculación curricular:</b> '+esc061(oaText)+'</div>':'');
   }
 
   function buildResource061(d){
@@ -4589,24 +4893,24 @@ function close(){document.getElementById('libModal059').classList.add('hidden')}
 
     if(type.includes('guia')){
       body='<div class="r063-section-title">🚀 ¡Comienza la aventura!</div>'+
-           tasks.map((t,i)=>playfulTask061(t[0],'Misión '+(i+1)+' · '+t[1],t[2],t[3])).join('')+
+           tasks.map((t,i)=>playfulTask061({...t,title:'Misión '+(i+1)+' · '+t.title})).join('')+
            '<div class="r063-exit"><b>🏁 Meta cumplida</b><br>'+(g<=2?'Colorea una estrella cuando sientas que aprendiste algo nuevo: ☆':'Escribe en una frase qué fue lo más importante que aprendiste.')+'</div>';
     }else if(type.includes('ficha')){
       body='<div class="r063-section-title">🎮 Desafíos para practicar</div>'+
-           tasks.map((t,i)=>playfulTask061(t[0],'Desafío '+(i+1)+' · '+t[1],t[2],t[3])).join('');
+           tasks.map((t,i)=>playfulTask061({...t,title:'Desafío '+(i+1)+' · '+t.title})).join('');
     }else if(type.includes('inicio')){
-      body=playfulTask061('🎁','Caja de ideas','¿Qué sabes o imaginas sobre '+topicText061(d)+'?',g<=2?'draw':'short')+
-           playfulTask061('💡','Predicción','¿Qué crees que aprenderemos hoy?',g<=2?'choice':'short');
+      body=playfulTask061(task061('🎁','Caja de ideas','¿Qué sabes o imaginas sobre '+topicText061(d)+'?',g<=2?'draw':'lines',{lines:2}))+
+           playfulTask061(task061('💡','Predicción','¿Qué crees que aprenderemos hoy?',g<=2?'oral':'lines',{lines:2}));
     }else if(type.includes('desarrollo')){
       body='<div class="r063-section-title">🧭 Ruta de aprendizaje</div>'+
-           tasks.slice(0,g<=2?3:4).map((t,i)=>playfulTask061(t[0],'Paso '+(i+1)+' · '+t[1],t[2],t[3])).join('');
+           tasks.slice(0,g<=2?3:4).map((t,i)=>playfulTask061({...t,title:'Paso '+(i+1)+' · '+t.title})).join('');
     }else if(type.includes('cierre')){
-      body=playfulTask061('⭐','Lo que descubrí','¿Qué aprendiste sobre '+topicText061(d)+'?',g<=2?'draw':'short')+
-           playfulTask061('🚦','Semáforo de aprendizaje','Marca cómo te sientes: 🟢 Lo entendí · 🟡 Necesito practicar · 🔴 Necesito ayuda','choice');
+      body=playfulTask061(task061('⭐','Lo que descubrí','¿Qué aprendiste sobre '+topicText061(d)+'?',g<=2?'draw':'lines',{lines:2}))+
+           playfulTask061(task061('🚦','Semáforo de aprendizaje','Marca cómo te sientes al terminar.','self'));
     }else if(type.includes('ticket')){
       body='<div class="r063-ticket">'+
-           playfulTask061('🎯','Una idea clave',g<=2?'Dibuja o cuenta una cosa que aprendiste sobre '+topicText061(d)+'.':'Escribe una idea importante sobre '+topicText061(d)+'.',g<=2?'draw':'short')+
-           playfulTask061('🚦','¿Cómo voy?','Marca: 🟢 Lo logré · 🟡 Estoy aprendiendo · 🔴 Necesito ayuda','choice')+
+           playfulTask061(task061('🎯','Una idea clave',g<=2?'Dibuja o cuenta una cosa que aprendiste sobre '+topicText061(d)+'.':'Escribe una idea importante sobre '+topicText061(d)+'.',g<=2?'draw':'lines',{lines:2}))+
+           playfulTask061(task061('🚦','¿Cómo voy?','Marca cómo te sientes con este aprendizaje.','self'))+
            '</div>';
     }else if(type.includes('lectura')){
       const sentences=g<=2?2:(g<=4?3:(g<=6?4:5));
@@ -4616,17 +4920,17 @@ function close(){document.getElementById('libModal059').classList.add('hidden')}
       if(sentences>=4)para.push('<p>Una buena estrategia es distinguir las ideas principales de los detalles y preguntarte cómo se conectan entre sí.</p>');
       if(sentences>=5)para.push('<p>Al finalizar, utiliza evidencias del texto y tus conocimientos previos para construir una conclusión propia.</p>');
       body='<div class="r063-reading">'+para.join('')+'</div>'+
-           playfulTask061('🔎','Después de leer',g<=2?'Cuenta o dibuja qué parte recuerdas mejor.':'Identifica la idea principal del texto.',g<=2?'draw':'short')+
-           playfulTask061('💬','Conversa',g<=2?'Comenta algo que te llamó la atención.':'Explica una relación entre el texto y tus conocimientos.','short');
+           playfulTask061(task061('🔎','Después de leer',g<=2?'Cuenta o dibuja qué parte recuerdas mejor.':'Identifica la idea principal del texto.',g<=2?'draw':'lines',{lines:2}))+
+           playfulTask061(task061('💬','Conversa',g<=2?'Comenta algo que te llamó la atención.':'Explica una relación entre el texto y tus conocimientos.',g<=2?'oral':'lines',{lines:2}));
     }else if(type.includes('preguntas')){
       body='<div class="r063-section-title">❓ Preguntas para pensar</div>'+
-           tasks.map((t,i)=>playfulTask061(t[0],'Pregunta '+(i+1),t[2],t[3])).join('');
+           tasks.map((t,i)=>playfulTask061({...t,title:'Pregunta '+(i+1)+' · '+t.title})).join('');
     }else if(type.includes('evaluacion')){
       body='<div class="r063-section-title">🌟 Muéstrame lo que aprendiste</div>'+
-           tasks.map((t,i)=>playfulTask061(t[0],'Actividad '+(i+1),t[2],t[3])).join('')+
+           tasks.map((t,i)=>playfulTask061({...t,title:'Actividad '+(i+1)+' · '+t.title})).join('')+
            '<div class="r063-exit"><b>Mi autoevaluación</b><br>☐ Lo logré &nbsp;&nbsp; ☐ Estoy avanzando &nbsp;&nbsp; ☐ Necesito apoyo</div>';
     }else{
-      body=tasks.map((t,i)=>playfulTask061(t[0],'Actividad '+(i+1),t[2],t[3])).join('');
+      body=tasks.map((t,i)=>playfulTask061({...t,title:'Actividad '+(i+1)+' · '+t.title})).join('');
     }
 
     return header061(d)+body;
@@ -4644,10 +4948,13 @@ function close(){document.getElementById('libModal059').classList.add('hidden')}
       const found=bank.find(o=>Number(o.number)===number);
       return found?{number:Number(found.number),text:String(found.text||'')}:{number,text:''};
     });
+    const unitOption=document.getElementById('resourceUnit060')?.selectedOptions?.[0];
+    const unitId=unitOption?.dataset?.unitId||'';
     return {
       grade:gradeLabel,
       subject,
       unit,
+      unitId,
       oa:oaDetails.map(o=>'OA '+String(o.number).padStart(2,'0')).join(', '),
       oaNumbers:oaDetails.map(o=>o.number),
       oaDetails,
@@ -4693,23 +5000,74 @@ function close(){document.getElementById('libModal059').classList.add('hidden')}
     return {...current061,html:document.getElementById('resourceEditorPaper061').innerHTML};
   }
 
+  function resolvedUnitId065(item){
+    if(item.unitId)return String(item.unitId);
+    const g=gradeNumber061(item), subject=item.subject||'';
+    const units=(typeof PROGRAM_UNIT_BANK!=='undefined'&&PROGRAM_UNIT_BANK[String(g)]&&PROGRAM_UNIT_BANK[String(g)][subject])||[];
+    const found=units.find(u=>u.name===item.unit);
+    return found?String(found.id):'';
+  }
+
+  function unifiedResource065(item){
+    const grade=gradeNumber061(item), unitId=resolvedUnitId065(item), nums=(item.oaNumbers||[]).map(Number).filter(Number.isFinite);
+    return {
+      id:item.id,
+      grade,
+      subject:item.subject||'',
+      unitId,
+      unitName:item.unit||'',
+      oaNumber:nums[0]??null,
+      oaNumbers:nums,
+      oaText:(item.oaDetails||[]).map(o=>o.text).filter(Boolean).join(' · '),
+      type:item.type||'Ficha imprimible',
+      audience:'all',
+      title:(item.type||'Recurso')+' · '+(item.topic||'Material creado'),
+      url:'',
+      notes:'Creado con AulaNexo',
+      fileName:'',filePath:'',fileType:'',fileSize:0,
+      generatedByAulaNexo:true,
+      generatedHtml:item.html||'',
+      generatedData:{...item,unitId},
+      createdAt:item.createdAt||new Date().toISOString(),
+      updatedAt:new Date().toISOString()
+    };
+  }
+
   function save061(){
     const item=getEdited061();
     if(!item)return;
+    item.unitId=resolvedUnitId065(item);
+    if(typeof state!=='undefined'&&Array.isArray(state.resources)){
+      const resource=unifiedResource065(item);
+      const idx=state.resources.findIndex(x=>x.id===resource.id);
+      if(idx>=0)state.resources[idx]={...state.resources[idx],...resource}; else state.resources.unshift(resource);
+      if(typeof save==='function')save();
+      const course=typeof activeCourse==='function'?activeCourse():null;
+      if(course&&Number(course.level)===Number(resource.grade)){
+        selectedResourceSubject=resource.subject;
+        selectedResourceUnit=String(resource.unitId||'');
+        selectedResourceOA='';
+      }
+      current061=item;
+      if(typeof renderResources==='function')renderResources();
+      if(typeof window.nexoCelebrate==='function')window.nexoCelebrate('generic');
+      alert('¡Recurso guardado en Recursos guardados!');
+      return;
+    }
+    // Respaldo local solo si la biblioteca principal no está disponible.
     let list=load061();
     const idx=list.findIndex(x=>x.id===item.id);
     if(idx>=0)list[idx]=item; else list.unshift(item);
     saveList061(list);
     current061=item;
-    renderLibrary061();
     if(typeof window.nexoCelebrate==='function')window.nexoCelebrate('generic');
-    alert('¡Recurso guardado en la Biblioteca!');
+    alert('¡Recurso guardado!');
   }
 
   function word061(){
     const item=getEdited061();
     if(!item)return;
-    const doc='<!doctype html><html><head><meta charset="utf-8"><style>body{font-family:Arial,sans-serif;max-width:760px;margin:32px auto;color:#222}h1{font-size:24px}h2{font-size:18px;color:#3730a3;margin-top:24px}.r061-meta{font-size:11px;color:#666;margin-bottom:18px}.r061-box{border:1px solid #bbb;padding:10px;margin:10px 0}.r061-answer{border:1px solid #ccc;min-height:55px;margin:8px 0 14px}.r061-line{border-bottom:1px solid #999;height:24px}.r063-header{border:2px solid #c7d2fe;background:#eef2ff;border-radius:14px;padding:16px;margin-bottom:12px}.r063-kicker{font-size:9px;font-weight:bold;color:#7c3aed}.r063-topic{font-size:11px;font-weight:bold;margin-top:6px}.r063-goal{border:1px solid #bae6fd;background:#f0f9ff;padding:10px;margin:12px 0}.r063-mission{border:1px solid #ddd;border-left:5px solid #818cf8;border-radius:12px;padding:12px;margin:10px 0}.r063-mission-title{font-weight:bold}.r063-draw{height:120px;border:2px dashed #bbb;margin-top:8px;text-align:center;padding-top:45px;color:#777}.r063-shortlines span{display:block;border-bottom:1px solid #999;height:22px}.r063-choices{background:#f8fafc;padding:8px;margin-top:8px}.r063-exit{background:#fffbeb;border:1px solid #fde68a;padding:10px;margin-top:12px}</style></head><body>'+item.html+'</body></html>';
+    const doc='<!doctype html><html><head><meta charset="utf-8"><style>body{font-family:Arial,sans-serif;max-width:760px;margin:32px auto;color:#222}h1{font-size:24px}h2{font-size:18px;color:#3730a3;margin-top:24px}.r061-meta{font-size:11px;color:#666;margin-bottom:18px}.r061-box{border:1px solid #bbb;padding:10px;margin:10px 0}.r061-answer{border:1px solid #ccc;min-height:55px;margin:8px 0 14px}.r061-line{border-bottom:1px solid #999;height:24px}.r063-header{border:2px solid #c7d2fe;background:#eef2ff;border-radius:14px;padding:16px;margin-bottom:12px}.r063-kicker{font-size:9px;font-weight:bold;color:#7c3aed}.r063-topic{font-size:11px;font-weight:bold;margin-top:6px}.r063-goal{border:1px solid #bae6fd;background:#f0f9ff;padding:10px;margin:12px 0}.r063-mission{border:1px solid #ddd;border-left:5px solid #818cf8;border-radius:12px;padding:12px;margin:10px 0}.r063-mission-title{font-weight:bold}.r063-draw{height:120px;border:2px dashed #bbb;margin-top:8px;text-align:center;padding-top:45px;color:#777}.r063-shortlines span{display:block;border-bottom:1px solid #999;height:22px}.r063-choices{background:#f8fafc;padding:8px;margin-top:8px}.r063-exit{background:#fffbeb;border:1px solid #fde68a;padding:10px;margin-top:12px}.r064-oral,.r064-check,.r064-match-item,.r064-step,.r064-sort-zone{border:1px solid #bbb;padding:8px;margin:6px 0}.r064-chip{display:inline-block;border:1px solid #bbb;padding:5px 8px;margin:3px}.r064-table{width:100%;border-collapse:collapse}.r064-table th,.r064-table td{border:1px solid #bbb;padding:7px}.r064-sentence-line{border-bottom:1px solid #999;height:25px}.r064-canvas{height:130px;border:2px dashed #bbb;margin-top:8px}.r064-sequence{display:table;width:100%}.r064-step{display:table-cell;width:33%}.r064-oa-note{border-left:4px solid #aaa;padding:8px;margin:8px 0}</style></head><body>'+item.html+'</body></html>';
     const blob=new Blob(['\ufeff',doc],{type:'application/msword'});
     const url=URL.createObjectURL(blob);
     const a=document.createElement('a');
@@ -4725,7 +5083,12 @@ function close(){document.getElementById('libModal059').classList.add('hidden')}
   }
 
   function editSaved061(id){
-    const item=load061().find(x=>x.id===id);
+    let item=null;
+    if(typeof state!=='undefined'&&Array.isArray(state.resources)){
+      const r=state.resources.find(x=>x.id===id&&x.generatedByAulaNexo);
+      if(r)item={...(r.generatedData||{}),id:r.id,html:r.generatedHtml||r.generatedData?.html||'',createdAt:r.createdAt};
+    }
+    if(!item)item=load061().find(x=>x.id===id);
     if(!item)return;
     current061={...item};
     document.getElementById('resourceEditorTitle061').textContent=item.type+' · '+item.topic;
@@ -4745,26 +5108,28 @@ function close(){document.getElementById('libModal059').classList.add('hidden')}
     renderLibrary061();
   }
 
+  function migrateOldGenerated065(){
+    if(typeof state==='undefined'||!Array.isArray(state.resources))return;
+    const old=load061();
+    if(!old.length)return;
+    let changed=false;
+    old.forEach(item=>{
+      if(!state.resources.some(r=>r.id===item.id)){
+        state.resources.unshift(unifiedResource065(item));
+        changed=true;
+      }
+    });
+    if(changed&&typeof save==='function')save();
+    // Una vez migrados, vaciamos la colección antigua para que no vuelva a duplicarse.
+    if(changed)saveList061([]);
+  }
+
   function renderLibrary061(){
-    const parent=document.getElementById('resourcesExisting060');
-    if(!parent)return;
-
-    let section=document.getElementById('generatedResources061');
-    if(!section){
-      section=document.createElement('div');
-      section.id='generatedResources061';
-      section.className='generated061-section';
-      parent.prepend(section);
-    }
-
-    const list=load061();
-    section.innerHTML='<div class="generated061-head"><h3>✨ Materiales creados con AulaNexo</h3><span class="generated061-count">'+list.length+' recurso(s)</span></div>'+
-      (list.length?'<div class="generated061-list">'+list.map(item=>
-        '<div class="generated061-card"><div class="generated061-card-top"><div><div class="generated061-title">'+esc061(item.type)+' · '+esc061(item.topic)+'</div><div class="generated061-meta">'+esc061(item.grade)+' · '+esc061(item.subject)+(item.oa?' · '+esc061(item.oa):'')+'</div></div></div><div class="generated061-actions"><button class="secondary" type="button" data-edit061="'+item.id+'">Abrir / Editar</button><button class="danger" type="button" data-delete061="'+item.id+'">Eliminar</button></div></div>'
-      ).join('')+'</div>':'<div class="generated061-empty">Todavía no has creado materiales con AulaNexo.</div>');
-
-    section.querySelectorAll('[data-edit061]').forEach(b=>b.onclick=()=>editSaved061(b.dataset.edit061));
-    section.querySelectorAll('[data-delete061]').forEach(b=>b.onclick=()=>delete061(b.dataset.delete061));
+    // Desde 0.0.65 no existe una franja separada de “Materiales creados con AulaNexo”.
+    // Todo se muestra en la lista única “Recursos guardados”.
+    document.getElementById('generatedResources061')?.remove();
+    migrateOldGenerated065();
+    if(typeof renderResources==='function'&&document.getElementById('resourceList'))renderResources();
   }
 
   function replacePrepareButton061(){
@@ -4798,6 +5163,7 @@ function close(){document.getElementById('libModal059').classList.add('hidden')}
   },100);
 
   window.renderGeneratedResources061=renderLibrary061;
+  window.openGeneratedResource061=editSaved061;
 })();
 </script>
 
