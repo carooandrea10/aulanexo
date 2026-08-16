@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>AulaNexo · Prototipo 0.0.68</title>
+<title>AulaNexo · Prototipo 0.0.69</title>
 <style>
 :root{
   --bg:#f5f7fb;--card:#fff;--text:#1f2937;--muted:#6b7280;--line:#e5e7eb;
@@ -1054,12 +1054,76 @@ nav.app-nav button[data-view].active{background:var(--primary-soft);color:#3730a
 @media(max-width:620px){.r067-path{grid-template-columns:repeat(2,1fr)}.r067-kid-title{font-size:23px}.r067-reward{grid-template-columns:auto 1fr}.r067-stars{grid-column:1/-1;text-align:center}}
 @media print{.r067-lower .r067-task{box-shadow:none}.r067-kid-header,.r067-nexo-bubble,.r067-path-item,.r067-lower .r067-task .r063-mission-title,.r067-reward{-webkit-print-color-adjust:exact;print-color-adjust:exact}}
 
+
+/* ===== AULANEXO 0.0.69 · FICHAS INFANTILES PARA COLOREAR ===== */
+.r069-sheet{
+  --ink:#111827;--paper:#fff;--soft:#f8fafc;
+  width:min(100%,820px);margin:0 auto;background:var(--paper);color:var(--ink);
+  border:2.5px solid var(--ink);border-radius:22px;padding:16px 18px 14px;
+  font-family:"Comic Sans MS","Trebuchet MS",ui-rounded,system-ui,sans-serif;
+  box-shadow:0 10px 28px rgba(15,23,42,.08)
+}
+.r069-sheet *{box-sizing:border-box}
+.r069-headrow{display:grid;grid-template-columns:1fr auto;gap:12px;align-items:start}
+.r069-fields{display:grid;grid-template-columns:1.25fr .75fr;gap:14px;margin:2px 0 10px;font-size:12px;font-weight:850}
+.r069-field{display:flex;gap:7px;align-items:flex-end}.r069-field span:last-child{height:20px;border-bottom:1.8px solid #111;flex:1}
+.r069-tag{border:1.8px solid #111;border-radius:999px;padding:5px 9px;font-size:9px;font-weight:950;white-space:nowrap;background:#fff}
+.r069-title{text-align:center;font-size:29px;line-height:1.05;margin:4px auto 5px;font-weight:950;letter-spacing:-.02em}
+.r069-subtitle{text-align:center;font-size:10.5px;font-weight:800;color:#475569;margin-bottom:9px}
+.r069-instruction{display:flex;gap:8px;align-items:flex-start;border:2px solid #111;border-radius:14px;padding:8px 10px;margin:8px 0 12px;font-size:12.5px;font-weight:800;line-height:1.3;background:#fff}
+.r069-instruction b{font-size:16px;line-height:1}
+.r069-lineart{display:block;width:100%;height:auto;max-height:270px;margin:0 auto}
+.r069-monsterwrap{display:grid;grid-template-columns:1fr;place-items:center;margin-top:2px}
+.r069-monsterwrap .r069-lineart{max-width:430px}
+.r069-wordgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:7px;margin-top:8px}
+.r069-word{border:1.8px dashed #111;border-radius:9px;min-height:42px;display:flex;align-items:center;justify-content:center;gap:7px;padding:5px 7px;font-size:16px;font-weight:950;background:#fff;text-align:center}
+.r069-word .dot{width:17px;height:17px;border:1.8px solid #111;border-radius:50%;flex:0 0 auto}
+.r069-stars{text-align:center;font-size:24px;letter-spacing:8px;margin:9px 0 2px}
+.r069-cheer{text-align:center;font-size:10.5px;font-weight:900;margin-bottom:5px}
+.r069-pathboard{position:relative;min-height:330px;border:2px solid #111;border-radius:18px;padding:14px;overflow:hidden}
+.r069-pathline{position:absolute;left:8%;right:17%;top:52%;height:0;border-top:3px dashed #111;transform:rotate(-8deg);transform-origin:center}
+.r069-stepstones{position:relative;z-index:2;display:grid;grid-template-columns:repeat(5,1fr);gap:9px;align-items:center;min-height:215px;padding:30px 45px 0 6px}
+.r069-stone{width:64px;height:64px;border:2px solid #111;border-radius:50%;display:grid;place-items:center;background:#fff;font-size:23px;font-weight:950;transform:rotate(var(--rot,0deg))}
+.r069-stone.blank{border-style:dashed;font-size:20px}
+.r069-rocket{position:absolute;right:13px;top:28px;width:120px}
+.r069-pathprompt{position:absolute;left:18px;bottom:16px;right:18px;border-top:1.6px solid #111;padding-top:9px;font-size:11px;font-weight:850}
+.r069-houses{display:grid;grid-template-columns:repeat(5,1fr);gap:7px;margin:7px 0 11px}
+.r069-house{position:relative;border:2px solid #111;border-radius:8px 8px 12px 12px;min-height:115px;padding:36px 5px 7px;text-align:center;background:#fff}
+.r069-house:before{content:"";position:absolute;width:58px;height:58px;left:50%;top:-27px;transform:translateX(-50%) rotate(45deg);border-left:2px solid #111;border-top:2px solid #111;background:#fff;z-index:0}
+.r069-house b{position:relative;z-index:1;font-size:20px}.r069-house .drop{height:54px;margin-top:5px;border:1.5px dashed #111;border-radius:8px}
+.r069-cutline{border-top:1.6px dashed #111;margin:10px 0 7px;position:relative}.r069-cutline:before{content:"✂";position:absolute;left:4px;top:-14px;background:#fff;padding-right:4px;font-size:17px}
+.r069-cardgrid{display:grid;grid-template-columns:repeat(5,1fr);gap:7px}
+.r069-cutcard{border:1.7px dashed #111;border-radius:8px;min-height:47px;display:grid;place-items:center;padding:5px;font-size:13.5px;font-weight:900;text-align:center;background:#fff}
+.r069-colorgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:9px;margin:10px 0}
+.r069-colorbubble{aspect-ratio:1/1;border:2px solid #111;border-radius:50%;display:grid;place-items:center;text-align:center;padding:7px;font-size:24px;font-weight:950;background:#fff}
+.r069-colorbubble.word{font-size:14px;border-radius:22px;aspect-ratio:auto;min-height:62px}
+.r069-sortzones{display:grid;grid-template-columns:1fr 1fr;gap:13px;margin:8px 0 10px}
+.r069-sortzone{border:2px solid #111;border-radius:16px;min-height:145px;padding:10px;text-align:center;background:#fff}
+.r069-sortzone b{display:block;font-size:17px;margin-bottom:8px}.r069-sortzone .paste{height:90px;border:1.5px dashed #111;border-radius:10px}
+.r069-matchgrid{display:grid;grid-template-columns:1fr 58px 1fr;gap:8px;align-items:stretch;margin:8px 0}
+.r069-matchcol{display:grid;gap:7px}.r069-matchitem{border:1.8px solid #111;border-radius:10px;min-height:49px;padding:7px;display:grid;place-items:center;text-align:center;font-size:13px;font-weight:900;background:#fff}
+.r069-matchmid{display:grid;place-items:center;font-size:11px;font-weight:900;text-align:center}.r069-matchmid:before{content:"UNE";writing-mode:vertical-rl;letter-spacing:2px}
+.r069-footer{margin-top:10px;border-top:1px dashed #94a3b8;padding-top:6px;font-family:system-ui,sans-serif;font-size:8px;color:#64748b;line-height:1.35}
+.r069-footer b{color:#334155}
+.r069-tinygoal{text-align:center;font-size:9px;color:#64748b;margin-top:3px}
+.r069-paintdots{display:flex;justify-content:center;gap:10px;margin:6px 0}.r069-paintdot{width:16px;height:16px;border:1.7px solid #111;border-radius:50%}
+@media(max-width:700px){
+  .r069-title{font-size:25px}.r069-wordgrid{grid-template-columns:repeat(2,1fr)}
+  .r069-houses{grid-template-columns:repeat(3,1fr)}.r069-cardgrid{grid-template-columns:repeat(3,1fr)}
+  .r069-colorgrid{grid-template-columns:repeat(3,1fr)}.r069-stepstones{grid-template-columns:repeat(3,1fr);padding-right:110px}
+}
+@media print{
+  .r069-sheet{box-shadow:none;border-color:#000;color:#000;width:100%;max-width:none;page-break-inside:avoid}
+  .r069-sheet *{color:#000!important;background:#fff!important;box-shadow:none!important}
+  .r069-lineart *{stroke:#000!important;fill:#fff!important}
+}
+
 </style>
 </head>
 <body>
 <header>
   <div class="header-wrap">
-    <div><h1>AulaNexo</h1><div class="subtitle">Prototipo 0.0.68 · Fichas lúdicas por curso, asignatura y OA</div></div>
+    <div><h1>AulaNexo</h1><div class="subtitle">Prototipo 0.0.69 · Fichas infantiles para colorear</div></div>
     <div class="header-actions"><button id="menuToggle" class="menu-toggle">☰ Menú</button><span class="current-section-pill">Sección: <strong id="currentSectionLabel">Curso</strong></span><span class="active-course-pill">Curso activo: <strong id="headerCourseName">Sin curso</strong></span><span id="cloudStatus" class="cloud-pill" data-state="offline">☁️ Sin conectar</span><button id="cloudConnectBtn" class="secondary">👤 Mi cuenta</button><button id="downloadBackup">⬇ Respaldo</button><button id="loadBackupBtn">⬆ Cargar respaldo</button><input id="backupFile" type="file" accept="application/json" hidden></div>
   </div>
 </header>
@@ -1517,7 +1581,7 @@ nav.app-nav button[data-view].active{background:var(--primary-soft);color:#3730a
     </div>
   </section>
 
-  <div class="footer">AulaNexo 0.0.68 · evaluación, seguimiento curricular, planificación, recursos, tutorial y asistente Nexo.</div>
+  <div class="footer">AulaNexo 0.0.69 · fichas infantiles, evaluación, seguimiento curricular, planificación, recursos, tutorial y asistente Nexo.</div>
 
   <section id="view-tutorial" class="view">
     <div class="tutorial-hero">
@@ -3726,7 +3790,7 @@ window.addEventListener('pagehide',()=>{if(cloudDirty&&cloudSession&&navigator.o
 
 document.getElementById('loadBackupBtn').onclick=()=>document.getElementById('backupFile').click();document.getElementById('backupFile').onchange=e=>{const f=e.target.files[0];if(!f)return;const reader=new FileReader();reader.onload=()=>{try{let data=JSON.parse(reader.result);const normalized=normalizeState(data);if(!normalized)throw new Error('Formato no reconocido');data=normalized;if(confirm('¿Cargar este respaldo? Reemplazará los datos actuales de este prototipo.')){state=attachCourseAliases(data);selectedApplicationId=null;selectedStudentId=null;selectedReportStudentId=null;selectedHistoryStudentId=null;selectedSimceApplicationId=null;selectedProgressStudentId=null;selectedProgressSubject=null;selectedProgressUnit='';selectedCoverageSubject=null;selectedSupportSubject=null;selectedSupportKey='';selectedInterventionSubject=null;selectedInterventionKey='';selectedInterventionGroup='support';interventionDraft={key:'',date:'',duration:'20',focus:'',activity:'',evidence:'',materials:''};selectedPlanningSubject=null;selectedPlanningUnit='';selectedPlanningOA='';planningDraft={key:'',date:'',duration:'45',objective:'',bloomLevel:'Comprender',bloomVerbs:'',attitudeCode:'',attitudeObjective:'',duaEngagementEnabled:true,duaEngagement:'',duaRepresentationEnabled:true,duaRepresentation:'',duaActionEnabled:true,duaAction:'',start:'',development:'',closing:'',assessment:'',differentiation:'',materials:''};editingPlanningId=null;planningMode='class';selectedResourceSubject=null;selectedResourceUnit='';selectedResourceOA='';editingResourceId=null;save();renderAll();alert('Respaldo cargado correctamente.')}}catch(err){alert('No pude cargar ese archivo como respaldo de AulaNexo 0.0.47.')}e.target.value=''};reader.readAsText(f)};
 
-// 0.0.68: el inicio de sesión debe procesarse antes del render general.
+// 0.0.69: mantiene el inicio de sesión previo al render y añade fichas infantiles para colorear.
 // Esto evita que un error de render deje el token de Google sin procesar.
 initCloud();
 try{
@@ -5083,7 +5147,242 @@ function close(){document.getElementById('libModal059').classList.add('hidden')}
       '<div class="r066-goal"><span class="icon">🎯</span><div><b>Nuestra meta</b><br>'+esc061(simpleGoal)+'</div></div>';
   }
 
+
+  /* ===== AULANEXO 0.0.69 · MOTOR DE FICHAS INFANTILES ===== */
+  function r069MonsterSvg(){
+    return '<svg class="r069-lineart" viewBox="0 0 520 300" aria-hidden="true">'+
+      '<g fill="white" stroke="#111827" stroke-width="5" stroke-linecap="round" stroke-linejoin="round">'+
+      '<path d="M125 115 Q85 70 60 112 Q43 141 91 150" />'+
+      '<path d="M395 115 Q435 70 460 112 Q477 141 429 150" />'+
+      '<path d="M155 72 Q133 26 104 37 Q120 70 153 93" />'+
+      '<path d="M365 72 Q387 26 416 37 Q400 70 367 93" />'+
+      '<path d="M260 43 l-18 22 -26 -8 9 25 -20 18 28 2 9 27 18 -20 23 15 1 -28 27 -8 -24 -16 7 -28 -28 10z" />'+
+      '<path d="M131 122 Q157 80 260 80 Q363 80 389 122 Q418 167 393 235 Q375 280 260 280 Q145 280 127 235 Q102 167 131 122z" />'+
+      '<circle cx="205" cy="132" r="29"/><circle cx="315" cy="132" r="29"/>'+
+      '<circle cx="205" cy="132" r="10" fill="#111827"/><circle cx="315" cy="132" r="10" fill="#111827"/>'+
+      '<circle cx="150" cy="164" r="10"/><circle cx="370" cy="164" r="10"/><circle cx="158" cy="212" r="9"/><circle cx="362" cy="212" r="9"/>'+
+      '<path d="M174 183 Q260 151 346 183 Q341 254 260 254 Q179 254 174 183z" />'+
+      '<path d="M197 181 l14 28 18 -35 20 31 20 -34 20 34 19 -31 16 35 15 -27" />'+
+      '<path d="M205 251 l18 -31 18 34 20 -31 19 31 18 -34 18 31" />'+
+      '<path d="M118 250 q-35 24 -3 38 h54 q13 -13 -5 -29" /><path d="M402 250 q35 24 3 38 h-54 q-13 -13 5 -29" />'+
+      '</g></svg>';
+  }
+
+  function r069RocketSvg(){
+    return '<svg class="r069-rocket" viewBox="0 0 130 210" aria-hidden="true">'+
+      '<g fill="white" stroke="#111827" stroke-width="4" stroke-linejoin="round">'+
+      '<path d="M65 12 Q103 46 90 119 L65 158 40 119 Q27 46 65 12z"/>'+
+      '<circle cx="65" cy="72" r="17"/>'+
+      '<path d="M41 113 18 139 42 143M89 113l23 26-24 4"/>'+
+      '<path d="M51 151 65 195 79 151"/>'+
+      '<path d="M56 160 65 185 74 160"/>'+
+      '</g></svg>';
+  }
+
+  function r069TeacherRef(d){
+    const teacher=(d.oaDetails||[]).map(o=>'OA '+String(o.number).padStart(2,'0')+': '+o.text).join(' · ');
+    return '<div class="r069-footer"><b>Referencia docente:</b> '+esc061(teacher||'OA seleccionado en AulaNexo')+
+      ' · <b>Tema:</b> '+esc061(topicText061(d))+'</div>';
+  }
+
+  function r069Header(d,title,instruction){
+    return '<div class="r069-fields"><div class="r069-field"><b>Nombre:</b><span></span></div><div class="r069-field"><b>Fecha:</b><span></span></div></div>'+
+      '<div class="r069-headrow"><div></div><div class="r069-tag">FICHA PARA COLOREAR</div></div>'+
+      '<div class="r069-title">'+esc061(title)+'</div>'+
+      '<div class="r069-subtitle">'+esc061(d.grade)+' · '+esc061(d.subject)+'</div>'+
+      '<div class="r069-instruction"><b>✎</b><span>'+esc061(instruction)+'</span></div>';
+  }
+
+  function r069LetterList(d){
+    const n=norm061(topicText061(d));
+    const hits=n.match(/\b[mplstdn]\b/g)||[];
+    const direct=letterFromTopic066(topicText061(d));
+    if(direct)hits.unshift(direct);
+    return [...new Set(hits)];
+  }
+
+  function r069WordPool(d){
+    const topic=topicText061(d), letters=r069LetterList(d), l=letters[0]||'', v=Number(d.variantIndex||0);
+    const banks={
+      m:['mamá','mano','mapa','mesa','mimo','miel','mono','moto','mula','muro'],
+      p:['pato','pan','pala','pera','pelo','pino','pila','polo','pozo','puma'],
+      l:['lata','lápiz','lazo','león','leche','lima','libro','loro','lobo','luna'],
+      s:['sapo','saco','sal','sello','semilla','silla','sirena','sopa','sol','suma'],
+      t:['taza','tapa','taco','tela','techo','tigre','tijera','tomate','topo','tubo'],
+      d:['dado','dama','danza','dedo','delfín','diente','dino','dominó','dos','ducha']
+    };
+    const generic=['mamá','mesa','mono','mapa','pato','pelota','pera','pan','sapo','sopa','sol','silla','lata','lápiz','loro','luna','taza','tomate','tijera','tigre','dado','dedo'];
+    let pool=banks[l]||generic;
+    if(letters.length>1){
+      pool=generic.filter(w=>letters.some(ch=>norm061(w).startsWith(ch)));
+      if(pool.length<12)pool=generic;
+    }
+    return rotate066(pool,v);
+  }
+
+  function r069Syllables(d){
+    const l=letterFromTopic066(topicText061(d))||'m';
+    return ['a','e','i','o','u'].map(v=>l+v);
+  }
+
+  function r069NumberPool(d){
+    const max=rangeFromTopic066(topicText061(d)) || (gradeNumber061(d)===1?40:100);
+    const candidates=max<=20?[2,5,8,11,14,17,20]:max<=40?[4,9,14,19,24,29,34,39,40]:[8,16,25,33,41,52,64,75,88,99];
+    const v=Number(d.variantIndex||0);
+    return rotate066(candidates.map(n=>Math.min(n,max)),v);
+  }
+
+  function r069TemplateKind(d){
+    const s=norm061(d.subject), t=norm061(topicText061(d)), oa=oaWords061(d);
+    if(s.includes('lenguaje')||s.includes('lengua y literatura')){
+      if(has061(t,'silab')||has061(oa,'silaba','conciencia fonologica'))return 'houses';
+      if(has061(t,'lectura','leer','palabra')||has061(oa,'leer palabras','lectura'))return 'monster';
+      if(has061(t,'unir','relacion','imagen'))return 'match';
+      if(letterFromTopic066(topicText061(d))||has061(t,'sonido inicial','letra','consonante'))return 'color';
+      return 'monster';
+    }
+    if(s.includes('matemat')){
+      if(has061(t,'cantidad','numero y cantidad','relacionar')||has061(oa,'representar cantidades'))return 'match';
+      if(has061(t,'composicion','descomposicion','clasificar'))return 'sort';
+      if(has061(t,'numero','conteo','contar','lectura','secuencia','serie')||has061(oa,'contar','leer numeros'))return 'path';
+      return 'path';
+    }
+    if(s.includes('ciencias')){
+      if(has061(t,'sentido','parte del cuerpo','funcion','órgano','organo')||has061(oa,'sentido','funcion'))return 'match';
+      if(has061(t,'seres vivos','no vivos','clasificar','animal','planta')||has061(oa,'clasificar'))return 'sort';
+      if(has061(t,'cuidado','salud','habito','hábitos','proteger')||has061(oa,'cuidar','proteger'))return 'color';
+      return 'sort';
+    }
+    return '';
+  }
+
+  function r069MonsterSheet(d){
+    const words=r069WordPool(d).slice(0,16);
+    return '<div class="r069-sheet">'+r069Header(d,'El monstruo come palabras','Lee cada palabra en voz alta. Marca el círculo cuando la logres leer y después colorea al monstruo.')+
+      '<div class="r069-monsterwrap">'+r069MonsterSvg()+'</div>'+
+      '<div class="r069-wordgrid">'+words.map(w=>'<div class="r069-word"><span class="dot"></span>'+esc061(w)+'</div>').join('')+'</div>'+
+      '<div class="r069-stars">☆ ☆ ☆ ☆ ☆</div><div class="r069-cheer">¡Cada palabra que lees alimenta a tu monstruo lector!</div>'+
+      r069TeacherRef(d)+'</div>';
+  }
+
+  function r069PathSheet(d){
+    const nums=r069NumberPool(d).slice(0,5);
+    const max=rangeFromTopic066(topicText061(d)) || (gradeNumber061(d)===1?40:100);
+    const blanks=nums.map((n,i)=>i===2?'':n);
+    return '<div class="r069-sheet">'+r069Header(d,'¡Cohete de números!','Lee los números del camino. Completa el que falta y colorea el cohete cuando llegues a la meta.')+
+      '<div class="r069-pathboard">'+r069RocketSvg()+'<div class="r069-pathline"></div>'+
+      '<div class="r069-stepstones">'+blanks.map((n,i)=>'<div class="r069-stone '+(n===''?'blank':'')+'" style="--rot:'+(i%2?4:-4)+'deg">'+(n===''?'?':esc061(n))+'</div>').join('')+'</div>'+
+      '<div class="r069-pathprompt">Desafío extra: encierra el número mayor y dibuja '+Math.min(10,Math.max(3,Math.round(max/8)))+' puntitos junto a él.</div></div>'+
+      '<div class="r069-stars">☆ ☆ ☆</div><div class="r069-cheer">¡Misión numérica cumplida!</div>'+r069TeacherRef(d)+'</div>';
+  }
+
+  function r069HouseSheet(d){
+    const syll=r069Syllables(d);
+    const l=(letterFromTopic066(topicText061(d))||'m');
+    const bank={
+      m:['mamá','mapa','mesa','melón','mimo','miel','mono','moto','mula','muro'],
+      p:['pato','pala','pera','pelo','pino','pila','polo','pozo','puma','puño'],
+      l:['lata','lazo','león','leche','lima','libro','loro','lobo','luna','lupa'],
+      s:['sapo','saco','sello','semilla','silla','sirena','sopa','sol','suma','sur'],
+      t:['taza','tapa','tela','techo','tigre','tijera','tomate','topo','tubo','tucán'],
+      d:['dado','dama','dedo','delfín','diente','dino','dominó','dos','ducha','dulce']
+    };
+    const cards=rotate066(bank[l]||bank.m,Number(d.variantIndex||0)).slice(0,10);
+    return '<div class="r069-sheet">'+r069Header(d,'La casita de las sílabas','Lee cada palabra. Recórtala y pégala en la casita de la sílaba con que comienza.')+
+      '<div class="r069-houses">'+syll.map(s=>'<div class="r069-house"><b>'+esc061(s)+'</b><div class="drop"></div></div>').join('')+'</div>'+
+      '<div class="r069-cutline"></div><div class="r069-cardgrid">'+cards.map(w=>'<div class="r069-cutcard">'+esc061(w)+'</div>').join('')+'</div>'+
+      '<div class="r069-stars">☆ ☆ ☆</div><div class="r069-cheer">¡Cada palabra encontró su casita!</div>'+r069TeacherRef(d)+'</div>';
+  }
+
+  function r069ColorSheet(d){
+    const s=norm061(d.subject), topic=topicText061(d), letter=letterFromTopic066(topic), v=Number(d.variantIndex||0);
+    let items=[], instruction='Colorea solo los elementos correctos según la consigna.';
+    if((s.includes('lenguaje')||s.includes('lengua y literatura')) && letter){
+      const words=r069WordPool(d).slice(0,12);
+      items=words.map(w=>({label:w,target:norm061(w).startsWith(norm061(letter))}));
+      instruction='Colorea solo las palabras que comienzan con '+letter.toUpperCase()+'. Luego repasa la letra con tu dedo.';
+    }else if(s.includes('ciencias')){
+      const pool=[
+        {label:'Escuchar suave',target:true},{label:'Meter objetos al oído',target:false},
+        {label:'Lavarse las manos',target:true},{label:'Probar sustancias desconocidas',target:false},
+        {label:'Dormir bien',target:true},{label:'Mirar el sol directamente',target:false},
+        {label:'Comer variado',target:true},{label:'Correr por la calle sin mirar',target:false}
+      ];
+      items=rotate066(pool,v);
+      instruction='Colorea solo las acciones que ayudan a cuidar tu cuerpo y tus sentidos.';
+    }else{
+      const nums=r069NumberPool(d).slice(0,12);
+      const target=nums[0]%2===0?'pares':'mayores';
+      items=nums.map((n,i)=>({label:String(n),target:target==='pares'?n%2===0:i>=6}));
+      instruction='Colorea los números que cumplen la consigna de tu profesora o profesor.';
+    }
+    return '<div class="r069-sheet">'+r069Header(d,'¡Colorea y descubre!',instruction)+
+      '<div class="r069-paintdots"><span class="r069-paintdot"></span><span class="r069-paintdot"></span><span class="r069-paintdot"></span></div>'+
+      '<div class="r069-colorgrid">'+items.slice(0,12).map(x=>'<div class="r069-colorbubble word">'+esc061(x.label)+'</div>').join('')+'</div>'+
+      '<div class="r069-cheer">Cuando termines, explica por qué elegiste esas respuestas.</div>'+r069TeacherRef(d)+'</div>';
+  }
+
+  function r069SortSheet(d){
+    const s=norm061(d.subject), t=norm061(topicText061(d)), v=Number(d.variantIndex||0);
+    let zones=['GRUPO A','GRUPO B'], cards=['Ejemplo 1','Ejemplo 2','Ejemplo 3','Ejemplo 4','Ejemplo 5','Ejemplo 6','Ejemplo 7','Ejemplo 8'];
+    let title='¡Cada uno a su lugar!', instruction='Recorta las tarjetas y pégalas en el grupo que corresponde.';
+    if(s.includes('ciencias')){
+      zones=['SER VIVO','NO VIVO'];
+      cards=rotate066(['perro','árbol','mariposa','flor','piedra','silla','vaso','pelota'],v);
+      instruction='Recorta las tarjetas. Decide si corresponde a un ser vivo o a algo no vivo y pégala en su lugar.';
+    }else if(s.includes('matemat')){
+      zones=['FORMA 1','FORMA 2'];
+      cards=rotate066(['10','5 + 5','7 + 3','6 + 4','8 + 2','4 + 6','9 + 1','3 + 7'],v);
+      instruction='Recorta y agrupa las tarjetas que representan la misma cantidad o idea matemática.';
+    }
+    return '<div class="r069-sheet">'+r069Header(d,title,instruction)+
+      '<div class="r069-sortzones">'+zones.map(z=>'<div class="r069-sortzone"><b>'+esc061(z)+'</b><div class="paste"></div></div>').join('')+'</div>'+
+      '<div class="r069-cutline"></div><div class="r069-cardgrid">'+cards.map(c=>'<div class="r069-cutcard">'+esc061(c)+'</div>').join('')+'</div>'+
+      '<div class="r069-stars">☆ ☆ ☆</div><div class="r069-cheer">¡Excelente clasificación!</div>'+r069TeacherRef(d)+'</div>';
+  }
+
+  function r069MatchSheet(d){
+    const s=norm061(d.subject), v=Number(d.variantIndex||0);
+    let left=[],right=[],instruction='Une cada elemento con su pareja correcta.';
+    if(s.includes('ciencias')){
+      left=['OJOS','OÍDOS','NARIZ','LENGUA','PIEL'];
+      right=rotate066(['VISTA','AUDICIÓN','OLFATO','GUSTO','TACTO'],v+1);
+      instruction='Une cada parte del cuerpo con el sentido que corresponde. Después colorea los recuadros.';
+    }else if(s.includes('matemat')){
+      const nums=r069NumberPool(d).slice(0,5);
+      left=nums.map(String);right=rotate066(nums.map(numberWord066),v+1);
+      instruction='Une cada número con su nombre. Después colorea las parejas que encontraste.';
+    }else{
+      const words=r069WordPool(d).slice(0,5);
+      left=words;right=rotate066(words.map(w=>'• '+w),v+1);
+      instruction='Lee y une cada palabra con su pareja. Después encierra la que más te gustó leer.';
+    }
+    return '<div class="r069-sheet">'+r069Header(d,'¡Une y juega!',instruction)+
+      '<div class="r069-matchgrid"><div class="r069-matchcol">'+left.map(x=>'<div class="r069-matchitem">'+esc061(x)+'</div>').join('')+
+      '</div><div class="r069-matchmid"></div><div class="r069-matchcol">'+right.map(x=>'<div class="r069-matchitem">'+esc061(x)+'</div>').join('')+'</div></div>'+
+      '<div class="r069-stars">☆ ☆ ☆</div><div class="r069-cheer">¡Encontraste las parejas!</div>'+r069TeacherRef(d)+'</div>';
+  }
+
+  function buildLowerWorksheet069(d){
+    const kind=r069TemplateKind(d);
+    if(!kind)return '';
+    if(kind==='monster')return r069MonsterSheet(d);
+    if(kind==='path')return r069PathSheet(d);
+    if(kind==='houses')return r069HouseSheet(d);
+    if(kind==='color')return r069ColorSheet(d);
+    if(kind==='sort')return r069SortSheet(d);
+    if(kind==='match')return r069MatchSheet(d);
+    return '';
+  }
+
+
   function buildResource061(d){
+    const g069=gradeNumber061(d), type069=norm061(d.type), subject069=norm061(d.subject);
+    if(g069<=2 && type069.includes('ficha') &&
+       (subject069.includes('lenguaje')||subject069.includes('lengua y literatura')||subject069.includes('matemat')||subject069.includes('ciencias'))){
+      const lower069=buildLowerWorksheet069(d);
+      if(lower069)return lower069;
+    }
     let tasks=adaptiveTasks061(d);
     const type=norm061(d.type), g=gradeNumber061(d), th=theme066(d.subject);
     tasks=tasks.slice(0,g<=2?4:(g<=4?4:5));
