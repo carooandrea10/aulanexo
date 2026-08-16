@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>AulaNexo · Prototipo 0.0.69</title>
+<title>AulaNexo · Prototipo 0.0.71</title>
 <style>
 :root{
   --bg:#f5f7fb;--card:#fff;--text:#1f2937;--muted:#6b7280;--line:#e5e7eb;
@@ -1118,12 +1118,138 @@ nav.app-nav button[data-view].active{background:var(--primary-soft);color:#3730a
   .r069-lineart *{stroke:#000!important;fill:#fff!important}
 }
 
+
+/* ===== AULANEXO 0.0.70 · BIBLIOTECA VISUAL INFANTIL ===== */
+.r070-titlewrap{
+  display:grid;grid-template-columns:72px 1fr 72px;gap:7px;align-items:center;
+  margin:0 auto 4px
+}
+.r070-titlewrap .r069-title{margin:0}
+.r070-doodle{width:68px;height:50px;display:block;margin:auto}
+.r070-hero{
+  border:2px solid #111827;border-radius:22px;padding:7px 10px 4px;
+  background:#fff;position:relative;overflow:hidden
+}
+.r070-monster-art{width:100%;max-width:465px;height:auto;display:block;margin:0 auto}
+.r070-rocket-scene{width:100%;height:auto;display:block}
+.r070-house-grid{
+  display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:8px;
+  align-items:start;margin:28px 0 12px
+}
+.r070-house-card{
+  border:1.8px dashed #111827;border-radius:15px;padding:5px 5px 8px;
+  min-height:170px;background:#fff;text-align:center
+}
+.r070-house-card .label{
+  display:inline-grid;place-items:center;min-width:44px;height:34px;
+  border:2px solid #111827;border-radius:999px;background:#fff;
+  font-size:19px;font-weight:950;margin:-22px auto 3px;padding:0 8px
+}
+.r070-house-svg{display:block;width:100%;height:112px;margin:0 auto}
+.r070-drop{
+  height:28px;border:1.6px dashed #111827;border-radius:9px;margin:3px 4px 0
+}
+.r070-sortzones{
+  display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin:8px 0 14px
+}
+.r070-sortzone{
+  border:2px solid #111827;border-radius:20px;padding:8px 10px 10px;
+  min-height:210px;background:#fff;text-align:center
+}
+.r070-bin-svg{width:100%;max-width:260px;height:128px;display:block;margin:0 auto 2px}
+.r070-sortzone b{
+  display:inline-block;border:1.8px solid #111827;border-radius:999px;
+  padding:4px 10px;font-size:13px;background:#fff
+}
+.r070-sortzone .paste{
+  height:46px;border:1.6px dashed #111827;border-radius:11px;margin:7px 4px 0
+}
+.r070-mini-decor{
+  display:flex;justify-content:center;align-items:center;gap:14px;margin:4px 0 8px
+}
+.r070-mini-decor svg{width:46px;height:38px}
+.r070-colorbubble{
+  position:relative;overflow:hidden
+}
+.r070-colorbubble:before,.r070-colorbubble:after{
+  content:"";position:absolute;width:8px;height:8px;border:1.4px solid #111827;
+  transform:rotate(45deg);background:#fff
+}
+.r070-colorbubble:before{left:8px;top:8px}.r070-colorbubble:after{right:8px;bottom:8px}
+.r070-matchcap{
+  display:grid;grid-template-columns:58px 1fr 58px;align-items:center;gap:7px;margin:1px 0 8px
+}
+.r070-matchcap svg{width:55px;height:45px}
+@media(max-width:680px){
+  .r070-titlewrap{grid-template-columns:48px 1fr 48px}
+  .r070-doodle{width:46px;height:38px}
+  .r070-house-grid{grid-template-columns:repeat(2,1fr)}
+  .r070-house-card:last-child{grid-column:1/-1;max-width:50%;justify-self:center;width:100%}
+  .r070-sortzones{grid-template-columns:1fr}
+}
+@media print{
+  .r070-hero,.r070-house-card,.r070-sortzone{box-shadow:none}
+  .r070-titlewrap,.r070-house-grid,.r070-sortzones{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+}
+
+
+/* ===== AULANEXO 0.0.71 · CIENCIAS VISUALES 1° BÁSICO ===== */
+.r071-science-zones{
+  display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:10px 0 12px
+}
+.r071-science-zone{
+  border:2.3px solid #111827;border-radius:24px;padding:8px 10px 12px;
+  min-height:235px;background:#fff;position:relative;overflow:hidden;text-align:center
+}
+.r071-science-zone-title{
+  display:inline-flex;align-items:center;gap:7px;border:2px solid #111827;
+  border-radius:999px;padding:5px 12px;font-size:17px;font-weight:950;background:#fff;
+  position:relative;z-index:2
+}
+.r071-science-zone-help{
+  font-size:11px;font-weight:800;margin:5px 0 2px;line-height:1.2
+}
+.r071-science-zone-art{width:100%;height:105px;display:block;margin:0 auto}
+.r071-science-paste{
+  height:57px;border:1.7px dashed #111827;border-radius:12px;margin:3px 4px 0;
+  display:grid;place-items:center;font-size:10px;font-weight:800;color:#6b7280
+}
+.r071-science-cards{
+  display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px;margin-top:8px
+}
+.r071-science-card{
+  border:1.8px dashed #111827;border-radius:14px;background:#fff;
+  min-height:120px;padding:5px 4px 7px;display:flex;flex-direction:column;
+  align-items:center;justify-content:space-between;text-align:center
+}
+.r071-science-card svg{
+  width:88px;height:78px;display:block;flex:0 0 auto
+}
+.r071-science-card b{
+  display:block;font-size:13px;line-height:1.05;margin-top:2px
+}
+.r071-science-decor{
+  display:flex;justify-content:center;gap:13px;align-items:center;margin:1px 0 5px
+}
+.r071-science-decor svg{width:42px;height:34px}
+.r071-tiny-note{
+  text-align:center;font-size:10px;font-weight:750;margin:3px 0 7px;color:#374151
+}
+@media(max-width:680px){
+  .r071-science-zones{grid-template-columns:1fr}
+  .r071-science-cards{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+@media print{
+  .r071-science-zone,.r071-science-card{box-shadow:none;break-inside:avoid}
+  .r071-science-cards{grid-template-columns:repeat(4,minmax(0,1fr))}
+}
+
 </style>
 </head>
 <body>
 <header>
   <div class="header-wrap">
-    <div><h1>AulaNexo</h1><div class="subtitle">Prototipo 0.0.69 · Fichas infantiles para colorear</div></div>
+    <div><h1>AulaNexo</h1><div class="subtitle">Prototipo 0.0.71 · Ciencias visuales y sincronización inteligente</div></div>
     <div class="header-actions"><button id="menuToggle" class="menu-toggle">☰ Menú</button><span class="current-section-pill">Sección: <strong id="currentSectionLabel">Curso</strong></span><span class="active-course-pill">Curso activo: <strong id="headerCourseName">Sin curso</strong></span><span id="cloudStatus" class="cloud-pill" data-state="offline">☁️ Sin conectar</span><button id="cloudConnectBtn" class="secondary">👤 Mi cuenta</button><button id="downloadBackup">⬇ Respaldo</button><button id="loadBackupBtn">⬆ Cargar respaldo</button><input id="backupFile" type="file" accept="application/json" hidden></div>
   </div>
 </header>
@@ -1581,7 +1707,7 @@ nav.app-nav button[data-view].active{background:var(--primary-soft);color:#3730a
     </div>
   </section>
 
-  <div class="footer">AulaNexo 0.0.69 · fichas infantiles, evaluación, seguimiento curricular, planificación, recursos, tutorial y asistente Nexo.</div>
+  <div class="footer">AulaNexo 0.0.71 · Ciencias visuales, sincronización inteligente, fichas para colorear, evaluación, seguimiento curricular, planificación, recursos, tutorial y asistente Nexo.</div>
 
   <section id="view-tutorial" class="view">
     <div class="tutorial-hero">
@@ -2294,6 +2420,39 @@ async function cloudCheckForRemoteChanges({force=false}={}){
     cloudSetStatus('☁️ Error de sincronización','error');cloudSetMessage('No pude revisar la nube: '+err.message,'err');return false;
   }finally{cloudBusy=false}
 }
+
+function cloudHasMeaningfulLocalData(){
+  try{
+    const s=cloudPlainState()||{};
+    if(Array.isArray(s.courses)&&s.courses.length)return true;
+    if(Array.isArray(s.applications)&&s.applications.length)return true;
+    if(Array.isArray(s.interventions)&&s.interventions.length)return true;
+    if(Array.isArray(s.classPlans)&&s.classPlans.length)return true;
+    if(Array.isArray(s.resources)&&s.resources.length)return true;
+    if(Array.isArray(s.instrumentTemplates)&&s.instrumentTemplates.length)return true;
+    if(s.unitSequences&&Object.keys(s.unitSequences).length)return true;
+    if(s.curriculumPlans&&Object.keys(s.curriculumPlans).length)return true;
+    const rs=s.reportSettings||{};
+    if(String(rs.teacherName||'').trim()||String(rs.schoolName||'').trim())return true;
+
+    // La instalación nueva trae una única rúbrica de lectura de ejemplo.
+    // Solo consideramos "trabajo real" las evaluaciones adicionales o una
+    // evaluación inicial claramente modificada por la persona.
+    const evs=Array.isArray(s.evaluations)?s.evaluations:[];
+    if(evs.length>1)return true;
+    if(evs.length===1){
+      const e=evs[0]||{};
+      const defaultLike=String(e.name||'').startsWith('Lectura oral · M, P, L, S y T') &&
+                        String(e.subject||'')==='Lenguaje' &&
+                        Number(e.curriculumGrade||1)===1;
+      if(!defaultLike)return true;
+    }
+    return false;
+  }catch(e){
+    return true; // ante duda, protegemos los datos locales
+  }
+}
+
 async function cloudInitialReconcile(){
   if(!cloudSession?.user?.id)return;
   loadCloudMeta();
@@ -2301,7 +2460,18 @@ async function cloudInitialReconcile(){
   cloudSetMessage('Comprobando los datos más recientes…');
   try{
     const row=await cloudFetchRow();
+    const localHasWork=cloudHasMeaningfulLocalData();
+
     if(row&&row.data){
+      // 0.0.71: si este es un dispositivo nuevo/vacío y la cuenta ya tiene
+      // información, descargamos la nube automáticamente. No tiene sentido
+      // mostrar un conflicto contra una instalación sin trabajo real.
+      if(!localHasWork){
+        await cloudApplyRemoteData(row.data,row.updated_at);
+        cloudSetMessage('Dispositivo nuevo detectado. Cargué automáticamente tus datos desde la nube.','ok');
+        return;
+      }
+
       if(cloudSameData(row.data,cloudPlainState())){
         cloudBaseUpdatedAt=row.updated_at;cloudLastSyncedAt=row.updated_at;setCloudDirty(false);hideCloudConflict();cloudSetMessage('Este dispositivo ya está al día.','ok');renderCloudAccount();
       }else if(cloudDirty&&cloudBaseUpdatedAt&&!cloudSameTimestamp(row.updated_at,cloudBaseUpdatedAt)){
@@ -2314,8 +2484,12 @@ async function cloudInitialReconcile(){
         await cloudApplyRemoteData(row.data,row.updated_at);
       }
     }else{
+      // Si la nube está vacía, solo subimos lo que exista localmente.
+      // Una instalación totalmente nueva puede guardar su estado inicial sin riesgo.
       await cloudForceUploadState();
-      cloudSetMessage('Esta cuenta todavía no tenía datos en la nube. Subí los datos de este dispositivo como punto de partida.','ok');
+      cloudSetMessage(localHasWork
+        ? 'Esta cuenta todavía no tenía datos en la nube. Subí los datos de este dispositivo como punto de partida.'
+        : 'Cuenta conectada. La nube quedó preparada para sincronizar tus próximos cambios.','ok');
     }
   }catch(err){
     cloudSetStatus('☁️ Error de sincronización','error');
@@ -3790,7 +3964,7 @@ window.addEventListener('pagehide',()=>{if(cloudDirty&&cloudSession&&navigator.o
 
 document.getElementById('loadBackupBtn').onclick=()=>document.getElementById('backupFile').click();document.getElementById('backupFile').onchange=e=>{const f=e.target.files[0];if(!f)return;const reader=new FileReader();reader.onload=()=>{try{let data=JSON.parse(reader.result);const normalized=normalizeState(data);if(!normalized)throw new Error('Formato no reconocido');data=normalized;if(confirm('¿Cargar este respaldo? Reemplazará los datos actuales de este prototipo.')){state=attachCourseAliases(data);selectedApplicationId=null;selectedStudentId=null;selectedReportStudentId=null;selectedHistoryStudentId=null;selectedSimceApplicationId=null;selectedProgressStudentId=null;selectedProgressSubject=null;selectedProgressUnit='';selectedCoverageSubject=null;selectedSupportSubject=null;selectedSupportKey='';selectedInterventionSubject=null;selectedInterventionKey='';selectedInterventionGroup='support';interventionDraft={key:'',date:'',duration:'20',focus:'',activity:'',evidence:'',materials:''};selectedPlanningSubject=null;selectedPlanningUnit='';selectedPlanningOA='';planningDraft={key:'',date:'',duration:'45',objective:'',bloomLevel:'Comprender',bloomVerbs:'',attitudeCode:'',attitudeObjective:'',duaEngagementEnabled:true,duaEngagement:'',duaRepresentationEnabled:true,duaRepresentation:'',duaActionEnabled:true,duaAction:'',start:'',development:'',closing:'',assessment:'',differentiation:'',materials:''};editingPlanningId=null;planningMode='class';selectedResourceSubject=null;selectedResourceUnit='';selectedResourceOA='';editingResourceId=null;save();renderAll();alert('Respaldo cargado correctamente.')}}catch(err){alert('No pude cargar ese archivo como respaldo de AulaNexo 0.0.47.')}e.target.value=''};reader.readAsText(f)};
 
-// 0.0.69: mantiene el inicio de sesión previo al render y añade fichas infantiles para colorear.
+// 0.0.70: mantiene el inicio de sesión y añade una biblioteca visual infantil de ilustraciones lineales.
 // Esto evita que un error de render deje el token de Google sin procesar.
 initCloud();
 try{
@@ -5148,7 +5322,7 @@ function close(){document.getElementById('libModal059').classList.add('hidden')}
   }
 
 
-  /* ===== AULANEXO 0.0.69 · MOTOR DE FICHAS INFANTILES ===== */
+  /* ===== AULANEXO 0.0.70 · MOTOR DE FICHAS + BIBLIOTECA VISUAL ===== */
   function r069MonsterSvg(){
     return '<svg class="r069-lineart" viewBox="0 0 520 300" aria-hidden="true">'+
       '<g fill="white" stroke="#111827" stroke-width="5" stroke-linecap="round" stroke-linejoin="round">'+
@@ -5179,6 +5353,186 @@ function close(){document.getElementById('libModal059').classList.add('hidden')}
       '</g></svg>';
   }
 
+
+  /* ===== 0.0.70 · ILUSTRACIONES LINEALES REUTILIZABLES ===== */
+  function r070DoodleSvg(side='left'){
+    const flip=side==='right'?'transform="translate(76 0) scale(-1 1)"':'';
+    return `<svg class="r070-doodle" viewBox="0 0 76 54" aria-hidden="true">
+      <g ${flip} fill="white" stroke="#111827" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M14 23 l4 8 9 1-7 6 2 9-8-5-8 5 2-9-7-6 9-1z"/>
+        <path d="M42 13 q5-10 10 0 q10-5 10 6 q0 8-10 15-10-7-10-15 0-7 0-6z"/>
+        <path d="M37 40 q6-9 12 0"/>
+        <circle cx="33" cy="17" r="3"/>
+        <path d="M63 39 l7 0M66.5 35.5l0 7"/>
+      </g>
+    </svg>`;
+  }
+
+  function r070MonsterSvg(variant=0){
+    const accessory=(variant%3===0)
+      ? '<path d="M279 50 l-16 19-23-7 8 23-17 15 24 2 8 23 16-18 21 13 1-24 23-7-20-14 6-24-24 9z"/>'
+      : (variant%3===1)
+      ? '<path d="M258 59 q12-24 24 0M270 35v18"/><circle cx="270" cy="30" r="7"/>'
+      : '<path d="M239 61 q31-28 62 0 q-7 22-31 22t-31-22z"/><path d="M248 58 q22 13 44 0"/>';
+    return `<svg class="r070-monster-art" viewBox="0 0 560 340" aria-hidden="true">
+      <g fill="white" stroke="#111827" stroke-width="4.6" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M122 127 Q70 81 45 120 Q27 151 83 166"/>
+        <path d="M438 127 Q490 81 515 120 Q533 151 477 166"/>
+        <path d="M157 92 Q124 39 96 53 Q111 92 153 112"/>
+        <path d="M403 92 Q436 39 464 53 Q449 92 407 112"/>
+        ${accessory}
+        <path d="M130 137 Q154 91 280 91 Q406 91 430 137 Q456 185 430 253 Q410 304 280 304 Q150 304 130 253 Q104 185 130 137z"/>
+        <ellipse cx="218" cy="148" rx="35" ry="39"/>
+        <ellipse cx="342" cy="148" rx="35" ry="39"/>
+        <circle cx="222" cy="151" r="11" fill="#111827"/>
+        <circle cx="338" cy="151" r="11" fill="#111827"/>
+        <circle cx="226" cy="146" r="3.5" fill="white" stroke="none"/>
+        <circle cx="342" cy="146" r="3.5" fill="white" stroke="none"/>
+        <path d="M175 203 Q280 158 385 203 Q378 282 280 282 Q182 282 175 203z"/>
+        <path d="M192 199 l18 27 19-36 23 31 27-38 27 38 23-31 20 36 19-27"/>
+        <path d="M205 277 l18-30 20 32 22-34 20 34 22-34 20 32 18-30"/>
+        <path d="M261 219 q19 13 38 0 q-4 27-19 27t-19-27z"/>
+        <circle cx="158" cy="176" r="11"/><circle cx="402" cy="176" r="11"/>
+        <circle cx="163" cy="231" r="8"/><circle cx="397" cy="231" r="8"/>
+        <path d="M118 268 q-38 23-6 42 h58 q15-12-6-31"/>
+        <path d="M442 268 q38 23 6 42 h-58 q-15-12 6-31"/>
+        <path d="M39 61 l5 10 11 1-8 7 2 11-10-6-10 6 3-11-9-7 11-1z"/>
+        <path d="M487 57 q6-13 13 0 q13-6 13 8 0 11-13 20-13-9-13-20 0-8 0-8z"/>
+        <path d="M82 53 q6-10 12 0"/><path d="M470 90 l13 0M476.5 83.5v13"/>
+      </g>
+    </svg>`;
+  }
+
+  function r070RocketSceneSvg(variant=0){
+    const moon=variant%2===0
+      ? '<circle cx="87" cy="78" r="34"/><path d="M72 68q12 7 22 0M96 88q8 5 15-1"/>'
+      : '<path d="M60 86 q35-52 72-13 q-34 7-47 39 q-23-4-25-26z"/>';
+    return `<svg class="r070-rocket-scene" viewBox="0 0 650 335" aria-hidden="true">
+      <g fill="white" stroke="#111827" stroke-width="3.6" stroke-linecap="round" stroke-linejoin="round">
+        ${moon}
+        <path d="M152 56 l5 11 12 1-9 8 3 12-11-7-11 7 3-12-9-8 12-1z"/>
+        <path d="M480 52 l4 8 9 1-7 6 2 9-8-5-8 5 2-9-7-6 9-1z"/>
+        <path d="M553 102 q6-12 12 0 q12-6 12 7 0 10-12 18-12-8-12-18 0-7 0-7z"/>
+        <path d="M439 73 l12 0M445 67v12"/>
+        <g transform="translate(436 60)">
+          <path d="M76 20 Q127 63 110 158 L76 207 42 158 Q25 63 76 20z"/>
+          <circle cx="76" cy="91" r="25"/>
+          <circle cx="68" cy="89" r="3" fill="#111827"/><circle cx="84" cy="89" r="3" fill="#111827"/>
+          <path d="M67 102 q9 8 18 0"/>
+          <path d="M43 151 13 185 45 190M109 151l30 34-32 5"/>
+          <path d="M57 200 76 255 95 200"/>
+          <path d="M64 209 76 243 88 209"/>
+        </g>
+        <path d="M499 278 q14-22 29 0 q16-18 34 0 q22-9 33 12 H469 q8-15 30-12z"/>
+        <path d="M34 279 q13-21 27 0 q17-18 33 0 q20-8 30 12 H8 q8-15 26-12z"/>
+      </g>
+    </svg>`;
+  }
+
+  function r070HouseSvg(index=0){
+    const badge=['★','♡','✿','○','◇'][index%5];
+    return `<svg class="r070-house-svg" viewBox="0 0 150 125" aria-hidden="true">
+      <g fill="white" stroke="#111827" stroke-width="3.1" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M17 54 75 13l58 41"/>
+        <path d="M28 48v64h94V48"/>
+        <rect x="62" y="73" width="27" height="39" rx="4"/>
+        <rect x="38" y="61" width="22" height="20" rx="4"/>
+        <rect x="91" y="61" width="22" height="20" rx="4"/>
+        <path d="M49 61v20M38 71h22M102 61v20M91 71h22"/>
+        <circle cx="82" cy="93" r="2.2" fill="#111827"/>
+        <path d="M15 111h120"/>
+        <text x="75" y="43" text-anchor="middle" font-size="18" font-family="Arial" fill="#111827" stroke="none">${badge}</text>
+      </g>
+    </svg>`;
+  }
+
+  function r070BinSvg(index=0){
+    const face=index%2===0
+      ? '<circle cx="80" cy="69" r="3" fill="#111827"/><circle cx="120" cy="69" r="3" fill="#111827"/><path d="M87 82q13 10 26 0"/>'
+      : '<circle cx="80" cy="69" r="3" fill="#111827"/><circle cx="120" cy="69" r="3" fill="#111827"/><path d="M88 85q12-8 24 0"/>';
+    return `<svg class="r070-bin-svg" viewBox="0 0 200 130" aria-hidden="true">
+      <g fill="white" stroke="#111827" stroke-width="3.2" stroke-linejoin="round" stroke-linecap="round">
+        <path d="M35 36h130l-11 77H46z"/>
+        <path d="M28 36h144M62 36l8-17h60l8 17"/>
+        <path d="M63 50l6 49M100 50v49M137 50l-6 49" opacity=".55"/>
+        ${face}
+        <path d="M25 118h150"/>
+        <path d="M23 19 l4 8 9 1-7 6 2 9-8-5-8 5 2-9-7-6 9-1z"/>
+      </g>
+    </svg>`;
+  }
+
+
+  /* ===== 0.0.71 · BIBLIOTECA VISUAL CIENCIAS ===== */
+  function r071ScienceIcon(name){
+    const n=norm061(name);
+    const open='<svg viewBox="0 0 100 90" aria-hidden="true"><g fill="white" stroke="#111827" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round">';
+    const close='</g></svg>';
+    if(n.includes('perro'))return open+
+      '<circle cx="50" cy="43" r="23"/><path d="M31 30 19 17q-8 18 8 28M69 30l12-13q8 18-8 28"/>'+
+      '<circle cx="42" cy="41" r="2.5" fill="#111827"/><circle cx="58" cy="41" r="2.5" fill="#111827"/>'+
+      '<ellipse cx="50" cy="50" rx="4" ry="3" fill="#111827"/><path d="M45 56q5 6 10 0"/>'+
+      '<path d="M38 65q-12 5-12 16M62 65q12 5 12 16"/><path d="M32 78h36"/>'+close;
+    if(n.includes('arbol')||n.includes('árbol'))return open+
+      '<path d="M44 72h12V54"/><path d="M50 15q-18 0-18 15-13 3-10 17 3 13 17 12 8 11 20 2 15 5 21-8 7-14-7-21-2-16-17-15-6-5-6-2z"/>'+
+      '<path d="M50 55 38 43M50 55l13-17"/><path d="M31 77h38"/>'+close;
+    if(n.includes('mariposa'))return open+
+      '<ellipse cx="50" cy="48" rx="5" ry="23"/><path d="M45 36Q22 15 17 38q-2 17 27 16M55 36Q78 15 83 38q2 17-27 16"/>'+
+      '<path d="M45 52Q25 48 23 69q9 16 24-3M55 52q20-4 22 17-9 16-24-3"/>'+
+      '<path d="M47 25q-7-11-14-8M53 25q7-11 14-8"/><circle cx="50" cy="42" r="1.5" fill="#111827"/>'+close;
+    if(n.includes('flor'))return open+
+      '<circle cx="50" cy="39" r="8"/><circle cx="50" cy="23" r="10"/><circle cx="65" cy="33" r="10"/><circle cx="59" cy="49" r="10"/><circle cx="41" cy="49" r="10"/><circle cx="35" cy="33" r="10"/>'+
+      '<path d="M50 57v25M49 70q-15-9-18 3 10 8 18 3M51 66q15-9 18 3-10 8-18 3"/>'+close;
+    if(n.includes('piedra'))return open+
+      '<path d="M20 68q4-25 20-36 14-10 29 1 11 9 13 35z"/><path d="M32 54q8-9 15-8M60 42q8 3 10 10"/>'+
+      '<circle cx="43" cy="61" r="2" fill="#111827"/><circle cx="58" cy="61" r="2" fill="#111827"/><path d="M46 67q5 4 10 0"/><path d="M16 73h70"/>'+close;
+    if(n.includes('silla'))return open+
+      '<rect x="31" y="38" width="38" height="23" rx="3"/><path d="M34 38V15h32v23M36 61l-5 23M64 61l5 23"/>'+
+      '<path d="M29 66h42"/><path d="M38 23h24"/>'+close;
+    if(n.includes('vaso'))return open+
+      '<path d="M32 20h36l-5 60H37z"/><path d="M36 36h28"/><path d="M43 53q7 7 14 0"/>'+
+      '<circle cx="45" cy="45" r="2" fill="#111827"/><circle cx="56" cy="45" r="2" fill="#111827"/>'+close;
+    if(n.includes('pelota'))return open+
+      '<circle cx="50" cy="47" r="31"/><path d="M50 16q-12 14-9 31t9 31M50 16q12 14 9 31t-9 31"/>'+
+      '<path d="M20 43q14 9 30 4t30 4M27 65q21-8 46 0"/><circle cx="42" cy="39" r="2" fill="#111827"/><circle cx="58" cy="39" r="2" fill="#111827"/><path d="M44 50q6 5 12 0"/>'+close;
+    return open+'<circle cx="50" cy="45" r="27"/><path d="M38 44h24M50 32v24"/>'+close;
+  }
+
+  function r071ScienceZoneArt(kind){
+    if(kind==='living'){
+      return `<svg class="r071-science-zone-art" viewBox="0 0 260 110" aria-hidden="true">
+        <g fill="white" stroke="#111827" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M18 96h224"/><path d="M32 96q8-20 16 0M50 96q8-28 16 0M202 96q8-22 16 0M220 96q8-28 16 0"/>
+          <path d="M105 95h18V62"/><path d="M114 25q-23 1-19 19-18 3-9 20 9 12 24 5 9 12 22 1 17 4 22-12 4-15-13-20-4-16-20-10-6-5-7-3z"/>
+          <path d="M170 74q7-15 15 0 15-8 15 9 0 12-15 21-15-9-15-21 0-9 0-9z"/>
+          <circle cx="51" cy="60" r="12"/><path d="M51 72v24M41 83h20"/>
+        </g></svg>`;
+    }
+    return `<svg class="r071-science-zone-art" viewBox="0 0 260 110" aria-hidden="true">
+      <g fill="white" stroke="#111827" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M18 96h224"/>
+        <rect x="43" y="51" width="53" height="40" rx="5"/><path d="M50 51 60 34h20l10 17"/>
+        <circle cx="145" cy="69" r="25"/><path d="M126 68q18 9 38 0M145 44q-7 13-4 25t4 25"/>
+        <path d="M194 88q3-25 22-31 17 6 22 31z"/><path d="M207 73q9-6 18 0"/>
+      </g></svg>`;
+  }
+
+  function r071ScienceDecor(){
+    return `<div class="r071-science-decor">
+      <svg viewBox="0 0 46 36"><g fill="white" stroke="#111827" stroke-width="2"><path d="M8 27q5-15 15-18 10 3 15 18M23 9v18M14 18h18"/></g></svg>
+      <svg viewBox="0 0 46 36"><g fill="white" stroke="#111827" stroke-width="2"><path d="M9 16q5-10 11 0 11-6 11 7 0 9-11 15Q9 32 9 23q0-7 0-7z"/></g></svg>
+      <svg viewBox="0 0 46 36"><g fill="white" stroke="#111827" stroke-width="2"><path d="M9 12l4 8 9 1-7 6 2 9-8-5-8 5 2-9-7-6 9-1z"/></g></svg>
+    </div>`;
+  }
+
+  function r070MiniDecor(){
+    return `<div class="r070-mini-decor">
+      <svg viewBox="0 0 50 42" aria-hidden="true"><g fill="white" stroke="#111827" stroke-width="2.3" stroke-linejoin="round"><path d="M10 17l4 8 9 1-7 6 2 9-8-5-8 5 2-9-7-6 9-1z"/></g></svg>
+      <svg viewBox="0 0 50 42" aria-hidden="true"><g fill="white" stroke="#111827" stroke-width="2.3" stroke-linecap="round"><path d="M5 31q5-12 17-7 4-14 16-6 9 2 7 13z"/><path d="M15 35q10 5 20 0"/></g></svg>
+      <svg viewBox="0 0 50 42" aria-hidden="true"><g fill="white" stroke="#111827" stroke-width="2.3" stroke-linejoin="round"><path d="M10 14q6-12 13 0 13-7 13 8 0 11-13 19Q10 33 10 22q0-8 0-8z"/></g></svg>
+    </div>`;
+  }
+
   function r069TeacherRef(d){
     const teacher=(d.oaDetails||[]).map(o=>'OA '+String(o.number).padStart(2,'0')+': '+o.text).join(' · ');
     return '<div class="r069-footer"><b>Referencia docente:</b> '+esc061(teacher||'OA seleccionado en AulaNexo')+
@@ -5188,8 +5542,7 @@ function close(){document.getElementById('libModal059').classList.add('hidden')}
   function r069Header(d,title,instruction){
     return '<div class="r069-fields"><div class="r069-field"><b>Nombre:</b><span></span></div><div class="r069-field"><b>Fecha:</b><span></span></div></div>'+
       '<div class="r069-headrow"><div></div><div class="r069-tag">FICHA PARA COLOREAR</div></div>'+
-      '<div class="r069-title">'+esc061(title)+'</div>'+
-      '<div class="r069-subtitle">'+esc061(d.grade)+' · '+esc061(d.subject)+'</div>'+
+      '<div class="r070-titlewrap">'+r070DoodleSvg('left')+'<div><div class="r069-title">'+esc061(title)+'</div><div class="r069-subtitle">'+esc061(d.grade)+' · '+esc061(d.subject)+'</div></div>'+r070DoodleSvg('right')+'</div>'+
       '<div class="r069-instruction"><b>✎</b><span>'+esc061(instruction)+'</span></div>';
   }
 
@@ -5257,20 +5610,20 @@ function close(){document.getElementById('libModal059').classList.add('hidden')}
   }
 
   function r069MonsterSheet(d){
-    const words=r069WordPool(d).slice(0,16);
+    const words=r069WordPool(d).slice(0,16), v=Number(d.variantIndex||0);
     return '<div class="r069-sheet">'+r069Header(d,'El monstruo come palabras','Lee cada palabra en voz alta. Marca el círculo cuando la logres leer y después colorea al monstruo.')+
-      '<div class="r069-monsterwrap">'+r069MonsterSvg()+'</div>'+
+      '<div class="r070-hero">'+r070MonsterSvg(v)+'</div>'+
       '<div class="r069-wordgrid">'+words.map(w=>'<div class="r069-word"><span class="dot"></span>'+esc061(w)+'</div>').join('')+'</div>'+
       '<div class="r069-stars">☆ ☆ ☆ ☆ ☆</div><div class="r069-cheer">¡Cada palabra que lees alimenta a tu monstruo lector!</div>'+
       r069TeacherRef(d)+'</div>';
   }
 
   function r069PathSheet(d){
-    const nums=r069NumberPool(d).slice(0,5);
+    const nums=r069NumberPool(d).slice(0,5), v=Number(d.variantIndex||0);
     const max=rangeFromTopic066(topicText061(d)) || (gradeNumber061(d)===1?40:100);
     const blanks=nums.map((n,i)=>i===2?'':n);
     return '<div class="r069-sheet">'+r069Header(d,'¡Cohete de números!','Lee los números del camino. Completa el que falta y colorea el cohete cuando llegues a la meta.')+
-      '<div class="r069-pathboard">'+r069RocketSvg()+'<div class="r069-pathline"></div>'+
+      '<div class="r069-pathboard">'+r070RocketSceneSvg(v)+'<div class="r069-pathline"></div>'+
       '<div class="r069-stepstones">'+blanks.map((n,i)=>'<div class="r069-stone '+(n===''?'blank':'')+'" style="--rot:'+(i%2?4:-4)+'deg">'+(n===''?'?':esc061(n))+'</div>').join('')+'</div>'+
       '<div class="r069-pathprompt">Desafío extra: encierra el número mayor y dibuja '+Math.min(10,Math.max(3,Math.round(max/8)))+' puntitos junto a él.</div></div>'+
       '<div class="r069-stars">☆ ☆ ☆</div><div class="r069-cheer">¡Misión numérica cumplida!</div>'+r069TeacherRef(d)+'</div>';
@@ -5289,7 +5642,7 @@ function close(){document.getElementById('libModal059').classList.add('hidden')}
     };
     const cards=rotate066(bank[l]||bank.m,Number(d.variantIndex||0)).slice(0,10);
     return '<div class="r069-sheet">'+r069Header(d,'La casita de las sílabas','Lee cada palabra. Recórtala y pégala en la casita de la sílaba con que comienza.')+
-      '<div class="r069-houses">'+syll.map(s=>'<div class="r069-house"><b>'+esc061(s)+'</b><div class="drop"></div></div>').join('')+'</div>'+
+      '<div class="r070-house-grid">'+syll.map((s,i)=>'<div class="r070-house-card"><div class="label">'+esc061(s)+'</div>'+r070HouseSvg(i)+'<div class="r070-drop"></div></div>').join('')+'</div>'+
       '<div class="r069-cutline"></div><div class="r069-cardgrid">'+cards.map(w=>'<div class="r069-cutcard">'+esc061(w)+'</div>').join('')+'</div>'+
       '<div class="r069-stars">☆ ☆ ☆</div><div class="r069-cheer">¡Cada palabra encontró su casita!</div>'+r069TeacherRef(d)+'</div>';
   }
@@ -5317,8 +5670,8 @@ function close(){document.getElementById('libModal059').classList.add('hidden')}
       instruction='Colorea los números que cumplen la consigna de tu profesora o profesor.';
     }
     return '<div class="r069-sheet">'+r069Header(d,'¡Colorea y descubre!',instruction)+
-      '<div class="r069-paintdots"><span class="r069-paintdot"></span><span class="r069-paintdot"></span><span class="r069-paintdot"></span></div>'+
-      '<div class="r069-colorgrid">'+items.slice(0,12).map(x=>'<div class="r069-colorbubble word">'+esc061(x.label)+'</div>').join('')+'</div>'+
+      r070MiniDecor()+
+      '<div class="r069-colorgrid">'+items.slice(0,12).map(x=>'<div class="r069-colorbubble r070-colorbubble word">'+esc061(x.label)+'</div>').join('')+'</div>'+
       '<div class="r069-cheer">Cuando termines, explica por qué elegiste esas respuestas.</div>'+r069TeacherRef(d)+'</div>';
   }
 
@@ -5328,15 +5681,24 @@ function close(){document.getElementById('libModal059').classList.add('hidden')}
     let title='¡Cada uno a su lugar!', instruction='Recorta las tarjetas y pégalas en el grupo que corresponde.';
     if(s.includes('ciencias')){
       zones=['SER VIVO','NO VIVO'];
-      cards=rotate066(['perro','árbol','mariposa','flor','piedra','silla','vaso','pelota'],v);
-      instruction='Recorta las tarjetas. Decide si corresponde a un ser vivo o a algo no vivo y pégala en su lugar.';
+      cards=rotate066(['perro','árbol','mariposa','flor','piedra','silla','vaso','pelota'],v).slice(0,8);
+      instruction='Recorta las tarjetas. Mira cada dibujo y decide: ¿es un ser vivo o no vivo? Luego pégalo en su lugar.';
+      return '<div class="r069-sheet">'+r069Header(d,title,instruction)+
+        r071ScienceDecor()+
+        '<div class="r071-science-zones">'+
+          '<div class="r071-science-zone"><div class="r071-science-zone-title">🌱 SER VIVO</div><div class="r071-science-zone-help">Nace, crece y necesita agua o alimento.</div>'+r071ScienceZoneArt('living')+'<div class="r071-science-paste">PEGA AQUÍ</div></div>'+
+          '<div class="r071-science-zone"><div class="r071-science-zone-title">◯ NO VIVO</div><div class="r071-science-zone-help">No nace ni crece por sí mismo.</div>'+r071ScienceZoneArt('nonliving')+'<div class="r071-science-paste">PEGA AQUÍ</div></div>'+
+        '</div>'+
+        '<div class="r069-cutline"></div><div class="r071-tiny-note">✂ Recorta por las líneas punteadas.</div>'+
+        '<div class="r071-science-cards">'+cards.map(c=>'<div class="r071-science-card">'+r071ScienceIcon(c)+'<b>'+esc061(c)+'</b></div>').join('')+'</div>'+
+        '<div class="r069-stars">☆ ☆ ☆</div><div class="r069-cheer">¡Excelente clasificación!</div>'+r069TeacherRef(d)+'</div>';
     }else if(s.includes('matemat')){
       zones=['FORMA 1','FORMA 2'];
       cards=rotate066(['10','5 + 5','7 + 3','6 + 4','8 + 2','4 + 6','9 + 1','3 + 7'],v);
       instruction='Recorta y agrupa las tarjetas que representan la misma cantidad o idea matemática.';
     }
     return '<div class="r069-sheet">'+r069Header(d,title,instruction)+
-      '<div class="r069-sortzones">'+zones.map(z=>'<div class="r069-sortzone"><b>'+esc061(z)+'</b><div class="paste"></div></div>').join('')+'</div>'+
+      '<div class="r070-sortzones">'+zones.map((z,i)=>'<div class="r070-sortzone">'+r070BinSvg(i)+'<b>'+esc061(z)+'</b><div class="paste"></div></div>').join('')+'</div>'+
       '<div class="r069-cutline"></div><div class="r069-cardgrid">'+cards.map(c=>'<div class="r069-cutcard">'+esc061(c)+'</div>').join('')+'</div>'+
       '<div class="r069-stars">☆ ☆ ☆</div><div class="r069-cheer">¡Excelente clasificación!</div>'+r069TeacherRef(d)+'</div>';
   }
@@ -5358,6 +5720,7 @@ function close(){document.getElementById('libModal059').classList.add('hidden')}
       instruction='Lee y une cada palabra con su pareja. Después encierra la que más te gustó leer.';
     }
     return '<div class="r069-sheet">'+r069Header(d,'¡Une y juega!',instruction)+
+      '<div class="r070-matchcap">'+r070DoodleSvg('left')+'<div class="r069-cheer">Traza líneas suaves y luego colorea tus parejas.</div>'+r070DoodleSvg('right')+'</div>'+
       '<div class="r069-matchgrid"><div class="r069-matchcol">'+left.map(x=>'<div class="r069-matchitem">'+esc061(x)+'</div>').join('')+
       '</div><div class="r069-matchmid"></div><div class="r069-matchcol">'+right.map(x=>'<div class="r069-matchitem">'+esc061(x)+'</div>').join('')+'</div></div>'+
       '<div class="r069-stars">☆ ☆ ☆</div><div class="r069-cheer">¡Encontraste las parejas!</div>'+r069TeacherRef(d)+'</div>';
