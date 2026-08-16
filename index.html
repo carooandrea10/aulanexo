@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>AulaNexo · Prototipo 0.0.65</title>
+<title>AulaNexo · Prototipo 0.0.67</title>
 <style>
 :root{
   --bg:#f5f7fb;--card:#fff;--text:#1f2937;--muted:#6b7280;--line:#e5e7eb;
@@ -1003,12 +1003,63 @@ nav.app-nav button[data-view].active{background:var(--primary-soft);color:#3730a
 @media(max-width:620px){.r064-match,.r064-sort-zones{grid-template-columns:1fr}.r064-sequence{grid-template-columns:1fr}}
 @media print{.r064-oral,.r064-check,.r064-chip,.r064-match-item,.r064-step,.r064-sort-card,.r064-sort-zone,.r064-oa-note{-webkit-print-color-adjust:exact;print-color-adjust:exact}}
 
+
+
+/* ===== AULANEXO_GENERATOR_066 · CALIDAD VISUAL + ACTIVIDADES ESPECÍFICAS ===== */
+.r066-sheet{--r066-accent:#4f46e5;--r066-soft:#eef2ff;--r066-ink:#263044;color:var(--r066-ink)}
+.r066-sheet.theme-math{--r066-accent:#2563eb;--r066-soft:#eff6ff}.r066-sheet.theme-language{--r066-accent:#7c3aed;--r066-soft:#f5f3ff}
+.r066-sheet.theme-science{--r066-accent:#059669;--r066-soft:#ecfdf5}.r066-sheet.theme-history{--r066-accent:#b45309;--r066-soft:#fffbeb}
+.r066-sheet.theme-art{--r066-accent:#db2777;--r066-soft:#fdf2f8}.r066-sheet.theme-music{--r066-accent:#7c3aed;--r066-soft:#faf5ff}
+.r066-sheet.theme-pe{--r066-accent:#ea580c;--r066-soft:#fff7ed}.r066-sheet.theme-tech{--r066-accent:#0891b2;--r066-soft:#ecfeff}
+.r066-sheet .r063-header{border-color:color-mix(in srgb,var(--r066-accent) 30%,#fff);background:linear-gradient(135deg,var(--r066-soft),#fff);padding:17px 19px 15px}
+.r066-sheet .r063-header h1{color:var(--r066-accent)!important;line-height:1.12}.r066-sheet .r063-kicker{color:var(--r066-accent)}
+.r066-sheet .r063-topic{border-color:color-mix(in srgb,var(--r066-accent) 22%,#e5e7eb);color:var(--r066-accent);background:#fff}
+.r066-studentbar{display:grid;grid-template-columns:1.5fr 1fr;gap:18px;margin:8px 0 14px;font-size:11px;font-weight:800;color:#475569}
+.r066-studentline{display:flex;gap:7px;align-items:end}.r066-studentline span:last-child{height:18px;border-bottom:1px solid #94a3b8;flex:1}
+.r066-goal{display:flex;gap:10px;align-items:flex-start;border-radius:14px;padding:11px 13px;margin:10px 0 14px;background:var(--r066-soft);border:1px solid color-mix(in srgb,var(--r066-accent) 22%,#fff);font-size:11.5px;line-height:1.45}
+.r066-goal .icon{font-size:20px}.r066-goal b{color:var(--r066-accent)}
+.r066-sheet .r063-mission{position:relative;overflow:hidden;border-left:0!important;border-color:#e2e8f0;padding:14px 15px 14px 16px}
+.r066-sheet .r063-mission::before{content:'';position:absolute;left:0;top:0;bottom:0;width:5px;background:var(--r066-accent)}
+.r066-sheet .r063-mission-title b{color:var(--r066-accent)}
+.r066-lower .r063-mission-title{font-size:14px}.r066-lower .r063-mission-title span{font-size:23px}.r066-lower .r063-mission p{font-size:13.5px!important;line-height:1.4!important}
+.r066-lower .r064-check,.r066-lower .r064-match-item,.r066-lower .r064-sort-card{font-size:12px;min-height:42px}.r066-lower .r064-canvas{height:160px}
+.r066-numbercards{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-top:10px}.r066-numbercard{border:2px solid color-mix(in srgb,var(--r066-accent) 25%,#dbe2ea);background:var(--r066-soft);border-radius:14px;min-height:70px;display:grid;place-items:center;font-size:25px;font-weight:950;color:var(--r066-accent)}
+.r066-visualchecks{display:grid;grid-template-columns:repeat(2,1fr);gap:8px;margin-top:10px}.r066-visualcheck{border:1px solid #dbe2ea;background:#fff;border-radius:13px;padding:10px;min-height:54px;display:flex;align-items:center;gap:9px;font-size:11.5px}.r066-visualcheck .pic{font-size:24px}.r066-visualcheck .box{font-size:17px;color:#64748b}
+.r066-fillnumbers{display:grid;gap:9px;margin-top:10px}.r066-fillrow{display:flex;gap:7px;align-items:center;justify-content:center}.r066-numbox{min-width:44px;height:42px;border:1.5px solid #94a3b8;border-radius:10px;display:grid;place-items:center;font-size:16px;font-weight:850;background:#fff}.r066-numbox.blank{border-style:dashed;color:#94a3b8}
+.r066-numberbond{display:flex;align-items:center;justify-content:center;gap:12px;margin-top:12px}.r066-bond-total,.r066-bond-part{width:62px;height:62px;border:2px solid var(--r066-accent);border-radius:50%;display:grid;place-items:center;font-size:20px;font-weight:900;background:var(--r066-soft);color:var(--r066-accent)}.r066-bond-parts{display:flex;gap:10px}.r066-bond-symbol{font-size:20px;color:#64748b}
+.r066-cutcards{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:10px}.r066-cutcard{border:1.5px dashed #94a3b8;border-radius:11px;padding:10px;text-align:center;background:#fff;font-size:11px;min-height:58px;display:grid;place-items:center}.r066-cutcard .pic{font-size:25px;display:block;margin-bottom:3px}
+.r066-bigchoice{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}.r066-bigchoice span{border:2px solid #cbd5e1;border-radius:999px;padding:8px 13px;background:#fff;font-size:12px;font-weight:850}
+.r066-teacher-note{margin-top:16px;padding-top:9px;border-top:1px dashed #cbd5e1;font-size:9px;color:#94a3b8}.r066-teacher-note b{color:#64748b}
+.r066-bonus{border:1px dashed #fbbf24;background:#fffbeb;border-radius:14px;padding:11px 13px;margin-top:12px;font-size:11.5px;color:#78350f}
+.r066-sheet .r063-section-title{color:var(--r066-accent)}
+@media(max-width:620px){.r066-numbercards{grid-template-columns:repeat(2,1fr)}.r066-visualchecks{grid-template-columns:1fr}.r066-cutcards{grid-template-columns:1fr}.r066-studentbar{grid-template-columns:1fr}}
+@media print{.r066-sheet .r063-header,.r066-goal,.r066-numbercard,.r066-visualcheck,.r066-bonus{-webkit-print-color-adjust:exact;print-color-adjust:exact}}
+
+
+
+/* ===== AULANEXO_GENERATOR_067 · REDISEÑO VISUAL REAL PARA 1° Y 2° ===== */
+.r067-kid-header{position:relative;overflow:hidden;border:3px solid var(--r066-accent);border-radius:24px;padding:18px 20px 17px;margin-bottom:12px;background:linear-gradient(145deg,var(--r066-soft),#fff 58%)}
+.r067-kid-header::before,.r067-kid-header::after{content:'';position:absolute;border-radius:50%;background:var(--r066-accent);opacity:.08}.r067-kid-header::before{width:110px;height:110px;right:-34px;top:-42px}.r067-kid-header::after{width:72px;height:72px;left:-28px;bottom:-34px}
+.r067-kid-top{position:relative;z-index:1;display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap}.r067-nexo-badge{display:inline-flex;align-items:center;gap:7px;border:2px solid var(--r066-accent);border-radius:999px;background:#fff;padding:6px 10px;font-size:10.5px;font-weight:950;color:var(--r066-accent);letter-spacing:.03em}.r067-nexo-badge .bot{font-size:19px}.r067-mission-tag{font-size:10px;font-weight:900;background:var(--r066-accent);color:#fff;border-radius:999px;padding:6px 10px}
+.r067-kid-title{position:relative;z-index:1;font-size:27px;line-height:1.03;margin:14px 0 6px!important;color:var(--r066-accent)!important;max-width:92%}.r067-kid-sub{position:relative;z-index:1;font-size:11px;color:#475569;font-weight:850}
+.r067-kid-header .r066-studentbar{position:relative;z-index:1;background:#fff;border:1px solid color-mix(in srgb,var(--r066-accent) 22%,#dbe2ea);border-radius:14px;padding:10px 12px;margin:14px 0 0}
+.r067-nexo-bubble{display:grid;grid-template-columns:auto 1fr;gap:10px;align-items:center;border:2px dashed color-mix(in srgb,var(--r066-accent) 45%,#cbd5e1);background:#fff;border-radius:18px;padding:10px 13px;margin:10px 0 12px}.r067-nexo-bubble .face{width:44px;height:44px;border-radius:15px;background:var(--r066-soft);display:grid;place-items:center;font-size:26px}.r067-nexo-bubble .speech{font-size:12.5px;line-height:1.35}.r067-nexo-bubble b{color:var(--r066-accent);font-size:13px}
+.r067-path{display:grid;grid-template-columns:repeat(4,1fr);gap:7px;margin:10px 0 15px}.r067-path-item{border:1px solid #e2e8f0;border-radius:13px;background:#fff;padding:7px 5px;text-align:center;font-size:9.5px;font-weight:850;color:#64748b}.r067-path-item b{width:25px;height:25px;border-radius:50%;background:var(--r066-accent);color:#fff;display:grid;place-items:center;margin:0 auto 4px;font-size:12px}
+.r067-kid-section{display:flex;align-items:center;gap:8px;margin:12px 0 8px;font-size:15px;font-weight:950;color:var(--r066-accent)}.r067-kid-section::after{content:'';height:2px;flex:1;background:linear-gradient(90deg,color-mix(in srgb,var(--r066-accent) 40%,#fff),transparent)}
+.r067-lower .r067-task{border:2px solid color-mix(in srgb,var(--r066-accent) 22%,#dbe2ea)!important;border-left:2px solid color-mix(in srgb,var(--r066-accent) 22%,#dbe2ea)!important;border-radius:20px!important;padding:0 14px 15px!important;margin:12px 0!important;background:#fff;box-shadow:0 5px 0 color-mix(in srgb,var(--r066-accent) 9%,#fff)}
+.r067-lower .r067-task::before{display:none!important}.r067-lower .r067-task .r063-mission-title{margin:0 -14px 10px;padding:10px 13px;border-radius:17px 17px 10px 10px;background:var(--r066-soft);display:flex;align-items:center;gap:8px}.r067-lower .r067-task .r063-mission-title .r067-step{width:31px;height:31px;border-radius:50%;display:grid;place-items:center;background:var(--r066-accent);color:#fff;font-size:14px;font-weight:950;flex:0 0 auto}.r067-lower .r067-task .r063-mission-title .r067-icon{font-size:23px;line-height:1}.r067-lower .r067-task .r063-mission-title b{font-size:14px!important;color:var(--r066-accent)!important}.r067-lower .r067-task>p{font-size:13.5px!important;line-height:1.34!important;font-weight:650;color:#334155;margin:7px 1px 8px!important}
+.r067-lower .r066-numbercards{gap:10px}.r067-lower .r066-numbercard{min-height:82px;font-size:30px;border-width:2.5px;box-shadow:0 3px 0 color-mix(in srgb,var(--r066-accent) 15%,#fff)}.r067-lower .r066-visualcheck{min-height:70px;border-width:2px;font-size:13px}.r067-lower .r066-visualcheck .pic{font-size:31px}.r067-lower .r066-cutcard{min-height:78px;font-size:12.5px}.r067-lower .r066-cutcard .pic{font-size:32px}.r067-lower .r064-match-item{min-height:50px;display:flex;align-items:center;justify-content:center;border-width:2px;border-radius:13px;background:#fff}.r067-lower .r064-sort-zone{min-height:100px;border-width:2px;background:#fff}.r067-lower .r064-canvas{height:175px;border-width:2.5px;background:repeating-linear-gradient(0deg,#fff,#fff 23px,#f8fafc 24px)}.r067-lower .r064-canvas::after{font-size:11px;font-weight:800}.r067-lower .r064-oral{font-size:12.5px;border-radius:14px;padding:11px 12px;background:var(--r066-soft)}
+.r067-reward{display:grid;grid-template-columns:auto 1fr auto;gap:10px;align-items:center;border:2px solid #fbbf24;background:#fffbeb;border-radius:18px;padding:11px 14px;margin:15px 0 4px;color:#713f12}.r067-reward .medal{font-size:30px}.r067-reward b{font-size:13px}.r067-reward small{display:block;font-size:10.5px;margin-top:2px}.r067-stars{font-size:24px;letter-spacing:3px;color:#d97706;white-space:nowrap}
+.r067-teacher-strip{margin-top:14px;border-top:1px dashed #cbd5e1;padding-top:8px;font-size:8.5px;color:#94a3b8;line-height:1.35}.r067-teacher-strip b{color:#64748b}
+@media(max-width:620px){.r067-path{grid-template-columns:repeat(2,1fr)}.r067-kid-title{font-size:23px}.r067-reward{grid-template-columns:auto 1fr}.r067-stars{grid-column:1/-1;text-align:center}}
+@media print{.r067-lower .r067-task{box-shadow:none}.r067-kid-header,.r067-nexo-bubble,.r067-path-item,.r067-lower .r067-task .r063-mission-title,.r067-reward{-webkit-print-color-adjust:exact;print-color-adjust:exact}}
+
 </style>
 </head>
 <body>
 <header>
   <div class="header-wrap">
-    <div><h1>AulaNexo</h1><div class="subtitle">Prototipo 0.0.65 · Biblioteca unificada de recursos</div></div>
+    <div><h1>AulaNexo</h1><div class="subtitle">Prototipo 0.0.67 · Fichas lúdicas por curso, asignatura y OA</div></div>
     <div class="header-actions"><button id="menuToggle" class="menu-toggle">☰ Menú</button><span class="current-section-pill">Sección: <strong id="currentSectionLabel">Curso</strong></span><span class="active-course-pill">Curso activo: <strong id="headerCourseName">Sin curso</strong></span><span id="cloudStatus" class="cloud-pill" data-state="offline">☁️ Sin conectar</span><button id="cloudConnectBtn" class="secondary">👤 Mi cuenta</button><button id="downloadBackup">⬇ Respaldo</button><button id="loadBackupBtn">⬆ Cargar respaldo</button><input id="backupFile" type="file" accept="application/json" hidden></div>
   </div>
 </header>
@@ -1466,7 +1517,7 @@ nav.app-nav button[data-view].active{background:var(--primary-soft);color:#3730a
     </div>
   </section>
 
-  <div class="footer">AulaNexo 0.0.65 · evaluación, seguimiento curricular, planificación, recursos, tutorial y asistente Nexo.</div>
+  <div class="footer">AulaNexo 0.0.67 · evaluación, seguimiento curricular, planificación, recursos, tutorial y asistente Nexo.</div>
 
   <section id="view-tutorial" class="view">
     <div class="tutorial-hero">
@@ -4444,7 +4495,7 @@ function close(){document.getElementById('libModal059').classList.add('hidden')}
       <div class="resource061-side">
         <div class="resource061-sidebox">
           <strong>Editar</strong>
-          <p>Puedes cambiar cualquier texto directamente en la hoja de la izquierda.</p>
+          <p>Puedes cambiar cualquier texto directamente en la hoja. Si quieres otros ejemplos o actividades, usa “Crear otra versión”.</p>
         </div>
         <button id="resourceSave061" class="primary" type="button">Guardar en Biblioteca</button>
         <button id="resourceWord061" class="secondary" type="button">Descargar en Word</button>
@@ -4512,10 +4563,34 @@ function close(){document.getElementById('libModal059').classList.add('hidden')}
       const n=Math.max(1,Math.min(6,Number(t.lines||2)));
       return '<div class="r064-sentence">'+Array.from({length:n},()=>'<div class="r064-sentence-line"></div>').join('')+'</div>';
     }
-    if(kind==='oral')return '<div class="r064-oral"><strong>💬 Respuesta oral:</strong> conversa con un compañero, explica tu idea y escucha la suya.</div>';
+    if(kind==='oral')return '<div class="r064-oral"><strong>💬 Lo digo con mis palabras:</strong> conversa, explica o responde oralmente.</div>';
     if(kind==='checks'){
       const ops=(t.options&&t.options.length?t.options:['Opción A','Opción B','Opción C']);
       return '<div class="r064-checks">'+ops.map(x=>'<div class="r064-check">☐ '+esc061(x)+'</div>').join('')+'</div>';
+    }
+    if(kind==='visualchecks'){
+      const ops=(t.options&&t.options.length?t.options:[['⭐','Opción 1'],['🌟','Opción 2']]);
+      return '<div class="r066-visualchecks">'+ops.map(x=>'<div class="r066-visualcheck"><span class="box">☐</span><span class="pic">'+esc061(Array.isArray(x)?x[0]:'⭐')+'</span><span>'+esc061(Array.isArray(x)?x[1]:x)+'</span></div>').join('')+'</div>';
+    }
+    if(kind==='numbercards'){
+      const nums=t.numbers||[4,8,12,20];
+      return '<div class="r066-numbercards">'+nums.map(n=>'<div class="r066-numbercard">'+esc061(n)+'</div>').join('')+'</div>';
+    }
+    if(kind==='fillnumbers'){
+      const rows=t.rowsData||[[1,'',3,4],[5,6,'',8]];
+      return '<div class="r066-fillnumbers">'+rows.map(row=>'<div class="r066-fillrow">'+row.map(v=>'<div class="r066-numbox '+(v===''?'blank':'')+'">'+(v===''?'?':esc061(v))+'</div>').join('')+'</div>').join('')+'</div>';
+    }
+    if(kind==='numberbond'){
+      const total=t.total??10, p1=t.part1??6, p2=t.part2??'';
+      return '<div class="r066-numberbond"><div class="r066-bond-total">'+esc061(total)+'</div><div class="r066-bond-symbol">=</div><div class="r066-bond-parts"><div class="r066-bond-part">'+esc061(p1)+'</div><div class="r066-bond-symbol">+</div><div class="r066-bond-part">'+(p2===''?'?':esc061(p2))+'</div></div></div>';
+    }
+    if(kind==='cutcards'){
+      const cards=t.cards||[['✂️','Tarjeta 1'],['⭐','Tarjeta 2'],['🌈','Tarjeta 3']];
+      return '<div class="r066-cutcards">'+cards.map(x=>'<div class="r066-cutcard"><span class="pic">'+esc061(Array.isArray(x)?x[0]:'⭐')+'</span>'+esc061(Array.isArray(x)?x[1]:x)+'</div>').join('')+'</div>';
+    }
+    if(kind==='bigchoice'){
+      const ops=t.options||['Sí','No'];
+      return '<div class="r066-bigchoice">'+ops.map(x=>'<span>○ '+esc061(x)+'</span>').join('')+'</div>';
     }
     if(kind==='wordbank'){
       const ops=(t.options&&t.options.length?t.options:['Palabra 1','Palabra 2','Palabra 3']);
@@ -4524,7 +4599,7 @@ function close(){document.getElementById('libModal059').classList.add('hidden')}
     if(kind==='match'){
       const left=t.left||['Elemento 1','Elemento 2','Elemento 3'];
       const right=t.right||['Respuesta A','Respuesta B','Respuesta C'];
-      return '<div class="r064-match"><div class="r064-match-col">'+left.map(x=>'<div class="r064-match-item">'+esc061(x)+'</div>').join('')+'</div><div class="r064-match-col">'+right.map(x=>'<div class="r064-match-item">'+esc061(x)+'</div>').join('')+'</div></div><div class="r064-match-arrow">Une con una línea cada elemento con su respuesta.</div>';
+      return '<div class="r064-match"><div class="r064-match-col">'+left.map(x=>'<div class="r064-match-item">'+esc061(x)+'</div>').join('')+'</div><div class="r064-match-col">'+right.map(x=>'<div class="r064-match-item">'+esc061(x)+'</div>').join('')+'</div></div><div class="r064-match-arrow">Une con una línea.</div>';
     }
     if(kind==='sequence'){
       const labels=t.labels||['Primero','Después','Al final'];
@@ -4554,7 +4629,9 @@ function close(){document.getElementById('libModal059').classList.add('hidden')}
 
   function playfulTask061(icon,title,text,kind,data){
     const t=typeof icon==='object'?icon:task061(icon,title,text,kind,data||{});
-    return '<div class="r063-mission"><div class="r063-mission-title"><span>'+esc061(t.icon||'⭐')+'</span><b>'+esc061(t.title||'Actividad')+'</b></div><p>'+esc061(t.text||'')+'</p>'+taskExtra061(t)+(t.tip?'<div class="r064-minihelp">💡 '+esc061(t.tip)+'</div>':'')+'</div>';
+    const step=t.step?'<span class="r067-step">'+esc061(t.step)+'</span>':'';
+    const k=String(t.kind||'lines').replace(/[^a-z0-9_-]/gi,'');
+    return '<div class="r063-mission r067-task kind-'+k+'"><div class="r063-mission-title">'+step+'<span class="r067-icon">'+esc061(t.icon||'⭐')+'</span><b>'+esc061(t.title||'Actividad')+'</b></div><p>'+esc061(t.text||'')+'</p>'+taskExtra061(t)+(t.tip?'<div class="r064-minihelp">💡 '+esc061(t.tip)+'</div>':'')+'</div>';
   }
 
   function oaWords061(d){
@@ -4830,15 +4907,124 @@ function close(){document.getElementById('libModal059').classList.add('hidden')}
     return null;
   }
 
+
+  function rotate066(arr,n){
+    if(!Array.isArray(arr)||!arr.length)return arr||[];
+    const k=((Number(n)||0)%arr.length+arr.length)%arr.length;
+    return arr.slice(k).concat(arr.slice(0,k));
+  }
+  function pick066(arr,d,count){return rotate066(arr,d.variantIndex||0).slice(0,count||arr.length)}
+  function numberWord066(n){
+    n=Number(n); const u=['cero','uno','dos','tres','cuatro','cinco','seis','siete','ocho','nueve','diez','once','doce','trece','catorce','quince','dieciséis','diecisiete','dieciocho','diecinueve','veinte'];
+    if(n<=20)return u[n]||String(n); if(n<30)return 'veinti'+(n===22?'dós':n===23?'trés':n===26?'séis':u[n-20]);
+    const tens={30:'treinta',40:'cuarenta',50:'cincuenta',60:'sesenta',70:'setenta',80:'ochenta',90:'noventa'}; const t=Math.floor(n/10)*10,r=n%10;
+    if(n<100)return tens[t]+(r?' y '+u[r]:''); if(n===100)return 'cien'; return String(n);
+  }
+  function rangeFromTopic066(topic){
+    const m=norm061(topic).match(/hasta\s+(?:el\s+)?(\d{1,3})/); return m?Math.max(10,Math.min(100,Number(m[1]))):null;
+  }
+  function theme066(subject){
+    const s=norm061(subject);
+    if(s.includes('matemat'))return {cls:'theme-math',icon:'🔢',name:'Misión matemática'};
+    if(s.includes('lenguaje')||s.includes('lengua y literatura'))return {cls:'theme-language',icon:'📚',name:'Detectives de palabras'};
+    if(s.includes('ciencias'))return {cls:'theme-science',icon:'🔬',name:'Laboratorio de ciencias'};
+    if(s.includes('historia'))return {cls:'theme-history',icon:'🧭',name:'Viaje por el tiempo y el espacio'};
+    if(s.includes('artes'))return {cls:'theme-art',icon:'🎨',name:'Taller creativo'};
+    if(s.includes('musica'))return {cls:'theme-music',icon:'🎵',name:'Exploradores del sonido'};
+    if(s.includes('educacion fisica'))return {cls:'theme-pe',icon:'🏃',name:'Desafío en movimiento'};
+    if(s.includes('tecnologia'))return {cls:'theme-tech',icon:'🛠️',name:'Misión inventora'};
+    return {cls:'',icon:'✨',name:'Misión de aprendizaje'};
+  }
+  function letterFromTopic066(topic){
+    const n=norm061(topic); let m=n.match(/(?:consonante|letra|sonido)\s+([a-zñ])/); if(m)return m[1];
+    m=n.match(/\b([mplstdnrfcgbvjqhz])\b/); return m?m[1]:'';
+  }
+  function letterCards066(letter){
+    const bank={
+      m:[['🍎','manzana'],['🐒','mono'],['🗺️','mapa'],['🌙','luna'],['☀️','sol'],['🍞','pan']],
+      p:[['🍞','pan'],['🦆','pato'],['⚽','pelota'],['🌙','luna'],['☀️','sol'],['🐒','mono']],
+      l:[['🌙','luna'],['✏️','lápiz'],['🍋','limón'],['🍞','pan'],['☀️','sol'],['🎲','dado']],
+      s:[['☀️','sol'],['🍲','sopa'],['🐸','sapo'],['🌙','luna'],['🍞','pan'],['🍅','tomate']],
+      t:[['☕','taza'],['🍅','tomate'],['🐢','tortuga'],['🌙','luna'],['🍞','pan'],['🐒','mono']],
+      d:[['🎲','dado'],['☝️','dedo'],['🐬','delfín'],['🌙','luna'],['☀️','sol'],['🍞','pan']],
+      n:[['☁️','nube'],['👃','nariz'],['🍊','naranja'],['🌙','luna'],['☀️','sol'],['🍞','pan']]
+    }; return bank[letter]||[];
+  }
+  function specialTasks066(d,g,topic,oa,subject){
+    const nt=norm061(topic), v=Number(d.variantIndex||0);
+    if(subject.includes('matemat')){
+      const max=rangeFromTopic066(topic);
+      if(max && (has061(nt,'numero','lectura','leer','conteo','contar')||has061(oa,'leer numeros','contar','numeros del 0'))){
+        const pools=max<=20?[3,7,12,16,20]:max<=40?[8,14,23,31,40]:[12,25,38,47,59,68,74,86,95];
+        const nums=pick066(pools,d,4).map(n=>Math.min(n,max));
+        const right=rotate066(nums.map(numberWord066),v+1);
+        const start=Math.max(0,Math.min(max-4,nums[0]-1));
+        return [
+          task061('👀','Lee en voz alta','Mira cada tarjeta y di el número.','numbercards',{numbers:nums}),
+          task061('🧩','Une número y palabra','Une cada número con su nombre.','match',{left:nums.map(String),right}),
+          task061('🔎','Completa la serie','Escribe los números que faltan.','fillnumbers',{rowsData:[[start,'',start+2,'',start+4],[Math.max(0,max-4),'',Math.max(0,max-2),'',max]]}),
+          task061('🎤','Dictado relámpago','Escucha 3 números que diga tu profesora o profesor y escríbelos.','lines',{lines:2})
+        ];
+      }
+      if(has061(nt,'composicion','descomposicion','componer','descomponer')||has061(oa,'componer','descomponer')){
+        const total=Math.min(20,Math.max(5,rangeFromTopic066(topic)||10)), p1=Math.max(1,total-(3+v%4));
+        return [
+          task061('🧩','Número partido','Completa la parte que falta para formar '+total+'.','numberbond',{total,part1:p1,part2:''}),
+          task061('🎨','Dos grupos, un total','Dibuja dos grupos diferentes que juntos formen '+total+'.','draw'),
+          task061('🔢','Busca otra forma','Escribe otra descomposición de '+total+'.','lines',{lines:1}),
+          task061('⭐','Desafío Nexo','¿Puedes encontrar una tercera forma? Cuéntala o dibújala.','oral')
+        ];
+      }
+    }
+    if(subject.includes('lenguaje')||subject.includes('lengua y literatura')){
+      const letter=letterFromTopic066(topic);
+      const cards=letterCards066(letter);
+      if(letter && cards.length){
+        const good=cards.slice(0,3), mixed=rotate066(cards,v).slice(0,6);
+        return [
+          task061('🔤','Conoce la letra '+letter.toUpperCase(),'Repasa con tu dedo la letra y di su sonido: '+letter.toUpperCase()+'  '+letter+'.','bigchoice',{options:[letter.toUpperCase(),letter]}),
+          task061('👀','Detective de sonidos','Marca solo los dibujos cuyos nombres comienzan con '+letter.toUpperCase()+'.','visualchecks',{options:mixed}),
+          task061('✂️','Arma tu colección','Recorta o señala las palabras que comienzan con '+letter.toUpperCase()+'.','cutcards',{cards:good}),
+          task061('🎨','Dibuja una más','Dibuja otra cosa que comience con '+letter.toUpperCase()+'.','draw')
+        ];
+      }
+    }
+    if(subject.includes('ciencias') && (has061(oa,'sentido','audicion','vista','olfato','gusto','tacto')||has061(nt,'sentido','audicion'))){
+      return [
+        task061('🧠','¿Qué sentido usamos?','Une cada órgano con el sentido que corresponde.','match',{left:['👁️ Ojos','👂 Oídos','👃 Nariz','👅 Lengua','✋ Piel'],right:rotate066(['Tacto','Vista','Gusto','Audición','Olfato'],v+1)}),
+        task061('🔎','Detectives de los sentidos','Marca con qué sentido descubrirías cada pista.','visualchecks',{options:[['🔔','una campana'],['🍋','un limón'],['🌸','una flor'],['🧸','un peluche']]}),
+        task061('🛡️','Cuidamos nuestros sentidos','Clasifica las acciones en “Me cuida” o “Me puede hacer daño”.','sort',{cards:['Escuchar música a volumen suave','Meter objetos en el oído','Usar lentes de sol cuando corresponde','Oler sustancias desconocidas muy de cerca'],zones:['💚 Me cuida','⚠️ Riesgo']}),
+        task061('⭐','Mi compromiso','Dibuja una acción que harás para cuidar tus sentidos.','draw')
+      ];
+    }
+    if(g<=2){
+      if(has061(oa,'identificar','reconocer','nombrar'))return [
+        task061('👀','Mira y encuentra','Observa ejemplos del tema y señala cuáles corresponden.','visualchecks',{options:[['⭐','Sí corresponde'],['🔍','Quiero revisar'],['💡','Otro ejemplo'],['❓','Tengo una duda']]}),
+        task061('🧩','Agrupa','Separa ejemplos según lo que aprendiste.','sort',{cards:['Ejemplo 1','Ejemplo 2','Ejemplo 3','Ejemplo 4'],zones:['Sí corresponde','No corresponde']}),
+        task061('🎨','Dibuja un ejemplo','Representa con un dibujo una idea correcta del tema.','draw'),
+        task061('💬','Cuéntalo','Explica oralmente por qué elegiste ese ejemplo.','oral')
+      ];
+      if(has061(oa,'clasificar','comparar'))return [
+        task061('🔎','Observa','Mira dos o más ejemplos y encuentra detalles.','oral'),
+        task061('🧩','Clasifica','Agrupa los ejemplos usando una característica que puedas observar.','sort',{cards:['Ejemplo 1','Ejemplo 2','Ejemplo 3','Ejemplo 4'],zones:['Grupo 1','Grupo 2']}),
+        task061('🎨','Muestra la diferencia','Dibuja un ejemplo de cada grupo.','draw'),
+        task061('💬','Explica','Cuenta qué característica usaste para agrupar.','oral')
+      ];
+    }
+    return null;
+  }
+
   function adaptiveTasks061(d){
     const g=gradeNumber061(d);
     const topic=topicText061(d);
     const subject=norm061(d.subject);
     const oa=oaWords061(d);
-    if(subject.includes('matemat'))return mathTasks061(d,g,topic,oa);
-    if(subject.includes('lenguaje')||subject.includes('lengua y literatura'))return languageTasks061(d,g,topic,oa);
-    if(subject.includes('ciencias'))return scienceTasks061(d,g,topic,oa);
-    if(subject.includes('historia'))return historyTasks061(d,g,topic,oa);
+    const special=specialTasks066(d,g,topic,oa,subject);
+    if(special)return special;
+    if(subject.includes('matemat'))return rotate066(mathTasks061(d,g,topic,oa),d.variantIndex||0);
+    if(subject.includes('lenguaje')||subject.includes('lengua y literatura'))return rotate066(languageTasks061(d,g,topic,oa),d.variantIndex||0);
+    if(subject.includes('ciencias'))return rotate066(scienceTasks061(d,g,topic,oa),d.variantIndex||0);
+    if(subject.includes('historia'))return rotate066(historyTasks061(d,g,topic,oa),d.variantIndex||0);
     const action=actionSubjectTasks061(d,g,topic,oa,subject);
     if(action)return action;
     if(g<=2)return [
@@ -4869,71 +5055,62 @@ function close(){document.getElementById('libModal059').classList.add('hidden')}
   }
 
   function header061(d){
-    const g=gradeNumber061(d);
-    const oa=oaSummary061(d);
-    const title=esc061(d.title||d.type||'Recurso');
-    const oaText=(d.oaDetails||[]).map(o=>'OA '+String(o.number).padStart(2,'0')+': '+o.text).join(' · ');
-    const stage=g<=2?'Actividades breves, visuales, orales y manipulables, con escritura muy acotada.':g<=4?'Actividades guiadas, aplicación breve y escritura progresiva.':g<=6?'Aplicación, comparación y explicación con mayor autonomía.':'Análisis, argumentación, transferencia y síntesis.';
+    const g=gradeNumber061(d), th=theme066(d.subject), oa=oaSummary061(d), topic=topicText061(d);
+    if(g<=2){
+      const shortGoal='Hoy aprenderás sobre '+topic+' con desafíos cortitos: mirar, jugar, probar y contar lo que descubriste.';
+      return '<div class="r067-kid-header">'+
+        '<div class="r067-kid-top"><div class="r067-nexo-badge"><span class="bot">🤖</span> NEXO TE ACOMPAÑA</div><div class="r067-mission-tag">'+esc061(th.icon+' '+th.name)+'</div></div>'+
+        '<h1 class="r067-kid-title">¡Misión: '+esc061(topic)+'!</h1>'+
+        '<div class="r067-kid-sub">'+esc061(d.grade)+' · '+esc061(d.subject)+'</div>'+
+        '<div class="r066-studentbar"><div class="r066-studentline"><span>Mi nombre:</span><span></span></div><div class="r066-studentline"><span>Fecha:</span><span></span></div></div>'+
+        '</div>'+
+        '<div class="r067-nexo-bubble"><div class="face">🤖</div><div class="speech"><b>¡Hola! Esta es tu misión de hoy.</b><br>'+esc061(shortGoal)+'</div></div>'+
+        '<div class="r067-path"><div class="r067-path-item"><b>1</b>Explora</div><div class="r067-path-item"><b>2</b>Juega</div><div class="r067-path-item"><b>3</b>Practica</div><div class="r067-path-item"><b>4</b>¡Desafío!</div></div>';
+    }
+    const simpleGoal=g<=4?'Hoy practicaremos '+topic+' con actividades breves y variadas.':'Aplicaremos el aprendizaje de '+topic+' mediante actividades acordes al OA seleccionado.';
     return '<div class="r063-header">'+
-      '<div class="r063-kicker">✨ AULANEXO · APRENDEMOS HACIENDO</div>'+
-      '<h1>'+title+'</h1>'+
-      '<div class="r063-topic">🌟 '+esc061(topicText061(d))+'</div>'+
+      '<div class="r063-kicker">'+th.icon+' '+esc061(th.name.toUpperCase())+' · '+esc061(d.type||'RECURSO')+'</div>'+
+      '<h1>'+esc061(topic)+'</h1>'+
+      '<div class="r063-topic">'+esc061(d.grade)+' · '+esc061(d.subject)+(oa?' · '+esc061(oa):'')+'</div>'+
       '</div>'+
-      '<div class="r061-meta"><b>Curso:</b> '+esc061(d.grade)+' &nbsp; · &nbsp; <b>Asignatura:</b> '+esc061(d.subject)+(d.unit?' &nbsp; · &nbsp; <b>Unidad:</b> '+esc061(d.unit):'')+(oa?'<br><b>OA:</b> '+esc061(oa):'')+'</div>'+
-      '<div class="r063-goal"><span>🎯</span><div><b>Hoy aprenderemos</b><br>'+esc061('Trabajaremos '+topicText061(d)+' con una propuesta adecuada para '+d.grade+'.')+'</div></div>'+
-      '<div class="r064-minihelp"><b>Enfoque para este curso:</b> '+esc061(stage)+'</div>'+
-      (oaText?'<div class="r064-oa-note"><b>Vinculación curricular:</b> '+esc061(oaText)+'</div>':'');
+      '<div class="r066-studentbar"><div class="r066-studentline"><span>Nombre:</span><span></span></div><div class="r066-studentline"><span>Fecha:</span><span></span></div></div>'+
+      '<div class="r066-goal"><span class="icon">🎯</span><div><b>Nuestra meta</b><br>'+esc061(simpleGoal)+'</div></div>';
   }
 
   function buildResource061(d){
-    const tasks=adaptiveTasks061(d);
-    const type=norm061(d.type);
-    const g=gradeNumber061(d);
+    let tasks=adaptiveTasks061(d);
+    const type=norm061(d.type), g=gradeNumber061(d), th=theme066(d.subject);
+    tasks=tasks.slice(0,g<=2?4:(g<=4?4:5));
+    const labels=g<=2?['Explora','Juega','Practica','Desafío estrella','Reto extra']:['Activa','Practica','Aplica','Profundiza','Desafío'];
+    const renderTasks=(arr,prefix='')=>arr.map((t,i)=>playfulTask061({...t,step:g<=2?(i+1):'',title:(prefix?prefix+' ':'')+(labels[i]||('Actividad '+(i+1)))+' · '+t.title})).join('');
     let body='';
-
     if(type.includes('guia')){
-      body='<div class="r063-section-title">🚀 ¡Comienza la aventura!</div>'+
-           tasks.map((t,i)=>playfulTask061({...t,title:'Misión '+(i+1)+' · '+t.title})).join('')+
-           '<div class="r063-exit"><b>🏁 Meta cumplida</b><br>'+(g<=2?'Colorea una estrella cuando sientas que aprendiste algo nuevo: ☆':'Escribe en una frase qué fue lo más importante que aprendiste.')+'</div>';
+      body=(g<=2?'<div class="r067-kid-section">🗺️ Mi ruta de desafíos</div>':'<div class="r063-section-title">🗺️ Tu ruta de aprendizaje</div>')+renderTasks(tasks)+
+           (g<=2?'<div class="r067-reward"><div class="medal">🏅</div><div><b>¡Misión terminada!</b><small>Colorea una estrella por tu esfuerzo de hoy.</small></div><div class="r067-stars">☆ ☆ ☆</div></div>':'<div class="r063-exit"><b>🏁 Llegamos a la meta</b><br>Escribe una idea que quieras recordar de esta guía.</div>');
     }else if(type.includes('ficha')){
-      body='<div class="r063-section-title">🎮 Desafíos para practicar</div>'+
-           tasks.map((t,i)=>playfulTask061({...t,title:'Desafío '+(i+1)+' · '+t.title})).join('');
+      body=(g<=2?'<div class="r067-kid-section">🎒 Mis 4 desafíos</div>':'<div class="r063-section-title">🎮 ¡A practicar!</div>')+renderTasks(tasks)+
+           (g<=2?'<div class="r067-reward"><div class="medal">🌟</div><div><b>¡Lo hiciste!</b><small>Elige tu desafío favorito y cuéntale a alguien cómo lo resolviste.</small></div><div class="r067-stars">☆ ☆ ☆</div></div>':'');
     }else if(type.includes('inicio')){
-      body=playfulTask061(task061('🎁','Caja de ideas','¿Qué sabes o imaginas sobre '+topicText061(d)+'?',g<=2?'draw':'lines',{lines:2}))+
-           playfulTask061(task061('💡','Predicción','¿Qué crees que aprenderemos hoy?',g<=2?'oral':'lines',{lines:2}));
+      const a=task061('🎁','Activa tus ideas','¿Qué sabes o recuerdas sobre '+topicText061(d)+'?',g<=2?'draw':'lines',{lines:2});
+      const b=tasks[0]||task061('💬','Conversa','Comparte una idea.','oral');
+      body=(g<=2?'<div class="r067-kid-section">🚀 ¡Comenzamos!</div>':'')+playfulTask061({...a,step:g<=2?1:''})+playfulTask061({...b,step:g<=2?2:''});
     }else if(type.includes('desarrollo')){
-      body='<div class="r063-section-title">🧭 Ruta de aprendizaje</div>'+
-           tasks.slice(0,g<=2?3:4).map((t,i)=>playfulTask061({...t,title:'Paso '+(i+1)+' · '+t.title})).join('');
+      body=(g<=2?'<div class="r067-kid-section">🧭 Vamos paso a paso</div>':'<div class="r063-section-title">🧭 Avanzamos paso a paso</div>')+renderTasks(tasks.slice(0,g<=2?3:4),'Paso');
     }else if(type.includes('cierre')){
-      body=playfulTask061(task061('⭐','Lo que descubrí','¿Qué aprendiste sobre '+topicText061(d)+'?',g<=2?'draw':'lines',{lines:2}))+
-           playfulTask061(task061('🚦','Semáforo de aprendizaje','Marca cómo te sientes al terminar.','self'));
+      body=(g<=2?'<div class="r067-kid-section">🏁 Cierro mi misión</div>':'')+playfulTask061({...task061('⭐','Lo que descubrí','Muestra qué aprendiste sobre '+topicText061(d)+'.',g<=2?'draw':'lines',{lines:2}),step:g<=2?1:''})+playfulTask061({...task061('🚦','¿Cómo voy?','Marca cómo te sientes con este aprendizaje.','self'),step:g<=2?2:''});
     }else if(type.includes('ticket')){
-      body='<div class="r063-ticket">'+
-           playfulTask061(task061('🎯','Una idea clave',g<=2?'Dibuja o cuenta una cosa que aprendiste sobre '+topicText061(d)+'.':'Escribe una idea importante sobre '+topicText061(d)+'.',g<=2?'draw':'lines',{lines:2}))+
-           playfulTask061(task061('🚦','¿Cómo voy?','Marca cómo te sientes con este aprendizaje.','self'))+
-           '</div>';
+      body='<div class="r063-ticket">'+playfulTask061({...task061('🎯','Una idea clave',g<=2?'Dibuja una cosa que aprendiste.':'Escribe una idea clave sobre '+topicText061(d)+'.',g<=2?'draw':'lines',{lines:2}),step:g<=2?1:''})+playfulTask061({...task061('🚦','Semáforo','Marca cómo te fue.','self'),step:g<=2?2:''})+'</div>';
     }else if(type.includes('lectura')){
-      const sentences=g<=2?2:(g<=4?3:(g<=6?4:5));
-      const para=[];
-      para.push('<p><b>'+esc061(topicText061(d))+'</b> es el tema de esta lectura. Mientras lees, busca ideas que te ayuden a comprenderlo.</p>');
-      if(sentences>=3)para.push('<p>Relaciona la información con lo que ya sabes y piensa en ejemplos que puedan ayudarte a explicarla.</p>');
-      if(sentences>=4)para.push('<p>Una buena estrategia es distinguir las ideas principales de los detalles y preguntarte cómo se conectan entre sí.</p>');
-      if(sentences>=5)para.push('<p>Al finalizar, utiliza evidencias del texto y tus conocimientos previos para construir una conclusión propia.</p>');
-      body='<div class="r063-reading">'+para.join('')+'</div>'+
-           playfulTask061(task061('🔎','Después de leer',g<=2?'Cuenta o dibuja qué parte recuerdas mejor.':'Identifica la idea principal del texto.',g<=2?'draw':'lines',{lines:2}))+
-           playfulTask061(task061('💬','Conversa',g<=2?'Comenta algo que te llamó la atención.':'Explica una relación entre el texto y tus conocimientos.',g<=2?'oral':'lines',{lines:2}));
+      body='<div class="r063-reading"><p><b>'+esc061(topicText061(d))+'</b></p><p>'+(g<=2?'Lee o escucha este texto junto a tu profesora o profesor. Observa las palabras e ideas importantes.':'Lee atentamente y busca información que te ayude a comprender el tema.')+'</p></div>'+renderTasks(tasks.slice(0,2));
     }else if(type.includes('preguntas')){
-      body='<div class="r063-section-title">❓ Preguntas para pensar</div>'+
-           tasks.map((t,i)=>playfulTask061({...t,title:'Pregunta '+(i+1)+' · '+t.title})).join('');
+      body=(g<=2?'<div class="r067-kid-section">❓ Preguntas de detective</div>':'<div class="r063-section-title">❓ Preguntas para pensar</div>')+renderTasks(tasks,'Pregunta');
     }else if(type.includes('evaluacion')){
-      body='<div class="r063-section-title">🌟 Muéstrame lo que aprendiste</div>'+
-           tasks.map((t,i)=>playfulTask061({...t,title:'Actividad '+(i+1)+' · '+t.title})).join('')+
-           '<div class="r063-exit"><b>Mi autoevaluación</b><br>☐ Lo logré &nbsp;&nbsp; ☐ Estoy avanzando &nbsp;&nbsp; ☐ Necesito apoyo</div>';
-    }else{
-      body=tasks.map((t,i)=>playfulTask061({...t,title:'Actividad '+(i+1)+' · '+t.title})).join('');
-    }
-
-    return header061(d)+body;
+      body=(g<=2?'<div class="r067-kid-section">🌟 Muestro lo que aprendí</div>':'<div class="r063-section-title">🌟 Muéstrame lo que aprendiste</div>')+renderTasks(tasks)+
+           (g<=2?'<div class="r067-reward"><div class="medal">🏆</div><div><b>¿Cómo me fue?</b><small>Marca: 😊 Lo logré &nbsp; 😐 Estoy practicando &nbsp; 🙋 Necesito ayuda</small></div><div class="r067-stars">☆ ☆ ☆</div></div>':'<div class="r063-exit"><b>Mi autoevaluación</b><br>☐ Lo logré &nbsp;&nbsp; ☐ Estoy avanzando &nbsp;&nbsp; ☐ Necesito apoyo</div>');
+    }else body=renderTasks(tasks);
+    const teacher=(d.oaDetails||[]).map(o=>'OA '+String(o.number).padStart(2,'0')+': '+o.text).join(' · ');
+    const teacherNote=teacher?(g<=2?'<div class="r067-teacher-strip"><b>Referencia docente:</b> '+esc061(teacher)+'</div>':'<div class="r066-teacher-note"><b>Referencia docente:</b> '+esc061(teacher)+'</div>'):'';
+    return '<div class="r066-sheet '+th.cls+' '+(g<=2?'r066-lower r067-lower':'')+'">'+header061(d)+body+teacherNote+'</div>';
   }
 
   function getForm061(){
@@ -4987,6 +5164,8 @@ function close(){document.getElementById('libModal059').classList.add('hidden')}
       alert('Selecciona al menos un Objetivo de Aprendizaje (OA).');
       return;
     }
+    window.__aulanexoVariant066=(Number(window.__aulanexoVariant066)||0)+1;
+    d.variantIndex=window.__aulanexoVariant066-1;
     const html=buildResource061(d);
     const creator=document.getElementById('resourceCreatorModal060');
     creator?.classList.add('hidden');
@@ -5148,9 +5327,15 @@ function close(){document.getElementById('libModal059').classList.add('hidden')}
   document.getElementById('resourceSave061')?.addEventListener('click',save061);
   document.getElementById('resourceWord061')?.addEventListener('click',word061);
   document.getElementById('resourcePdf061')?.addEventListener('click',pdf061);
-  document.getElementById('resourceRegenerate061')?.addEventListener('click',()=>{
+  const regen066=document.getElementById('resourceRegenerate061');
+  if(regen066)regen066.textContent='✨ Crear otra versión';
+  regen066?.addEventListener('click',()=>{
+    if(!current061)return;
+    const d={...current061,variantIndex:Number(current061.variantIndex||0)+1};
+    const html=buildResource061(d);
     closeEditor061();
-    document.getElementById('resourceCreatorModal060')?.classList.remove('hidden');
+    openEditor061(d,html);
+    if(typeof window.nexoCelebrate==='function')setTimeout(()=>window.nexoCelebrate('generic'),250);
   });
 
   let tries061=0;
