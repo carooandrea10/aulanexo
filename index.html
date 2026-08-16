@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>AulaNexo · Prototipo 0.0.67</title>
+<title>AulaNexo · Prototipo 0.0.68</title>
 <style>
 :root{
   --bg:#f5f7fb;--card:#fff;--text:#1f2937;--muted:#6b7280;--line:#e5e7eb;
@@ -1059,7 +1059,7 @@ nav.app-nav button[data-view].active{background:var(--primary-soft);color:#3730a
 <body>
 <header>
   <div class="header-wrap">
-    <div><h1>AulaNexo</h1><div class="subtitle">Prototipo 0.0.67 · Fichas lúdicas por curso, asignatura y OA</div></div>
+    <div><h1>AulaNexo</h1><div class="subtitle">Prototipo 0.0.68 · Fichas lúdicas por curso, asignatura y OA</div></div>
     <div class="header-actions"><button id="menuToggle" class="menu-toggle">☰ Menú</button><span class="current-section-pill">Sección: <strong id="currentSectionLabel">Curso</strong></span><span class="active-course-pill">Curso activo: <strong id="headerCourseName">Sin curso</strong></span><span id="cloudStatus" class="cloud-pill" data-state="offline">☁️ Sin conectar</span><button id="cloudConnectBtn" class="secondary">👤 Mi cuenta</button><button id="downloadBackup">⬇ Respaldo</button><button id="loadBackupBtn">⬆ Cargar respaldo</button><input id="backupFile" type="file" accept="application/json" hidden></div>
   </div>
 </header>
@@ -1517,7 +1517,7 @@ nav.app-nav button[data-view].active{background:var(--primary-soft);color:#3730a
     </div>
   </section>
 
-  <div class="footer">AulaNexo 0.0.67 · evaluación, seguimiento curricular, planificación, recursos, tutorial y asistente Nexo.</div>
+  <div class="footer">AulaNexo 0.0.68 · evaluación, seguimiento curricular, planificación, recursos, tutorial y asistente Nexo.</div>
 
   <section id="view-tutorial" class="view">
     <div class="tutorial-hero">
@@ -3726,8 +3726,14 @@ window.addEventListener('pagehide',()=>{if(cloudDirty&&cloudSession&&navigator.o
 
 document.getElementById('loadBackupBtn').onclick=()=>document.getElementById('backupFile').click();document.getElementById('backupFile').onchange=e=>{const f=e.target.files[0];if(!f)return;const reader=new FileReader();reader.onload=()=>{try{let data=JSON.parse(reader.result);const normalized=normalizeState(data);if(!normalized)throw new Error('Formato no reconocido');data=normalized;if(confirm('¿Cargar este respaldo? Reemplazará los datos actuales de este prototipo.')){state=attachCourseAliases(data);selectedApplicationId=null;selectedStudentId=null;selectedReportStudentId=null;selectedHistoryStudentId=null;selectedSimceApplicationId=null;selectedProgressStudentId=null;selectedProgressSubject=null;selectedProgressUnit='';selectedCoverageSubject=null;selectedSupportSubject=null;selectedSupportKey='';selectedInterventionSubject=null;selectedInterventionKey='';selectedInterventionGroup='support';interventionDraft={key:'',date:'',duration:'20',focus:'',activity:'',evidence:'',materials:''};selectedPlanningSubject=null;selectedPlanningUnit='';selectedPlanningOA='';planningDraft={key:'',date:'',duration:'45',objective:'',bloomLevel:'Comprender',bloomVerbs:'',attitudeCode:'',attitudeObjective:'',duaEngagementEnabled:true,duaEngagement:'',duaRepresentationEnabled:true,duaRepresentation:'',duaActionEnabled:true,duaAction:'',start:'',development:'',closing:'',assessment:'',differentiation:'',materials:''};editingPlanningId=null;planningMode='class';selectedResourceSubject=null;selectedResourceUnit='';selectedResourceOA='';editingResourceId=null;save();renderAll();alert('Respaldo cargado correctamente.')}}catch(err){alert('No pude cargar ese archivo como respaldo de AulaNexo 0.0.47.')}e.target.value=''};reader.readAsText(f)};
 
-renderAll();
+// 0.0.68: el inicio de sesión debe procesarse antes del render general.
+// Esto evita que un error de render deje el token de Google sin procesar.
 initCloud();
+try{
+  renderAll();
+}catch(err){
+  console.error('AulaNexo: error durante el render inicial', err);
+}
 </script>
 
 <button id="nexoLauncher" class="nexo-launcher" type="button" aria-label="Abrir asistente Nexo">
