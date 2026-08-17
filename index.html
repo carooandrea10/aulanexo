@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>AulaNexo · Prototipo 0.0.77</title>
+<title>AulaNexo · Prototipo 0.0.84</title>
 <style>
 :root{
   --bg:#f5f7fb;--card:#fff;--text:#1f2937;--muted:#6b7280;--line:#e5e7eb;
@@ -1567,12 +1567,294 @@ nav.app-nav button[data-view].active{background:var(--primary-soft);color:#3730a
   .instrument077-modal{max-width:96vw!important}
 }
 
+
+/* ===== AULANEXO 0.0.78 · PLANIFICACIÓN DESARROLLADA DESDE EL OA ===== */
+.planning078-regenerate{
+  background:#ecfdf5!important;color:#166534!important;border-color:#a7f3d0!important;
+  font-weight:900!important
+}
+.planning078-regenerate:hover{background:#d1fae5!important}
+.planning078-note{
+  border:1px solid #bbf7d0;background:linear-gradient(135deg,#f0fdf4,#f8fafc);
+  color:#166534;border-radius:13px;padding:10px 12px;font-size:11.5px;line-height:1.5
+}
+.planning078-note b{color:#14532d}
+
+
+/* ===== AULANEXO 0.0.80 · ACTITUD Y DUA REORGANIZADOS ===== */
+.planning080-hidden-select{display:none!important}
+
+.planning080-attitude-card{
+  margin-top:7px;border:1px solid #dbe2f2;border-radius:14px;background:#fff;padding:11px 12px
+}
+.planning080-attitude-top{
+  display:flex;justify-content:space-between;align-items:flex-start;gap:12px
+}
+.planning080-mini-label{
+  font-size:9px;font-weight:900;letter-spacing:.065em;color:#6366f1;margin-bottom:4px
+}
+.planning080-attitude-summary{
+  font-size:11.5px;font-weight:800;color:#334155;line-height:1.45;max-width:660px
+}
+.planning080-attitude-card textarea{min-height:68px}
+
+.planning080-dua-intro{
+  margin-top:7px;display:flex;justify-content:space-between;align-items:center;gap:12px;
+  border:1px solid #ddd6fe;border-radius:14px;padding:11px 12px;
+  background:linear-gradient(135deg,#faf5ff,#f8fafc)
+}
+.planning080-dua-intro b{display:block;font-size:11.5px;color:#4c1d95}
+.planning080-dua-intro span{display:block;margin-top:3px;font-size:10.5px;line-height:1.4;color:#6b21a8}
+
+.planning080-dua-grid{
+  display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin-top:10px
+}
+.planning080-dua-card{
+  border:1px solid #e2e8f0;border-radius:14px;background:#fff;padding:11px;min-width:0
+}
+.planning080-dua-card.is-disabled{opacity:.56}
+.planning080-dua-head{
+  display:flex;justify-content:space-between;gap:8px;align-items:center;margin-bottom:8px
+}
+.planning080-dua-head label{display:flex;align-items:center;gap:5px;font-size:11.5px;color:#312e81}
+.planning080-count{
+  flex:none;border-radius:999px;padding:3px 7px;background:#f1f5f9;color:#475569;
+  font-size:8.5px;font-weight:900
+}
+.planning080-guideline-chips{display:flex;flex-direction:column;gap:5px;min-height:72px}
+.planning080-guideline-chips span{
+  display:block;border-radius:8px;background:#f8fafc;border:1px solid #e5e7eb;
+  padding:5px 7px;font-size:9.5px;line-height:1.3;color:#475569
+}
+.planning080-link{
+  width:100%;margin-top:8px;padding:6px 7px!important;background:#eef2ff!important;
+  color:#4338ca!important;border-color:#c7d2fe!important;font-size:9.5px!important;font-weight:900!important
+}
+.planning080-application{border-top:1px solid #eef2f7;margin-top:9px;padding-top:8px}
+.planning080-application label{font-size:9.5px;color:#64748b;font-weight:800}
+.planning080-application textarea{margin-top:5px;min-height:62px;font-size:10.5px;line-height:1.4}
+
+.planning080-modal{max-width:850px!important}
+.planning080-dua-modal{max-width:920px!important}
+.planning080-modal-head{
+  display:flex;justify-content:space-between;align-items:flex-start;gap:12px;
+  padding-bottom:11px;border-bottom:1px solid #e5e7eb
+}
+.planning080-modal-head h2{margin:2px 0 3px}
+.planning080-modal-kicker{
+  font-size:9px;font-weight:900;letter-spacing:.07em;color:#6366f1
+}
+.planning080-source{
+  margin-top:10px;border-radius:10px;background:#f8fafc;border:1px solid #e5e7eb;
+  padding:8px 10px;font-size:10px;line-height:1.4;color:#64748b
+}
+.planning080-attitude-list{
+  display:flex;flex-direction:column;gap:7px;margin-top:11px;max-height:55vh;overflow:auto;padding-right:3px
+}
+.planning080-attitude-option{
+  width:100%;display:grid;grid-template-columns:31px 1fr;gap:9px;align-items:start;text-align:left;
+  border:1px solid #e2e8f0!important;border-radius:12px!important;background:#fff!important;
+  color:#374151!important;padding:9px 10px!important
+}
+.planning080-attitude-option:hover{border-color:#a5b4fc!important;background:#fafaff!important}
+.planning080-attitude-option.is-selected{
+  border-color:#6366f1!important;background:#eef2ff!important;box-shadow:0 0 0 1px #c7d2fe inset
+}
+.planning080-attitude-number{
+  width:27px;height:27px;border-radius:8px;background:#f1f5f9;color:#475569;
+  display:grid;place-items:center;font-size:10px;font-weight:900
+}
+.planning080-attitude-option.is-selected .planning080-attitude-number{background:#4f46e5;color:#fff}
+.planning080-attitude-text{font-size:11.5px;line-height:1.48}
+.planning080-custom{
+  width:100%;margin-top:10px;background:#f8fafc!important;color:#475569!important;
+  border:1px dashed #94a3b8!important
+}
+
+.planning080-dua-tabs{
+  display:grid;grid-template-columns:repeat(3,1fr);gap:7px;margin-top:12px
+}
+.planning080-dua-tabs button{
+  background:#f8fafc!important;color:#475569!important;border-color:#e2e8f0!important;font-size:10.5px!important
+}
+.planning080-dua-tabs button.active{
+  background:#eef2ff!important;color:#4338ca!important;border-color:#818cf8!important
+}
+.planning080-dua-body{
+  margin-top:11px;max-height:57vh;overflow:auto;padding-right:3px
+}
+.planning080-guideline{
+  border:1px solid #e2e8f0;border-radius:13px;background:#fff;margin-bottom:9px;overflow:hidden
+}
+.planning080-guideline-head{
+  background:#f8fafc;border-bottom:1px solid #e5e7eb;padding:8px 10px;
+  display:flex;align-items:center;gap:7px
+}
+.planning080-guideline-code{
+  border-radius:999px;background:#eef2ff;color:#4338ca;padding:3px 7px;font-size:8.5px;font-weight:900
+}
+.planning080-guideline-title{font-size:10.5px;font-weight:900;color:#334155}
+.planning080-considerations{padding:5px 8px}
+.planning080-consideration{
+  display:grid;grid-template-columns:19px 1fr;gap:7px;align-items:start;
+  padding:7px 5px;border-bottom:1px solid #f1f5f9;cursor:pointer
+}
+.planning080-consideration:last-child{border-bottom:none}
+.planning080-consideration:hover{background:#fafaff}
+.planning080-consideration input{margin-top:2px;width:14px;height:14px}
+.planning080-consideration-text{font-size:10.5px;line-height:1.42;color:#475569}
+.planning080-consideration-code{font-weight:900;color:#6366f1;margin-right:5px}
+.planning080-recommended{
+  display:inline-flex;margin-left:5px;border-radius:999px;background:#dcfce7;color:#166534;
+  padding:2px 5px;font-size:7.5px;font-weight:900
+}
+.planning080-modal-footer{
+  display:flex;justify-content:space-between;align-items:center;gap:10px;
+  padding-top:10px;border-top:1px solid #e5e7eb;margin-top:10px
+}
+
+@media(max-width:900px){
+  .planning080-dua-grid{grid-template-columns:1fr}
+  .planning080-guideline-chips{min-height:auto}
+}
+@media(max-width:650px){
+  .planning080-attitude-top,.planning080-dua-intro{flex-direction:column;align-items:stretch}
+  .planning080-dua-tabs{grid-template-columns:1fr}
+}
+
+
+/* ===== AULANEXO 0.0.81 · PLANIFICACIÓN AUTOMÁTICA ===== */
+.planning081-generate{
+  background:#4f46e5!important;color:#fff!important;border-color:#4f46e5!important;font-weight:900!important
+}
+.planning081-ready{
+  display:grid;grid-template-columns:42px 1fr auto;gap:10px;align-items:center;
+  border:1px solid #bbf7d0;background:linear-gradient(135deg,#f0fdf4,#f8fafc);
+  border-radius:14px;padding:11px 12px
+}
+.planning081-ready-icon{
+  width:38px;height:38px;border-radius:12px;display:grid;place-items:center;
+  background:#dcfce7;border:1px solid #bbf7d0;font-size:19px
+}
+.planning081-ready b{display:block;font-size:11.5px;color:#14532d}
+.planning081-ready span{display:block;margin-top:3px;font-size:10.5px;line-height:1.4;color:#3f6212}
+.planning081-ready-badge{
+  border-radius:999px;padding:5px 9px;background:#fff;border:1px solid #86efac;
+  color:#166534;font-size:9.5px;font-weight:900;white-space:nowrap
+}
+.planning081-autofill-note{
+  margin-top:6px;font-size:9.5px;color:#64748b;line-height:1.35
+}
+@media(max-width:720px){
+  .planning081-ready{grid-template-columns:38px 1fr}
+  .planning081-ready-badge{grid-column:1/-1;width:max-content}
+}
+
+
+/* ===== AULANEXO 0.0.82 · PLANIFICAR SIN REDACTAR ===== */
+.planning082-hidden-field{display:none!important}
+.planning082-phase-head{
+  display:flex;justify-content:space-between;gap:10px;align-items:flex-start;
+  margin-top:7px;padding:9px 10px;border:1px solid #e2e8f0;border-radius:11px;background:#f8fafc
+}
+.planning082-phase-head b{display:block;font-size:11.5px;color:#334155}
+.planning082-phase-head span:not(.planning082-recommended-badge){
+  display:block;margin-top:2px;font-size:10px;line-height:1.4;color:#64748b
+}
+.planning082-recommended-badge{
+  flex:none;border-radius:999px;padding:4px 8px;background:#ecfdf5;border:1px solid #a7f3d0;
+  color:#166534;font-size:8.5px;font-weight:900
+}
+.planning082-options{
+  display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px;margin-top:9px
+}
+.planning082-options-wide{grid-template-columns:repeat(5,minmax(0,1fr))}
+.planning082-option{
+  position:relative;display:flex;flex-direction:column;align-items:flex-start;gap:4px;min-height:86px;
+  text-align:left!important;padding:9px 10px!important;border:1px solid #e2e8f0!important;
+  border-radius:12px!important;background:#fff!important;color:#334155!important
+}
+.planning082-option:hover{border-color:#a5b4fc!important;background:#fafaff!important}
+.planning082-option.is-selected{
+  border-color:#6366f1!important;background:#eef2ff!important;
+  box-shadow:0 0 0 1px #c7d2fe inset
+}
+.planning082-option-icon{font-size:18px;line-height:1}
+.planning082-option-title{font-size:10.5px;font-weight:900;line-height:1.25;color:#312e81}
+.planning082-option-desc{font-size:9px;line-height:1.35;color:#64748b;font-weight:500}
+.planning082-option-tag{
+  position:absolute;right:6px;top:6px;border-radius:999px;padding:2px 5px;background:#dcfce7;
+  color:#166534;font-size:7px;font-weight:900
+}
+.planning082-generated{
+  margin-top:9px;border-left:4px solid #8b5cf6;border-radius:10px;background:#faf5ff;
+  padding:9px 11px
+}
+.planning082-generated-label{
+  font-size:8.5px;font-weight:900;letter-spacing:.045em;color:#6d28d9;text-transform:uppercase
+}
+.planning082-generated-text{
+  margin-top:4px;font-size:11.5px;line-height:1.52;color:#374151;white-space:pre-wrap
+}
+@media(max-width:980px){
+  .planning082-options,.planning082-options-wide{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+@media(max-width:620px){
+  .planning082-options,.planning082-options-wide{grid-template-columns:1fr}
+}
+
+
+/* ===== AULANEXO 0.0.83 · SELECTORES DE MOMENTOS ROBUSTOS ===== */
+.planning083-radio-card{
+  position:relative;display:block;min-width:0;cursor:pointer
+}
+.planning083-radio-card input{
+  position:absolute;opacity:0;pointer-events:none;width:1px;height:1px
+}
+.planning083-radio-content{
+  position:relative;display:flex;flex-direction:column;align-items:flex-start;gap:4px;min-height:86px;
+  padding:9px 10px;border:1px solid #e2e8f0;border-radius:12px;background:#fff;color:#334155;
+  transition:border-color .14s ease,background .14s ease,box-shadow .14s ease,transform .14s ease
+}
+.planning083-radio-card:hover .planning083-radio-content{
+  border-color:#a5b4fc;background:#fafaff;transform:translateY(-1px)
+}
+.planning083-radio-card input:focus-visible + .planning083-radio-content{
+  outline:3px solid rgba(99,102,241,.22);outline-offset:2px
+}
+.planning083-radio-card input:checked + .planning083-radio-content{
+  border-color:#6366f1;background:#eef2ff;box-shadow:0 0 0 1px #c7d2fe inset
+}
+.planning083-check{
+  position:absolute;right:7px;bottom:7px;width:20px;height:20px;border-radius:999px;
+  display:grid;place-items:center;background:#fff;border:1px solid #cbd5e1;color:transparent;
+  font-size:11px;font-weight:900
+}
+.planning083-radio-card input:checked + .planning083-radio-content .planning083-check{
+  background:#4f46e5;border-color:#4f46e5;color:#fff
+}
+.planning083-radio-card input:disabled + .planning083-radio-content{
+  opacity:.5;cursor:not-allowed;transform:none
+}
+
+
+/* ===== AULANEXO 0.0.84 · SELECTORES NATIVOS DE MOMENTOS ===== */
+.planning084-phase-select{
+  width:100%;margin-top:9px;padding:10px 11px;border:1px solid #c7d2fe;border-radius:11px;
+  background:#fff;color:#312e81;font-size:11.5px;font-weight:800;cursor:pointer
+}
+.planning084-phase-select:focus{outline:3px solid rgba(99,102,241,.16);border-color:#6366f1}
+.planning084-help{
+  margin-top:6px;font-size:9.5px;line-height:1.4;color:#64748b
+}
+.planning084-help b{color:#166534}
+
 </style>
 </head>
 <body>
 <header>
   <div class="header-wrap">
-    <div><h1>AulaNexo</h1><div class="subtitle">Prototipo 0.0.77 · Instrumentos de evaluación por OA</div></div>
+    <div><h1>AulaNexo</h1><div class="subtitle">Prototipo 0.0.84 · Momentos de clase estables</div></div>
     <div class="header-actions"><button id="menuToggle" class="menu-toggle">☰ Menú</button><span class="current-section-pill">Sección: <strong id="currentSectionLabel">Curso</strong></span><span class="active-course-pill">Curso activo: <strong id="headerCourseName">Sin curso</strong></span><span id="cloudStatus" class="cloud-pill" data-state="offline">☁️ Sin conectar</span><button id="cloudConnectBtn" class="secondary">👤 Mi cuenta</button><button id="downloadBackup">⬇ Respaldo</button><button id="loadBackupBtn">⬆ Cargar respaldo</button><input id="backupFile" type="file" accept="application/json" hidden></div>
   </div>
 </header>
@@ -1906,7 +2188,12 @@ nav.app-nav button[data-view].active{background:var(--primary-soft);color:#3730a
       <div>
         <div id="planningClassPanel">
           <div class="card planning-form">
-            <div class="row between"><div><h2>Borrador de la clase</h2><div class="small">Se prepara a partir del OA y de la evidencia del curso. Puedes modificar cada apartado antes de guardarlo.</div></div><div class="row"><span id="planningEditingBadge" class="planning-editing hidden">Editando</span><button id="resetPlanningDraft" class="ghost">Restablecer borrador</button></div></div>
+            <div class="row between"><div><h2>Planificación lista para revisar</h2><div class="small">Selecciona el OA y AulaNexo completa la planificación por ti. Tu trabajo principal es revisar, ajustar si quieres y guardar.</div></div><div class="row"><span id="planningEditingBadge" class="planning-editing hidden">Editando</span><button id="planningRegenerate078" class="planning081-generate">✨ Generar planificación completa</button><button id="resetPlanningDraft" class="ghost">Volver a generar</button></div></div>
+            <div class="planning081-ready section-gap">
+              <div class="planning081-ready-icon">✨</div>
+              <div><b>AulaNexo escribe el borrador completo.</b><span>Objetivo de clase · Bloom · objetivo actitudinal · DUA · actividades de Inicio, Desarrollo y Cierre · evaluación · diferenciación · materiales.</span></div>
+              <div id="planningAutoStatus081" class="planning081-ready-badge">Lista para editar</div>
+            </div>
             <div class="planning-form-grid section-gap">
               <div class="field"><label>Fecha</label><input id="planningDate" type="date"></div>
               <div class="field"><label>Duración aproximada</label><select id="planningDuration"><option value="45">45 minutos</option><option value="60">60 minutos</option><option value="90">90 minutos</option></select></div>
@@ -1919,19 +2206,150 @@ nav.app-nav button[data-view].active{background:var(--primary-soft);color:#3730a
                 <div class="field"><label>Habilidad cognitiva · Taxonomía de Bloom revisada</label><select id="planningBloomLevel"><option>Recordar</option><option>Comprender</option><option>Aplicar</option><option>Analizar</option><option>Evaluar</option><option>Crear</option></select><div id="planningBloomHint" class="planning-bloom-hint"></div></div>
                 <div class="field"><label>Verbos / habilidades sugeridas</label><input id="planningBloomVerbs" type="text" placeholder="Ej.: identificar, explicar, aplicar..."><div class="planning-source-note">El nivel es una sugerencia automática; puedes cambiarlo según la exigencia real de la clase.</div></div>
               </div>
-              <div class="field section-gap"><label>Objetivo actitudinal</label><select id="planningAttitudeSelect" class="planning-attitude-select"></select><textarea id="planningAttitudeObjective" class="section-gap" placeholder="Objetivo actitudinal para esta clase"></textarea><div id="planningAttitudeNote" class="planning-source-note"></div></div>
-              <div class="field section-gap"><label>Principios DUA · Diseño Universal para el Aprendizaje</label><div class="planning-source-note">Basado en las tres áreas de las Pautas DUA 3.0 de CAST. Marca las que aplicarás y adapta la forma concreta de llevarlas a la clase.</div>
-                <div class="dua-grid">
-                  <div id="duaEngagementCard" class="dua-card"><div class="dua-card-head"><input id="planningDuaEngagementEnabled" type="checkbox"><div><div class="dua-card-title">Compromiso</div><small>Diseñar múltiples medios para involucrarse y sostener la participación.</small></div></div><textarea id="planningDuaEngagement"></textarea></div>
-                  <div id="duaRepresentationCard" class="dua-card"><div class="dua-card-head"><input id="planningDuaRepresentationEnabled" type="checkbox"><div><div class="dua-card-title">Representación</div><small>Diseñar múltiples formas de percibir, comprender y construir significado.</small></div></div><textarea id="planningDuaRepresentation"></textarea></div>
-                  <div id="duaActionCard" class="dua-card"><div class="dua-card-head"><input id="planningDuaActionEnabled" type="checkbox"><div><div class="dua-card-title">Acción y expresión</div><small>Diseñar múltiples formas de interactuar, responder y demostrar lo aprendido.</small></div></div><textarea id="planningDuaAction"></textarea></div>
+              <div class="field section-gap">
+                <label>Objetivo actitudinal</label>
+                <select id="planningAttitudeSelect" class="planning080-hidden-select" aria-hidden="true" tabindex="-1"></select>
+
+                <div class="planning080-attitude-card">
+                  <div class="planning080-attitude-top">
+                    <div>
+                      <div class="planning080-mini-label">ACTITUD PARA ESTA CLASE</div>
+                      <div id="planningAttitudeSummary080" class="planning080-attitude-summary">Aún no seleccionada</div>
+                    </div>
+                    <button id="planningChooseAttitude080" type="button" class="secondary">🎯 Elegir objetivo</button>
+                  </div>
+                  <textarea id="planningAttitudeObjective" class="section-gap" placeholder="El objetivo actitudinal seleccionado aparecerá aquí y podrás adaptarlo."></textarea>
+                  <div id="planningAttitudeNote" class="planning-source-note"></div>
                 </div>
+              </div>
+
+              <div class="field section-gap">
+                <label>Principios DUA · Diseño Universal para el Aprendizaje</label>
+                <div class="planning080-dua-intro">
+                  <div>
+                    <b>DUA 3.0 completo, sin recargar la planificación</b>
+                    <span>AulaNexo selecciona automáticamente consideraciones pertinentes al OA. Puedes abrir cada área solo si quieres revisar o cambiar la selección.</span>
+                  </div>
+                  <button id="planningConfigureDua080" type="button" class="secondary">⚙️ Configurar DUA</button>
+                </div>
+
+                <div class="planning080-dua-grid">
+                  <div id="duaEngagementCard" class="planning080-dua-card">
+                    <div class="planning080-dua-head">
+                      <label><input id="planningDuaEngagementEnabled" type="checkbox"> <b>💜 Compromiso</b></label>
+                      <span id="duaEngagementCount080" class="planning080-count">0 seleccionadas</span>
+                    </div>
+                    <div class="planning080-guideline-chips">
+                      <span>7 · Intereses e identidades</span>
+                      <span>8 · Esfuerzo y persistencia</span>
+                      <span>9 · Capacidad emocional</span>
+                    </div>
+                    <button type="button" class="planning080-link" data-open-dua080="engagement">Ver y seleccionar pautas →</button>
+                    <div class="planning080-application">
+                      <label>Aplicación concreta en esta clase</label>
+                      <textarea id="planningDuaEngagement"></textarea>
+                    </div>
+                  </div>
+
+                  <div id="duaRepresentationCard" class="planning080-dua-card">
+                    <div class="planning080-dua-head">
+                      <label><input id="planningDuaRepresentationEnabled" type="checkbox"> <b>👁️ Representación</b></label>
+                      <span id="duaRepresentationCount080" class="planning080-count">0 seleccionadas</span>
+                    </div>
+                    <div class="planning080-guideline-chips">
+                      <span>1 · Percepción</span>
+                      <span>2 · Lenguaje y símbolos</span>
+                      <span>3 · Construcción del conocimiento</span>
+                    </div>
+                    <button type="button" class="planning080-link" data-open-dua080="representation">Ver y seleccionar pautas →</button>
+                    <div class="planning080-application">
+                      <label>Aplicación concreta en esta clase</label>
+                      <textarea id="planningDuaRepresentation"></textarea>
+                    </div>
+                  </div>
+
+                  <div id="duaActionCard" class="planning080-dua-card">
+                    <div class="planning080-dua-head">
+                      <label><input id="planningDuaActionEnabled" type="checkbox"> <b>✋ Acción y expresión</b></label>
+                      <span id="duaActionCount080" class="planning080-count">0 seleccionadas</span>
+                    </div>
+                    <div class="planning080-guideline-chips">
+                      <span>4 · Interacción</span>
+                      <span>5 · Expresión y comunicación</span>
+                      <span>6 · Desarrollo de estrategias</span>
+                    </div>
+                    <button type="button" class="planning080-link" data-open-dua080="action">Ver y seleccionar pautas →</button>
+                    <div class="planning080-application">
+                      <label>Aplicación concreta en esta clase</label>
+                      <textarea id="planningDuaAction"></textarea>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="planning-source-note">AulaNexo ya deja una selección DUA preparada según el OA. Las 36 consideraciones siguen disponibles para revisar o modificar, sin tener que escribirlas.</div>
               </div>
             </div>
 
-            <div class="field section-gap"><label>Inicio</label><textarea id="planningStart"></textarea></div>
-            <div class="field section-gap"><label>Desarrollo</label><textarea id="planningDevelopment" class="planning-large"></textarea></div>
-            <div class="field section-gap"><label>Cierre</label><textarea id="planningClosing"></textarea></div>
+            <div class="field section-gap">
+              <label>Inicio de la clase</label>
+              <div class="planning082-phase-head">
+                <div><b>1. Escoge cómo quieres comenzar</b><span>AulaNexo ya marca una recomendada. Puedes cambiarla tocando cualquier tarjeta.</span></div>
+                <span id="planningStartModeBadge082" class="planning082-recommended-badge">Recomendado</span>
+              </div>
+              <select id="planningStartMode084" class="planning084-phase-select">
+                <option value="activate">🧠 Activar saberes previos</option>
+                <option value="challenge">❓ Desafío inicial</option>
+                <option value="explore">🔎 Exploración visual</option>
+                <option value="play">🎲 Juego breve</option>
+              </select>
+              <div id="planningStartRecommendation084" class="planning084-help"></div>
+              <div class="planning082-generated">
+                <div class="planning082-generated-label">✨ AulaNexo generó este inicio</div>
+                <div id="planningStartPreview082" class="planning082-generated-text"></div>
+              </div>
+              <textarea id="planningStart" class="planning082-hidden-field" tabindex="-1" aria-hidden="true"></textarea>
+            </div>
+
+            <div class="field section-gap">
+              <label>Desarrollo de la clase</label>
+              <div class="planning082-phase-head">
+                <div><b>2. Escoge la forma de trabajo</b><span>Toca una tarjeta y AulaNexo cambia automáticamente la actividad completa.</span></div>
+                <span id="planningDevelopmentModeBadge082" class="planning082-recommended-badge">Recomendado</span>
+              </div>
+              <select id="planningDevelopmentMode084" class="planning084-phase-select">
+                <option value="model">👩‍🏫 Modelado + práctica</option>
+                <option value="hands">👐 Manipulativo / práctico</option>
+                <option value="stations">🚏 Estaciones</option>
+                <option value="collaborative">🤝 Trabajo colaborativo</option>
+                <option value="challenge">🚀 Desafío de aplicación</option>
+              </select>
+              <div id="planningDevelopmentRecommendation084" class="planning084-help"></div>
+              <div class="planning082-generated">
+                <div class="planning082-generated-label">✨ AulaNexo generó este desarrollo</div>
+                <div id="planningDevelopmentPreview082" class="planning082-generated-text"></div>
+              </div>
+              <textarea id="planningDevelopment" class="planning082-hidden-field" tabindex="-1" aria-hidden="true"></textarea>
+            </div>
+
+            <div class="field section-gap">
+              <label>Cierre de la clase</label>
+              <div class="planning082-phase-head">
+                <div><b>3. Escoge cómo quieres cerrar</b><span>Toca una tarjeta y AulaNexo genera el cierre y la evaluación correspondiente.</span></div>
+                <span id="planningClosingModeBadge082" class="planning082-recommended-badge">Recomendado</span>
+              </div>
+              <select id="planningClosingMode084" class="planning084-phase-select">
+                <option value="ticket">🎫 Ticket de salida</option>
+                <option value="oral">💬 Explicación rápida</option>
+                <option value="traffic">🚦 Semáforo</option>
+                <option value="finalChallenge">⭐ Desafío final</option>
+              </select>
+              <div id="planningClosingRecommendation084" class="planning084-help"></div>
+              <div class="planning082-generated">
+                <div class="planning082-generated-label">✨ AulaNexo generó este cierre</div>
+                <div id="planningClosingPreview082" class="planning082-generated-text"></div>
+              </div>
+              <textarea id="planningClosing" class="planning082-hidden-field" tabindex="-1" aria-hidden="true"></textarea>
+            </div>
             <div class="field section-gap"><label>Evidencia / evaluación de la clase</label><textarea id="planningAssessment"></textarea></div>
             <div class="field section-gap"><label>Apoyos y diferenciación</label><textarea id="planningDifferentiation" class="planning-large"></textarea></div>
             <div class="field section-gap"><label>Materiales y recursos</label><textarea id="planningMaterials"></textarea></div>
@@ -2208,6 +2626,53 @@ nav.app-nav button[data-view].active{background:var(--primary-soft);color:#3730a
   </div>
 </div>
 
+<!-- ===== AulaNexo 0.0.80 · Selector de objetivo actitudinal ===== -->
+<div id="planningAttitudeModal080" class="modal-backdrop hidden" aria-hidden="true">
+  <div class="modal planning080-modal">
+    <div class="planning080-modal-head">
+      <div>
+        <div class="planning080-modal-kicker">OBJETIVO ACTITUDINAL</div>
+        <h2>Elige una actitud para la clase</h2>
+        <div class="small">Aquí sí puedes leer las opciones completas antes de seleccionar.</div>
+      </div>
+      <button id="planningAttitudeClose080" type="button" class="ghost">Cerrar</button>
+    </div>
+    <div id="planningAttitudeSource080" class="planning080-source"></div>
+    <div id="planningAttitudeList080" class="planning080-attitude-list"></div>
+    <button id="planningAttitudeCustom080" type="button" class="planning080-custom">
+      ✎ Escribir o adaptar un objetivo actitudinal propio
+    </button>
+  </div>
+</div>
+
+<!-- ===== AulaNexo 0.0.80 · Configurador DUA ===== -->
+<div id="planningDuaModal080" class="modal-backdrop hidden" aria-hidden="true">
+  <div class="modal planning080-dua-modal">
+    <div class="planning080-modal-head">
+      <div>
+        <div class="planning080-modal-kicker">DISEÑO UNIVERSAL PARA EL APRENDIZAJE</div>
+        <h2>Configurar DUA para esta clase</h2>
+        <div class="small">Los 3 principios contienen sus 9 pautas. Selecciona las consideraciones que realmente aplicarás.</div>
+      </div>
+      <button id="planningDuaClose080" type="button" class="ghost">Cerrar</button>
+    </div>
+
+    <div class="planning080-dua-tabs">
+      <button type="button" data-dua-tab080="engagement" class="active">💜 Compromiso</button>
+      <button type="button" data-dua-tab080="representation">👁️ Representación</button>
+      <button type="button" data-dua-tab080="action">✋ Acción y expresión</button>
+    </div>
+
+    <div id="planningDuaModalBody080" class="planning080-dua-body"></div>
+
+    <div class="planning080-modal-footer">
+      <div id="planningDuaTotal080" class="small">0 consideraciones seleccionadas</div>
+      <button id="planningDuaDone080" type="button" class="primary">Listo</button>
+    </div>
+  </div>
+</div>
+
+
 <script>
 const STORAGE_KEY='aulanexo_proto_048';
 const OLD_STORAGE_KEYS=['aulanexo_proto_047','aulanexo_proto_046','aulanexo_proto_045','aulanexo_proto_044','aulanexo_proto_043','aulanexo_proto_042','aulanexo_proto_041','aulanexo_proto_040','aulanexo_proto_039','aulanexo_proto_038','aulanexo_proto_037','aulanexo_proto_036','aulanexo_proto_035','aulanexo_proto_034','aulanexo_proto_033','aulanexo_proto_032','aulanexo_proto_031','aulanexo_proto_030','aulanexo_proto_029','aulanexo_proto_028','aulanexo_proto_027','aulanexo_proto_026','aulanexo_proto_025','aulanexo_proto_024','aulanexo_proto_023','aulanexo_proto_022','aulanexo_proto_021','aulanexo_proto_020','aulanexo_proto_019','aulanexo_proto_018','aulanexo_proto_017','aulanexo_proto_016','aulanexo_proto_015','aulanexo_proto_014','aulanexo_proto_013','aulanexo_proto_012','aulanexo_proto_011','aulanexo_proto_010','aulanexo_proto_009','aulanexo_proto_008','aulanexo_proto_007','aulanexo_proto_006','aulanexo_proto_005','aulanexo_proto_004','aulanexo_proto_003','aulanexo_proto_002','aulanexo_proto_001'];
@@ -2351,7 +2816,7 @@ function normalizeState(x){
   if(!Array.isArray(x.interventions))x.interventions=[];
   x.interventions=x.interventions.filter(i=>i&&i.courseId).map(i=>({id:i.id||'int_'+uid(),courseId:i.courseId,grade:Number(i.grade)||null,subject:i.subject||'',unitId:String(i.unitId||''),unitName:i.unitName||'',oaNumber:Number(i.oaNumber)||null,oaText:i.oaText||'',groupKey:i.groupKey||'support',studentIds:Array.isArray(i.studentIds)?i.studentIds:[],studentNames:Array.isArray(i.studentNames)?i.studentNames:[],date:i.date||localDate(),duration:String(i.duration||'20'),focus:i.focus||'',activity:i.activity||'',evidence:i.evidence||'',materials:i.materials||'',baselineByStudent:(i.baselineByStudent&&typeof i.baselineByStudent==='object'&&!Array.isArray(i.baselineByStudent))?i.baselineByStudent:{},completed:!!i.completed,completedDate:i.completedDate||'',completedAt:i.completedAt||'',createdAt:i.createdAt||new Date().toISOString()}));
   if(!Array.isArray(x.classPlans))x.classPlans=[];
-  x.classPlans=x.classPlans.filter(p=>p&&p.courseId).map(p=>({id:p.id||'plan_'+uid(),courseId:p.courseId,grade:Number(p.grade)||null,subject:p.subject||'',unitId:String(p.unitId||''),unitName:p.unitName||'',oaNumber:Number(p.oaNumber)||null,oaText:p.oaText||'',date:p.date||localDate(),duration:String(p.duration||'45'),objective:p.objective||'',bloomLevel:p.bloomLevel||'',bloomVerbs:p.bloomVerbs||'',attitudeCode:p.attitudeCode??'custom',attitudeObjective:p.attitudeObjective||'',duaEngagementEnabled:p.duaEngagementEnabled!==false,duaEngagement:p.duaEngagement||'',duaRepresentationEnabled:p.duaRepresentationEnabled!==false,duaRepresentation:p.duaRepresentation||'',duaActionEnabled:p.duaActionEnabled!==false,duaAction:p.duaAction||'',start:p.start||'',development:p.development||'',closing:p.closing||'',assessment:p.assessment||'',differentiation:p.differentiation||'',materials:p.materials||'',createdAt:p.createdAt||new Date().toISOString(),updatedAt:p.updatedAt||p.createdAt||new Date().toISOString()}));
+  x.classPlans=x.classPlans.filter(p=>p&&p.courseId).map(p=>({id:p.id||'plan_'+uid(),courseId:p.courseId,grade:Number(p.grade)||null,subject:p.subject||'',unitId:String(p.unitId||''),unitName:p.unitName||'',oaNumber:Number(p.oaNumber)||null,oaText:p.oaText||'',date:p.date||localDate(),duration:String(p.duration||'45'),objective:p.objective||'',bloomLevel:p.bloomLevel||'',bloomVerbs:p.bloomVerbs||'',attitudeCode:p.attitudeCode??'custom',attitudeObjective:p.attitudeObjective||'',duaEngagementEnabled:p.duaEngagementEnabled!==false,duaEngagement:p.duaEngagement||'',duaRepresentationEnabled:p.duaRepresentationEnabled!==false,duaRepresentation:p.duaRepresentation||'',duaActionEnabled:p.duaActionEnabled!==false,duaAction:p.duaAction||'',duaConsiderations:Array.isArray(p.duaConsiderations)?p.duaConsiderations.map(String):[],startMode:p.startMode||'',developmentMode:p.developmentMode||'',closingMode:p.closingMode||'',start:p.start||'',development:p.development||'',closing:p.closing||'',assessment:p.assessment||'',differentiation:p.differentiation||'',materials:p.materials||'',createdAt:p.createdAt||new Date().toISOString(),updatedAt:p.updatedAt||p.createdAt||new Date().toISOString()}));
   if(!Array.isArray(x.resources))x.resources=[];
   x.resources=x.resources.filter(r=>r&&r.title).map(r=>({id:r.id||'res_'+uid(),grade:Number(r.grade)||null,subject:r.subject||'',unitId:String(r.unitId||''),unitName:r.unitName||'',oaNumber:r.oaNumber==null||r.oaNumber===''?null:Number(r.oaNumber),oaText:r.oaText||'',type:r.type||'Otro',audience:r.audience||'all',title:r.title||'',url:r.url||'',notes:r.notes||'',fileName:r.fileName||'',filePath:r.filePath||'',fileType:r.fileType||'',fileSize:Number(r.fileSize)||0,createdAt:r.createdAt||new Date().toISOString(),updatedAt:r.updatedAt||r.createdAt||new Date().toISOString()}));
   if(!x.unitSequences||typeof x.unitSequences!=='object'||Array.isArray(x.unitSequences))x.unitSequences={};
@@ -3729,6 +4194,142 @@ const ATTITUDE_BANK_7_8={
     'Prevenir riesgos y fortalecer el autocuidado, valorando la vida, el cuerpo, el bienestar y la salud.'
   ]
 };
+
+/* ===== 0.0.80 · DUA 3.0 COMPLETO, ORGANIZADO EN MODAL ===== */
+const DUA_3_0_080={
+  engagement:{
+    title:'Compromiso',
+    guidelines:[
+      {code:'7',title:'Acoger intereses e identidades',items:[
+        ['7.1','Optimizar la elección y la autonomía'],
+        ['7.2','Optimizar la relevancia, el valor y la autenticidad'],
+        ['7.3','Fomentar la alegría y el juego'],
+        ['7.4','Abordar sesgos, amenazas y distracciones']
+      ]},
+      {code:'8',title:'Sostener el esfuerzo y la persistencia',items:[
+        ['8.1','Clarificar el significado y propósito de las metas'],
+        ['8.2','Optimizar el desafío y el apoyo'],
+        ['8.3','Fomentar colaboración, interdependencia y aprendizaje colectivo'],
+        ['8.4','Fomentar pertenencia y comunidad'],
+        ['8.5','Ofrecer retroalimentación orientada a la acción']
+      ]},
+      {code:'9',title:'Capacidad emocional',items:[
+        ['9.1','Reconocer expectativas, creencias y motivaciones'],
+        ['9.2','Desarrollar conciencia de sí mismo y de los demás'],
+        ['9.3','Promover reflexión individual y colectiva'],
+        ['9.4','Cultivar empatía y prácticas restaurativas']
+      ]}
+    ]
+  },
+  representation:{
+    title:'Representación',
+    guidelines:[
+      {code:'1',title:'Percepción',items:[
+        ['1.1','Apoyar oportunidades para personalizar la presentación de la información'],
+        ['1.2','Apoyar múltiples formas de percibir la información'],
+        ['1.3','Representar de forma auténtica una diversidad de perspectivas e identidades']
+      ]},
+      {code:'2',title:'Lenguaje y símbolos',items:[
+        ['2.1','Clarificar vocabulario, símbolos y estructuras del lenguaje'],
+        ['2.2','Apoyar la decodificación de textos, notación matemática y símbolos'],
+        ['2.3','Cultivar comprensión y respeto entre lenguas y dialectos'],
+        ['2.4','Abordar sesgos en el uso del lenguaje y los símbolos'],
+        ['2.5','Ilustrar a través de múltiples medios']
+      ]},
+      {code:'3',title:'Construcción del conocimiento',items:[
+        ['3.1','Conectar conocimientos previos con nuevos aprendizajes'],
+        ['3.2','Destacar y explorar patrones, características críticas, ideas principales y relaciones'],
+        ['3.3','Cultivar múltiples formas de conocer y construir significado'],
+        ['3.4','Maximizar la transferencia y la generalización']
+      ]}
+    ]
+  },
+  action:{
+    title:'Acción y expresión',
+    guidelines:[
+      {code:'4',title:'Interacción',items:[
+        ['4.1','Variar y valorar los métodos de respuesta, navegación y movimiento'],
+        ['4.2','Optimizar el acceso a materiales, tecnologías y herramientas accesibles y de apoyo']
+      ]},
+      {code:'5',title:'Expresión y comunicación',items:[
+        ['5.1','Usar múltiples medios para la comunicación'],
+        ['5.2','Usar múltiples herramientas para construir, componer y crear'],
+        ['5.3','Desarrollar fluidez mediante apoyos graduados para la práctica y el desempeño'],
+        ['5.4','Abordar sesgos relacionados con los modos de expresión y comunicación']
+      ]},
+      {code:'6',title:'Desarrollo de estrategias',items:[
+        ['6.1','Establecer metas significativas'],
+        ['6.2','Anticipar y planificar los desafíos'],
+        ['6.3','Organizar información y recursos'],
+        ['6.4','Fortalecer la capacidad de monitorear el progreso'],
+        ['6.5','Cuestionar prácticas excluyentes']
+      ]}
+    ]
+  }
+};
+
+function duaItems080(){
+  const rows=[];
+  Object.entries(DUA_3_0_080).forEach(([area,data])=>{
+    data.guidelines.forEach(g=>g.items.forEach(([code,label])=>rows.push({area,code,label,guideline:g.title})));
+  });
+  return rows;
+}
+function duaSuggested080(subject,oa,grade){
+  const k=planningSubjectKind(subject),t=normalizeText(oa?.text||''),g=Number(grade)||0;
+  const s=new Set(['7.2','8.1','8.2','8.5','1.2','3.1','3.2','4.1','5.1','5.3','6.4']);
+  if(g<=2)s.add('7.3');
+  if(k==='language'){s.add('2.1');s.add('2.2');s.add('2.5')}
+  if(k==='math'){s.add('2.1');s.add('2.2');s.add('2.5')}
+  if(k==='science'){s.add('2.1');s.add('3.3')}
+  if(k==='history'){s.add('1.3');s.add('3.3')}
+  if(k==='arts'||k==='music'){s.add('5.2');s.add('3.3')}
+  if(k==='pe'){s.add('4.2')}
+  if(/grupo|equipo|colabor|particip/.test(t)){s.add('8.3');s.add('8.4')}
+  return [...s];
+}
+function duaSelectedText080(draft,area){
+  const selected=new Set((draft?.duaConsiderations||[]).map(String));
+  return duaItems080().filter(x=>selected.has(x.code)&&(!area||x.area===area))
+    .map(x=>`${x.code} · ${x.label}`).join('; ');
+}
+
+
+const ATTITUDE_FALLBACK_081=[
+  'Participar de manera respetuosa y responsable, escuchando a otras personas y aportando al trabajo común.',
+  'Demostrar curiosidad e interés por aprender, formulando preguntas y explorando distintas maneras de resolver la tarea.',
+  'Trabajar con esfuerzo y perseverancia, utilizando los errores como oportunidades para aprender y mejorar.',
+  'Demostrar confianza progresiva en las propias capacidades y disposición a solicitar o aceptar apoyo cuando sea necesario.',
+  'Valorar la diversidad de ideas, experiencias, capacidades y formas de participación presentes en el curso.',
+  'Actuar con responsabilidad y cuidado hacia sí mismo, otras personas, los materiales y el entorno.'
+];
+function planningAttitudeInfo081(grade,subject){
+  const official=attitudeBankFor(grade,subject)||[];
+  return official.length?{bank:official,official:true}:{bank:ATTITUDE_FALLBACK_081,official:false};
+}
+function planningEnsureComplete081(course,subject,unit,oa,force=false){
+  const d=ensurePlanningDraft(course,subject,unit,oa,force);
+  const att=planningAttitudeInfo081(course.level,subject);
+  if(!d.attitudeObjective || d.attitudeCode==='custom'){
+    const idx=attitudeSuggestionIndex(subject,oa.text,att.bank);
+    const chosen=idx>=0?idx:0;
+    d.attitudeCode=String(chosen);
+    d.attitudeObjective=att.bank[chosen]||ATTITUDE_FALLBACK_081[0];
+  }
+  if(!Array.isArray(d.duaConsiderations)||!d.duaConsiderations.length){
+    d.duaConsiderations=duaSuggested080(subject,oa,course.level);
+  }
+  const dua=duaDefaults(subject,oa);
+  if(!String(d.duaEngagement||'').trim())d.duaEngagement=dua.engagement;
+  if(!String(d.duaRepresentation||'').trim())d.duaRepresentation=dua.representation;
+  if(!String(d.duaAction||'').trim())d.duaAction=dua.action;
+  d.duaEngagementEnabled=true;d.duaRepresentationEnabled=true;d.duaActionEnabled=true;
+  if(!String(d.bloomLevel||'').trim())d.bloomLevel=bloomForOA(oa.text);
+  if(!String(d.bloomVerbs||'').trim())d.bloomVerbs=(BLOOM_BANK[d.bloomLevel]||[]).join(', ');
+  planningEnsureModes082(d,subject,oa,course.level,force);
+  return d;
+}
+
 function normalizeText(s){return String(s||'').normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase()}
 function bloomForOA(text){
   const t=normalizeText(text),ordered=['Crear','Evaluar','Analizar','Aplicar','Comprender','Recordar'];
@@ -3772,28 +4373,520 @@ function planningSubjectKind(subject){
   if(s.includes('orientación'))return 'orientation';
   return 'general';
 }
-function planningBaseTemplate(subject,oa){
+function planningBaseTemplate(subject,oa,grade){
   const kind=planningSubjectKind(subject),code=`OA ${String(oa.number).padStart(2,'0')}`;
-  const base={objective:`Avanzar en el aprendizaje asociado al ${code}: ${oa.text}`,start:'Comunicar el propósito de la clase y activar conocimientos previos mediante una pregunta, ejemplo o desafío breve relacionado con el OA.',development:'Modelar o recordar la idea central del aprendizaje. Continuar con práctica guiada y luego dar una oportunidad de aplicación más autónoma mientras se observa el desempeño de los estudiantes.',closing:'Realizar un cierre breve en el que los estudiantes expliquen, muestren o apliquen lo aprendido y conecten la actividad con el propósito de la clase.',assessment:'Recoger una evidencia breve e individual vinculada al OA para identificar quiénes avanzaron, quiénes están en proceso y quiénes necesitan apoyo adicional.',materials:'Pizarra, material de apoyo y recursos directamente relacionados con la actividad seleccionada.'};
-  if(kind==='language')Object.assign(base,{start:'Presentar una palabra, oración, texto breve o situación comunicativa relacionada con el OA y activar lo que los estudiantes ya saben.',development:'Modelar la habilidad de lenguaje involucrada. Realizar una práctica guiada con ejemplos y luego una tarea breve de lectura, escritura o comunicación oral en la que los estudiantes apliquen el aprendizaje.',closing:'Compartir una respuesta, lectura o producción breve y pedir a los estudiantes que expliquen qué hicieron para resolver la tarea.',materials:'Texto breve, tarjetas o palabras, pizarra y material de lectura/escritura según el OA.'});
-  if(kind==='math')Object.assign(base,{start:'Plantear una situación breve o desafío matemático que conecte el OA con conocimientos previos y permita anticipar estrategias.',development:'Representar el aprendizaje con material concreto, dibujos, símbolos o ejemplos según corresponda. Resolver una situación de manera guiada y luego entregar práctica gradual para aplicar la estrategia.',closing:'Resolver un ejercicio o problema breve de salida y comentar las estrategias utilizadas, no solo la respuesta final.',materials:'Material concreto o representaciones visuales, pizarra, tarjetas numéricas y ejercicios breves según el OA.'});
-  if(kind==='science')Object.assign(base,{start:'Observar un fenómeno, objeto, imagen o situación cotidiana relacionada con el OA y formular una pregunta de exploración.',development:'Guiar la observación, comparación, clasificación o pequeña indagación necesaria para el OA. Registrar hallazgos y conversar sobre la evidencia obtenida.',closing:'Responder la pregunta inicial usando lo observado durante la clase y registrar una idea clave o conclusión breve.',materials:'Objetos o imágenes para observar, material de registro y recursos de exploración seguros según el OA.'});
-  if(kind==='history')Object.assign(base,{start:'Presentar una imagen, fuente, mapa, línea de tiempo o situación cercana que permita activar ideas previas sobre el OA.',development:'Observar y analizar información relevante, guiar comparaciones o secuencias y dar una tarea en la que los estudiantes utilicen vocabulario y conceptos del OA.',closing:'Construir una conclusión breve o responder una pregunta de síntesis usando información trabajada en la clase.',materials:'Imágenes, mapas, fuentes visuales o textos breves y material de registro según el OA.'});
-  if(kind==='arts')Object.assign(base,{start:'Observar referentes visuales y conversar brevemente sobre elementos que se relacionan con el OA.',development:'Explorar materiales o procedimientos, modelar una posibilidad sin imponer un único resultado y dar tiempo para crear, revisar y mejorar una producción propia.',closing:'Compartir algunas producciones y comentar decisiones, descubrimientos o preferencias usando vocabulario visual apropiado.',materials:'Materiales de creación y referentes visuales pertinentes al OA.'});
-  if(kind==='music')Object.assign(base,{start:'Escuchar un fragmento, sonido o patrón breve vinculado al OA e invitar a describir lo que se percibe.',development:'Explorar el elemento musical mediante escucha, interpretación, movimiento o creación. Alternar modelado, práctica grupal y una oportunidad de ejecución más autónoma.',closing:'Realizar una interpretación, escucha o reflexión breve que permita reconocer el aprendizaje trabajado.',materials:'Audio, instrumentos disponibles, voz, cuerpo y apoyos visuales según el OA.'});
-  if(kind==='pe')Object.assign(base,{start:'Realizar una activación física breve y explicar el desafío motriz o hábito de seguridad asociado al OA.',development:'Modelar la acción motriz, practicarla en tareas progresivas y luego aplicarla en un juego, circuito o situación con reglas simples, observando seguridad y participación.',closing:'Bajar progresivamente la intensidad, recuperar la respiración y comentar qué ayudó a realizar mejor la tarea motriz.',materials:'Espacio seguro e implementos deportivos necesarios para el OA.'});
-  if(kind==='technology')Object.assign(base,{start:'Presentar una necesidad, objeto o desafío cotidiano conectado con el OA y conversar sobre posibles soluciones.',development:'Guiar la exploración de herramientas, materiales o software y desarrollar una tarea de diseño, creación o uso tecnológico con criterios claros.',closing:'Mostrar el producto o solución y revisar brevemente si responde al desafío planteado.',materials:'Herramientas, materiales o dispositivo/software requerido por la actividad y el OA.'});
-  if(kind==='english')Object.assign(base,{start:'Activar vocabulario y expresiones conocidas mediante imágenes, gestos, audio o preguntas breves relacionadas con el OA.',development:'Modelar el lenguaje objetivo y ofrecer práctica oral/visual guiada antes de una tarea breve de comprensión o producción con apoyo decreciente.',closing:'Realizar una salida breve en la que cada estudiante comprenda o produzca una expresión vinculada al OA.',materials:'Imágenes, audio, tarjetas de vocabulario y apoyos visuales según el OA.'});
-  if(kind==='orientation')Object.assign(base,{start:'Presentar una situación cotidiana o pregunta de reflexión vinculada al OA en un ambiente de respeto y participación voluntaria.',development:'Guiar conversación, análisis de situaciones, juego de roles o actividad personal/grupal que permita aplicar el aprendizaje sin exponer innecesariamente experiencias privadas.',closing:'Cerrar con una idea práctica, acuerdo o estrategia que los estudiantes puedan usar en la vida escolar cotidiana.',materials:'Situaciones breves, tarjetas o apoyos visuales; evitar solicitar información personal sensible.'});
+  const raw=String(oa.text||''),o=raw.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,''),g=Number(grade)||0;
+  const young=g>0&&g<=2;
+  const base={
+    objective:`Avanzar en el aprendizaje asociado al ${code}: ${oa.text}`,
+    start:'Comunicar el propósito de la clase y activar conocimientos previos mediante una pregunta, ejemplo o desafío breve relacionado con el OA.',
+    development:'Modelar o recordar la idea central del aprendizaje. Continuar con práctica guiada y luego dar una oportunidad de aplicación más autónoma mientras se observa el desempeño de los estudiantes.',
+    closing:'Realizar un cierre breve en el que los estudiantes expliquen, muestren o apliquen lo aprendido y conecten la actividad con el propósito de la clase.',
+    assessment:'Recoger una evidencia breve e individual vinculada al OA para identificar quiénes avanzaron, quiénes están en proceso y quiénes necesitan apoyo adicional.',
+    materials:'Pizarra, material de apoyo y recursos directamente relacionados con la actividad seleccionada.'
+  };
+
+  /* ---------- CIENCIAS ---------- */
+  if(kind==='science'){
+    if(o.includes('seres vivos')&&(o.includes('no viv')||o.includes('cosas no'))){
+      Object.assign(base,{
+        objective:'Distinguir seres vivos de elementos no vivos utilizando características observables y necesidades vitales como criterio.',
+        start:young
+          ?'Mostrar cuatro ejemplos grandes: un perro, una planta, una piedra y una silla. Preguntar: “¿Cuáles tienen vida? ¿Cómo podríamos comprobarlo?” Permitir responder oralmente, señalando o levantando una tarjeta.'
+          :'Presentar ejemplos contrastantes de seres vivos y elementos no vivos. Pedir una primera clasificación y registrar en la pizarra los criterios que el curso utiliza espontáneamente.',
+        development:young
+          ?'Modelar con dos ejemplos: “El perro crece y necesita agua/alimento; la piedra no”. Luego entregar o mostrar tarjetas con árbol, mariposa, flor, vaso, pelota y roca. En parejas, clasificar en VIVE / NO VIVE. Revisar una tarjeta a la vez y pedir que justifiquen usando una característica: crece, responde a estímulos, se reproduce o necesita agua, alimento y aire. Cerrar la práctica con un caso menos evidente, por ejemplo una semilla.'
+          :'Construir con el curso una lista de características de los seres vivos. Clasificar ejemplos variados y discutir casos que pueden confundir por movimiento o apariencia. Pedir que cada grupo justifique al menos dos decisiones usando evidencia y no solo intuición.',
+        closing:'Mostrar un caso nuevo y pedir una respuesta individual: “¿Es un ser vivo o no? Escribe, dibuja o explica una razón”. Recuperar dos respuestas y volver al criterio científico.',
+        assessment:'Evidencia individual: clasifica correctamente un caso nuevo y justifica su decisión mencionando al menos una característica propia de los seres vivos.',
+        materials:'Tarjetas o imágenes de perro, árbol, mariposa, flor, semilla, piedra, vaso, silla y pelota; dos carteles “VIVE / NO VIVE”; pizarra.'
+      });
+    }else if(o.includes('sentidos')){
+      Object.assign(base,{
+        objective:'Relacionar los sentidos con sus órganos y reconocer cómo permiten obtener información del entorno, incorporando acciones de cuidado.',
+        start:young
+          ?'Presentar una “bolsa misteriosa” o situaciones breves: escuchar una campana, mirar una imagen, tocar una textura. Preguntar: “¿Qué parte de nuestro cuerpo nos ayudó a descubrirlo?”'
+          :'Plantear situaciones cotidianas donde intervienen distintos sentidos y pedir identificar qué información entrega cada uno.',
+        development:young
+          ?'Trabajar estaciones o tarjetas: OÍR, VER, TOCAR, OLER y SABOREAR. En cada caso, emparejar sentido + órgano + situación. Después presentar acciones de cuidado (volumen muy alto, manos limpias, no introducir objetos en los oídos, proteger los ojos) y decidir si ayudan o dañan.'
+          :'Relacionar sentido, órgano, información obtenida y acción de cuidado mediante situaciones problemáticas. Pedir que los estudiantes expliquen por qué una acción protege o pone en riesgo el órgano.',
+        closing:'Realizar un desafío oral de tres casos: nombrar el sentido, su órgano y una acción de cuidado. Finalizar con una frase de síntesis construida por el curso.',
+        assessment:'Ticket breve: identifica correctamente el sentido y órgano de una situación nueva y propone una acción pertinente de cuidado.',
+        materials:'Tarjetas o imágenes de situaciones sensoriales, objetos seguros con distintas texturas/sonidos, tarjetas de acciones de cuidado y pizarra.'
+      });
+    }else if(o.includes('animales')){
+      Object.assign(base,{
+        objective:'Observar, describir y clasificar animales utilizando características pertinentes al OA.',
+        start:'Mostrar tres animales contrastantes y preguntar: “¿En qué se parecen? ¿En qué son diferentes?” Registrar únicamente características observables.',
+        development:young
+          ?'Entregar imágenes de animales y clasificar primero con un criterio modelado (por ejemplo cobertura corporal, forma de desplazamiento o hábitat, según el OA). Luego cambiar el criterio y volver a agrupar. Pedir que expliquen oralmente una decisión.'
+          :'Analizar distintas características de los animales y construir categorías utilizando un criterio común. Comparar clasificaciones entre grupos y revisar si el criterio se aplicó de manera consistente.',
+        closing:'Presentar un animal nuevo y pedir que cada estudiante indique en qué grupo lo ubicaría y por qué.',
+        assessment:'Evidencia individual: describe una característica, clasifica un animal nuevo usando el criterio trabajado y justifica brevemente.',
+        materials:'Imágenes variadas de animales, tarjetas con criterios de clasificación, papelógrafo o pizarra.'
+      });
+    }else if(o.includes('plantas')){
+      Object.assign(base,{
+        objective:'Reconocer y describir estructuras o características de las plantas mencionadas en el OA mediante observación directa o imágenes.',
+        start:'Observar una planta real o una imagen grande. Preguntar: “¿Qué partes reconocemos? ¿Qué observamos realmente y qué estamos suponiendo?”',
+        development:young
+          ?'Explorar una planta real o imágenes. Señalar y nombrar las estructuras trabajadas en el OA. Luego armar una planta con tarjetas o piezas y ubicar cada parte. Comparar dos plantas para observar semejanzas y diferencias.'
+          :'Realizar observación guiada de distintas plantas, registrar estructuras y características, y comparar ejemplos evitando asumir que todas las plantas son iguales.',
+        closing:'Usar una imagen nueva para identificar o ubicar las estructuras estudiadas y explicar una observación.',
+        assessment:'Evidencia individual: reconoce y ubica las estructuras o características solicitadas en un ejemplo que no fue usado durante el modelado.',
+        materials:'Plantas reales seguras o fotografías, tarjetas de estructuras, lupa opcional, hoja o pizarra de registro.'
+      });
+    }else if(o.includes('material')){
+      Object.assign(base,{
+        objective:'Reconocer materiales y describir sus propiedades para clasificarlos o decidir cuál es más adecuado en una situación.',
+        start:'Mostrar dos objetos fabricados con materiales diferentes y preguntar: “¿De qué están hechos? ¿Qué podemos observar o probar sin dañarlos?”',
+        development:young
+          ?'Explorar objetos seguros de plástico, metal, madera, papel, tela u otros presentes en el OA. Describir con palabras simples propiedades como rígido/flexible, áspero/suave o transparente/opaco. Clasificar por un criterio y explicar una elección.'
+          :'Examinar muestras u objetos, registrar propiedades observables y comparar materiales. Luego resolver una situación de elección: seleccionar un material para un uso concreto y justificarlo por sus propiedades.',
+        closing:'Presentar un objeto o necesidad nueva y preguntar qué material elegirían y qué propiedad sustenta la decisión.',
+        assessment:'Evidencia individual: identifica un material, describe al menos una propiedad y utiliza esa propiedad para clasificar o justificar una elección.',
+        materials:'Muestras u objetos seguros de distintos materiales, tarjetas de propiedades, tabla simple de observación.'
+      });
+    }else if(/salud|saludable|higiene|actividad fisica|alimentacion/.test(o)){
+      Object.assign(base,{
+        objective:'Reconocer hábitos vinculados al cuidado del cuerpo y justificar decisiones saludables en situaciones cotidianas.',
+        start:'Presentar dos escenas cotidianas contrastantes y preguntar qué decisión ayuda más a cuidar el cuerpo y por qué.',
+        development:young
+          ?'Clasificar tarjetas de acciones en “me ayuda a cuidarme / debo revisarlo”. Conversar sobre alimentación, higiene, descanso o movimiento según el OA. Después resolver pequeñas situaciones: “¿Qué harías si...?”'
+          :'Analizar hábitos cotidianos, distinguir decisiones saludables y poco saludables y justificar los efectos esperados. Elaborar recomendaciones realistas para una situación concreta.',
+        closing:'Cada estudiante elige una acción de cuidado y explica cuándo podría realizarla.',
+        assessment:'Evidencia individual: reconoce una conducta de cuidado y justifica por qué contribuye a la salud según el contenido del OA.',
+        materials:'Tarjetas de hábitos y situaciones, pizarra, imágenes o casos breves.'
+      });
+    }else{
+      Object.assign(base,{
+        start:'Observar un fenómeno, objeto, imagen o situación cotidiana relacionada con el OA y formular una pregunta de exploración.',
+        development:'Guiar la observación, comparación, clasificación o pequeña indagación necesaria para el OA. Registrar hallazgos y conversar sobre la evidencia obtenida.',
+        closing:'Responder la pregunta inicial usando lo observado durante la clase y registrar una idea clave o conclusión breve.',
+        materials:'Objetos o imágenes para observar, material de registro y recursos de exploración seguros según el OA.'
+      });
+    }
+  }
+
+  /* ---------- MATEMÁTICA ---------- */
+  if(kind==='math'){
+    if(/contar|numeros|representar|comparar y ordenar/.test(o) && !/fraccion|multiplic|division/.test(o)){
+      Object.assign(base,{
+        objective:'Representar, relacionar y comparar números o cantidades de acuerdo con la exigencia específica del OA.',
+        start:young
+          ?'Mostrar una colección breve de objetos y preguntar: “¿Cuántos hay? ¿Cómo podríamos demostrarlo de otra forma?”'
+          :'Plantear una situación breve con cantidades y pedir distintas formas de representarlas o compararlas.',
+        development:young
+          ?'Construir cantidades con fichas o policubos, asociarlas a tarjetas numéricas y representarlas con dibujos. Luego comparar dos colecciones usando lenguaje como más, menos o igual cuando corresponda. Cambiar la disposición de los objetos para comprobar que la cantidad se mantiene.'
+          :'Representar números o cantidades de distintas formas, comparar estrategias y resolver situaciones graduadas que exijan justificar la relación entre numeral, cantidad y representación.',
+        closing:'Mostrar una representación nueva y pedir una respuesta individual: número, cantidad o comparación según el OA, acompañada de una breve explicación.',
+        assessment:'Evidencia individual: representa o interpreta correctamente una cantidad/número y explica cómo comprobó su respuesta.',
+        materials:'Policubos, fichas o tapas, tarjetas numéricas, recta numérica o material visual según el OA.'
+      });
+    }else if(/adicion|sustraccion|sumar|restar|componer|descomponer/.test(o)){
+      Object.assign(base,{
+        objective:'Resolver y representar situaciones de adición, sustracción, composición o descomposición utilizando estrategias acordes al OA.',
+        start:young
+          ?'Contar una historia breve con objetos: “Había 6, llegaron 2” o “Había 8, se fueron 3”. Preguntar qué cambió y permitir representarlo con material.'
+          :'Plantear un problema breve y pedir anticipar qué ocurre con la cantidad antes de elegir una operación.',
+        development:young
+          ?'Modelar una situación con policubos o fichas, luego representarla con dibujo y finalmente con números. Resolver dos ejemplos guiados y uno en pareja. Si el OA es composición/descomposición, buscar distintas maneras de formar el mismo número.'
+          :'Resolver situaciones con representaciones concretas, pictóricas y simbólicas. Comparar al menos dos estrategias y pedir que los estudiantes expliquen qué representa cada número u operación.',
+        closing:'Problema de salida de una sola situación. Pedir solución y una representación que permita comprobarla.',
+        assessment:'Evidencia individual: representa la situación, obtiene un resultado coherente y explica qué hizo con las cantidades.',
+        materials:'Policubos, fichas, tarjetas numéricas, dibujos o diagramas simples, pizarra.'
+      });
+    }else if(/multiplic|division|repart|grupos iguales/.test(o)){
+      Object.assign(base,{
+        objective:'Representar y resolver situaciones de grupos iguales o reparto, relacionando la representación con la operación correspondiente.',
+        start:'Presentar objetos organizados en grupos iguales o una situación de reparto y preguntar qué observan y cómo podrían contar eficientemente.',
+        development:'Construir grupos o repartos con material concreto, registrar mediante dibujo y relacionar con la expresión matemática correspondiente. Resolver una situación guiada y otra nueva, explicando qué representa cada cantidad.',
+        closing:'Resolver un caso breve nuevo y explicar si corresponde agrupar o repartir.',
+        assessment:'Evidencia individual: construye o interpreta una representación, resuelve la situación y justifica el procedimiento.',
+        materials:'Fichas, tapas, bandejas o círculos para agrupar, tarjetas de problemas y pizarra.'
+      });
+    }else if(o.includes('fraccion')){
+      Object.assign(base,{
+        objective:'Comprender y representar fracciones mediante particiones en partes iguales y relaciones entre representación y símbolo.',
+        start:'Mostrar dos figuras divididas de manera distinta y preguntar cuál representa realmente partes iguales y por qué.',
+        development:'Construir particiones con papel, figuras o material manipulativo. Nombrar la fracción representada, comparar ejemplos correctos e incorrectos y resolver situaciones nuevas.',
+        closing:'Mostrar una representación nueva y pedir identificar o construir la fracción correspondiente justificando el número de partes.',
+        assessment:'Evidencia individual: reconoce partes iguales y relaciona correctamente una representación con la fracción solicitada.',
+        materials:'Círculos o tiras de fracciones, papeles para doblar, figuras recortables, tarjetas de fracciones.'
+      });
+    }else if(/geometr|figuras|cuerpos|angulo|simetr/.test(o)){
+      Object.assign(base,{
+        objective:'Reconocer, describir o construir figuras/cuerpos utilizando propiedades geométricas pertinentes al OA.',
+        start:'Mostrar figuras o cuerpos semejantes y preguntar qué propiedades permiten distinguirlos sin usar solo el nombre o el color.',
+        development:young
+          ?'Manipular figuras o cuerpos, observar lados, vértices, caras u otras propiedades trabajadas. Clasificar por un criterio y construir o buscar ejemplos en el entorno.'
+          :'Analizar propiedades, clasificar ejemplos y contraejemplos y realizar una construcción o representación bajo condiciones explícitas.',
+        closing:'Presentar una figura/cuerpo nuevo y pedir identificar una propiedad que permita clasificarlo correctamente.',
+        assessment:'Evidencia individual: reconoce una propiedad relevante y la utiliza para clasificar, describir o construir según el OA.',
+        materials:'Figuras geométricas, cuerpos, palitos, geoplano o material de construcción según el OA.'
+      });
+    }else{
+      Object.assign(base,{
+        start:'Plantear una situación breve o desafío matemático que conecte el OA con conocimientos previos y permita anticipar estrategias.',
+        development:'Representar el aprendizaje con material concreto, dibujos, símbolos o ejemplos según corresponda. Resolver una situación de manera guiada y luego entregar práctica gradual para aplicar la estrategia.',
+        closing:'Resolver un ejercicio o problema breve de salida y comentar las estrategias utilizadas, no solo la respuesta final.',
+        materials:'Material concreto o representaciones visuales, pizarra, tarjetas numéricas y ejercicios breves según el OA.'
+      });
+    }
+  }
+
+  /* ---------- LENGUAJE ---------- */
+  if(kind==='language'){
+    if(/conciencia fonologica|sonidos|silabas|fonema|segment/.test(o)){
+      Object.assign(base,{
+        objective:'Reconocer, segmentar o combinar sonidos/sílabas en palabras, de acuerdo con la habilidad especificada en el OA.',
+        start:young
+          ?'Realizar un juego de escucha con 3 o 4 palabras. Pedir que descubran qué sonido o sílaba se repite, sin exigir escritura.'
+          :'Presentar palabras conocidas y pedir identificar el patrón sonoro o segmentación vinculada al OA.',
+        development:young
+          ?'Modelar con fichas: una ficha por sílaba o sonido según la tarea. Practicar oralmente con palabras conocidas, luego jugar a clasificar imágenes por sonido inicial/final o cantidad de sílabas. Incluir palabras nuevas al final para comprobar transferencia.'
+          :'Modelar la habilidad fonológica, realizar práctica guiada y luego resolver una serie breve de palabras nuevas explicando la estrategia utilizada.',
+        closing:'Desafío oral individual con una palabra nueva. El estudiante responde, señala o mueve fichas para mostrar lo que escucha.',
+        assessment:'Evidencia individual: resuelve correctamente una palabra no modelada aplicando la habilidad fonológica del OA.',
+        materials:'Tarjetas con imágenes/palabras, fichas o tapitas, letras móviles si corresponde y pizarra.'
+      });
+    }else if(/fluidez|precision|decod|leer palabras|leer oraciones/.test(o)){
+      Object.assign(base,{
+        objective:'Leer palabras, oraciones o textos breves con la precisión y continuidad esperada por el OA, utilizando relectura para mejorar.',
+        start:'Modelar una lectura breve y comparar dos formas de leer la misma frase: una que dificulta comprender y otra más fluida. Preguntar qué cambia.',
+        development:young
+          ?'Leer primero en eco con el docente, luego en parejas con una cantidad breve de palabras u oraciones. Marcar una meta concreta: precisión, continuidad o respeto de unidades de sentido. Releer una segunda vez buscando mejorar un aspecto.'
+          :'Realizar lectura modelada, práctica guiada y relectura breve. Dar retroalimentación centrada en un criterio observable y finalizar con una lectura individual corta.',
+        closing:'Cada estudiante relee una línea o fragmento breve y comenta qué intentó mejorar.',
+        assessment:'Evidencia individual: lectura breve registrada con foco en precisión, continuidad y mejora entre intentos según el OA.',
+        materials:'Texto o listado breve apropiado al nivel, tarjetas de palabras, señaladores y pauta simple de observación.'
+      });
+    }else if(/comprender|comprension|informacion explicita|inferir|texto/.test(o)){
+      Object.assign(base,{
+        objective:'Comprender el texto trabajado identificando información y utilizando pistas para responder de acuerdo con el OA.',
+        start:young
+          ?'Mostrar portada, imagen o título y preguntar qué creen que podría ocurrir. Registrar dos predicciones sin decidir todavía si son correctas.'
+          :'Activar conocimientos previos a partir del título, imagen o una pregunta clave que ayude a anticipar el contenido.',
+        development:young
+          ?'Leer o escuchar un texto breve por partes. Detenerse para preguntar “¿Dónde lo dice?” o “¿Qué pista nos ayuda?”. Usar imágenes y respuestas orales. Al final, ordenar 3 escenas o responder preguntas breves según el OA.'
+          :'Leer el texto con propósito claro, localizar evidencia y responder preguntas que progresen desde información explícita hacia relaciones o inferencias según el OA. Pedir citar o señalar la pista usada.',
+        closing:'Responder una pregunta de síntesis y justificarla señalando una palabra, imagen, hecho o fragmento del texto.',
+        assessment:'Evidencia individual: responde una pregunta nueva de comprensión y utiliza evidencia del texto para sostener su respuesta.',
+        materials:'Texto breve adecuado al curso, imágenes o tarjetas de secuencia, destacadores o señaladores.'
+      });
+    }else if(o.includes('escribir')){
+      Object.assign(base,{
+        objective:'Producir un texto o mensaje acorde con el propósito indicado en el OA, organizando ideas y realizando una mejora después de revisar.',
+        start:'Presentar un ejemplo breve del tipo de texto o situación comunicativa y conversar sobre para qué se escribe y quién lo leerá.',
+        development:young
+          ?'Planificar oralmente o con dibujos antes de escribir. Modelar una oración o parte del texto, dejar un apoyo visual de palabras útiles y acompañar la escritura. Realizar una revisión muy breve centrada en un solo criterio.'
+          :'Planificar contenido y destinatario, modelar una decisión de escritura, producir un borrador y revisar con 2 o 3 criterios vinculados al OA antes de mejorar la versión.',
+        closing:'Compartir voluntariamente algunos textos y señalar una decisión que ayudó a comunicar mejor la idea.',
+        assessment:'Evidencia individual: producción escrita que responde al propósito y muestra al menos una mejora realizada tras la revisión.',
+        materials:'Modelo breve, organizador visual, banco de palabras o conectores según nivel, hoja o cuaderno.'
+      });
+    }else{
+      Object.assign(base,{
+        start:'Presentar una palabra, oración, texto breve o situación comunicativa relacionada con el OA y activar lo que los estudiantes ya saben.',
+        development:'Modelar la habilidad de lenguaje involucrada. Realizar una práctica guiada con ejemplos y luego una tarea breve de lectura, escritura o comunicación oral en la que los estudiantes apliquen el aprendizaje.',
+        closing:'Compartir una respuesta, lectura o producción breve y pedir a los estudiantes que expliquen qué hicieron para resolver la tarea.',
+        materials:'Texto breve, tarjetas o palabras, pizarra y material de lectura/escritura según el OA.'
+      });
+    }
+  }
+
+  /* ---------- HISTORIA / GEOGRAFÍA ---------- */
+  if(kind==='history'){
+    if(/mapa|ubic|localiz|plano|puntos cardinales|coordenadas/.test(o)){
+      Object.assign(base,{
+        objective:'Ubicar e interpretar elementos espaciales utilizando referencias, símbolos o vocabulario cartográfico acorde al OA.',
+        start:young
+          ?'Usar un plano sencillo de la sala o una imagen de un lugar conocido. Preguntar: “¿Cómo le explicarías a alguien dónde está este objeto sin apuntarlo?”'
+          :'Presentar un mapa o plano con una ubicación problema y pedir describir qué referencias permiten orientarse.',
+        development:young
+          ?'Practicar primero con posiciones cercanas y luego con un plano sencillo. Seguir instrucciones, ubicar símbolos y dar una indicación a un compañero usando el vocabulario espacial trabajado.'
+          :'Interpretar símbolos y referencias, localizar puntos y resolver recorridos o problemas de ubicación justificando qué referencia se utilizó.',
+        closing:'Dar una ubicación nueva para que cada estudiante la marque o describa utilizando al menos una referencia correcta.',
+        assessment:'Evidencia individual: localiza correctamente un elemento y explica qué referencia o símbolo utilizó.',
+        materials:'Plano simple, mapa o cuadrícula según el OA, símbolos recortables, lápices de colores.'
+      });
+    }else if(/pueblos originarios|mapuche|aymara|rapa nui|diaguita|atacameno|kawesqar|selknam/.test(o)){
+      Object.assign(base,{
+        objective:'Reconocer y describir características de pueblos originarios vinculándolas con territorio, cultura o formas de vida según el OA.',
+        start:'Observar una fotografía, objeto, vivienda, vestimenta o paisaje asociado a un pueblo. Preguntar qué información permite observar y qué no podemos asegurar solo con la imagen.',
+        development:young
+          ?'Trabajar con estaciones o tarjetas de imágenes. Asociar territorio, vivienda, actividad o elemento cultural con apoyo visual. Comparar dos pueblos usando un solo criterio y evitar presentar sus culturas como si pertenecieran únicamente al pasado.'
+          :'Analizar fuentes breves e imágenes, extraer información y comparar pueblos utilizando criterios explícitos. Relacionar características con el territorio y reconocer continuidad cultural cuando corresponda.',
+        closing:'Completar oralmente o por escrito: “Aprendí que… / Una diferencia o semejanza es…”.',
+        assessment:'Evidencia individual: describe una característica respaldada por la fuente y establece una relación o comparación pertinente.',
+        materials:'Imágenes y fuentes breves, mapa de Chile, tarjetas de comparación y material visual respetuoso.'
+      });
+    }else if(/derechos|deberes|convivencia|ciudadan|participacion/.test(o)){
+      Object.assign(base,{
+        objective:'Analizar situaciones de convivencia o participación y tomar decisiones fundamentadas en derechos, deberes, normas o responsabilidades según el OA.',
+        start:'Presentar una situación breve de la vida escolar con dos posibles decisiones. Preguntar cuál ayudaría más a una convivencia respetuosa y por qué.',
+        development:young
+          ?'Leer o dramatizar situaciones simples. Identificar qué ocurre, cómo se sienten las personas y qué alternativa respeta mejor a todos. Construir una solución entre el curso.'
+          :'Analizar casos, identificar principios involucrados, anticipar consecuencias y comparar alternativas antes de justificar una decisión.',
+        closing:'Resolver un caso nuevo mediante votación razonada o respuesta individual y explicar una razón.',
+        assessment:'Evidencia individual: propone una acción pertinente y la justifica utilizando el derecho, deber, norma o principio trabajado.',
+        materials:'Tarjetas de situaciones, láminas o casos breves, pizarra.'
+      });
+    }else{
+      Object.assign(base,{
+        start:'Presentar una imagen, fuente, mapa, línea de tiempo o situación cercana que permita activar ideas previas sobre el OA.',
+        development:'Observar y analizar información relevante, guiar comparaciones o secuencias y dar una tarea en la que los estudiantes utilicen vocabulario y conceptos del OA.',
+        closing:'Construir una conclusión breve o responder una pregunta de síntesis usando información trabajada en la clase.',
+        materials:'Imágenes, mapas, fuentes visuales o textos breves y material de registro según el OA.'
+      });
+    }
+  }
+
+  /* ---------- OTRAS ASIGNATURAS ---------- */
+  if(kind==='arts')Object.assign(base,{
+    start:'Observar referentes visuales y conversar brevemente sobre elementos que se relacionan con el OA.',
+    development:'Explorar materiales o procedimientos, modelar una posibilidad sin imponer un único resultado y dar tiempo para crear, revisar y mejorar una producción propia.',
+    closing:'Compartir algunas producciones y comentar decisiones, descubrimientos o preferencias usando vocabulario visual apropiado.',
+    materials:'Materiales de creación y referentes visuales pertinentes al OA.'
+  });
+  if(kind==='music')Object.assign(base,{
+    start:'Escuchar un fragmento, sonido o patrón breve vinculado al OA e invitar a describir lo que se percibe.',
+    development:'Explorar el elemento musical mediante escucha, interpretación, movimiento o creación. Alternar modelado, práctica grupal y una oportunidad de ejecución más autónoma.',
+    closing:'Realizar una interpretación, escucha o reflexión breve que permita reconocer el aprendizaje trabajado.',
+    materials:'Audio, instrumentos disponibles, voz, cuerpo y apoyos visuales según el OA.'
+  });
+  if(kind==='pe')Object.assign(base,{
+    start:'Realizar una activación física breve y explicar el desafío motriz o hábito de seguridad asociado al OA.',
+    development:'Modelar la acción motriz, practicarla en tareas progresivas y luego aplicarla en un juego, circuito o situación con reglas simples, observando seguridad y participación.',
+    closing:'Bajar progresivamente la intensidad, recuperar la respiración y comentar qué ayudó a realizar mejor la tarea motriz.',
+    materials:'Espacio seguro e implementos deportivos necesarios para el OA.'
+  });
+  if(kind==='technology')Object.assign(base,{
+    start:'Presentar una necesidad, objeto o desafío cotidiano conectado con el OA y conversar sobre posibles soluciones.',
+    development:'Guiar la exploración de herramientas, materiales o software y desarrollar una tarea de diseño, creación o uso tecnológico con criterios claros.',
+    closing:'Mostrar el producto o solución y revisar brevemente si responde al desafío planteado.',
+    materials:'Herramientas, materiales o dispositivo/software requerido por la actividad y el OA.'
+  });
+  if(kind==='english')Object.assign(base,{
+    start:'Activar vocabulario y expresiones conocidas mediante imágenes, gestos, audio o preguntas breves relacionadas con el OA.',
+    development:'Modelar el lenguaje objetivo y ofrecer práctica oral/visual guiada antes de una tarea breve de comprensión o producción con apoyo decreciente.',
+    closing:'Realizar una salida breve en la que cada estudiante comprenda o produzca una expresión vinculada al OA.',
+    materials:'Imágenes, audio, tarjetas de vocabulario y apoyos visuales según el OA.'
+  });
+  if(kind==='orientation')Object.assign(base,{
+    start:'Presentar una situación cotidiana o pregunta de reflexión vinculada al OA en un ambiente de respeto y participación voluntaria.',
+    development:'Guiar conversación, análisis de situaciones, juego de roles o actividad personal/grupal que permita aplicar el aprendizaje sin exponer innecesariamente experiencias privadas.',
+    closing:'Cerrar con una idea práctica, acuerdo o estrategia que los estudiantes puedan usar en la vida escolar cotidiana.',
+    materials:'Situaciones breves, tarjetas o apoyos visuales; evitar solicitar información personal sensible.'
+  });
+
   return base;
 }
+
+/* ===== 0.0.82 · ELECCIÓN SIMPLE DE INICIO / DESARROLLO / CIERRE ===== */
+const PLANNING_PHASE_LABELS_082={
+  start:{
+    activate:{icon:'🧠',title:'Activar saberes previos',desc:'Preguntas o ejemplos para conectar con lo que ya saben.'},
+    challenge:{icon:'❓',title:'Desafío inicial',desc:'Una situación o pregunta que despierte curiosidad.'},
+    explore:{icon:'🔎',title:'Exploración visual',desc:'Observar imágenes, objetos o ejemplos antes de explicar.'},
+    play:{icon:'🎲',title:'Juego breve',desc:'Comenzar de forma lúdica y participativa.'}
+  },
+  development:{
+    model:{icon:'👩‍🏫',title:'Modelado + práctica',desc:'El docente muestra, practican juntos y luego aplican.'},
+    hands:{icon:'👐',title:'Manipulativo / práctico',desc:'Aprender haciendo, observando o manipulando.'},
+    stations:{icon:'🚏',title:'Estaciones',desc:'Pequeñas tareas o desafíos distribuidos por estaciones.'},
+    collaborative:{icon:'🤝',title:'Trabajo colaborativo',desc:'Resolver, comparar o crear con pares o grupos.'},
+    challenge:{icon:'🚀',title:'Desafío de aplicación',desc:'Aplicar el aprendizaje en un problema o caso nuevo.'}
+  },
+  closing:{
+    ticket:{icon:'🎫',title:'Ticket de salida',desc:'Una evidencia individual breve antes de terminar.'},
+    oral:{icon:'💬',title:'Explicación rápida',desc:'Explicar, mostrar o responder oralmente.'},
+    traffic:{icon:'🚦',title:'Semáforo',desc:'Reconocer qué comprendieron y qué necesitan reforzar.'},
+    finalChallenge:{icon:'⭐',title:'Desafío final',desc:'Resolver un caso nuevo para comprobar el aprendizaje.'}
+  }
+};
+
+function planningRecommendedModes082(subject,oa,grade){
+  const kind=planningSubjectKind(subject),t=normalizeText(oa?.text||''),g=Number(grade)||0,young=g<=2;
+  let start='activate',development='model',closing='ticket';
+
+  if(kind==='science'){start='explore';development='hands';closing=young?'oral':'finalChallenge'}
+  if(kind==='math'){start=young?'play':'challenge';development=young?'hands':'model';closing='finalChallenge'}
+  if(kind==='language'){
+    if(/sonido|silab|fonema|conciencia fonologica/.test(t)){start='play';development='hands';closing='oral'}
+    else if(/leer|lectura|comprend/.test(t)){start='challenge';development='model';closing='ticket'}
+    else if(/escribir|produci/.test(t)){start='explore';development='model';closing='oral'}
+  }
+  if(kind==='history'){start='explore';development='collaborative';closing='oral'}
+  if(kind==='arts'||kind==='music'){start='explore';development='hands';closing='oral'}
+  if(kind==='pe'){start='play';development='hands';closing='oral'}
+  if(kind==='technology'){start='challenge';development='hands';closing='finalChallenge'}
+  if(kind==='english'){start='play';development='model';closing='oral'}
+  if(kind==='orientation'){start='challenge';development='collaborative';closing='oral'}
+
+  return {start,development,closing};
+}
+
+function planningPhaseBase082(subject,oa,grade){
+  return planningBaseTemplate(subject,oa,grade);
+}
+
+function planningStartText082(mode,subject,oa,grade){
+  const b=planningPhaseBase082(subject,oa,grade),g=Number(grade)||0,young=g<=2;
+  if(mode==='activate'){
+    return `Activar conocimientos previos antes de presentar el contenido central. ${b.start} El docente recoge 2 o 3 respuestas y las utiliza para conectar explícitamente con el propósito de la clase.`;
+  }
+  if(mode==='challenge'){
+    return `Presentar el aprendizaje como un pequeño desafío. ${b.start} No se entrega la respuesta de inmediato: se pide al curso anticipar una solución o explicación y se retoma esa respuesta al final de la clase.`;
+  }
+  if(mode==='explore'){
+    return `Comenzar observando antes de explicar. ${b.start} Los estudiantes comentan qué ven, qué reconocen y qué preguntas les surgen. ${young?'Pueden responder oralmente, señalando o manipulando material, sin exigir escritura.':'El docente registra algunas ideas clave para contrastarlas durante el desarrollo.'}`;
+  }
+  return `Iniciar con un juego breve de 5 a 7 minutos vinculado directamente al OA. ${b.start} La dinámica debe permitir participar rápidamente y servir como diagnóstico informal de lo que el curso ya sabe. ${young?'Priorizar respuestas orales, movimiento, imágenes o material concreto.':'Cerrar el juego explicitando qué aprendizaje se trabajará.'}`;
+}
+
+function planningDevelopmentText082(mode,subject,oa,grade){
+  const b=planningPhaseBase082(subject,oa,grade),g=Number(grade)||0,young=g<=2;
+  if(mode==='model'){
+    return `Trabajar mediante modelado y práctica gradual. Primero, el docente muestra un ejemplo pensando en voz alta. Luego desarrolla un segundo ejemplo con participación del curso. A continuación: ${b.development} Finalizar esta fase con una tarea breve que cada estudiante pueda intentar con menor apoyo.`;
+  }
+  if(mode==='hands'){
+    return `Priorizar una experiencia práctica o manipulativa. ${b.development} El docente organiza el material antes de comenzar, modela una acción o ejemplo y luego acompaña la exploración con preguntas breves. ${young?'Evitar largas instrucciones escritas y entregar una indicación a la vez.':'Solicitar que los estudiantes registren o expliquen la evidencia obtenida.'}`;
+  }
+  if(mode==='stations'){
+    return `Organizar el desarrollo en 3 estaciones breves. Estación 1: reconocimiento o repaso del aprendizaje. Estación 2: aplicación guiada. Estación 3: desafío o transferencia. Como contenido central de las estaciones utilizar: ${b.development} ${young?'Cada estación debe tener instrucciones visuales y una tarea corta.':'Los grupos rotan y dejan una evidencia simple en cada estación.'}`;
+  }
+  if(mode==='collaborative'){
+    return `Desarrollar el OA mediante trabajo colaborativo. Después de un ejemplo breve del docente, los estudiantes trabajan en parejas o grupos pequeños para resolver, clasificar, comparar, explicar o crear según corresponda. La tarea central será: ${b.development} Cada grupo debe preparar una respuesta o evidencia concreta y todos sus integrantes deben poder explicar al menos una decisión.`;
+  }
+  return `Proponer un desafío de aplicación después de una explicación breve. El docente modela solo lo indispensable y plantea una situación nueva en la que el curso deba usar el aprendizaje. Para resolverla se trabajará así: ${b.development} El docente circula haciendo preguntas y entrega apoyos solo cuando son necesarios, evitando resolver la tarea por el estudiante.`;
+}
+
+function planningClosingText082(mode,subject,oa,grade){
+  const b=planningPhaseBase082(subject,oa,grade),g=Number(grade)||0,young=g<=2;
+  if(mode==='ticket'){
+    return `Aplicar un ticket de salida individual de 3 a 5 minutos. ${b.closing} La respuesta debe permitir comprobar directamente el OA y no solo preguntar si “entendieron”. ${young?'Puede resolverse señalando, dibujando, marcando o respondiendo oralmente al docente.':'Recoger las respuestas para decidir el apoyo de la clase siguiente.'}`;
+  }
+  if(mode==='oral'){
+    return `Cerrar con una explicación o demostración breve. ${b.closing} Seleccionar algunas respuestas y pedir que expliquen cómo lo supieron o qué estrategia utilizaron. ${young?'Aceptar respuestas orales, gestuales, con imágenes o material concreto.':'Finalizar construyendo una frase de síntesis vinculada al propósito de la clase.'}`;
+  }
+  if(mode==='traffic'){
+    return `Realizar un cierre tipo semáforo. Después de ${b.closing.toLowerCase()} cada estudiante indica: verde = puedo hacerlo solo; amarillo = puedo hacerlo con algo de ayuda; rojo = todavía necesito apoyo. El docente solicita una evidencia o ejemplo breve antes de registrar la percepción, para que el semáforo no sea solo una opinión.`;
+  }
+  return `Cerrar con un desafío final diferente a los ejemplos trabajados. ${b.closing} Cada estudiante intenta resolverlo de forma individual y explica, muestra o representa su respuesta. El docente usa este caso nuevo para comprobar si el aprendizaje puede transferirse.`;
+}
+
+function planningAssessmentForClosing082(mode,subject,oa,grade){
+  const b=planningPhaseBase082(subject,oa,grade);
+  if(mode==='ticket')return `Ticket de salida individual. ${b.assessment}`;
+  if(mode==='oral')return `Evidencia oral o demostrativa breve, registrada mediante observación del docente. ${b.assessment}`;
+  if(mode==='traffic')return `Semáforo de autoevaluación acompañado de una evidencia concreta del aprendizaje. ${b.assessment}`;
+  return `Desafío final individual con un caso nuevo. ${b.assessment}`;
+}
+
+function planningMaterialsForModes082(startMode,developmentMode,subject,oa,grade){
+  const b=planningPhaseBase082(subject,oa,grade);
+  const extras=[];
+  if(startMode==='play')extras.push('material breve para juego inicial');
+  if(startMode==='explore')extras.push('imágenes, objetos o ejemplos para observar');
+  if(developmentMode==='hands')extras.push('material concreto o manipulativo');
+  if(developmentMode==='stations')extras.push('3 estaciones con instrucciones y materiales separados');
+  if(developmentMode==='collaborative')extras.push('una consigna por pareja o grupo');
+  if(developmentMode==='challenge')extras.push('un desafío o caso de aplicación');
+  return [b.materials,...extras].filter(Boolean).join('; ');
+}
+
+function planningEnsureModes082(draft,subject,oa,grade,force=false){
+  const rec=planningRecommendedModes082(subject,oa,grade);
+  if(force||!draft.startMode)draft.startMode=rec.start;
+  if(force||!draft.developmentMode)draft.developmentMode=rec.development;
+  if(force||!draft.closingMode)draft.closingMode=rec.closing;
+  draft.start=planningStartText082(draft.startMode,subject,oa,grade);
+  draft.development=planningDevelopmentText082(draft.developmentMode,subject,oa,grade);
+  draft.closing=planningClosingText082(draft.closingMode,subject,oa,grade);
+  draft.assessment=planningAssessmentForClosing082(draft.closingMode,subject,oa,grade);
+  draft.materials=planningMaterialsForModes082(draft.startMode,draft.developmentMode,subject,oa,grade);
+  return draft;
+}
+
+function planningApplyModes084(draft,subject,oa,grade){
+  const startSel=document.getElementById('planningStartMode084');
+  const devSel=document.getElementById('planningDevelopmentMode084');
+  const closeSel=document.getElementById('planningClosingMode084');
+
+  const rec=planningRecommendedModes082(subject,oa,grade);
+  const startMode=startSel?.value||draft.startMode||rec.start;
+  const developmentMode=devSel?.value||draft.developmentMode||rec.development;
+  const closingMode=closeSel?.value||draft.closingMode||rec.closing;
+
+  draft.startMode=startMode;
+  draft.developmentMode=developmentMode;
+  draft.closingMode=closingMode;
+  draft.start=planningStartText082(startMode,subject,oa,grade);
+  draft.development=planningDevelopmentText082(developmentMode,subject,oa,grade);
+  draft.closing=planningClosingText082(closingMode,subject,oa,grade);
+  draft.assessment=planningAssessmentForClosing082(closingMode,subject,oa,grade);
+  draft.materials=planningMaterialsForModes082(startMode,developmentMode,subject,oa,grade);
+
+  const start=document.getElementById('planningStart');
+  const dev=document.getElementById('planningDevelopment');
+  const close=document.getElementById('planningClosing');
+  const assessment=document.getElementById('planningAssessment');
+  const materials=document.getElementById('planningMaterials');
+  if(start)start.value=draft.start;
+  if(dev)dev.value=draft.development;
+  if(close)close.value=draft.closing;
+  if(assessment)assessment.value=draft.assessment;
+  if(materials)materials.value=draft.materials;
+
+  const startPreview=document.getElementById('planningStartPreview082');
+  const devPreview=document.getElementById('planningDevelopmentPreview082');
+  const closePreview=document.getElementById('planningClosingPreview082');
+  if(startPreview)startPreview.textContent=draft.start;
+  if(devPreview)devPreview.textContent=draft.development;
+  if(closePreview)closePreview.textContent=draft.closing;
+
+  const startHelp=document.getElementById('planningStartRecommendation084');
+  const devHelp=document.getElementById('planningDevelopmentRecommendation084');
+  const closeHelp=document.getElementById('planningClosingRecommendation084');
+  if(startHelp)startHelp.innerHTML=startMode===rec.start?'<b>✓ Recomendación de AulaNexo para este OA</b>':'Elegiste una alternativa distinta a la recomendada de AulaNexo.';
+  if(devHelp)devHelp.innerHTML=developmentMode===rec.development?'<b>✓ Recomendación de AulaNexo para este OA</b>':'Elegiste una alternativa distinta a la recomendada de AulaNexo.';
+  if(closeHelp)closeHelp.innerHTML=closingMode===rec.closing?'<b>✓ Recomendación de AulaNexo para este OA</b>':'Elegiste una alternativa distinta a la recomendada de AulaNexo.';
+
+  const startBadge=document.getElementById('planningStartModeBadge082');
+  const devBadge=document.getElementById('planningDevelopmentModeBadge082');
+  const closeBadge=document.getElementById('planningClosingModeBadge082');
+  if(startBadge)startBadge.textContent=startMode===rec.start?'✓ Recomendado':'Elegido por ti';
+  if(devBadge)devBadge.textContent=developmentMode===rec.development?'✓ Recomendado':'Elegido por ti';
+  if(closeBadge)closeBadge.textContent=closingMode===rec.closing?'✓ Recomendado':'Elegido por ti';
+
+  return draft;
+}
+
+function planningRenderPhaseOptions082(draft,subject,oa,grade){
+  const rec=planningRecommendedModes082(subject,oa,grade);
+  const startSel=document.getElementById('planningStartMode084');
+  const devSel=document.getElementById('planningDevelopmentMode084');
+  const closeSel=document.getElementById('planningClosingMode084');
+
+  if(!draft.startMode)draft.startMode=rec.start;
+  if(!draft.developmentMode)draft.developmentMode=rec.development;
+  if(!draft.closingMode)draft.closingMode=rec.closing;
+
+  if(startSel)startSel.value=draft.startMode;
+  if(devSel)devSel.value=draft.developmentMode;
+  if(closeSel)closeSel.value=draft.closingMode;
+
+  planningApplyModes084(draft,subject,oa,grade);
+}
+
 function planningContextFor(course,subject,unit,oa){
   const groups=supportDataFor(course.id,course.level,subject,oa.number,unit.id);
   return {groups,withEvidence:groups.support.length+groups.process.length+groups.achieved.length};
 }
 function planningDifferentiationText(ctx){
   const g=ctx.groups;
-  if(!ctx.withEvidence)return 'Aún no hay evidencia estándar de este OA en el curso. Durante la clase, observar el desempeño y recoger una evidencia breve antes de definir agrupaciones o apoyos posteriores.';
+  if(!ctx.withEvidence)return 'Apoyo preventivo: presentar instrucciones breves y de un paso a la vez, modelar un ejemplo antes del trabajo autónomo y mantener apoyos visuales o concretos disponibles. Si aparece dificultad, reducir la cantidad de ejercicios sin cambiar el OA, ofrecer más tiempo y permitir una forma alternativa pertinente de responder. Para quienes avanzan con facilidad, incorporar un caso nuevo de transferencia o una explicación del procedimiento.';
   const lines=[];
   if(g.support.length)lines.push(`Apoyo prioritario (${g.support.length}): modelado cercano, instrucciones breves, ejemplos adicionales y retroalimentación inmediata.`);
   if(g.process.length)lines.push(`En proceso (${g.process.length}): práctica guiada con apoyos que se retiren gradualmente y oportunidad de explicar el procedimiento o aprendizaje.`);
@@ -3805,12 +4898,27 @@ function planningDraftId(course,subject,unit,oa){return `${course.id}|${subject}
 function ensurePlanningDraft(course,subject,unit,oa,force=false){
   const key=planningDraftId(course,subject,unit,oa);
   if(force||planningDraft.key!==key){
-    const t=planningBaseTemplate(subject,oa),ctx=planningContextFor(course,subject,unit,oa),bloomLevel=bloomForOA(oa.text),bank=attitudeBankFor(course.level,subject),attIdx=attitudeSuggestionIndex(subject,oa.text,bank),dua=duaDefaults(subject,oa);
-    planningDraft={key,date:localDate(),duration:'45',objective:t.objective,bloomLevel,bloomVerbs:BLOOM_BANK[bloomLevel].join(', '),attitudeCode:attIdx>=0?String(attIdx):'custom',attitudeObjective:attIdx>=0?bank[attIdx]:'',duaEngagementEnabled:true,duaEngagement:dua.engagement,duaRepresentationEnabled:true,duaRepresentation:dua.representation,duaActionEnabled:true,duaAction:dua.action,start:t.start,development:t.development,closing:t.closing,assessment:t.assessment,differentiation:planningDifferentiationText(ctx),materials:t.materials};editingPlanningId=null
+    const t=planningBaseTemplate(subject,oa,course.level),ctx=planningContextFor(course,subject,unit,oa),bloomLevel=bloomForOA(oa.text),attInfo=planningAttitudeInfo081(course.level,subject),bank=attInfo.bank,attIdx=attitudeSuggestionIndex(subject,oa.text,bank),dua=duaDefaults(subject,oa);
+    planningDraft={key,date:localDate(),duration:'45',objective:t.objective,bloomLevel,bloomVerbs:BLOOM_BANK[bloomLevel].join(', '),attitudeCode:attIdx>=0?String(attIdx):'custom',attitudeObjective:attIdx>=0?bank[attIdx]:'',duaEngagementEnabled:true,duaEngagement:dua.engagement,duaRepresentationEnabled:true,duaRepresentation:dua.representation,duaActionEnabled:true,duaAction:dua.action,duaConsiderations:duaSuggested080(subject,oa,course.level),startMode:'',developmentMode:'',closingMode:'',start:t.start,development:t.development,closing:t.closing,assessment:t.assessment,differentiation:planningDifferentiationText(ctx),materials:t.materials};editingPlanningId=null
   }
   return planningDraft;
 }
-function planningCopyText(course,subject,unit,oa,draft){const dua=[];if(draft.duaEngagementEnabled&&draft.duaEngagement)dua.push(`Compromiso: ${draft.duaEngagement}`);if(draft.duaRepresentationEnabled&&draft.duaRepresentation)dua.push(`Representación: ${draft.duaRepresentation}`);if(draft.duaActionEnabled&&draft.duaAction)dua.push(`Acción y expresión: ${draft.duaAction}`);return [`AulaNexo · Planificación de clase`,`Curso: ${course.name}`,`Asignatura: ${subject}`,`${unit.name} · OA ${String(oa.number).padStart(2,'0')}`,`Fecha: ${formatDate(draft.date)}`,`Duración: ${draft.duration} minutos`,'',`Propósito de la clase:`,draft.objective,'',`Taxonomía de Bloom: ${draft.bloomLevel||''}`,`Verbos / habilidades: ${draft.bloomVerbs||''}`,'',`Objetivo actitudinal:`,draft.attitudeObjective||'—','',`Principios DUA:`,...(dua.length?dua:['—']),'',`Inicio:`,draft.start,'',`Desarrollo:`,draft.development,'',`Cierre:`,draft.closing,'',`Evidencia / evaluación:`,draft.assessment,'',`Apoyos y diferenciación:`,draft.differentiation,'',`Materiales y recursos:`,draft.materials].join('\n')}
+function planningCopyText(course,subject,unit,oa,draft){
+  const dua=[];
+  if(draft.duaEngagementEnabled){
+    const s=duaSelectedText080(draft,'engagement');if(s)dua.push(`Compromiso · pautas seleccionadas: ${s}`);
+    if(draft.duaEngagement)dua.push(`Aplicación: ${draft.duaEngagement}`);
+  }
+  if(draft.duaRepresentationEnabled){
+    const s=duaSelectedText080(draft,'representation');if(s)dua.push(`Representación · pautas seleccionadas: ${s}`);
+    if(draft.duaRepresentation)dua.push(`Aplicación: ${draft.duaRepresentation}`);
+  }
+  if(draft.duaActionEnabled){
+    const s=duaSelectedText080(draft,'action');if(s)dua.push(`Acción y expresión · pautas seleccionadas: ${s}`);
+    if(draft.duaAction)dua.push(`Aplicación: ${draft.duaAction}`);
+  }
+  return [`AulaNexo · Planificación de clase`,`Curso: ${course.name}`,`Asignatura: ${subject}`,`${unit.name} · OA ${String(oa.number).padStart(2,'0')}`,`Fecha: ${formatDate(draft.date)}`,`Duración: ${draft.duration} minutos`,'',`Propósito de la clase:`,draft.objective,'',`Taxonomía de Bloom: ${draft.bloomLevel||''}`,`Verbos / habilidades: ${draft.bloomVerbs||''}`,'',`Objetivo actitudinal:`,draft.attitudeObjective||'—','',`Principios DUA:`,...(dua.length?dua:['—']),'',`Inicio:`,draft.start,'',`Desarrollo:`,draft.development,'',`Cierre:`,draft.closing,'',`Evidencia / evaluación:`,draft.assessment,'',`Apoyos y diferenciación:`,draft.differentiation,'',`Materiales y recursos:`,draft.materials].join('\n')
+}
 
 function planningFileName(course,subject,oa,draft){
   const clean=x=>String(x||'').normalize('NFD').replace(/[\u0300-\u036f]/g,'').replace(/[^a-zA-Z0-9_-]+/g,'_').replace(/^_+|_+$/g,'').slice(0,55)||'Planificacion';
@@ -3826,9 +4934,18 @@ function docxParagraph(text,{bold=false,size=22,before=0,after=100,keep=false}={
 }
 function planningDocxXml(course,subject,unit,oa,draft){
   const dua=[];
-  if(draft.duaEngagementEnabled&&draft.duaEngagement)dua.push(['Compromiso',draft.duaEngagement]);
-  if(draft.duaRepresentationEnabled&&draft.duaRepresentation)dua.push(['Representación',draft.duaRepresentation]);
-  if(draft.duaActionEnabled&&draft.duaAction)dua.push(['Acción y expresión',draft.duaAction]);
+  if(draft.duaEngagementEnabled){
+    const s=duaSelectedText080(draft,'engagement');
+    dua.push(['Compromiso',[s?`Pautas seleccionadas: ${s}`:'',draft.duaEngagement?`Aplicación: ${draft.duaEngagement}`:''].filter(Boolean).join('\n')]);
+  }
+  if(draft.duaRepresentationEnabled){
+    const s=duaSelectedText080(draft,'representation');
+    dua.push(['Representación',[s?`Pautas seleccionadas: ${s}`:'',draft.duaRepresentation?`Aplicación: ${draft.duaRepresentation}`:''].filter(Boolean).join('\n')]);
+  }
+  if(draft.duaActionEnabled){
+    const s=duaSelectedText080(draft,'action');
+    dua.push(['Acción y expresión',[s?`Pautas seleccionadas: ${s}`:'',draft.duaAction?`Aplicación: ${draft.duaAction}`:''].filter(Boolean).join('\n')]);
+  }
   const body=[];
   body.push(docxParagraph('AulaNexo · Planificación de clase',{bold:true,size:34,after:180}));
   body.push(docxParagraph(`Curso: ${course.name}`,{bold:true,size:22,after:40}));
@@ -3879,7 +4996,12 @@ function downloadPlanningWord(course,subject,unit,oa,draft){
   if(!course||!unit||!oa)return alert('Selecciona curso, unidad y OA antes de descargar.');
   const blob=planningDocxBlob(course,subject,unit,oa,draft);downloadBlob(blob,'application/vnd.openxmlformats-officedocument.wordprocessingml.document',planningFileName(course,subject,oa,draft));
 }
-function setPlanningFormDisabled(disabled){['planningDate','planningDuration','planningObjective','planningBloomLevel','planningBloomVerbs','planningAttitudeSelect','planningAttitudeObjective','planningDuaEngagementEnabled','planningDuaEngagement','planningDuaRepresentationEnabled','planningDuaRepresentation','planningDuaActionEnabled','planningDuaAction','planningStart','planningDevelopment','planningClosing','planningAssessment','planningDifferentiation','planningMaterials'].forEach(id=>{const el=document.getElementById(id);if(el)el.disabled=disabled});['savePlanning','downloadPlanningDocx','copyPlanning','resetPlanningDraft'].forEach(id=>{const el=document.getElementById(id);if(el)el.disabled=disabled})}
+function setPlanningFormDisabled(disabled){
+  ['planningDate','planningDuration','planningObjective','planningBloomLevel','planningBloomVerbs','planningAttitudeSelect','planningAttitudeObjective','planningDuaEngagementEnabled','planningDuaEngagement','planningDuaRepresentationEnabled','planningDuaRepresentation','planningDuaActionEnabled','planningDuaAction','planningStart','planningDevelopment','planningClosing','planningAssessment','planningDifferentiation','planningMaterials'].forEach(id=>{const el=document.getElementById(id);if(el)el.disabled=disabled});
+  ['savePlanning','downloadPlanningDocx','copyPlanning','resetPlanningDraft','planningRegenerate078','planningChooseAttitude080','planningConfigureDua080'].forEach(id=>{const el=document.getElementById(id);if(el)el.disabled=disabled});
+  document.querySelectorAll('[data-open-dua080]').forEach(el=>el.disabled=disabled);
+  ['planningStartMode084','planningDevelopmentMode084','planningClosingMode084'].forEach(id=>{const el=document.getElementById(id);if(el)el.disabled=disabled});
+}
 
 function unitSequenceKey(course,subject,unit){return `${course.id}|${subject}|${unit.id}`}
 function currentUnitSequence(course,subject,unit){
@@ -3948,6 +5070,126 @@ function renderPlanningAnnual(course,subject){
   timeline.innerHTML=items.map(it=>{if(!it.start)return `<div class="annual-timeline-row"><div class="annual-timeline-label"><strong>${esc(it.unit.name.replace(/^Unidad\s*\d+\s*:\s*/i,''))}</strong><span>Sin período</span></div><div class="annual-timeline-track"></div><div class="annual-timeline-state">Pendiente</div></div>`;const a=new Date(`${it.start}T12:00:00`).getTime(),z=new Date(`${it.end}T12:00:00`).getTime(),left=Math.max(0,(a-min)/span*100),width=Math.max(2,(z-a)/span*100);return `<div class="annual-timeline-row"><div class="annual-timeline-label"><strong>${esc(it.unit.name.replace(/^Unidad\s*\d+\s*:\s*/i,''))}</strong><span>${formatDate(it.start)} – ${formatDate(it.end)}</span></div><div class="annual-timeline-track"><span style="left:${left}%;width:${Math.min(100-left,width)}%"></span></div><div class="annual-timeline-state">${it.planPct}% planificado</div></div>`}).join('');
 }
 
+
+let planningDuaTab080='engagement';
+
+function attitudeInfo080(course,subject){
+  return planningAttitudeInfo081(course?.level,subject);
+}
+function updateAttitudeSummary080(){
+  const el=document.getElementById('planningAttitudeSummary080');
+  if(!el)return;
+  const txt=(planningDraft?.attitudeObjective||'').trim();
+  el.textContent=txt||'Aún no seleccionada';
+}
+function openAttitudeModal080(){
+  const course=activeCourse();if(!course)return;
+  const info=attitudeInfo080(course,selectedPlanningSubject);
+  const modal=document.getElementById('planningAttitudeModal080');
+  const root=document.getElementById('planningAttitudeList080');
+  const source=document.getElementById('planningAttitudeSource080');
+  if(!modal||!root)return;
+
+  source.textContent=info.official
+    ?`Mostrando ${info.bank.length} objetivos actitudinales disponibles para ${selectedPlanningSubject}.`
+    :'No hay un banco separado de actitudes disponible aquí para esta asignatura. Puedes escribir una redacción propia.';
+
+  root.innerHTML=info.bank.length
+    ?info.bank.map((txt,i)=>`<button type="button" class="planning080-attitude-option ${String(planningDraft.attitudeCode)===String(i)?'is-selected':''}" data-att080="${i}">
+        <span class="planning080-attitude-number">${i+1}</span>
+        <span class="planning080-attitude-text">${esc(txt)}</span>
+      </button>`).join('')
+    :'<div class="empty">No hay objetivos actitudinales específicos disponibles para esta asignatura.</div>';
+
+  root.querySelectorAll('[data-att080]').forEach(btn=>btn.onclick=()=>{
+    const i=Number(btn.dataset.att080),txt=info.bank[i];
+    planningDraft.attitudeCode=String(i);
+    planningDraft.attitudeObjective=txt||'';
+    const hidden=document.getElementById('planningAttitudeSelect');
+    if(hidden)hidden.value=String(i);
+    document.getElementById('planningAttitudeObjective').value=planningDraft.attitudeObjective;
+    updateAttitudeSummary080();
+    closeAttitudeModal080();
+  });
+
+  modal.classList.remove('hidden');modal.setAttribute('aria-hidden','false');
+}
+function closeAttitudeModal080(){
+  const modal=document.getElementById('planningAttitudeModal080');
+  modal?.classList.add('hidden');modal?.setAttribute('aria-hidden','true');
+}
+
+function duaAreaEnabled080(area){
+  if(area==='engagement')return planningDraft.duaEngagementEnabled!==false;
+  if(area==='representation')return planningDraft.duaRepresentationEnabled!==false;
+  return planningDraft.duaActionEnabled!==false;
+}
+function updateDuaSummary080(){
+  const selected=new Set((planningDraft?.duaConsiderations||[]).map(String));
+  const counts={engagement:0,representation:0,action:0};
+  duaItems080().forEach(x=>{if(selected.has(x.code))counts[x.area]++});
+  const map={
+    engagement:['duaEngagementCount080','duaEngagementCard'],
+    representation:['duaRepresentationCount080','duaRepresentationCard'],
+    action:['duaActionCount080','duaActionCard']
+  };
+  Object.entries(map).forEach(([area,[countId,cardId]])=>{
+    const n=counts[area],c=document.getElementById(countId),card=document.getElementById(cardId);
+    if(c)c.textContent=`${n} seleccionada${n===1?'':'s'}`;
+    card?.classList.toggle('is-disabled',!duaAreaEnabled080(area));
+  });
+  const total=document.getElementById('planningDuaTotal080');
+  if(total){
+    const n=counts.engagement+counts.representation+counts.action;
+    total.textContent=`${n} consideración${n===1?'':'es'} seleccionada${n===1?'':'s'}`;
+  }
+}
+function renderDuaModal080(){
+  const body=document.getElementById('planningDuaModalBody080');if(!body)return;
+  const area=planningDuaTab080,data=DUA_3_0_080[area];
+  const selected=new Set((planningDraft.duaConsiderations||[]).map(String));
+  const course=activeCourse(),unit=unitById(course?.level,selectedPlanningSubject,selectedPlanningUnit);
+  const oa=unitObjectivesFor(course?.level,selectedPlanningSubject,selectedPlanningUnit).find(o=>String(o.number)===String(selectedPlanningOA));
+  const suggested=new Set(duaSuggested080(selectedPlanningSubject,oa,course?.level));
+
+  body.innerHTML=data.guidelines.map(g=>`
+    <div class="planning080-guideline">
+      <div class="planning080-guideline-head">
+        <span class="planning080-guideline-code">Pauta ${g.code}</span>
+        <span class="planning080-guideline-title">${esc(g.title)}</span>
+      </div>
+      <div class="planning080-considerations">
+        ${g.items.map(([code,label])=>`
+          <label class="planning080-consideration">
+            <input type="checkbox" data-dua-cons080="${code}" ${selected.has(code)?'checked':''}>
+            <span class="planning080-consideration-text">
+              <span class="planning080-consideration-code">${code}</span>${esc(label)}
+              ${suggested.has(code)?'<span class="planning080-recommended">Sugerido para este OA</span>':''}
+            </span>
+          </label>`).join('')}
+      </div>
+    </div>`).join('');
+
+  body.querySelectorAll('[data-dua-cons080]').forEach(cb=>cb.onchange=()=>{
+    const set=new Set((planningDraft.duaConsiderations||[]).map(String));
+    if(cb.checked)set.add(cb.dataset.duaCons080);else set.delete(cb.dataset.duaCons080);
+    planningDraft.duaConsiderations=[...set];
+    updateDuaSummary080();
+  });
+  document.querySelectorAll('[data-dua-tab080]').forEach(b=>b.classList.toggle('active',b.dataset.duaTab080===area));
+  updateDuaSummary080();
+}
+function openDuaModal080(area='engagement'){
+  planningDuaTab080=area;
+  const modal=document.getElementById('planningDuaModal080');if(!modal)return;
+  modal.classList.remove('hidden');modal.setAttribute('aria-hidden','false');
+  renderDuaModal080();
+}
+function closeDuaModal080(){
+  const modal=document.getElementById('planningDuaModal080');
+  modal?.classList.add('hidden');modal?.setAttribute('aria-hidden','true');
+}
+
 function renderPlanning(){
   const course=activeCourse(),subjectEl=document.getElementById('planningSubjectSelect'),unitEl=document.getElementById('planningUnitSelect'),oaEl=document.getElementById('planningOASelect'),oaBox=document.getElementById('planningSelectedOA'),ctxBox=document.getElementById('planningContext');if(!subjectEl||!unitEl||!oaEl)return;
   const editBadge=document.getElementById('planningEditingBadge'),cancelBtn=document.getElementById('cancelPlanningEdit');
@@ -3963,15 +5205,31 @@ function renderPlanning(){
   if(!oas.some(o=>String(o.number)===String(selectedPlanningOA)))selectedPlanningOA=String(oas[0].number);oaEl.disabled=false;oaEl.innerHTML=oas.map(o=>`<option value="${o.number}" ${String(o.number)===String(selectedPlanningOA)?'selected':''}>OA ${String(o.number).padStart(2,'0')}</option>`).join('');
   const oa=oas.find(o=>String(o.number)===String(selectedPlanningOA))||oas[0],ctx=planningContextFor(course,selectedPlanningSubject,unit,oa);oaBox.innerHTML=`<div class="support-oa-code">OA ${String(oa.number).padStart(2,'0')}</div><div class="support-unit">${esc(unit.name)}</div><div class="support-oa-text">${esc(oa.text)}</div>`;
   const g=ctx.groups;ctxBox.innerHTML=`<div class="planning-context-title">Contexto actual del OA</div><div class="planning-context-text">${ctx.withEvidence?`AulaNexo encontró evidencia previa de ${ctx.withEvidence} estudiante${ctx.withEvidence===1?'':'s'} y la usa solamente para sugerir apoyos.`:'Todavía no hay evidencia estándar previa de este OA. La planificación puede prepararse igualmente.'}</div><div class="planning-context-grid"><div class="planning-context-mini"><strong>${g.support.length}</strong><span>Apoyo prioritario</span></div><div class="planning-context-mini"><strong>${g.process.length}</strong><span>En proceso</span></div><div class="planning-context-mini"><strong>${g.achieved.length}</strong><span>Consolidado</span></div><div class="planning-context-mini"><strong>${g.pending.length}</strong><span>Sin evidencia</span></div></div>`;
-  const draft=ensurePlanningDraft(course,selectedPlanningSubject,unit,oa);setPlanningFormDisabled(false);
+  const draft=planningEnsureComplete081(course,selectedPlanningSubject,unit,oa);setPlanningFormDisabled(false);
   document.getElementById('planningDate').value=draft.date;document.getElementById('planningDuration').value=draft.duration;document.getElementById('planningObjective').value=draft.objective;
   const bloomEl=document.getElementById('planningBloomLevel'),bloomHintEl=document.getElementById('planningBloomHint');bloomEl.value=draft.bloomLevel||'Comprender';document.getElementById('planningBloomVerbs').value=draft.bloomVerbs||BLOOM_BANK[bloomEl.value].join(', ');bloomHintEl.textContent=bloomHint(bloomEl.value);
-  const attBank=attitudeBankFor(course.level,selectedPlanningSubject),attSelect=document.getElementById('planningAttitudeSelect'),attNote=document.getElementById('planningAttitudeNote');
-  if(attBank.length){attSelect.innerHTML=attBank.map((x,i)=>`<option value="${i}" ${String(i)===String(draft.attitudeCode)?'selected':''}>${esc(x)}</option>`).join('')+'<option value="custom" '+(draft.attitudeCode==='custom'?'selected':'')+'>Redacción propia / OAT</option>';attNote.textContent='Opciones tomadas de las actitudes de la asignatura en las Bases Curriculares. Puedes adaptar la redacción para esta clase.';}else{attSelect.innerHTML='<option value="custom">Redacción propia / OAT</option>';draft.attitudeCode='custom';attNote.textContent='Esta asignatura no presenta aquí un banco separado de actitudes; escribe el objetivo actitudinal que corresponda sin atribuirlo automáticamente como oficial.';}
+  const attInfo081=planningAttitudeInfo081(course.level,selectedPlanningSubject),attBank=attInfo081.bank,attSelect=document.getElementById('planningAttitudeSelect'),attNote=document.getElementById('planningAttitudeNote');
+  if(attBank.length){
+    attSelect.innerHTML=attBank.map((x,i)=>`<option value="${i}">${esc(x)}</option>`).join('')+'<option value="custom">Redacción propia / OAT</option>';
+    attSelect.value=String(draft.attitudeCode??'custom');
+    attNote.textContent=attInfo081.official?`${attBank.length} objetivos actitudinales disponibles para ${selectedPlanningSubject}. AulaNexo ya seleccionó uno; puedes cambiarlo si quieres.`:`AulaNexo propuso un objetivo actitudinal transversal para evitar que tengas que escribirlo desde cero. Puedes cambiarlo o editarlo.`;
+  }else{
+    attSelect.innerHTML='<option value="custom">Redacción propia / OAT</option>';attSelect.value='custom';draft.attitudeCode='custom';
+    attNote.textContent='No hay un banco separado de actitudes disponible para esta asignatura; puedes escribir una redacción propia.';
+  }
   document.getElementById('planningAttitudeObjective').value=draft.attitudeObjective||'';
-  document.getElementById('planningDuaEngagementEnabled').checked=draft.duaEngagementEnabled!==false;document.getElementById('planningDuaEngagement').value=draft.duaEngagement||'';document.getElementById('planningDuaRepresentationEnabled').checked=draft.duaRepresentationEnabled!==false;document.getElementById('planningDuaRepresentation').value=draft.duaRepresentation||'';document.getElementById('planningDuaActionEnabled').checked=draft.duaActionEnabled!==false;document.getElementById('planningDuaAction').value=draft.duaAction||'';
-  ['Engagement','Representation','Action'].forEach(k=>{const enabled=document.getElementById('planningDua'+k+'Enabled').checked,card=document.getElementById(k==='Action'?'duaActionCard':'dua'+k+'Card');if(card)card.classList.toggle('is-disabled',!enabled)});
+  updateAttitudeSummary080();
+
+  if(!Array.isArray(draft.duaConsiderations)||!draft.duaConsiderations.length){
+    draft.duaConsiderations=duaSuggested080(selectedPlanningSubject,oa,course.level);
+  }
+  document.getElementById('planningDuaEngagementEnabled').checked=draft.duaEngagementEnabled!==false;document.getElementById('planningDuaEngagement').value=draft.duaEngagement||'';
+  document.getElementById('planningDuaRepresentationEnabled').checked=draft.duaRepresentationEnabled!==false;document.getElementById('planningDuaRepresentation').value=draft.duaRepresentation||'';
+  document.getElementById('planningDuaActionEnabled').checked=draft.duaActionEnabled!==false;document.getElementById('planningDuaAction').value=draft.duaAction||'';
+  updateDuaSummary080();
   document.getElementById('planningStart').value=draft.start;document.getElementById('planningDevelopment').value=draft.development;document.getElementById('planningClosing').value=draft.closing;document.getElementById('planningAssessment').value=draft.assessment;document.getElementById('planningDifferentiation').value=draft.differentiation;document.getElementById('planningMaterials').value=draft.materials;
+  planningRenderPhaseOptions082(draft,selectedPlanningSubject,oa,course.level);
+  const autoFields=[draft.objective,draft.bloomLevel,draft.bloomVerbs,draft.attitudeObjective,draft.duaEngagement,draft.duaRepresentation,draft.duaAction,draft.start,draft.development,draft.closing,draft.assessment,draft.differentiation,draft.materials];const autoDone=autoFields.filter(x=>String(x||'').trim()).length;const autoStatus=document.getElementById('planningAutoStatus081');if(autoStatus)autoStatus.textContent=autoDone===autoFields.length?'✓ Completa':`${autoDone}/${autoFields.length} secciones`;
   editBadge.classList.toggle('hidden',!editingPlanningId);cancelBtn.classList.toggle('hidden',!editingPlanningId);document.getElementById('savePlanning').textContent=editingPlanningId?'Guardar cambios':'Guardar planificación';
   renderSavedPlanning(course);
   renderPlanningSequence(course,selectedPlanningSubject,unit,oas);
@@ -3989,11 +5247,13 @@ function renderSavedPlanning(course){
 }
 function copyTextWithFallback(text,success='Copiado.'){const fallback=()=>{const ta=document.createElement('textarea');ta.value=text;ta.style.position='fixed';ta.style.opacity='0';document.body.appendChild(ta);ta.select();let ok=false;try{ok=document.execCommand('copy')}catch(e){}ta.remove();alert(ok?success:'No pude copiar automáticamente. Puedes seleccionar el contenido desde esta pantalla.')};if(navigator.clipboard?.writeText)navigator.clipboard.writeText(text).then(()=>alert(success)).catch(fallback);else fallback()}
 function loadPlanningForEdit(id){
-  const p=state.classPlans.find(x=>x.id===id),course=activeCourse();if(!p||!course||p.courseId!==course.id)return;selectedPlanningSubject=p.subject;selectedPlanningUnit=String(p.unitId);selectedPlanningOA=String(p.oaNumber);editingPlanningId=p.id;planningDraft={key:planningDraftId(course,p.subject,{id:p.unitId},{number:p.oaNumber}),date:p.date,duration:String(p.duration||'45'),objective:p.objective,bloomLevel:p.bloomLevel||bloomForOA(p.oaText||''),bloomVerbs:p.bloomVerbs||BLOOM_BANK[p.bloomLevel||bloomForOA(p.oaText||'')].join(', '),attitudeCode:p.attitudeCode??'custom',attitudeObjective:p.attitudeObjective||'',duaEngagementEnabled:p.duaEngagementEnabled!==false,duaEngagement:p.duaEngagement||duaDefaults(p.subject,{text:p.oaText||''}).engagement,duaRepresentationEnabled:p.duaRepresentationEnabled!==false,duaRepresentation:p.duaRepresentation||duaDefaults(p.subject,{text:p.oaText||''}).representation,duaActionEnabled:p.duaActionEnabled!==false,duaAction:p.duaAction||duaDefaults(p.subject,{text:p.oaText||''}).action,start:p.start,development:p.development,closing:p.closing,assessment:p.assessment,differentiation:p.differentiation,materials:p.materials};renderPlanning();window.scrollTo({top:0,behavior:'smooth'});
+  const p=state.classPlans.find(x=>x.id===id),course=activeCourse();if(!p||!course||p.courseId!==course.id)return;selectedPlanningSubject=p.subject;selectedPlanningUnit=String(p.unitId);selectedPlanningOA=String(p.oaNumber);editingPlanningId=p.id;planningDraft={key:planningDraftId(course,p.subject,{id:p.unitId},{number:p.oaNumber}),date:p.date,duration:String(p.duration||'45'),objective:p.objective,bloomLevel:p.bloomLevel||bloomForOA(p.oaText||''),bloomVerbs:p.bloomVerbs||BLOOM_BANK[p.bloomLevel||bloomForOA(p.oaText||'')].join(', '),attitudeCode:p.attitudeCode??'custom',attitudeObjective:p.attitudeObjective||'',duaEngagementEnabled:p.duaEngagementEnabled!==false,duaEngagement:p.duaEngagement||duaDefaults(p.subject,{text:p.oaText||''}).engagement,duaRepresentationEnabled:p.duaRepresentationEnabled!==false,duaRepresentation:p.duaRepresentation||duaDefaults(p.subject,{text:p.oaText||''}).representation,duaActionEnabled:p.duaActionEnabled!==false,duaAction:p.duaAction||duaDefaults(p.subject,{text:p.oaText||''}).action,duaConsiderations:Array.isArray(p.duaConsiderations)&&p.duaConsiderations.length?p.duaConsiderations.map(String):duaSuggested080(p.subject,{text:p.oaText||''},p.grade),startMode:p.startMode||'',developmentMode:p.developmentMode||'',closingMode:p.closingMode||'',start:p.start,development:p.development,closing:p.closing,assessment:p.assessment,differentiation:p.differentiation,materials:p.materials};renderPlanning();window.scrollTo({top:0,behavior:'smooth'});
 }
 function savePlanningFromForm(){
   const course=activeCourse(),unit=unitById(course?.level,selectedPlanningSubject,selectedPlanningUnit),oa=unitObjectivesFor(course?.level,selectedPlanningSubject,selectedPlanningUnit).find(o=>String(o.number)===String(selectedPlanningOA));if(!course||!unit||!oa)return alert('Selecciona curso, unidad y OA.');
-  const p={courseId:course.id,grade:course.level,subject:selectedPlanningSubject,unitId:String(unit.id),unitName:unit.name,oaNumber:Number(oa.number),oaText:oa.text,date:planningDraft.date,duration:String(planningDraft.duration||'45'),objective:planningDraft.objective.trim(),bloomLevel:planningDraft.bloomLevel||'Comprender',bloomVerbs:(planningDraft.bloomVerbs||'').trim(),attitudeCode:planningDraft.attitudeCode??'custom',attitudeObjective:(planningDraft.attitudeObjective||'').trim(),duaEngagementEnabled:planningDraft.duaEngagementEnabled!==false,duaEngagement:(planningDraft.duaEngagement||'').trim(),duaRepresentationEnabled:planningDraft.duaRepresentationEnabled!==false,duaRepresentation:(planningDraft.duaRepresentation||'').trim(),duaActionEnabled:planningDraft.duaActionEnabled!==false,duaAction:(planningDraft.duaAction||'').trim(),start:planningDraft.start.trim(),development:planningDraft.development.trim(),closing:planningDraft.closing.trim(),assessment:planningDraft.assessment.trim(),differentiation:planningDraft.differentiation.trim(),materials:planningDraft.materials.trim()};if(!p.date)return alert('Selecciona una fecha.');if(!p.objective||!p.development)return alert('Completa al menos el propósito y el desarrollo de la clase.');
+  planningEnsureModes082(planningDraft,selectedPlanningSubject,oa,course.level,false);
+  planningApplyModes084(planningDraft,selectedPlanningSubject,oa,course.level);
+  const p={courseId:course.id,grade:course.level,subject:selectedPlanningSubject,unitId:String(unit.id),unitName:unit.name,oaNumber:Number(oa.number),oaText:oa.text,date:planningDraft.date,duration:String(planningDraft.duration||'45'),objective:planningDraft.objective.trim(),bloomLevel:planningDraft.bloomLevel||'Comprender',bloomVerbs:(planningDraft.bloomVerbs||'').trim(),attitudeCode:planningDraft.attitudeCode??'custom',attitudeObjective:(planningDraft.attitudeObjective||'').trim(),duaEngagementEnabled:planningDraft.duaEngagementEnabled!==false,duaEngagement:(planningDraft.duaEngagement||'').trim(),duaRepresentationEnabled:planningDraft.duaRepresentationEnabled!==false,duaRepresentation:(planningDraft.duaRepresentation||'').trim(),duaActionEnabled:planningDraft.duaActionEnabled!==false,duaAction:(planningDraft.duaAction||'').trim(),duaConsiderations:Array.isArray(planningDraft.duaConsiderations)?planningDraft.duaConsiderations.map(String):[],startMode:planningDraft.startMode||'',developmentMode:planningDraft.developmentMode||'',closingMode:planningDraft.closingMode||'',start:planningDraft.start.trim(),development:planningDraft.development.trim(),closing:planningDraft.closing.trim(),assessment:planningDraft.assessment.trim(),differentiation:planningDraft.differentiation.trim(),materials:planningDraft.materials.trim()};if(!p.date)return alert('Selecciona una fecha.');if(!p.objective)return alert('No pude generar el propósito de la clase. Vuelve a seleccionar el OA.');if(!p.development){planningApplyModes084(planningDraft,selectedPlanningSubject,oa,course.level);p.development=planningDraft.development||'';}if(!p.development)return alert('No pude generar el desarrollo automáticamente. Vuelve a seleccionar la forma de trabajo.');
   if(editingPlanningId){const idx=state.classPlans.findIndex(x=>x.id===editingPlanningId);if(idx>=0)state.classPlans[idx]={...state.classPlans[idx],...p,updatedAt:new Date().toISOString()};editingPlanningId=null}else state.classPlans.push({...p,id:'plan_'+uid(),createdAt:new Date().toISOString(),updatedAt:new Date().toISOString()});save();planningDraft.key='';renderPlanning();alert('Planificación guardada.')
 }
 
@@ -4238,11 +5498,45 @@ document.getElementById('planningUnitSelect').onchange=e=>{selectedPlanningUnit=
 document.getElementById('planningOASelect').onchange=e=>{selectedPlanningOA=e.target.value;planningDraft.key='';editingPlanningId=null;renderPlanning()};
 document.getElementById('planningDate').onchange=e=>planningDraft.date=e.target.value;document.getElementById('planningDuration').onchange=e=>planningDraft.duration=e.target.value;document.getElementById('planningObjective').oninput=e=>planningDraft.objective=e.target.value;
 document.getElementById('planningBloomLevel').onchange=e=>{planningDraft.bloomLevel=e.target.value;planningDraft.bloomVerbs=BLOOM_BANK[e.target.value].join(', ');document.getElementById('planningBloomVerbs').value=planningDraft.bloomVerbs;document.getElementById('planningBloomHint').textContent=bloomHint(e.target.value)};document.getElementById('planningBloomVerbs').oninput=e=>planningDraft.bloomVerbs=e.target.value;
-document.getElementById('planningAttitudeSelect').onchange=e=>{planningDraft.attitudeCode=e.target.value;const course=activeCourse(),bank=attitudeBankFor(course?.level,selectedPlanningSubject);if(e.target.value!=='custom'&&bank[Number(e.target.value)]){planningDraft.attitudeObjective=bank[Number(e.target.value)];document.getElementById('planningAttitudeObjective').value=planningDraft.attitudeObjective}};document.getElementById('planningAttitudeObjective').oninput=e=>planningDraft.attitudeObjective=e.target.value;
-function bindDuaToggle(kind,cardId,textId){const cb=document.getElementById('planningDua'+kind+'Enabled'),card=document.getElementById(cardId);cb.onchange=e=>{planningDraft['dua'+kind+'Enabled']=e.target.checked;card.classList.toggle('is-disabled',!e.target.checked)};document.getElementById(textId).oninput=e=>planningDraft['dua'+kind]=e.target.value}
+document.getElementById('planningAttitudeSelect').onchange=e=>{planningDraft.attitudeCode=e.target.value;const course=activeCourse(),bank=planningAttitudeInfo081(course?.level,selectedPlanningSubject).bank;if(e.target.value!=='custom'&&bank[Number(e.target.value)]){planningDraft.attitudeObjective=bank[Number(e.target.value)];document.getElementById('planningAttitudeObjective').value=planningDraft.attitudeObjective;updateAttitudeSummary080()}};document.getElementById('planningAttitudeObjective').oninput=e=>planningDraft.attitudeObjective=e.target.value;
+document.getElementById('planningAttitudeObjective').addEventListener('input',updateAttitudeSummary080);
+document.getElementById('planningChooseAttitude080').onclick=openAttitudeModal080;
+document.getElementById('planningAttitudeClose080')?.addEventListener('click',closeAttitudeModal080);
+document.getElementById('planningAttitudeCustom080')?.addEventListener('click',()=>{
+  planningDraft.attitudeCode='custom';
+  const hidden=document.getElementById('planningAttitudeSelect');if(hidden)hidden.value='custom';
+  closeAttitudeModal080();
+  document.getElementById('planningAttitudeObjective').focus();
+  updateAttitudeSummary080();
+});
+document.getElementById('planningAttitudeModal080')?.addEventListener('click',e=>{if(e.target.id==='planningAttitudeModal080')closeAttitudeModal080()});
+
+document.getElementById('planningConfigureDua080')?.addEventListener('click',()=>openDuaModal080('engagement'));
+document.querySelectorAll('[data-open-dua080]').forEach(b=>b.addEventListener('click',()=>openDuaModal080(b.dataset.openDua080)));
+document.querySelectorAll('[data-dua-tab080]').forEach(b=>b.addEventListener('click',()=>{planningDuaTab080=b.dataset.duaTab080;renderDuaModal080()}));
+document.getElementById('planningDuaClose080')?.addEventListener('click',closeDuaModal080);
+document.getElementById('planningDuaDone080')?.addEventListener('click',closeDuaModal080);
+document.getElementById('planningDuaModal080')?.addEventListener('click',e=>{if(e.target.id==='planningDuaModal080')closeDuaModal080()});
+
+['planningStartMode084','planningDevelopmentMode084','planningClosingMode084'].forEach(id=>{
+  document.getElementById(id)?.addEventListener('change',()=>{
+    const course=activeCourse();
+    const unit=unitById(course?.level,selectedPlanningSubject,selectedPlanningUnit);
+    const oa=unitObjectivesFor(course?.level,selectedPlanningSubject,selectedPlanningUnit).find(o=>String(o.number)===String(selectedPlanningOA));
+    if(!course||!unit||!oa||!planningDraft)return;
+    planningApplyModes084(planningDraft,selectedPlanningSubject,oa,course.level);
+  });
+});
+
+function bindDuaToggle(kind,cardId,textId){
+  const cb=document.getElementById('planningDua'+kind+'Enabled'),card=document.getElementById(cardId);
+  cb.onchange=e=>{planningDraft['dua'+kind+'Enabled']=e.target.checked;card.classList.toggle('is-disabled',!e.target.checked);updateDuaSummary080()};
+  document.getElementById(textId).oninput=e=>planningDraft['dua'+kind]=e.target.value
+}
 bindDuaToggle('Engagement','duaEngagementCard','planningDuaEngagement');bindDuaToggle('Representation','duaRepresentationCard','planningDuaRepresentation');bindDuaToggle('Action','duaActionCard','planningDuaAction');
-document.getElementById('planningStart').oninput=e=>planningDraft.start=e.target.value;document.getElementById('planningDevelopment').oninput=e=>planningDraft.development=e.target.value;document.getElementById('planningClosing').oninput=e=>planningDraft.closing=e.target.value;document.getElementById('planningAssessment').oninput=e=>planningDraft.assessment=e.target.value;document.getElementById('planningDifferentiation').oninput=e=>planningDraft.differentiation=e.target.value;document.getElementById('planningMaterials').oninput=e=>planningDraft.materials=e.target.value;
-document.getElementById('resetPlanningDraft').onclick=()=>{const course=activeCourse(),unit=unitById(course?.level,selectedPlanningSubject,selectedPlanningUnit),oa=unitObjectivesFor(course?.level,selectedPlanningSubject,selectedPlanningUnit).find(o=>String(o.number)===String(selectedPlanningOA));if(!course||!unit||!oa)return;editingPlanningId=null;ensurePlanningDraft(course,selectedPlanningSubject,unit,oa,true);renderPlanning()};
+document.getElementById('planningAssessment').oninput=e=>planningDraft.assessment=e.target.value;document.getElementById('planningDifferentiation').oninput=e=>planningDraft.differentiation=e.target.value;document.getElementById('planningMaterials').oninput=e=>planningDraft.materials=e.target.value;
+document.getElementById('resetPlanningDraft').onclick=()=>{const course=activeCourse(),unit=unitById(course?.level,selectedPlanningSubject,selectedPlanningUnit),oa=unitObjectivesFor(course?.level,selectedPlanningSubject,selectedPlanningUnit).find(o=>String(o.number)===String(selectedPlanningOA));if(!course||!unit||!oa)return;editingPlanningId=null;planningEnsureComplete081(course,selectedPlanningSubject,unit,oa,true);renderPlanning()};
+ document.getElementById('planningRegenerate078').onclick=()=>{const course=activeCourse(),unit=unitById(course?.level,selectedPlanningSubject,selectedPlanningUnit),oa=unitObjectivesFor(course?.level,selectedPlanningSubject,selectedPlanningUnit).find(o=>String(o.number)===String(selectedPlanningOA));if(!course||!unit||!oa)return alert('Selecciona una unidad y un OA para generar la planificación.');if(editingPlanningId&&!confirm('Estás editando una planificación guardada. ¿Quieres reemplazar el borrador actual por una nueva planificación completa?'))return;editingPlanningId=null;planningEnsureComplete081(course,selectedPlanningSubject,unit,oa,true);renderPlanning();};
 document.getElementById('cancelPlanningEdit').onclick=()=>{editingPlanningId=null;planningDraft.key='';renderPlanning()};
 document.getElementById('savePlanning').onclick=savePlanningFromForm;
 document.getElementById('downloadPlanningDocx').onclick=()=>{const course=activeCourse(),unit=unitById(course?.level,selectedPlanningSubject,selectedPlanningUnit),oa=unitObjectivesFor(course?.level,selectedPlanningSubject,selectedPlanningUnit).find(o=>String(o.number)===String(selectedPlanningOA));if(!course||!unit||!oa)return;downloadPlanningWord(course,selectedPlanningSubject,unit,oa,planningDraft)};
@@ -5229,6 +6523,7 @@ function close(){document.getElementById('libModal059').classList.add('hidden')}
   window.openInstrumentCreator077=open;
 })();
 </script>
+
 
 <div id="resourceCreatorModal060" class="modal-backdrop hidden" aria-hidden="true">
   <div class="modal resource073-modal">
