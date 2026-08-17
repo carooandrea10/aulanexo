@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>AulaNexo · Prototipo 0.0.75</title>
+<title>AulaNexo · Prototipo 0.0.76</title>
 <style>
 :root{
   --bg:#f5f7fb;--card:#fff;--text:#1f2937;--muted:#6b7280;--line:#e5e7eb;
@@ -1501,12 +1501,33 @@ nav.app-nav button[data-view].active{background:var(--primary-soft);color:#3730a
   .resource075-phase-label{text-align:left;width:max-content}
 }
 
+
+/* ===== AULANEXO 0.0.76 · DE LA IDEA AL RECURSO EDITABLE ===== */
+.resource076-create{
+  background:#ecfdf5!important;
+  color:#166534!important;
+  border-color:#a7f3d0!important;
+  font-weight:900!important;
+}
+.resource076-create:hover{background:#d1fae5!important}
+.resource076-bridge{
+  margin:10px 16px 14px;
+  padding:10px 12px;
+  border-radius:12px;
+  background:#f0fdf4;
+  border:1px solid #bbf7d0;
+  color:#166534;
+  font-size:11.5px;
+  line-height:1.48;
+}
+.resource076-bridge b{color:#14532d}
+
 </style>
 </head>
 <body>
 <header>
   <div class="header-wrap">
-    <div><h1>AulaNexo</h1><div class="subtitle">Prototipo 0.0.75 · Ideas pedagógicas vinculadas al OA</div></div>
+    <div><h1>AulaNexo</h1><div class="subtitle">Prototipo 0.0.76 · De la idea al recurso editable</div></div>
     <div class="header-actions"><button id="menuToggle" class="menu-toggle">☰ Menú</button><span class="current-section-pill">Sección: <strong id="currentSectionLabel">Curso</strong></span><span class="active-course-pill">Curso activo: <strong id="headerCourseName">Sin curso</strong></span><span id="cloudStatus" class="cloud-pill" data-state="offline">☁️ Sin conectar</span><button id="cloudConnectBtn" class="secondary">👤 Mi cuenta</button><button id="downloadBackup">⬇ Respaldo</button><button id="loadBackupBtn">⬆ Cargar respaldo</button><input id="backupFile" type="file" accept="application/json" hidden></div>
   </div>
 </header>
@@ -4720,7 +4741,7 @@ function close(){document.getElementById('libModal059').classList.add('hidden')}
       <div>
         <div class="small" style="font-weight:850;color:#4f46e5">💡 IDEAS PARA CREAR</div>
         <h2>Ideas pedagógicas por OA</h2>
-        <div class="small">Selecciona qué quieres trabajar. AulaNexo te propondrá formas concretas de crear el recurso, pero no fabricará la ficha o archivo por ti.</div>
+        <div class="small">Selecciona qué quieres trabajar. AulaNexo te propondrá actividades concretas vinculadas al OA y podrás convertir cualquiera de ellas en un recurso editable.</div>
       </div>
       <button id="resourceCreatorClose060" class="ghost" type="button">Cerrar</button>
     </div>
@@ -4767,7 +4788,7 @@ function close(){document.getElementById('libModal059').classList.add('hidden')}
     </div>
 
     <div class="resources060-ready resource073-ready">
-      <b>AulaNexo te orienta, tú creas.</b> Aquí no recibirás una frase genérica: la propuesta debe ayudarte a llevar el OA a la sala con ejemplos, pasos, preguntas y evidencias. Si necesitas material, AulaNexo te indica qué crear en Canva, Word, PowerPoint o con material concreto; luego puedes subirlo a <b>Recursos guardados</b>.
+      <b>AulaNexo te orienta y te ayuda a crear.</b> La propuesta parte del OA y puede convertirse en un recurso editable dentro de AulaNexo. También puedes llevar la idea a Canva, Word, PowerPoint o material concreto y luego guardarla en <b>Recursos guardados</b>.
     </div>
 
     <div class="row end section-gap">
@@ -4817,7 +4838,7 @@ function close(){document.getElementById('libModal059').classList.add('hidden')}
       '<h2>Recursos Pedagógicos</h2>'+
       '<p>AulaNexo puede proponerte ideas según Curso, Asignatura, Unidad y OA. Tú creas el material donde prefieras y luego lo guardas aquí.</p>'+
       '<div class="resources060-actions">'+
-        '<button id="resourceCreate060" class="resources060-action" type="button"><span class="icon">💡</span><strong>Ideas para crear</strong><span>Recibe propuestas concretas según Curso, Asignatura, Unidad y OA. AulaNexo no genera el archivo.</span></button>'+
+        '<button id="resourceCreate060" class="resources060-action" type="button"><span class="icon">💡</span><strong>Ideas para crear</strong><span>Recibe propuestas concretas según Curso, Asignatura, Unidad y OA y conviértelas en un recurso editable.</span></button>'+
         '<button id="resourceUpload060" class="resources060-action" type="button"><span class="icon">⬆️</span><strong>Subir mi recurso</strong><span>Agrega un PDF, guía, presentación, ficha u otro material que ya tengas.</span></button>'+
       '</div>';
 
@@ -6404,6 +6425,7 @@ function close(){document.getElementById('libModal059').classList.add('hidden')}
 
   window.renderGeneratedResources061=renderLibrary061;
   window.openGeneratedResource061=editSaved061;
+  window.generateAulaNexoResource061=generate061;
 })();
 </script>
 
@@ -6482,6 +6504,7 @@ function close(){document.getElementById('libModal059').classList.add('hidden')}
 
 <script>
 /* ===== AULANEXO 0.0.75 · IDEAS PEDAGÓGICAS VINCULADAS AL OA ===== */
+/* 0.0.76 añade el puente directo desde una idea hacia el generador editable. */
 (function(){
   const btn=document.getElementById('resourceIdeaGenerate073');
   const results=document.getElementById('resourceIdeaResults073');
@@ -7092,6 +7115,7 @@ function close(){document.getElementById('libModal059').classList.add('hidden')}
       '<div class="resource075-oa-focus"><b>'+E(primaryOA.code)+':</b> '+E(primaryOA.text)+
       (oas.length>1?'<div class="resource075-empty-note">Seleccionaste '+oas.length+' OA. La propuesta se desarrolla desde '+E(primaryOA.code)+' para mantener un foco claro; los demás quedan como OA complementarios.</div>':'')+
       '</div></div>'+
+      '<div class="resource076-bridge"><b>Nuevo:</b> cuando una propuesta te guste, pulsa <b>“Crear recurso editable”</b>. AulaNexo conservará el curso, asignatura, unidad y OA seleccionados y abrirá el material listo para revisar, editar, guardar o descargar.</div>'+
       '<div class="resource075-list">'+ideas.map((idea,idx)=>{
         const ass=assessment075(profile);
         return '<article class="resource075-card">'+
@@ -7110,6 +7134,7 @@ function close(){document.getElementById('libModal059').classList.add('hidden')}
           '</div>'+
           '<div class="resource075-actions">'+
             '<button class="resource075-develop" type="button" data-develop075="'+idx+'">✨ Ver guía completa</button>'+
+            '<button class="resource076-create" type="button" data-create076="'+idx+'">🧩 Crear recurso editable</button>'+
             '<button class="ghost" type="button" data-copyquick075="'+idx+'">Copiar idea breve</button>'+
           '</div>'+
           guideHtml075(profile,idea,idx,ctx)+
@@ -7125,6 +7150,47 @@ function close(){document.getElementById('libModal059').classList.add('hidden')}
       panel.classList.toggle('hidden');
       b.textContent=open?'↑ Ocultar guía completa':'✨ Ver guía completa';
       if(open)setTimeout(()=>panel.scrollIntoView({behavior:'smooth',block:'nearest'}),70);
+    }));
+
+
+    results.querySelectorAll('[data-create076]').forEach(b=>b.addEventListener('click',()=>{
+      const idea=ideas[Number(b.dataset.create076)];
+      if(!idea)return;
+
+      const typeEl=document.getElementById('resourceType060');
+      const topicEl=document.getElementById('resourceTopic060');
+
+      let resourceType='Actividad de Desarrollo';
+      if(idea.sequence==='worksheet'||idea.sequence==='worksheet2')resourceType='Ficha imprimible';
+      else if(idea.sequence==='opening')resourceType='Actividad de Inicio';
+      else if(idea.sequence==='exit'||idea.sequence==='traffic')resourceType='Ticket de Salida';
+      else if(idea.sequence==='reteach')resourceType='Apoyo o reenseñanza';
+
+      if(typeEl){
+        const has=[...typeEl.options].some(o=>o.value===resourceType || o.textContent===resourceType);
+        if(has)typeEl.value=resourceType;
+      }
+      if(topicEl){
+        const preferred=(ctx.topic||profile.focus||idea.title||'').trim();
+        topicEl.value=preferred;
+      }
+
+      window.__aulanexoIdea076={
+        title:idea.title,
+        kind:idea.kind,
+        sequence:idea.sequence,
+        promise:idea.promise,
+        resourceType,
+        focus:profile.focus,
+        oaCode:primaryOA.code,
+        oaText:primaryOA.text
+      };
+
+      if(typeof window.generateAulaNexoResource061==='function'){
+        window.generateAulaNexoResource061();
+      }else{
+        alert('No pude abrir el generador de recursos. Cierra y vuelve a abrir “Ideas para crear”.');
+      }
     }));
 
     results.querySelectorAll('[data-copyquick075]').forEach(b=>b.addEventListener('click',async()=>{
