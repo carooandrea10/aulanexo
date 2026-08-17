@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>AulaNexo · Prototipo 0.0.76</title>
+<title>AulaNexo · Prototipo 0.0.77</title>
 <style>
 :root{
   --bg:#f5f7fb;--card:#fff;--text:#1f2937;--muted:#6b7280;--line:#e5e7eb;
@@ -1522,12 +1522,57 @@ nav.app-nav button[data-view].active{background:var(--primary-soft);color:#3730a
 }
 .resource076-bridge b{color:#14532d}
 
+
+/* ===== AULANEXO 0.0.77 · INSTRUMENTOS POR OA ===== */
+.instrument077-modal{max-width:930px!important}
+.instrument077-grid{
+  display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:11px;margin-top:14px
+}
+.instrument077-oa{
+  margin-top:12px;border:1px solid #dbe2f2;border-radius:14px;background:#f8fafc;padding:10px
+}
+.instrument077-oa-title{
+  font-size:11px;font-weight:900;color:#475569;text-transform:uppercase;letter-spacing:.035em;margin-bottom:7px
+}
+.instrument077-oa-list{display:flex;flex-direction:column;gap:7px;max-height:235px;overflow:auto}
+.instrument077-oa-item{
+  display:grid;grid-template-columns:20px 1fr;gap:8px;align-items:start;
+  border:1px solid #e5e7eb;border-radius:11px;background:#fff;padding:9px 10px;cursor:pointer
+}
+.instrument077-oa-item:hover{border-color:#c7d2fe;background:#fafaff}
+.instrument077-oa-code{
+  display:inline-flex;border-radius:999px;padding:3px 7px;background:#eef2ff;color:#4338ca;
+  font-size:9.5px;font-weight:900;margin-bottom:4px
+}
+.instrument077-oa-text{font-size:11.5px;line-height:1.45;color:#374151}
+.instrument077-help{
+  margin-top:12px;padding:11px 12px;border-radius:12px;background:#f5f3ff;
+  border:1px solid #ddd6fe;font-size:11.5px;line-height:1.5;color:#4c1d95
+}
+.instrument077-preview{
+  margin-top:12px;border:1px solid #bbf7d0;background:#f0fdf4;border-radius:14px;padding:11px 12px
+}
+.instrument077-preview h4{margin:0 0 7px;font-size:12px;color:#166534}
+.instrument077-preview ul{margin:0;padding-left:18px}
+.instrument077-preview li{font-size:11.5px;line-height:1.45;color:#374151;margin:4px 0}
+.instrument077-empty{
+  padding:12px;border:1px dashed #cbd5e1;border-radius:11px;text-align:center;
+  color:#64748b;font-size:11px;background:#fff
+}
+.instrument077-actions{
+  display:flex;justify-content:flex-end;gap:8px;flex-wrap:wrap;margin-top:14px
+}
+@media(max-width:720px){
+  .instrument077-grid{grid-template-columns:1fr}
+  .instrument077-modal{max-width:96vw!important}
+}
+
 </style>
 </head>
 <body>
 <header>
   <div class="header-wrap">
-    <div><h1>AulaNexo</h1><div class="subtitle">Prototipo 0.0.76 · De la idea al recurso editable</div></div>
+    <div><h1>AulaNexo</h1><div class="subtitle">Prototipo 0.0.77 · Instrumentos de evaluación por OA</div></div>
     <div class="header-actions"><button id="menuToggle" class="menu-toggle">☰ Menú</button><span class="current-section-pill">Sección: <strong id="currentSectionLabel">Curso</strong></span><span class="active-course-pill">Curso activo: <strong id="headerCourseName">Sin curso</strong></span><span id="cloudStatus" class="cloud-pill" data-state="offline">☁️ Sin conectar</span><button id="cloudConnectBtn" class="secondary">👤 Mi cuenta</button><button id="downloadBackup">⬇ Respaldo</button><button id="loadBackupBtn">⬆ Cargar respaldo</button><input id="backupFile" type="file" accept="application/json" hidden></div>
   </div>
 </header>
@@ -4735,6 +4780,456 @@ function close(){document.getElementById('libModal059').classList.add('hidden')}
 })();
 </script>
 
+
+<div id="instrumentCreatorModal077" class="modal-backdrop hidden" aria-hidden="true">
+  <div class="modal instrument077-modal">
+    <div class="row between">
+      <div>
+        <div class="small" style="font-weight:900;color:#4f46e5">✨ CREAR DESDE EL CURRÍCULUM</div>
+        <h2>Crear instrumento de evaluación por OA</h2>
+        <div class="small">Selecciona un OA principal. AulaNexo propondrá criterios observables y niveles de desempeño que luego podrás editar libremente.</div>
+      </div>
+      <button id="instrumentClose077" class="ghost" type="button">Cerrar</button>
+    </div>
+
+    <div class="instrument077-grid">
+      <div class="field">
+        <label>Curso</label>
+        <select id="instrumentGrade077">
+          <option value="">Seleccionar</option>
+          <option>1° Básico</option><option>2° Básico</option><option>3° Básico</option><option>4° Básico</option>
+          <option>5° Básico</option><option>6° Básico</option><option>7° Básico</option><option>8° Básico</option>
+        </select>
+      </div>
+      <div class="field">
+        <label>Asignatura</label>
+        <select id="instrumentSubject077"><option value="">Primero selecciona Curso</option></select>
+      </div>
+      <div class="field">
+        <label>Unidad</label>
+        <select id="instrumentUnit077"><option value="">Primero selecciona Curso y Asignatura</option></select>
+      </div>
+      <div class="field">
+        <label>Tipo de instrumento</label>
+        <select id="instrumentKind077">
+          <option>Rúbrica de Desempeño</option>
+          <option>Lista de Cotejo</option>
+          <option>Escala de Apreciación</option>
+          <option>Pauta de Observación</option>
+          <option>Ticket de Salida</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="instrument077-oa">
+      <div class="instrument077-oa-title">OA principal</div>
+      <div id="instrumentOAList077" class="instrument077-oa-list">
+        <div class="instrument077-empty">Selecciona Curso, Asignatura y Unidad para ver los OA.</div>
+      </div>
+    </div>
+
+    <div class="instrument077-grid">
+      <div class="field">
+        <label>Nombre del instrumento</label>
+        <input id="instrumentName077" type="text" placeholder="AulaNexo propondrá un nombre">
+      </div>
+      <div class="field">
+        <label>Contexto o actividad (opcional)</label>
+        <input id="instrumentContext077" type="text" placeholder="Ej.: clasificación de seres vivos, lectura oral, trabajo grupal">
+      </div>
+    </div>
+
+    <div class="instrument077-help">
+      <b>¿Qué hará AulaNexo?</b> Tomará el contenido del OA y propondrá criterios que puedas observar durante la actividad. No tendrás que empezar con una rúbrica transversal genérica.
+    </div>
+
+    <div id="instrumentPreview077" class="instrument077-preview hidden"></div>
+
+    <div class="instrument077-actions">
+      <button id="instrumentPreviewBtn077" class="secondary" type="button">👀 Revisar criterios</button>
+      <button id="instrumentCreateBtn077" class="primary" type="button">✨ Crear y editar instrumento</button>
+    </div>
+  </div>
+</div>
+
+<script>
+/* ===== AULANEXO 0.0.77 · GENERADOR DE INSTRUMENTOS POR OA ===== */
+(function(){
+  const modal=document.getElementById('instrumentCreatorModal077');
+  const grade=document.getElementById('instrumentGrade077');
+  const subject=document.getElementById('instrumentSubject077');
+  const unit=document.getElementById('instrumentUnit077');
+  const oaList=document.getElementById('instrumentOAList077');
+  const kind=document.getElementById('instrumentKind077');
+  const name=document.getElementById('instrumentName077');
+  const context=document.getElementById('instrumentContext077');
+  const preview=document.getElementById('instrumentPreview077');
+  if(!modal||!grade||!subject||!unit||!oaList)return;
+
+  const E=v=>String(v??'').replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m]));
+  const N=v=>String(v||'').toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'').trim();
+
+  function gnum(){return parseInt(grade.value,10)||0}
+
+  function subjects(){
+    const g=gnum(), prev=subject.value;
+    const rows=(typeof OA_BANK!=='undefined'&&OA_BANK[String(g)])?Object.keys(OA_BANK[String(g)]):[];
+    subject.innerHTML='<option value="">Seleccionar</option>'+rows.map(x=>'<option value="'+E(x)+'">'+E(x)+'</option>').join('');
+    if(rows.includes(prev))subject.value=prev;
+    units();
+  }
+  function units(){
+    const g=gnum(), s=subject.value, prev=unit.value;
+    const rows=(typeof PROGRAM_UNIT_BANK!=='undefined'&&PROGRAM_UNIT_BANK[String(g)]&&PROGRAM_UNIT_BANK[String(g)][s])||[];
+    unit.innerHTML='<option value="">Seleccionar Unidad</option>'+rows.map(u=>'<option value="'+E(u.name)+'" data-unit-id="'+E(u.id)+'">'+E(u.name)+'</option>').join('');
+    if([...unit.options].some(o=>o.value===prev))unit.value=prev;
+    renderOA();
+  }
+  function selectedUnit(){
+    const rows=(typeof PROGRAM_UNIT_BANK!=='undefined'&&PROGRAM_UNIT_BANK[String(gnum())]&&PROGRAM_UNIT_BANK[String(gnum())][subject.value])||[];
+    const opt=unit.selectedOptions?.[0], id=opt?.dataset?.unitId||'';
+    return rows.find(u=>String(u.id)===String(id))||rows.find(u=>u.name===unit.value)||null;
+  }
+  function renderOA(){
+    const g=gnum(), s=subject.value;
+    const bank=(typeof OA_BANK!=='undefined'&&OA_BANK[String(g)]&&OA_BANK[String(g)][s])||[];
+    const u=selectedUnit();
+    if(!g||!s||!unit.value){
+      oaList.innerHTML='<div class="instrument077-empty">Selecciona Curso, Asignatura y Unidad para ver los OA.</div>';
+      return;
+    }
+    const allowed=u&&Array.isArray(u.oa)?new Set(u.oa.map(Number)):null;
+    const rows=allowed?bank.filter(o=>allowed.has(Number(o.number))):bank;
+    if(!rows.length){
+      oaList.innerHTML='<div class="instrument077-empty">No hay OA disponibles para esta selección.</div>';
+      return;
+    }
+    oaList.innerHTML=rows.map(o=>
+      '<label class="instrument077-oa-item"><input type="radio" name="instrumentOA077" value="'+Number(o.number)+'">'+
+      '<span><span class="instrument077-oa-code">OA '+String(o.number).padStart(2,'0')+'</span>'+
+      '<div class="instrument077-oa-text">'+E(o.text)+'</div></span></label>'
+    ).join('');
+    oaList.querySelectorAll('input').forEach(x=>x.addEventListener('change',suggestName));
+  }
+  function selectedOA(){
+    const el=oaList.querySelector('input[name="instrumentOA077"]:checked');
+    if(!el)return null;
+    const num=Number(el.value);
+    const bank=(typeof OA_BANK!=='undefined'&&OA_BANK[String(gnum())]&&OA_BANK[String(gnum())][subject.value])||[];
+    const found=bank.find(o=>Number(o.number)===num);
+    return found?{number:Number(found.number),text:String(found.text||'')}:null;
+  }
+
+  function shortFocus(text){
+    let x=String(text||'').replace(/\s+/g,' ').trim();
+    x=x.replace(/^(observar y describir|demostrar que comprenden|leer independientemente y comprender|comprender|identificar|reconocer|describir|comparar|explicar)\s+/i,'');
+    if(x.length>62)x=x.slice(0,61).replace(/\s+\S*$/,'')+'…';
+    return x.charAt(0).toUpperCase()+x.slice(1);
+  }
+  function suggestName(){
+    const oa=selectedOA();
+    if(!oa||name.dataset.edited==='1')return;
+    const label=kind.value.replace(' de Desempeño','');
+    name.value=label+' · '+shortFocus(oa.text);
+  }
+
+  function descriptors(criteriaName, action, lowerExtra){
+    return {
+      d3:action+'. Lo realiza de manera autónoma, correcta y puede explicar su respuesta.',
+      d2:action+' parcialmente o con apoyo ocasional. Su explicación aún es incompleta.',
+      d1:'Requiere apoyo frecuente para '+lowerExtra+' y todavía no logra explicarlo con claridad.'
+    };
+  }
+
+  function profile(subjectName,oaText,g){
+    const s=N(subjectName), o=N(oaText);
+    let rows=[];
+
+    if(s.includes('ciencias')){
+      if(o.includes('seres vivos')&&(o.includes('no viv')||o.includes('cosas no'))){
+        rows=[
+          ['Reconoce características de los seres vivos','Identifica características que permiten reconocer a un ser vivo','identificar las características de los seres vivos'],
+          ['Clasifica seres vivos y elementos no vivos','Clasifica ejemplos usando un criterio científico pertinente','clasificar correctamente los ejemplos'],
+          ['Justifica su clasificación','Explica su decisión usando una característica observable o necesidad vital','justificar por qué un ejemplo pertenece a una categoría'],
+          ['Aplica el criterio a un caso nuevo','Resuelve correctamente un ejemplo diferente a los modelados','aplicar el criterio en un caso nuevo']
+        ];
+      }else if(o.includes('sentidos')){
+        rows=[
+          ['Identifica el sentido involucrado','Relaciona situaciones cotidianas con el sentido correspondiente','identificar el sentido que participa'],
+          ['Ubica el órgano asociado','Reconoce y ubica el órgano principal relacionado con cada sentido','ubicar correctamente el órgano'],
+          ['Explica su función','Describe qué información permite obtener ese sentido','explicar la función del sentido'],
+          ['Reconoce acciones de cuidado','Propone acciones concretas para proteger los órganos de los sentidos','reconocer medidas de cuidado']
+        ];
+      }else if(o.includes('animales')){
+        rows=[
+          ['Observa características','Describe características observables de los animales','observar y describir características'],
+          ['Compara usando un criterio','Establece semejanzas y diferencias usando el mismo criterio','comparar animales con un criterio común'],
+          ['Clasifica de forma coherente','Agrupa animales de acuerdo con la característica solicitada','clasificar según la característica'],
+          ['Comunica lo observado','Explica su clasificación usando vocabulario apropiado a su nivel','comunicar lo observado']
+        ];
+      }else if(o.includes('plantas')){
+        rows=[
+          ['Reconoce estructuras de la planta','Identifica las estructuras mencionadas en el OA','reconocer las estructuras principales'],
+          ['Ubica las estructuras','Señala correctamente las estructuras en plantas o imágenes diferentes','ubicar las estructuras'],
+          ['Describe características observables','Describe lo que observa en cada estructura','describir características visibles'],
+          ['Aplica lo aprendido','Reconoce las estructuras en un ejemplo nuevo','aplicar lo aprendido a otra planta']
+        ];
+      }else if(o.includes('material')){
+        rows=[
+          ['Reconoce el material','Identifica de qué material están hechos distintos objetos','reconocer el material'],
+          ['Describe propiedades','Describe propiedades observables de los materiales','describir las propiedades'],
+          ['Clasifica con un criterio','Agrupa objetos usando una propiedad definida','clasificar con un criterio coherente'],
+          ['Justifica una elección','Explica qué material elegiría según la situación planteada','justificar una elección de material']
+        ];
+      }
+    }
+
+    if(s.includes('matemat')){
+      if(/contar|numeros|representar|comparar y ordenar/.test(o) && !/fraccion|multiplic|division/.test(o)){
+        rows=[
+          ['Representa cantidades','Representa una cantidad mediante objetos, dibujos o símbolos','representar la cantidad correctamente'],
+          ['Relaciona número y cantidad','Asocia el numeral con la cantidad correspondiente','relacionar numeral y cantidad'],
+          ['Compara cantidades','Determina relaciones de mayor, menor o igualdad según corresponda','comparar las cantidades'],
+          ['Explica su estrategia','Comunica cómo contó, representó o comprobó su respuesta','explicar la estrategia utilizada']
+        ];
+      }else if(/adicion|sustraccion|sumar|restar|componer|descomponer/.test(o)){
+        rows=[
+          ['Comprende la situación','Reconoce qué ocurre con las cantidades en el problema','comprender la situación presentada'],
+          ['Representa el problema','Modela la situación con material, dibujo o expresión matemática','representar el problema'],
+          ['Resuelve correctamente','Aplica una estrategia coherente y obtiene una solución','resolver la situación'],
+          ['Explica y comprueba','Explica su procedimiento y comprueba el resultado','explicar o comprobar el procedimiento']
+        ];
+      }else if(/multiplic|division|repart|grupos iguales/.test(o)){
+        rows=[
+          ['Construye grupos o repartos','Representa correctamente grupos iguales o un reparto equitativo','construir los grupos o repartos'],
+          ['Relaciona representación y operación','Vincula el modelo concreto con la operación correspondiente','relacionar el modelo con la operación'],
+          ['Resuelve situaciones','Obtiene una solución coherente con la situación','resolver la situación planteada'],
+          ['Justifica el procedimiento','Explica qué representa cada cantidad de la operación','explicar el significado de las cantidades']
+        ];
+      }else if(o.includes('fraccion')){
+        rows=[
+          ['Reconoce partes iguales','Identifica o construye particiones en partes iguales','reconocer partes iguales'],
+          ['Representa fracciones','Relaciona correctamente una representación con su fracción','representar la fracción'],
+          ['Compara representaciones','Compara fracciones o representaciones según el OA','comparar las representaciones'],
+          ['Justifica su respuesta','Explica usando el número y tamaño de las partes','justificar la respuesta']
+        ];
+      }else if(/geometr|figuras|cuerpos|angulo|simetr/.test(o)){
+        rows=[
+          ['Reconoce propiedades','Identifica propiedades geométricas relevantes','reconocer las propiedades'],
+          ['Clasifica figuras o cuerpos','Agrupa usando una propiedad geométrica y no solo la apariencia','clasificar con criterio geométrico'],
+          ['Construye o representa','Construye o representa según las condiciones solicitadas','construir o representar'],
+          ['Justifica con vocabulario geométrico','Explica su decisión usando propiedades pertinentes','justificar usando propiedades geométricas']
+        ];
+      }
+    }
+
+    if(s.includes('lenguaje')||s.includes('lengua y literatura')){
+      if(/conciencia fonologica|sonidos|silabas|fonema/.test(o)){
+        rows=[
+          ['Escucha e identifica sonidos','Reconoce el sonido, fonema o sílaba solicitado en palabras conocidas','identificar auditivamente el sonido'],
+          ['Segmenta o combina','Segmenta o combina sonidos o sílabas según la tarea','segmentar o combinar correctamente'],
+          ['Aplica en palabras nuevas','Resuelve ejemplos que no fueron modelados previamente','aplicar la habilidad en palabras nuevas'],
+          ['Explica oralmente','Comunica qué escuchó o qué estrategia utilizó','explicar oralmente su respuesta']
+        ];
+      }else if(/fluidez|precision|decod|leer palabras|leer oraciones/.test(o)){
+        rows=[
+          ['Decodifica con precisión','Lee palabras u oraciones con precisión acorde al nivel trabajado','decodificar con precisión'],
+          ['Mantiene continuidad','Lee con una continuidad que permite comprender la frase o texto','mantener continuidad en la lectura'],
+          ['Respeta unidades de sentido','Realiza pausas o agrupaciones pertinentes según su nivel','respetar unidades de sentido'],
+          ['Mejora con relectura','Incorpora apoyos o correcciones en una segunda lectura','mejorar después de releer']
+        ];
+      }else if(/comprender|comprension|informacion explicita|inferir/.test(o)){
+        rows=[
+          ['Comprende información del texto','Responde de manera coherente con la información leída o escuchada','comprender la información central'],
+          ['Localiza evidencia','Identifica palabras, fragmentos o pistas que apoyan su respuesta','localizar evidencia en el texto'],
+          ['Relaciona o infiere','Establece relaciones o inferencias acordes al OA','relacionar información o inferir'],
+          ['Justifica su respuesta','Explica por qué su respuesta se sostiene en el texto','justificar usando evidencia textual']
+        ];
+      }else if(o.includes('escribir')){
+        rows=[
+          ['Responde al propósito','Escribe de acuerdo con la intención o situación comunicativa','responder al propósito de escritura'],
+          ['Organiza sus ideas','Presenta ideas en un orden comprensible','organizar las ideas'],
+          ['Desarrolla el contenido','Incluye información suficiente y pertinente','desarrollar el contenido'],
+          ['Revisa y mejora','Realiza al menos una mejora significativa después de revisar','revisar y mejorar el escrito']
+        ];
+      }
+    }
+
+    if(s.includes('historia')||s.includes('geografia')){
+      if(/mapa|ubic|localiz|plano|puntos cardinales|coordenadas/.test(o)){
+        rows=[
+          ['Interpreta referencias espaciales','Reconoce símbolos, referencias o elementos del mapa/plano','interpretar referencias espaciales'],
+          ['Ubica correctamente','Localiza elementos según las indicaciones del OA','ubicar correctamente los elementos'],
+          ['Usa vocabulario espacial','Emplea términos espaciales o cartográficos pertinentes','usar vocabulario espacial'],
+          ['Justifica la ubicación','Explica qué referencia utilizó para decidir','justificar la ubicación']
+        ];
+      }else if(/pueblos originarios|mapuche|aymara|rapa nui|diaguita|atacameno|kawesqar|selknam/.test(o)){
+        rows=[
+          ['Obtiene información de fuentes','Reconoce información relevante en imágenes, textos u otras fuentes','obtener información de las fuentes'],
+          ['Describe características','Describe características culturales o territoriales sin generalizar','describir características pertinentes'],
+          ['Compara respetuosamente','Establece semejanzas y diferencias usando un criterio claro','comparar respetuosamente'],
+          ['Explica relaciones','Relaciona territorio, cultura o formas de vida según el OA','explicar las relaciones estudiadas']
+        ];
+      }else if(/derechos|deberes|convivencia|ciudadan|participacion/.test(o)){
+        rows=[
+          ['Reconoce el principio involucrado','Identifica el derecho, deber, norma o forma de participación presente','reconocer el principio involucrado'],
+          ['Analiza consecuencias','Explica cómo una decisión afecta a otras personas','analizar sus consecuencias'],
+          ['Propone una solución','Formula una alternativa respetuosa y realizable','proponer una solución pertinente'],
+          ['Justifica su decisión','Explica por qué la alternativa favorece la convivencia o participación','justificar la decisión']
+        ];
+      }
+    }
+
+    if(!rows.length){
+      rows=[
+        ['Comprende el aprendizaje central','Demuestra comprensión del contenido o habilidad central del OA','comprender el aprendizaje central'],
+        ['Aplica lo aprendido','Resuelve una situación directamente vinculada con el OA','aplicar lo aprendido'],
+        ['Explica su proceso','Comunica la estrategia, evidencia o razonamiento utilizado','explicar su proceso'],
+        ['Transfiere a un caso nuevo','Aplica el aprendizaje en un ejemplo diferente al modelado','transferir el aprendizaje a un caso nuevo']
+      ];
+    }
+    return rows;
+  }
+
+  function buildCriteria(){
+    const oa=selectedOA();
+    if(!oa)return null;
+    const raw=profile(subject.value,oa.text,gnum());
+    const k=kind.value;
+    let rows=raw;
+
+    if(k==='Ticket de Salida')rows=raw.slice(0,3);
+
+    return rows.map((r,i)=>{
+      let d;
+      if(k==='Lista de Cotejo'){
+        d={
+          d3:r[1]+'. Lo evidencia de manera autónoma.',
+          d2:r[1]+' parcialmente o con una indicación adicional.',
+          d1:'Aún requiere apoyo para '+r[2]+'.'
+        };
+      }else if(k==='Escala de Apreciación'){
+        d={
+          d3:r[1]+' de manera consistente.',
+          d2:r[1]+' algunas veces o con apoyo ocasional.',
+          d1:'Todavía requiere apoyo frecuente para '+r[2]+'.'
+        };
+      }else if(k==='Pauta de Observación'){
+        d={
+          d3:'Durante la actividad, '+r[1].charAt(0).toLowerCase()+r[1].slice(1)+' de forma autónoma.',
+          d2:'Durante la actividad, '+r[1].charAt(0).toLowerCase()+r[1].slice(1)+' parcialmente o con apoyo.',
+          d1:'Durante la actividad, requiere apoyo frecuente para '+r[2]+'.'
+        };
+      }else if(k==='Ticket de Salida'){
+        d={
+          d3:r[1]+'. Su respuesta permite comprobar el aprendizaje.',
+          d2:r[1]+' parcialmente; requiere una pregunta de apoyo.',
+          d1:'Aún no logra '+r[2]+' en el caso presentado.'
+        };
+      }else{
+        d=descriptors(r[0],r[1],r[2]);
+      }
+      return {name:r[0],...d};
+    });
+  }
+
+  function validate(){
+    const oa=selectedOA();
+    if(!gnum()||!subject.value||!unit.value){
+      alert('Selecciona Curso, Asignatura y Unidad.');
+      return null;
+    }
+    if(!oa){
+      alert('Selecciona un OA principal.');
+      return null;
+    }
+    const criteria=buildCriteria();
+    if(!criteria?.length)return null;
+    suggestName();
+    return {oa,criteria};
+  }
+
+  function showPreview(){
+    const data=validate();
+    if(!data)return;
+    preview.classList.remove('hidden');
+    preview.innerHTML='<h4>Vista previa de criterios</h4><ul>'+
+      data.criteria.map(c=>'<li><b>'+E(c.name)+':</b> '+E(c.d3)+'</li>').join('')+
+      '</ul><div class="small" style="margin-top:8px">Al crear el instrumento podrás editar nombres, descriptores, escala y vínculo curricular.</div>';
+  }
+
+  function createInstrument(){
+    const data=validate();
+    if(!data)return;
+    const now=new Date().toISOString();
+    const id=typeof uid==='function'?'eval_'+uid():'eval_077_'+Date.now();
+    const cId=()=>typeof uid==='function'?'c_'+uid():'c_077_'+Math.random().toString(36).slice(2);
+
+    const ev={
+      id,
+      name:(name.value||kind.value+' · '+shortFocus(data.oa.text)).trim(),
+      subject:subject.value,
+      description:'Creado con AulaNexo desde '+grade.value+', '+unit.value+', OA '+String(data.oa.number).padStart(2,'0')+
+        (context.value.trim()?' · Contexto: '+context.value.trim():''),
+      type:'rubric',
+      libraryKind:kind.value,
+      criteria:data.criteria.map(c=>({...c,id:cId(),oaNumbers:[Number(data.oa.number)]})),
+      gradeScale:null,
+      curriculumGrade:gnum(),
+      curriculumSubject:subject.value,
+      oaNumbers:[Number(data.oa.number)],
+      oaPointMax:{},
+      simce:{enabled:false,source:'grade'},
+      createdAt:now,
+      updatedAt:now
+    };
+
+    if(typeof state==='undefined'||!Array.isArray(state.evaluations)){
+      alert('No pude acceder a Mis evaluaciones.');
+      return;
+    }
+    state.evaluations.push(ev);
+    if(typeof save==='function')save();
+    if(typeof renderEvaluations==='function')renderEvaluations();
+
+    close();
+    if(typeof switchView==='function')switchView('evaluations');
+    setTimeout(()=>{
+      if(typeof openEvaluationModal==='function')openEvaluationModal(ev.id);
+      if(typeof window.nexoCelebrate==='function')window.nexoCelebrate('evaluation');
+    },100);
+  }
+
+  function open(){
+    modal.classList.remove('hidden');
+    modal.setAttribute('aria-hidden','false');
+    preview.classList.add('hidden');
+    if(!grade.value){
+      const course=typeof activeCourse==='function'?activeCourse():null;
+      const lvl=Number(course?.level);
+      if(Number.isFinite(lvl)&&lvl>=1&&lvl<=8)grade.value=lvl+'° Básico';
+    }
+    subjects();
+  }
+  function close(){
+    modal.classList.add('hidden');
+    modal.setAttribute('aria-hidden','true');
+  }
+
+  grade.addEventListener('change',subjects);
+  subject.addEventListener('change',units);
+  unit.addEventListener('change',renderOA);
+  kind.addEventListener('change',()=>{name.dataset.edited='';suggestName();preview.classList.add('hidden')});
+  name.addEventListener('input',()=>{name.dataset.edited='1'});
+  document.getElementById('instrumentPreviewBtn077')?.addEventListener('click',showPreview);
+  document.getElementById('instrumentCreateBtn077')?.addEventListener('click',createInstrument);
+  document.getElementById('instrumentClose077')?.addEventListener('click',close);
+  modal.addEventListener('click',e=>{if(e.target===modal)close()});
+
+  window.openInstrumentCreator077=open;
+})();
+</script>
+
 <div id="resourceCreatorModal060" class="modal-backdrop hidden" aria-hidden="true">
   <div class="modal resource073-modal">
     <div class="row between">
@@ -4865,7 +5360,11 @@ function close(){document.getElementById('libModal059').classList.add('hidden')}
     instruments.className='resources060-panel';
     const instrumentHero=document.createElement('div');
     instrumentHero.className='resources060-hero';
-    instrumentHero.innerHTML='<h2>Instrumentos de Evaluación</h2><p>Selecciona una plantilla, revisa su vista previa y úsala como base para una nueva Evaluación.</p>';
+    instrumentHero.innerHTML=
+      '<div class="row between" style="align-items:flex-start;gap:12px;flex-wrap:wrap">'+
+        '<div><h2>Instrumentos de Evaluación</h2><p>Selecciona una plantilla existente o crea un instrumento alineado a un OA.</p></div>'+
+        '<button id="instrumentCreate077" class="primary" type="button">✨ Crear instrumento por OA</button>'+
+      '</div>';
     instruments.appendChild(instrumentHero);
     instruments.appendChild(instrumentCard);
 
@@ -4877,6 +5376,9 @@ function close(){document.getElementById('libModal059').classList.add('hidden')}
 
     document.getElementById('resourceCreate060')?.addEventListener('click',openCreator060);
     document.getElementById('resourceUpload060')?.addEventListener('click',upload060);
+    document.getElementById('instrumentCreate077')?.addEventListener('click',()=>{
+      if(typeof window.openInstrumentCreator077==='function')window.openInstrumentCreator077();
+    });
 
     addSubnav060();
   }
