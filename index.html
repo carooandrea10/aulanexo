@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>AulaNexo · Prototipo 0.0.73</title>
+<title>AulaNexo · Prototipo 0.0.75</title>
 <style>
 :root{
   --bg:#f5f7fb;--card:#fff;--text:#1f2937;--muted:#6b7280;--line:#e5e7eb;
@@ -1300,12 +1300,213 @@ nav.app-nav button[data-view].active{background:var(--primary-soft);color:#3730a
 .resource073-note{border-left:4px solid #818cf8;background:#f8faff;border-radius:10px;padding:9px 11px;font-size:11px;line-height:1.45;color:#4b5563;margin-top:10px}
 @media(max-width:720px){.resource073-grid{grid-template-columns:1fr}.resource073-modal{max-width:96vw!important}}
 
+
+/* ===== AULANEXO 0.0.74 · IDEAS PEDAGÓGICAS DESARROLLADAS ===== */
+.resource074-summary{
+  margin-top:9px;padding:9px 10px;border-radius:11px;background:#f8fafc;
+  border:1px solid #e5e7eb;font-size:11.5px;line-height:1.48;color:#374151
+}
+.resource074-meta{
+  display:flex;gap:6px;flex-wrap:wrap;margin-top:9px
+}
+.resource074-chip{
+  display:inline-flex;align-items:center;gap:4px;border:1px solid #dbe2f2;
+  border-radius:999px;padding:4px 8px;background:#fff;font-size:10px;
+  font-weight:800;color:#475569
+}
+.resource074-develop{
+  background:#eef2ff!important;color:#3730a3!important;border-color:#c7d2fe!important
+}
+.resource074-detail{
+  margin-top:12px;padding-top:12px;border-top:1px dashed #cbd5e1
+}
+.resource074-detail.hidden{display:none!important}
+.resource074-detail-head{
+  display:flex;justify-content:space-between;gap:8px;align-items:flex-start;
+  padding:10px 11px;border-radius:12px;background:#f5f3ff;margin-bottom:10px
+}
+.resource074-detail-head strong{font-size:12px;color:#312e81}
+.resource074-detail-head span{font-size:10.5px;color:#6b7280;line-height:1.35}
+.resource074-section{
+  margin:9px 0;padding:9px 10px;border:1px solid #e5e7eb;border-radius:12px;background:#fff
+}
+.resource074-section h5{
+  margin:0 0 5px;font-size:11px;text-transform:uppercase;letter-spacing:.035em;color:#4f46e5
+}
+.resource074-section p{
+  margin:0;font-size:11.5px;line-height:1.5;color:#374151
+}
+.resource074-section ul,.resource074-section ol{
+  margin:4px 0 0;padding-left:18px
+}
+.resource074-section li{
+  margin:4px 0;font-size:11.5px;line-height:1.48;color:#374151
+}
+.resource074-phase{
+  display:grid;grid-template-columns:74px 1fr;gap:9px;align-items:start;margin:7px 0
+}
+.resource074-phase b{
+  font-size:10.5px;color:#4338ca;background:#eef2ff;border-radius:8px;
+  padding:5px 6px;text-align:center
+}
+.resource074-phase div{font-size:11.5px;line-height:1.48;color:#374151}
+.resource074-question{
+  display:block;margin:4px 0;padding-left:12px;position:relative;
+  font-size:11.5px;line-height:1.45;color:#374151
+}
+.resource074-question:before{
+  content:"•";position:absolute;left:2px;color:#6366f1;font-weight:900
+}
+.resource074-resource-box{
+  background:#fffbeb!important;border-color:#fde68a!important
+}
+.resource074-resource-box h5{color:#92400e}
+.resource074-copyfull{
+  background:#fff!important;color:#4338ca!important;border-color:#c7d2fe!important
+}
+@media(max-width:720px){
+  .resource074-phase{grid-template-columns:1fr}
+  .resource074-phase b{text-align:left;width:max-content}
+}
+
+
+/* ===== AULANEXO 0.0.75 · IDEAS REALMENTE VINCULADAS AL OA ===== */
+.resource075-intro{
+  border:1px solid #c7d2fe;background:linear-gradient(135deg,#f8faff,#f5f3ff);
+  border-radius:16px;padding:14px 15px;margin-bottom:15px
+}
+.resource075-intro strong{font-size:14px;color:#312e81}
+.resource075-intro p{font-size:12px;line-height:1.55;color:#4b5563;margin:5px 0 0}
+.resource075-oa-focus{
+  margin-top:9px;padding:9px 11px;border-radius:11px;background:#fff;border:1px solid #e0e7ff;
+  font-size:11.5px;line-height:1.48;color:#374151
+}
+.resource075-list{display:flex;flex-direction:column;gap:16px}
+.resource075-card{
+  border:1px solid #dbe2f2;border-radius:18px;background:#fff;overflow:hidden;
+  box-shadow:0 5px 18px rgba(51,65,85,.055)
+}
+.resource075-card-head{
+  padding:15px 16px 13px;display:grid;grid-template-columns:48px 1fr;gap:11px;
+  background:linear-gradient(135deg,#ffffff,#fafaff);border-bottom:1px solid #eef2f7
+}
+.resource075-icon{
+  width:48px;height:48px;border-radius:14px;background:#eef2ff;display:grid;
+  place-items:center;font-size:25px;border:1px solid #dbe4ff
+}
+.resource075-card-head h4{font-size:17px;margin:0;color:#1f2937;line-height:1.25}
+.resource075-kicker{
+  font-size:10px;font-weight:900;text-transform:uppercase;letter-spacing:.055em;
+  color:#6366f1;margin-bottom:3px
+}
+.resource075-promise{
+  font-size:12px;line-height:1.52;color:#4b5563;margin:6px 0 0
+}
+.resource075-quick{
+  display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:7px;
+  padding:11px 16px;background:#fbfcfe;border-bottom:1px solid #eef2f7
+}
+.resource075-stat{
+  border:1px solid #e5e7eb;border-radius:11px;padding:7px 8px;background:#fff;min-height:53px
+}
+.resource075-stat b{
+  display:block;font-size:9px;text-transform:uppercase;letter-spacing:.04em;color:#64748b;margin-bottom:3px
+}
+.resource075-stat span{font-size:11px;font-weight:800;color:#334155;line-height:1.28}
+.resource075-preview{
+  display:grid;grid-template-columns:1.12fr .88fr;gap:10px;padding:13px 16px
+}
+.resource075-previewbox{
+  border-radius:12px;padding:10px 11px;border:1px solid #e5e7eb;background:#fff
+}
+.resource075-previewbox h5{margin:0 0 5px;font-size:10.5px;color:#4f46e5;text-transform:uppercase;letter-spacing:.035em}
+.resource075-previewbox p,.resource075-previewbox li{
+  margin:0;font-size:11.5px;line-height:1.5;color:#374151
+}
+.resource075-previewbox ul{margin:3px 0 0;padding-left:17px}
+.resource075-actions{
+  display:flex;gap:8px;flex-wrap:wrap;padding:0 16px 14px
+}
+.resource075-actions button{font-size:11.5px;padding:9px 12px}
+.resource075-develop{
+  background:#4f46e5!important;color:#fff!important;border-color:#4f46e5!important
+}
+.resource075-detail{
+  border-top:1px solid #e5e7eb;background:#fcfcff;padding:16px
+}
+.resource075-detail.hidden{display:none!important}
+.resource075-guide-head{
+  display:flex;justify-content:space-between;gap:10px;align-items:flex-start;margin-bottom:13px
+}
+.resource075-guide-head h4{font-size:16px;margin:0;color:#312e81}
+.resource075-guide-head p{font-size:11px;color:#6b7280;margin:4px 0 0;line-height:1.45}
+.resource075-columns{
+  display:grid;grid-template-columns:1fr 1fr;gap:11px;margin-bottom:11px
+}
+.resource075-section{
+  border:1px solid #e2e8f0;border-radius:14px;background:#fff;padding:11px 12px;margin-bottom:10px
+}
+.resource075-section h5{
+  margin:0 0 6px;font-size:11px;color:#4338ca;text-transform:uppercase;letter-spacing:.035em
+}
+.resource075-section p,.resource075-section li{
+  font-size:12px;line-height:1.55;color:#374151
+}
+.resource075-section p{margin:0}
+.resource075-section ul,.resource075-section ol{margin:4px 0 0;padding-left:19px}
+.resource075-section li{margin:4px 0}
+.resource075-timeline{display:flex;flex-direction:column;gap:8px}
+.resource075-phase{
+  display:grid;grid-template-columns:92px 1fr;gap:10px;align-items:start
+}
+.resource075-phase-label{
+  border-radius:10px;padding:7px 8px;text-align:center;font-size:10.5px;font-weight:900;
+  color:#3730a3;background:#eef2ff;border:1px solid #dbe4ff
+}
+.resource075-phase-body{font-size:12px;line-height:1.55;color:#374151}
+.resource075-script{
+  border-left:4px solid #8b5cf6;background:#f5f3ff!important;border-color:#ddd6fe!important
+}
+.resource075-script h5{color:#6d28d9}
+.resource075-ready{
+  background:#fffbeb!important;border-color:#fde68a!important
+}
+.resource075-ready h5{color:#92400e}
+.resource075-assess{
+  background:#f0fdf4!important;border-color:#bbf7d0!important
+}
+.resource075-assess h5{color:#166534}
+.resource075-warning{
+  background:#fff7ed!important;border-color:#fed7aa!important
+}
+.resource075-warning h5{color:#9a3412}
+.resource075-support{
+  background:#eff6ff!important;border-color:#bfdbfe!important
+}
+.resource075-support h5{color:#1d4ed8}
+.resource075-mini-badge{
+  display:inline-flex;align-items:center;border:1px solid #dbe2f2;border-radius:999px;
+  padding:4px 8px;background:#fff;font-size:10px;font-weight:800;color:#475569;margin:2px 4px 2px 0
+}
+.resource075-copy{
+  background:#fff!important;color:#4338ca!important;border-color:#c7d2fe!important
+}
+.resource075-empty-note{
+  font-size:11px;color:#64748b;border-left:3px solid #c7d2fe;padding-left:9px;margin-top:8px
+}
+@media(max-width:760px){
+  .resource075-quick{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .resource075-preview,.resource075-columns{grid-template-columns:1fr}
+  .resource075-phase{grid-template-columns:1fr}
+  .resource075-phase-label{text-align:left;width:max-content}
+}
+
 </style>
 </head>
 <body>
 <header>
   <div class="header-wrap">
-    <div><h1>AulaNexo</h1><div class="subtitle">Prototipo 0.0.73 · Ideas pedagógicas por OA</div></div>
+    <div><h1>AulaNexo</h1><div class="subtitle">Prototipo 0.0.75 · Ideas pedagógicas vinculadas al OA</div></div>
     <div class="header-actions"><button id="menuToggle" class="menu-toggle">☰ Menú</button><span class="current-section-pill">Sección: <strong id="currentSectionLabel">Curso</strong></span><span class="active-course-pill">Curso activo: <strong id="headerCourseName">Sin curso</strong></span><span id="cloudStatus" class="cloud-pill" data-state="offline">☁️ Sin conectar</span><button id="cloudConnectBtn" class="secondary">👤 Mi cuenta</button><button id="downloadBackup">⬇ Respaldo</button><button id="loadBackupBtn">⬆ Cargar respaldo</button><input id="backupFile" type="file" accept="application/json" hidden></div>
   </div>
 </header>
@@ -4566,7 +4767,7 @@ function close(){document.getElementById('libModal059').classList.add('hidden')}
     </div>
 
     <div class="resources060-ready resource073-ready">
-      <b>AulaNexo te orienta, tú creas.</b> Puedes llevar la idea a Canva, Word, PowerPoint, material concreto u otra herramienta. Cuando esté lista, súbela a <b>Recursos guardados</b> y vincúlala al OA.
+      <b>AulaNexo te orienta, tú creas.</b> Aquí no recibirás una frase genérica: la propuesta debe ayudarte a llevar el OA a la sala con ejemplos, pasos, preguntas y evidencias. Si necesitas material, AulaNexo te indica qué crear en Canva, Word, PowerPoint o con material concreto; luego puedes subirlo a <b>Recursos guardados</b>.
     </div>
 
     <div class="row end section-gap">
@@ -6280,23 +6481,20 @@ function close(){document.getElementById('libModal059').classList.add('hidden')}
 
 
 <script>
-/* ===== AULANEXO 0.0.73 · ASISTENTE DE IDEAS PEDAGÓGICAS ===== */
+/* ===== AULANEXO 0.0.75 · IDEAS PEDAGÓGICAS VINCULADAS AL OA ===== */
 (function(){
   const btn=document.getElementById('resourceIdeaGenerate073');
   const results=document.getElementById('resourceIdeaResults073');
   if(!btn||!results)return;
 
-  function esc073(s){
-    return String(s??'').replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m]));
-  }
-  function norm073(s){
-    return String(s||'').toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'').trim();
-  }
-  function grade073(){
+  const E=s=>String(s??'').replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m]));
+  const N=s=>String(s||'').toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'').trim();
+
+  function grade075(){
     const n=parseInt(document.getElementById('resourceGrade060')?.value||'',10);
     return Number.isFinite(n)?n:0;
   }
-  function selectedOA073(){
+  function selectedOA075(){
     return [...document.querySelectorAll('#resourceOAChoices063 input[type="checkbox"]:checked')].map(input=>{
       const label=input.closest('.resource063-oa-item');
       return {
@@ -6306,122 +6504,641 @@ function close(){document.getElementById('libModal059').classList.add('hidden')}
       };
     });
   }
-  function ageSupport073(g){
-    if(g<=2)return 'Usa imágenes grandes, consignas de una sola acción, respuesta oral o manipulativa y muy poca escritura.';
-    if(g<=4)return 'Combina apoyo visual con respuestas breves, comparación y explicación oral.';
-    if(g<=6)return 'Pide justificar decisiones, registrar estrategias y trabajar de forma colaborativa.';
-    return 'Incorpora análisis, evidencia, argumentación, autonomía y una síntesis final.';
+  function clip075(text,limit=180){
+    const s=String(text||'').replace(/\s+/g,' ').trim();
+    return s.length>limit?s.slice(0,limit-1).trim()+'…':s;
   }
-  function materials073(type){
-    const n=norm073(type);
-    if(n.includes('juego'))return 'Tarjetas, cinta adhesiva, pizarra y elementos simples para marcar puntajes o turnos.';
-    if(n.includes('manipul'))return 'Material concreto disponible en la sala, tarjetas, recipientes o elementos recortables.';
-    if(n.includes('ficha'))return 'Una hoja diseñada en Canva/Word, imágenes simples y lápices de colores.';
-    if(n.includes('ticket'))return 'Media hoja o tarjeta pequeña; también puede proyectarse y responderse en un papel.';
-    return 'Pizarra, tarjetas, imágenes o material que ya tengas disponible.';
+  function includesAny075(s,arr){return arr.some(x=>s.includes(x))}
+  function joinNatural075(arr){
+    if(!arr.length)return '';
+    if(arr.length===1)return arr[0];
+    return arr.slice(0,-1).join(', ')+' y '+arr[arr.length-1];
   }
-  function pool073(subject,topic){
-    const s=norm073(subject), t=norm073(topic);
-    if(s.includes('lenguaje')||s.includes('lengua y literatura')){
-      return [
-        {icon:'🔎',title:'Detectives de palabras',format:'Juego / ficha opcional',steps:['Presenta palabras, imágenes o fragmentos breves relacionados con el OA.','Los estudiantes buscan una característica indicada: sonido, sílaba, información explícita, personaje o pista textual.','Cierran explicando cómo encontraron la respuesta.'],ludic:'Usa una lupa de papel, tarjetas de “pista” o insignias de detective.'},
-        {icon:'🎲',title:'Bingo del aprendizaje',format:'Juego grupal',steps:['Crea cartones con conceptos, palabras, números o respuestas vinculadas al OA.','Da pistas en vez de nombrar directamente la respuesta.','Cada estudiante justifica una casilla antes de marcarla.'],ludic:'Puedes usar porotos, tapas o fichas como marcadores.'},
-        {icon:'✂️',title:'Recorta, ordena y explica',format:'Ficha imprimible',steps:['Diseña entre 6 y 10 tarjetas grandes.','Pide ordenar, clasificar o relacionar según el OA.','Agrega una última consigna oral: “¿Cómo supiste dónde iba?”.'],ludic:'Convierte las categorías en casitas, cofres, trenes o personajes.'},
-        {icon:'🎤',title:'Micrófono lector',format:'Actividad de cierre',steps:['Entrega una palabra, oración o pregunta breve a cada pareja.','Un estudiante responde y el compañero complementa.','Selecciona 2 o 3 respuestas para compartir con el curso.'],ludic:'Usa un micrófono de cartón o un objeto que funcione como “turno de voz”.'}
-      ];
-    }
-    if(s.includes('matemat')){
-      return [
-        {icon:'🛒',title:'El mercado matemático',format:'Actividad manipulativa',steps:['Asigna precios, cantidades o desafíos relacionados con el OA.','Los estudiantes compran, agrupan, comparan o calculan usando material concreto.','Al final explican una estrategia que usaron.'],ludic:'Usa monedas de papel, etiquetas y pequeños puestos de mercado.'},
-        {icon:'🚀',title:'Camino numérico gigante',format:'Juego grupal',steps:['Marca un recorrido en el suelo o pizarra.','Cada casilla contiene un desafío breve del OA.','Avanzan solo después de explicar la respuesta o representación.'],ludic:'El recorrido puede ser espacial, submarino, de dinosaurios o de tesoro.'},
-        {icon:'🧱',title:'Construye y representa',format:'Actividad manipulativa',steps:['Da un desafío numérico o geométrico.','Los estudiantes lo representan con bloques, palitos, tapas o dibujos.','Comparan dos maneras distintas de representar lo mismo.'],ludic:'Entrega una “misión de construcción” distinta a cada grupo.'},
-        {icon:'🎯',title:'Elige la respuesta y defiéndela',format:'Ticket de Salida',steps:['Presenta 2 o 3 respuestas posibles a un problema breve.','Cada estudiante elige una y marca su opción.','Agrega una frase: “Elegí esta porque…”.'],ludic:'Usa semáforo, dianas o tarjetas A/B/C para responder.'}
-      ];
-    }
+
+  /* Perfil pedagógico construido desde el texto real del OA. */
+  function profile075(subject,oaText,g,topic){
+    const s=N(subject), o=N(oaText), t=N(topic);
+    const p={
+      focus:topic||clip075(oaText,120),
+      action:'aplicar el aprendizaje del OA en una situación concreta',
+      examples:['un ejemplo trabajado por el docente','un ejemplo para resolver en parejas','un caso nuevo para comprobar comprensión'],
+      success:['Responde de acuerdo con el aprendizaje central del OA.','Explica al menos una decisión o procedimiento.','Aplica lo aprendido en un ejemplo nuevo.'],
+      confusions:['Responder por intuición sin usar el criterio trabajado.','Repetir el ejemplo del docente sin poder aplicarlo a un caso nuevo.'],
+      prompts:['¿Qué te hace pensar eso?','¿Qué evidencia o pista usaste?','¿Cómo lo explicarías con tus palabras?','¿Qué cambiaría en otro ejemplo?'],
+      evidence:'una respuesta observable y una explicación breve',
+      resource:'Prepara un apoyo simple con una consigna, un ejemplo modelado y los elementos necesarios para aplicar el OA.',
+      hook:'Presenta un caso cercano o una imagen y formula una pregunta que obligue a usar el aprendizaje del OA.',
+      teacherLine:'Hoy vamos a resolver una misión usando lo que sabemos. No buscamos adivinar: tendremos que explicar qué pista, evidencia o estrategia usamos.',
+      name:'Misión del OA',
+      icon:'🎯'
+    };
+
     if(s.includes('ciencias')){
+      p.icon='🔬';
+      if(o.includes('seres vivos')&&includesAny075(o,['cosas no vivas','no vivas'])){
+        Object.assign(p,{
+          focus:topic||'características de los seres vivos y comparación con elementos no vivos',
+          action:'reconocer características de los seres vivos y usarlas para distinguirlos de elementos no vivos',
+          examples:['perro','árbol','mariposa','flor','piedra','silla','vaso','pelota'],
+          success:['Clasifica correctamente ejemplos de seres vivos y no vivos.','Justifica usando una característica del OA: crece, responde a estímulos, se reproduce o necesita agua, alimento y aire.','Corrige una clasificación cuando aparece nueva evidencia.'],
+          confusions:['Pensar que algo se mueve significa automáticamente que está vivo.','Clasificar solo por apariencia sin mencionar una característica de los seres vivos.','Creer que una planta no está viva porque no se desplaza como un animal.'],
+          prompts:['¿Qué característica de los seres vivos aparece aquí?','¿Necesita agua, alimento o aire para vivir?','¿Puede crecer o responder al ambiente?','¿Qué diferencia encuentras entre este ejemplo y un objeto no vivo?'],
+          evidence:'clasificación de 6–8 ejemplos más la justificación oral de al menos una elección',
+          resource:'Crea 8 tarjetas con imagen y palabra: perro, árbol, mariposa, flor, piedra, silla, vaso y pelota. Agrega dos rótulos grandes: “Ser vivo” y “No vivo”. Para desafiar después, incorpora una semilla.',
+          hook:'Muestra una planta y una pelota. Pregunta: “Las dos están en nuestra sala, pero ¿las dos están vivas? ¿Cómo podríamos comprobarlo?”.',
+          teacherLine:'Hoy seremos detectives de la vida. No basta con decir “sí” o “no”: cada equipo tendrá que encontrar una pista que demuestre por qué algo es un ser vivo o no.',
+          name:'Detectives de la vida'
+        });
+      }else if(o.includes('sentidos')){
+        Object.assign(p,{
+          focus:topic||'ubicación, función y cuidado de los sentidos',
+          action:'identificar qué sentido participa en distintas situaciones, ubicar el órgano correspondiente y proponer acciones de cuidado',
+          examples:['escuchar una campana','oler una fruta','mirar una señal','tocar hielo','probar un alimento'],
+          success:['Relaciona una situación con el sentido correspondiente.','Ubica el órgano principal asociado al sentido.','Propone una acción concreta para protegerlo o evitar un riesgo.'],
+          confusions:['Nombrar solo el órgano sin explicar para qué sirve.','Confundir el sentido con el objeto que produce el estímulo.','Proponer cuidados vagos que no se relacionan con el riesgo presentado.'],
+          prompts:['¿Qué sentido estás usando aquí?','¿Dónde está ubicado el órgano que participa?','¿Qué información nos entrega este sentido?','¿Qué acción nos ayuda a protegerlo?'],
+          evidence:'resolución de situaciones cotidianas y propuesta de al menos una medida de cuidado',
+          resource:'Prepara 10 tarjetas: 5 situaciones de uso de los sentidos y 5 situaciones de cuidado o riesgo. Incluye dibujos claros y una frase breve. Puedes sumar una silueta del cuerpo para ubicar ojos, oídos, nariz, lengua y piel.',
+          hook:'Haz sonar suavemente un objeto fuera de la vista y pregunta: “¿Cómo supieron que ocurrió algo si no lo estaban mirando?”.',
+          teacherLine:'Nuestro cuerpo recibe pistas todo el tiempo. Hoy descubriremos qué sentido nos entrega cada pista y cómo podemos cuidarlo.',
+          name:'Guardianes de los sentidos'
+        });
+      }else if(o.includes('animales')&&includesAny075(o,['tamano','cubierta corporal','desplazamiento','habitat'])){
+        Object.assign(p,{
+          focus:topic||'comparación de animales según características observables',
+          action:'observar y comparar animales usando criterios como tamaño, cubierta corporal, desplazamiento y hábitat',
+          examples:['pez','perro','mariposa','pingüino','serpiente','rana','ave','conejo'],
+          success:['Describe al menos dos características observables de un animal.','Compara dos animales usando un mismo criterio.','Clasifica sin cambiar el criterio a mitad de la tarea.'],
+          confusions:['Decir solo si “le gusta” un animal en vez de observar características.','Mezclar criterios diferentes en una misma clasificación.'],
+          prompts:['¿Qué característica puedes observar?','¿En qué se parecen estos dos animales?','¿En qué se diferencian?','¿Qué criterio estás usando para agruparlos?'],
+          evidence:'comparación oral o gráfica de animales usando al menos dos criterios',
+          resource:'Crea tarjetas de 8 animales con fotografías o ilustraciones claras. Añade tarjetas de criterio: “cubierta corporal”, “cómo se desplaza”, “dónde vive” y “tamaño”.',
+          hook:'Muestra un pez y un perro y pregunta: “Los dos son animales, pero ¿qué pistas nos permiten compararlos?”.',
+          teacherLine:'Hoy no vamos a ordenar animales por cuál nos gusta más. Los científicos usan características observables y eso haremos nosotros.',
+          name:'Safari de características'
+        });
+      }else if(o.includes('plantas')&&includesAny075(o,['hojas','flores','tallos','raices'])){
+        Object.assign(p,{
+          focus:topic||'estructuras principales de las plantas',
+          action:'identificar hojas, flores, tallo y raíces mediante observación de plantas reales o imágenes',
+          examples:['raíz','tallo','hoja','flor','planta completa','plantín'],
+          success:['Identifica las estructuras principales en una planta.','Señala su ubicación en un ejemplar o imagen.','Describe con palabras simples una característica visible de cada estructura.'],
+          confusions:['Confundir raíz con tallo por observar solo un dibujo esquemático.','Nombrar partes sin poder ubicarlas en una planta diferente.'],
+          prompts:['¿Qué parte está bajo la tierra?','¿Dónde se unen las hojas?','¿Qué estructuras se repiten en distintas plantas?','¿Qué observas en esta parte?'],
+          evidence:'identificación correcta de las estructuras en una planta diferente a la usada durante el modelado',
+          resource:'Usa una planta real pequeña y prepara una lámina de otra especie. Crea cuatro tarjetas con las palabras raíz, tallo, hoja y flor para ubicarlas en ambos ejemplos.',
+          hook:'Lleva una planta real y cúbrela parcialmente. Ve descubriendo sus partes y pregunta qué observan antes de nombrarlas.',
+          teacherLine:'Hoy miraremos una planta como científicos: parte por parte. La misión es descubrir qué estructuras aparecen aunque las plantas no sean iguales.',
+          name:'Exploradores de plantas'
+        });
+      }else if(includesAny075(o,['habitos de vida saludable','vida saludable','cuerpo sano','prevenir enfermedades'])){
+        Object.assign(p,{
+          focus:topic||'hábitos de vida saludable y prevención',
+          action:'reconocer acciones cotidianas que ayudan a cuidar el cuerpo y justificar por qué son saludables',
+          examples:['lavarse las manos','actividad física','lavar frutas','tomar agua','dormir','cepillarse los dientes','comer variado','no lavarse antes de comer'],
+          success:['Distingue acciones saludables de acciones que pueden perjudicar el cuidado del cuerpo.','Relaciona una acción con un beneficio concreto.','Propone un hábito posible de aplicar en su vida diaria.'],
+          confusions:['Clasificar alimentos solo como “buenos” o “malos” sin considerar variedad y frecuencia.','Dar una regla sin explicar cómo ayuda al cuerpo.'],
+          prompts:['¿Cómo ayuda esta acción a nuestro cuerpo?','¿Qué podría pasar si nunca la realizamos?','¿Qué hábito ya practicas?','¿Qué cambio pequeño podrías intentar?'],
+          evidence:'análisis de situaciones y elección justificada de un hábito de cuidado',
+          resource:'Prepara 8–10 tarjetas de acciones cotidianas. Usa un semáforo o dos zonas: “Cuida mi cuerpo” / “Necesita mejorar”. Evita mensajes de culpa o apariencia física.',
+          hook:'Presenta dos rutinas de mañana muy diferentes y pregunta cuál ayuda mejor a cuidar el cuerpo y por qué.',
+          teacherLine:'Hoy no buscamos ser perfectos. Vamos a reconocer pequeñas acciones que ayudan a nuestro cuerpo a mantenerse sano.',
+          name:'Misión cuerpo sano'
+        });
+      }else if(o.includes('materiales')&&includesAny075(o,['propiedades','flex','rigid','transpar','opac','imperme'])){
+        Object.assign(p,{
+          focus:topic||'materiales y sus propiedades observables',
+          action:'explorar objetos, identificar de qué material están hechos y clasificarlos según una propiedad observable',
+          examples:['esponja','cuchara plástica','regla metálica','trozo de tela','vaso transparente','goma','cartón','madera'],
+          success:['Describe una propiedad observable del material.','Clasifica objetos usando un criterio declarado.','Compara dos materiales usando vocabulario del OA.'],
+          confusions:['Confundir el objeto con el material del que está hecho.','Cambiar de criterio durante una clasificación.'],
+          prompts:['¿De qué material está hecho?','¿Qué propiedad puedes comprobar?','¿Qué objetos podrían ir juntos y por qué?','¿Qué material elegirías para esta situación?'],
+          evidence:'clasificación de objetos y explicación del criterio usando una propiedad',
+          resource:'Arma una bandeja con 6–8 objetos seguros de distintos materiales y tarjetas con propiedades. Evita objetos filosos, quebrables o de difícil manipulación.',
+          hook:'Muestra dos objetos que cumplen la misma función pero están hechos de materiales distintos. Pregunta qué cambia entre ellos.',
+          teacherLine:'Hoy vamos a tocar, observar y comparar. No basta con nombrar el objeto: queremos descubrir qué material tiene y cómo es.',
+          name:'Laboratorio de materiales'
+        });
+      }else{
+        p.name='Laboratorio del OA';
+        p.teacherLine='Hoy trabajaremos como científicos: observaremos, compararemos y usaremos evidencia para explicar lo que descubramos.';
+        p.evidence='observación, comparación o explicación directamente relacionada con el OA seleccionado';
+      }
+    }
+
+    if(s.includes('matemat')){
+      p.icon='🧮';
+      if(includesAny075(o,['contar','numeros','representar','comparar y ordenar']) && !includesAny075(o,['fraccion','multiplic','division'])){
+        Object.assign(p,{
+          focus:topic||'conteo, representación y comparación de cantidades',
+          action:'representar cantidades de distintas maneras y comparar estrategias',
+          examples:['cubos encajables','marcos de diez','tarjetas con numerales','colecciones de objetos','recta numérica'],
+          success:['Cuenta o representa sin perder correspondencia uno a uno.','Relaciona cantidad con numeral.','Explica cómo comprobó una cantidad o comparación.'],
+          confusions:['Contar un objeto más de una vez.','Reconocer el numeral pero no relacionarlo con la cantidad.','Responder “es más” sin justificar con la representación.'],
+          prompts:['¿Cómo sabes cuántos hay?','¿Puedes mostrarlo de otra manera?','¿Dónde ves que una cantidad es mayor?','¿Cómo comprobarías sin volver a empezar?'],
+          evidence:'representación correcta de una cantidad y explicación de una comparación',
+          resource:'Prepara tarjetas de números y colecciones equivalentes; agrega cubos, tapas o palitos para construir las cantidades. Usa el rango numérico que indique el OA.',
+          hook:'Muestra dos colecciones cercanas en cantidad y pregunta cómo podríamos saber cuál tiene más sin adivinar.',
+          teacherLine:'Hoy los números tendrán varias formas. La misión es demostrar una cantidad con objetos, dibujos o numerales y explicar cómo sabemos que representa lo mismo.',
+          name:'Construye el número'
+        });
+      }else if(includesAny075(o,['adicion','sustraccion','sumar','restar','componer','descomponer'])){
+        Object.assign(p,{
+          focus:topic||'adición, sustracción y relaciones entre cantidades',
+          action:'resolver situaciones concretas representando lo que se agrega, se quita, se compone o se descompone',
+          examples:['cubos','fichas','historias breves','marco de diez','dibujos','recta numérica'],
+          success:['Representa correctamente la situación.','Elige una operación o estrategia coherente.','Explica qué representa cada número en su procedimiento.'],
+          confusions:['Elegir una operación solo por una palabra de la consigna.','Escribir un resultado sin representar la situación.'],
+          prompts:['¿Qué está ocurriendo con la cantidad?','¿Qué representa este número?','¿Puedes resolverlo de otra manera?','¿Cómo compruebas tu resultado?'],
+          evidence:'resolución de una situación nueva con representación y explicación',
+          resource:'Crea 6 tarjetas con problemas muy breves y contextos cercanos. Acompaña con material concreto. En cursos pequeños usa números dentro del rango del OA y una sola acción por tarjeta.',
+          hook:'Cuenta una historia breve con objetos reales: “Había 6, llegaron 2…”. Detente antes del resultado y pregunta qué cambió.',
+          teacherLine:'Hoy no vamos a buscar solo el resultado. Vamos a mostrar qué le pasó a la cantidad y cómo nuestra estrategia representa esa historia.',
+          name:'Historias que cambian números'
+        });
+      }else if(includesAny075(o,['multiplic','division','repartir','grupos iguales'])){
+        Object.assign(p,{
+          focus:topic||'grupos iguales, multiplicación y división',
+          action:'modelar situaciones de grupos iguales o reparto y conectar la representación con expresiones matemáticas',
+          examples:['platos y fichas','arreglos rectangulares','grupos de tapas','tarjetas de reparto'],
+          success:['Construye grupos iguales o un reparto equitativo.','Relaciona la representación con la operación.','Explica qué representa cada factor, grupo o cantidad repartida.'],
+          confusions:['Formar grupos de tamaños distintos.','Usar multiplicación o división sin relacionarla con la situación.'],
+          prompts:['¿Cuántos grupos hay?','¿Cuántos elementos tiene cada grupo?','¿El reparto quedó justo?','¿Cómo escribirías lo que construiste?'],
+          evidence:'modelo concreto correcto y explicación de la relación entre grupos y operación',
+          resource:'Prepara fichas y recipientes pequeños, junto con tarjetas de desafíos de agrupación o reparto. Incluye una tabla simple “grupos / en cada grupo / total”.',
+          hook:'Entrega una cantidad de objetos y pregunta cómo repartirlos justamente entre varios equipos.',
+          teacherLine:'Hoy la operación aparecerá después de construir. Primero haremos grupos o repartos; luego escribiremos la matemática que representa lo que hicimos.',
+          name:'Fábrica de grupos'
+        });
+      }else if(includesAny075(o,['fraccion','fracciones'])){
+        Object.assign(p,{
+          focus:topic||'fracciones como partes iguales de un entero o colección',
+          action:'construir, comparar y representar fracciones usando partes iguales',
+          examples:['círculos de papel','tiras de fracciones','cuadrículas','colecciones de fichas'],
+          success:['Divide o reconoce partes iguales.','Relaciona la representación con la fracción correspondiente.','Justifica comparaciones usando el tamaño o número de partes.'],
+          confusions:['Considerar fracción cualquier división aunque las partes no sean iguales.','Pensar que un denominador mayor siempre significa una fracción mayor.'],
+          prompts:['¿Las partes son iguales?','¿Qué indica el número de abajo?','¿Cuántas partes estamos considerando?','¿Cómo lo demostrarías con un dibujo?'],
+          evidence:'representación correcta de una fracción y explicación usando partes iguales',
+          resource:'Prepara tiras o círculos recortables con particiones claras. Añade tarjetas con fracciones y desafíos de equivalencia o comparación según el OA.',
+          hook:'Muestra dos “mitades” dibujadas de forma desigual y pregunta si ambas representan realmente una mitad.',
+          teacherLine:'Hoy las fracciones no serán solo números: vamos a construirlas y comprobar que las partes sean realmente iguales.',
+          name:'Taller de fracciones'
+        });
+      }else if(includesAny075(o,['figuras','cuerpos geometricos','geometr','angulos','simetr'])){
+        Object.assign(p,{
+          focus:topic||'propiedades y relaciones geométricas',
+          action:'observar, construir o clasificar figuras usando propiedades en lugar de apariencia',
+          examples:['figuras recortadas','palitos','geoplano','objetos del entorno','papel cuadriculado'],
+          success:['Nombra o reconoce propiedades relevantes.','Clasifica usando un criterio geométrico.','Justifica por qué una figura pertenece o no a una categoría.'],
+          confusions:['Clasificar por orientación o tamaño en vez de propiedades.','Usar solo el nombre de la figura sin describir características.'],
+          prompts:['¿Qué propiedad estás usando?','¿Cambiaría la figura si la giramos?','¿Qué tienen en común?','¿Qué figura no pertenece y por qué?'],
+          evidence:'clasificación o construcción acompañada de una justificación geométrica',
+          resource:'Prepara un set variado de figuras, incluyendo ejemplos rotados y de distintos tamaños para evitar que el reconocimiento dependa de un prototipo único.',
+          hook:'Muestra una figura conocida girada y pregunta si sigue siendo la misma figura y cómo podemos demostrarlo.',
+          teacherLine:'Hoy miraremos las figuras por sus propiedades, no por cómo están “paradas” o por su tamaño.',
+          name:'Detectives geométricos'
+        });
+      }else{
+        p.name='Desafío matemático';
+        p.teacherLine='Hoy tendremos que mostrar nuestro pensamiento. El resultado importa, pero también cómo lo representamos, explicamos y comprobamos.';
+        p.evidence='procedimiento o representación matemática más una explicación breve';
+      }
+    }
+
+    if(s.includes('lenguaje')||s.includes('lengua y literatura')){
+      p.icon='📚';
+      if(includesAny075(o,['conciencia fonologica','sonidos','silabas','fonema']) || includesAny075(t,['consonante','silaba','sonido'])){
+        Object.assign(p,{
+          focus:topic||'conciencia fonológica y relación entre sonidos, sílabas y palabras',
+          action:'escuchar, identificar, segmentar o combinar sonidos y sílabas en palabras conocidas',
+          examples:['palabras con imágenes','tarjetas silábicas','palmas','fichas para marcar sonidos','objetos del aula'],
+          success:['Escucha e identifica el sonido o sílaba solicitada.','Segmenta o combina sin depender de la escritura cuando la tarea es oral.','Aplica la habilidad a palabras nuevas y conocidas.'],
+          confusions:['Responder por la letra escrita cuando la tarea evalúa el sonido.','Agregar o quitar sonidos al segmentar.'],
+          prompts:['¿Qué escuchas al comienzo?','¿Cuántas partes o golpes de voz escuchas?','¿Qué palabra queda si unimos estos sonidos?','¿Puedes pensar otra palabra que tenga ese sonido?'],
+          evidence:'respuestas orales en palabras nuevas, no solo repetición de ejemplos modelados',
+          resource:'Crea tarjetas con imagen + palabra solo como apoyo visual. Selecciona vocabulario conocido y evita combinaciones que el curso aún no haya aprendido. Para 1° básico usa entre 6 y 10 tarjetas.',
+          hook:'Di dos palabras exagerando el sonido objetivo y pregunta qué escuchan que se repite.',
+          teacherLine:'Hoy nuestros oídos serán detectives. Primero escucharemos; después veremos cómo esos sonidos aparecen en las palabras.',
+          name:'Oídos detectives'
+        });
+      }else if(o.includes('leer')&&includesAny075(o,['fluidez','precision','decod','palabras','oraciones'])){
+        Object.assign(p,{
+          focus:topic||'lectura de palabras y textos breves con precisión y fluidez',
+          action:'leer unidades breves, volver a leer y reconocer qué mejora entre una lectura y otra',
+          examples:['lista breve de palabras','oraciones cortas','mini texto','lectura eco','lectura por turnos'],
+          success:['Lee con precisión acorde al nivel trabajado.','Respeta unidades de sentido en frases breves.','Mejora después de una relectura con apoyo.'],
+          confusions:['Acelerar y perder precisión.','Adivinar palabras por la primera letra o por la imagen.'],
+          prompts:['¿Qué parte de la palabra te ayudó?','¿Dónde conviene hacer una pequeña pausa?','¿Qué mejoró en tu segunda lectura?','¿Qué palabra necesitamos volver a mirar?'],
+          evidence:'lectura breve antes y después de una relectura, observando precisión y continuidad',
+          resource:'Prepara una lectura corta con tipografía grande y vocabulario acorde a las consonantes o patrones ya enseñados. Marca 4–6 palabras foco para practicar antes del texto.',
+          hook:'Lee una oración primero de forma entrecortada y luego con fluidez. Pregunta cuál se entendió mejor y por qué.',
+          teacherLine:'Hoy no se trata de leer rápido. Buscaremos leer cada vez con más seguridad y de una forma que ayude a entender lo que dice el texto.',
+          name:'Lectura que cobra vida'
+        });
+      }else if(includesAny075(o,['comprender','comprension','informacion explicita','inferir','texto'])){
+        Object.assign(p,{
+          focus:topic||'comprensión de textos mediante búsqueda de información y explicación con evidencia',
+          action:'comprender un texto y justificar respuestas usando pistas o información del propio texto',
+          examples:['cuento breve','texto informativo','imagen + texto','preguntas literales','pregunta de inferencia'],
+          success:['Responde una pregunta central del texto.','Ubica o menciona información que apoya la respuesta.','Distingue una respuesta basada en el texto de una opinión personal.'],
+          confusions:['Responder desde experiencias personales sin volver al texto.','Copiar una frase sin explicar cómo responde la pregunta.'],
+          prompts:['¿Dónde encontraste esa información?','¿Qué parte del texto te da una pista?','¿Eso lo dice el texto o lo estás pensando tú?','¿Qué cambió en tu respuesta al volver a leer?'],
+          evidence:'respuesta a una pregunta nueva acompañada de una evidencia del texto',
+          resource:'Selecciona un texto breve acorde al nivel y prepara 3 preguntas: una para localizar, una para relacionar y una para explicar. En primeros cursos, permite responder oralmente o señalando.',
+          hook:'Muestra solo el título o una imagen del texto y recoge predicciones. Después pregunta cuáles se confirmaron al leer.',
+          teacherLine:'Hoy las respuestas no saldrán de la memoria: aprenderemos a volver al texto y encontrar la pista que sostiene lo que pensamos.',
+          name:'Cazadores de pistas'
+        });
+      }else if(o.includes('escribir')){
+        Object.assign(p,{
+          focus:topic||'producción escrita con propósito, ideas organizadas y revisión',
+          action:'planificar, escribir y revisar una producción breve acorde al OA',
+          examples:['lista de ideas','organizador simple','modelo breve','borrador','lista de revisión'],
+          success:['Escribe de acuerdo con el propósito propuesto.','Organiza las ideas de forma comprensible.','Realiza al menos una mejora después de revisar.'],
+          confusions:['Comenzar a escribir sin decidir qué quiere comunicar.','Entender la revisión solo como corregir letra u ortografía.'],
+          prompts:['¿Qué quieres que entienda quien lea?','¿Qué idea debe aparecer primero?','¿Qué parte podrías explicar mejor?','¿Qué cambio hiciste después de revisar?'],
+          evidence:'borrador y versión revisada donde se observe al menos una mejora significativa',
+          resource:'Prepara un organizador previo muy breve y una lista de cotejo con 3 criterios. Ajusta la cantidad de escritura al curso; en niveles iniciales combina dibujo, dictado al adulto y palabras conocidas.',
+          hook:'Muestra dos versiones breves de un mensaje, una clara y otra incompleta. Pregunta cuál cumple mejor su propósito.',
+          teacherLine:'Los escritores no escriben perfecto a la primera. Hoy vamos a pensar, escribir y después mejorar una parte de nuestro texto.',
+          name:'Taller de autores'
+        });
+      }else{
+        p.name='Taller de Lenguaje';
+        p.teacherLine='Hoy vamos a usar una estrategia de Lenguaje y luego tendremos que explicar qué nos ayudó a comprender, leer, escribir o comunicar mejor.';
+        p.evidence='una respuesta o producción lingüística acompañada de explicación o revisión';
+      }
+    }
+
+    if(s.includes('historia')||s.includes('geografia')){
+      p.icon='🗺️';
+      if(includesAny075(o,['mapa','ubic','localiz','planos','puntos cardinales','coordenadas'])){
+        Object.assign(p,{
+          focus:topic||'ubicación y relaciones espaciales mediante mapas o planos',
+          action:'ubicar elementos y justificar la ubicación usando referencias espaciales del OA',
+          examples:['plano de la sala','mapa simple','símbolos','leyenda','puntos de referencia'],
+          success:['Ubica correctamente elementos.','Usa vocabulario espacial o cartográfico del OA.','Explica qué referencia utilizó para decidir la ubicación.'],
+          confusions:['Ubicar por memoria sin usar referencias del mapa.','Confundir símbolo, lugar y leyenda.'],
+          prompts:['¿Qué referencia usaste?','¿Qué indica este símbolo?','¿Qué queda al norte/sur/cerca/lejos según el mapa?','¿Cómo podrías dar instrucciones a otra persona?'],
+          evidence:'ubicación correcta y explicación usando al menos una referencia espacial',
+          resource:'Prepara un mapa o plano limpio con pocos elementos, una leyenda visible y 5–8 tarjetas para ubicar. En niveles pequeños parte con espacios conocidos.',
+          hook:'Presenta un plano sencillo de un lugar conocido y pregunta cómo podríamos darle instrucciones a alguien que nunca ha estado allí.',
+          teacherLine:'Hoy el mapa será nuestro lenguaje. Tendremos que usar sus pistas para ubicar lugares y explicar cómo llegamos a esa decisión.',
+          name:'Exploradores del mapa'
+        });
+      }else if(includesAny075(o,['pueblos originarios','mapuche','aymara','rapa nui','diaguita','atacameno','kawesqar','selknam'])){
+        Object.assign(p,{
+          focus:topic||'pueblos originarios, formas de vida y diversidad cultural',
+          action:'reconocer características y aportes de pueblos originarios usando fuentes visuales o informativas',
+          examples:['vivienda','territorio','alimentación','vestimenta','lengua','oficios','tradiciones'],
+          success:['Reconoce información proveniente de una fuente.','Describe una característica sin reducir al pueblo a un estereotipo.','Compara respetuosamente semejanzas y diferencias.'],
+          confusions:['Hablar de todos los pueblos originarios como si fueran iguales.','Presentarlos solo como parte del pasado y no reconocer continuidad cultural cuando corresponda.'],
+          prompts:['¿Qué información entrega esta fuente?','¿Qué característica está relacionada con el territorio?','¿Qué semejanza o diferencia encuentras?','¿Cómo evitamos generalizar a partir de una sola imagen?'],
+          evidence:'explicación basada en fuentes y comparación respetuosa de características',
+          resource:'Selecciona fuentes visuales diferenciadas y confiables. Prepara una tabla con categorías como territorio, vivienda, alimentación y tradiciones; evita disfraces caricaturescos.',
+          hook:'Muestra dos fuentes de pueblos distintos sin decir sus nombres y pregunta qué detalles permiten inferir que corresponden a contextos diferentes.',
+          teacherLine:'Hoy observaremos fuentes con respeto y atención. Nuestra meta no es memorizar disfraces, sino comprender cómo el territorio y la cultura se relacionan con distintas formas de vida.',
+          name:'Museo de pueblos y territorios'
+        });
+      }else if(includesAny075(o,['derechos','deberes','convivencia','ciudadan','participacion'])){
+        Object.assign(p,{
+          focus:topic||'convivencia, derechos, deberes y participación',
+          action:'analizar situaciones cotidianas y proponer decisiones respetuosas y responsables',
+          examples:['turnos','cuidado de espacios','opiniones diferentes','reglas comunes','ayuda entre compañeros','participación'],
+          success:['Identifica el derecho, deber o norma involucrada.','Explica cómo una decisión afecta a otras personas.','Propone una alternativa respetuosa y realizable.'],
+          confusions:['Confundir derecho con “hacer lo que quiero”.','Nombrar una norma sin relacionarla con convivencia o bienestar común.'],
+          prompts:['¿A quién afecta esta situación?','¿Qué derecho o responsabilidad aparece?','¿Qué alternativa sería más justa?','¿Qué podría hacer el curso para prevenir el problema?'],
+          evidence:'análisis de una situación y propuesta justificada de una solución',
+          resource:'Prepara 6 situaciones breves y realistas de convivencia escolar. Evita casos demasiado graves para una dinámica rápida; usa problemas que permitan conversar y tomar decisiones.',
+          hook:'Presenta una situación cercana con dos posibles decisiones y pregunta cuál ayuda mejor a la convivencia y por qué.',
+          teacherLine:'Hoy analizaremos situaciones que podrían pasar en cualquier curso. No buscaremos culpables: pensaremos qué decisión cuida mejor los derechos y responsabilidades de todos.',
+          name:'Consejo del curso'
+        });
+      }else{
+        p.name='Investigadores de Historia';
+        p.teacherLine='Hoy no vamos a memorizar una lista. Usaremos fuentes, lugares, tiempos o situaciones para construir una explicación y sostenerla con evidencia.';
+        p.evidence='explicación breve basada en una fuente, relación temporal, espacial o concepto del OA';
+      }
+    }
+    return p;
+  }
+
+  function ideaSet075(profile,type,g){
+    const t=N(type);
+    const base=[
+      {
+        icon:profile.icon,title:profile.name,
+        kind:'Actividad principal',format:'Desarrollo guiado',
+        duration:g<=2?'25–30 min':'30–40 min',
+        grouping:g<=2?'Parejas o grupos de 3':'Equipos de 3–4',
+        promise:'Una actividad central donde los estudiantes aplican el criterio del OA, explican decisiones y reciben retroalimentación durante el proceso.',
+        sequence:'principal'
+      },
+      {
+        icon:'🎲',title:'Desafío en movimiento: '+profile.name,
+        kind:'Juego de aplicación',format:'Juego grupal',
+        duration:g<=2?'18–22 min':'20–30 min',
+        grouping:'Equipos de 3–4',
+        promise:'El mismo aprendizaje se practica como juego, pero cada respuesta debe ir acompañada de una explicación o evidencia.',
+        sequence:'game'
+      },
+      {
+        icon:'✅',title:'Comprueba lo aprendido',
+        kind:'Evidencia breve',format:'Cierre / Ticket',
+        duration:'8–12 min',
+        grouping:'Individual + revisión breve',
+        promise:'Un cierre corto para saber quién comprendió el criterio del OA y quién necesita otra oportunidad de aprendizaje.',
+        sequence:'exit'
+      }
+    ];
+
+    if(t.includes('ficha')){
       return [
-        {icon:'🕵️',title:'Detectives científicos',format:'Actividad de observación',steps:['Presenta imágenes, objetos o situaciones relacionadas con el OA.','Los estudiantes observan y buscan pistas para clasificar, comparar o explicar.','Cierran compartiendo una evidencia que apoye su decisión.'],ludic:'Entrega una credencial de detective o una lista de “pistas científicas”.'},
-        {icon:'🧺',title:'Clasifica y descubre',format:'Actividad manipulativa / ficha opcional',steps:['Prepara imágenes u objetos de dos o tres categorías.','Los estudiantes los ubican en recipientes, aros o sectores.','Pide explicar oralmente una elección.'],ludic:'Nombra los recipientes como “estaciones” o “casas” y deja que los niños decoren las etiquetas.'},
-        {icon:'🚦',title:'Semáforo del cuidado',format:'Actividad de desarrollo',steps:['Presenta acciones o situaciones vinculadas con salud, sentidos, ambiente o cuidado.','Clasifican en verde, amarillo o rojo.','Conversan sobre cómo transformar una acción roja en una verde.'],ludic:'Usa círculos grandes de colores o paletas de semáforo hechas por los estudiantes.'},
-        {icon:'🧪',title:'Mini laboratorio de aula',format:'Experiencia guiada',steps:['Plantea una pregunta sencilla vinculada al OA.','Observan, manipulan o comparan materiales seguros.','Registran con dibujo, palabras clave o una conclusión breve según el curso.'],ludic:'Entrega a cada grupo un nombre de equipo científico y una tarjeta de misión.'}
+        {...base[0],icon:'📝',title:'Ficha guiada: '+profile.name,kind:'Ficha imprimible',format:'Ficha imprimible',duration:g<=2?'20–25 min':'25–30 min',grouping:'Individual con modelado inicial',sequence:'worksheet'},
+        {...base[2],icon:'✂️',title:'Recorta, relaciona y explica',kind:'Ficha manipulativa',format:'Ficha imprimible',duration:'20–25 min',grouping:'Parejas',sequence:'worksheet2'}
       ];
     }
-    if(s.includes('historia')||s.includes('geografia')){
+    if(t.includes('juego'))return [base[1],{...base[1],icon:'🏁',title:'Reto por estaciones: '+profile.name,sequence:'stations',duration:'25–35 min'}];
+    if(t.includes('manipul'))return [{...base[0],icon:'🧺',title:'Manos a la obra: '+profile.name,kind:'Actividad manipulativa',format:'Material concreto',sequence:'hands'}];
+    if(t.includes('inicio'))return [{...base[0],icon:'⚡',title:'Pregunta que despierta curiosidad',kind:'Inicio de clase',format:'Inicio',duration:'8–12 min',grouping:'Curso completo + parejas',sequence:'opening'}];
+    if(t.includes('desarrollo'))return [base[0],base[1]];
+    if(t.includes('cierre')||t.includes('ticket'))return [base[2],{...base[2],icon:'🚦',title:'Semáforo de comprensión',sequence:'traffic'}];
+    if(t.includes('apoyo')||t.includes('reensen'))return [{...base[0],icon:'🤝',title:'Segunda oportunidad: '+profile.name,kind:'Apoyo / reenseñanza',format:'Grupo pequeño',duration:'15–20 min',grouping:'Grupo de 3–5 estudiantes',sequence:'reteach'}];
+    return base;
+  }
+
+  function preparation075(profile,idea,g){
+    const count=g<=2?'6–8':'8–12';
+    const arr=[
+      'Define como evidencia principal: '+profile.evidence+'.',
+      'Prepara '+count+' ejemplos o situaciones directamente relacionados con el OA. Evita comenzar con casos ambiguos.',
+      'Deja listo un ejemplo para modelar y al menos un caso nuevo que no hayas mostrado durante la explicación.',
+      'Organiza los materiales antes de la clase para que el tiempo se use en pensar y explicar, no en repartir o recortar.'
+    ];
+    if(idea.sequence==='exit')return [
+      'Elige 2 o 3 casos nuevos relacionados con el mismo criterio del OA.',
+      'Prepara una respuesta breve que pueda resolverse en menos de 10 minutos.',
+      'Decide de antemano qué respuesta indicará “lo comprendió”, “requiere una pregunta de apoyo” o “necesita reenseñanza”.'
+    ];
+    if(idea.sequence==='opening')return [
+      'Escoge un caso llamativo pero comprensible relacionado con el OA.',
+      'No reveles la respuesta al comienzo: prepara 2 preguntas que hagan visibles las ideas previas.',
+      'Ten preparado el ejemplo que usarás después para conectar las respuestas del curso con el aprendizaje de la clase.'
+    ];
+    return arr;
+  }
+
+  function materials075(profile,idea){
+    if(idea.sequence==='exit')return '2–3 casos nuevos, una tarjeta pequeña o media hoja y lápiz. También puede hacerse oralmente o con tarjetas de respuesta.';
+    if(idea.sequence==='game'||idea.sequence==='stations')return profile.resource+' Añade tarjetas de turno o estaciones y una forma simple de registrar qué explicación dio cada equipo.';
+    if(idea.sequence==='worksheet'||idea.sequence==='worksheet2')return profile.resource+' La hoja debe incluir un ejemplo resuelto y espacio para justificar al menos una respuesta.';
+    if(idea.sequence==='opening')return 'Una imagen, objeto, situación o pregunta detonante vinculada al OA; pizarra para registrar respuestas iniciales.';
+    if(idea.sequence==='reteach')return profile.resource+' Reduce la cantidad de ejemplos y trabaja con material concreto o visual antes de volver a una tarea simbólica.';
+    return profile.resource;
+  }
+
+  function timeline075(profile,idea,g){
+    if(idea.sequence==='exit'){
       return [
-        {icon:'🏛️',title:'Museo del curso',format:'Actividad grupal',steps:['Cada grupo recibe una imagen, objeto, fuente o concepto del OA.','Prepara una explicación breve o cartel.','El curso recorre el “museo” y registra una idea nueva.'],ludic:'Entrega entradas de museo y usa mesas como estaciones.'},
-        {icon:'⏳',title:'Línea de tiempo humana',format:'Actividad manipulativa',steps:['Entrega tarjetas con hechos, etapas o acciones.','Los estudiantes deben ubicarse físicamente en orden.','Revisan el orden y justifican los cambios.'],ludic:'Usa una cuerda larga o una línea adhesiva en el suelo.'},
-        {icon:'🗺️',title:'Mapa vivo',format:'Juego grupal',steps:['Proyecta o dibuja un mapa simple.','Entrega tarjetas de lugares, elementos o pistas.','Los equipos deben ubicarlas y explicar la relación.'],ludic:'Transforma las pistas en una búsqueda guiada.'},
-        {icon:'🔄',title:'Antes y ahora',format:'Ficha / conversación',steps:['Selecciona imágenes contrastadas vinculadas al OA.','Los estudiantes identifican semejanzas y diferencias.','Cierran con una explicación sobre qué cambió y qué se mantuvo.'],ludic:'Puedes presentarlo como “viaje en el tiempo”.'}
+        ['2 min','Presenta un caso nuevo sin volver a explicar el contenido.'],
+        ['4–6 min','Cada estudiante responde y agrega una razón, evidencia o representación.'],
+        ['2–3 min','Revisa una respuesta modelo y pide autoevaluar: “lo pude hacer / necesito practicar”.']
+      ];
+    }
+    if(idea.sequence==='opening'){
+      return [
+        ['2 min',profile.hook],
+        ['3–4 min','Recoge respuestas y pregunta qué pistas o conocimientos usaron. No corrijas todo todavía.'],
+        ['3 min','Conecta las ideas con el OA y explica qué tendrán que descubrir o demostrar durante la clase.']
+      ];
+    }
+    if(idea.sequence==='game'){
+      return [
+        ['4 min',profile.hook+' Explica que cada punto requiere respuesta + explicación.'],
+        ['12–15 min','Los equipos resuelven rondas. Alterna quién responde para que no participe siempre la misma persona.'],
+        ['5 min','Detén el juego con dos casos que generaron dudas y revísalos con el criterio del OA.']
+      ];
+    }
+    if(idea.sequence==='stations'){
+      return [
+        ['5 min','Modela una estación y explica cómo registrar una respuesta.'],
+        ['18–22 min','Los equipos rotan por 3 estaciones: reconocer/aplicar, explicar y resolver un caso nuevo.'],
+        ['5 min','Comparan qué estación fue más difícil y recuperan la idea central del OA.']
+      ];
+    }
+    if(idea.sequence==='reteach'){
+      return [
+        ['4 min','Vuelve al concepto usando un ejemplo muy claro y material concreto o visual.'],
+        ['8 min','Resuelve junto al grupo 2 o 3 casos, haciendo preguntas en vez de entregar la respuesta.'],
+        ['5 min','Entrega un caso nuevo individual para comprobar si ya pueden aplicar el criterio.']
       ];
     }
     return [
-      {icon:'🎯',title:'Misión del OA',format:'Actividad de desarrollo',steps:['Presenta un desafío concreto relacionado con el OA.','Los estudiantes resuelven en parejas o equipos.','Cierran mostrando qué aprendieron y cómo lo hicieron.'],ludic:'Convierte la actividad en una misión con tres pasos visibles.'},
-      {icon:'🧩',title:'Estaciones de aprendizaje',format:'Juego grupal',steps:['Prepara 3 estaciones breves con acciones distintas.','Los equipos rotan y resuelven un desafío en cada una.','Al terminar eligen la estación que mejor les ayudó a aprender.'],ludic:'Asigna un símbolo o nombre diferente a cada estación.'},
-      {icon:'✂️',title:'Clasifica y relaciona',format:'Ficha / material concreto',steps:['Prepara tarjetas con conceptos o ejemplos.','Los estudiantes las agrupan o relacionan.','Pide justificar una elección.'],ludic:'Usa sobres, bolsillos o paneles temáticos.'},
-      {icon:'✅',title:'Salida rápida',format:'Ticket de Salida',steps:['Formula una pregunta central del OA.','Pide una respuesta breve o selección de opción.','Incluye una autoevaluación simple.'],ludic:'Usa una tarjeta con forma temática o un pequeño desafío final.'}
+      ['5–7 min',profile.hook+' Luego modela un ejemplo pensando en voz alta.'],
+      [g<=2?'12–15 min':'18–22 min','Los estudiantes resuelven los casos en '+idea.grouping.toLowerCase()+'. En cada caso deben decidir y explicar qué criterio, evidencia o estrategia usaron.'],
+      ['5–7 min','Introduce un ejemplo nuevo. Compara respuestas, corrige una confusión frecuente y construye una conclusión con el curso.']
     ];
   }
-  function filterType073(pool,type){
-    if(!type||type==='Varias ideas')return pool.slice(0,4);
-    const n=norm073(type);
-    const matches=pool.filter(i=>{
-      const f=norm073(i.format);
-      if(n.includes('ficha'))return f.includes('ficha');
-      if(n.includes('juego'))return f.includes('juego');
-      if(n.includes('manipul'))return f.includes('manipul');
-      if(n.includes('inicio'))return true;
-      if(n.includes('desarrollo'))return true;
-      if(n.includes('cierre'))return f.includes('cierre')||f.includes('ticket');
-      if(n.includes('ticket'))return f.includes('ticket');
-      if(n.includes('apoyo'))return true;
-      return true;
-    });
-    return (matches.length?matches:pool).slice(0,3);
+
+  function teacherScript075(profile,idea){
+    if(idea.sequence==='exit')return '“Este caso no lo hicimos juntos. Quiero ver qué puedes hacer ahora por tu cuenta. Responde y agrega una pista, razón o representación que demuestre cómo lo sabes.”';
+    if(idea.sequence==='reteach')return '“Vamos a volver a mirar esta idea de otra manera. Yo haré preguntas y ustedes me ayudarán a encontrar la pista. Después cada uno probará con un ejemplo nuevo.”';
+    return '“'+profile.teacherLine+'”';
   }
-  function render073(){
+
+  function differentiation075(profile,g){
+    const support=g<=2
+      ? 'Reduce a 4 ejemplos contrastantes, permite responder señalando o manipulando y ofrece dos opciones antes de pedir explicación oral. Modela vocabulario clave y repite la consigna con una acción por vez.'
+      : g<=4
+      ? 'Reduce la cantidad de casos, entrega una pauta visual con los pasos y permite resolver el primer ejemplo con un compañero antes del trabajo autónomo.'
+      : 'Entrega un organizador con criterio → evidencia → conclusión, reduce la carga de escritura si no es el foco del OA y permite una revisión guiada del primer caso.';
+    const challenge=g<=2
+      ? 'Agrega un caso menos evidente y pide explicar por qué genera duda antes de decidir.'
+      : 'Entrega un caso que admita comparación o más de una estrategia y pide justificar cuál criterio o procedimiento resulta más sólido.';
+    return {support,challenge};
+  }
+
+  function readyExamples075(profile,g){
+    const ex=profile.examples.slice(0,g<=2?8:10);
+    return ex.length?ex:[profile.focus];
+  }
+
+  function assessment075(profile){
+    return {
+      criteria:profile.success,
+      observe:'Busca '+profile.evidence+'. No marques solo correcto/incorrecto: anota qué criterio o estrategia usa el estudiante.',
+      next:'Si responde correctamente pero no puede explicar, todavía necesita consolidar el criterio. Si puede explicar y aplicar a un caso nuevo, hay evidencia más sólida de aprendizaje.'
+    };
+  }
+
+  function resourceRecipe075(profile,idea,g){
+    if(idea.sequence==='worksheet'||idea.sequence==='worksheet2'){
+      return 'Si decides crear una ficha, hazla de una página. Incluye: 1) título breve; 2) una instrucción de una acción; 3) un ejemplo resuelto; 4) '+(g<=2?'6–8':'8–12')+' casos basados en estos ejemplos: '+joinNatural075(readyExamples075(profile,g).slice(0,6))+'; 5) una pregunta final “¿Cómo lo supiste?”. No necesitas que AulaNexo dibuje la ficha: puedes diseñarla en Canva o Word y luego subirla.';
+    }
+    if(idea.sequence==='game'||idea.sequence==='stations'){
+      return 'Crea un set de tarjetas. Cada tarjeta debe tener un solo desafío. Usa estos contenidos como punto de partida: '+joinNatural075(readyExamples075(profile,g).slice(0,6))+'. Añade una tarjeta de “explica tu respuesta” para evitar que el juego se reduzca a acertar.';
+    }
+    if(idea.sequence==='exit'){
+      return 'Crea una tarjeta pequeña con 2 casos nuevos y una frase final: “Sé que mi respuesta es correcta porque…”. En 1°–2° básico puede responderse oralmente, con dibujo o señalando.';
+    }
+    return 'El recurso puede ser muy simple: '+profile.resource+' No hace falta producir una ficha extensa; el material debe ayudar a aplicar el OA y dejar espacio para que los estudiantes expliquen.';
+  }
+
+  function buildGuideText075(profile,idea,ctx){
+    const dif=differentiation075(profile,ctx.g), ass=assessment075(profile);
+    const lines=[
+      idea.title,
+      ctx.grade+' · '+ctx.subject+' · '+ctx.unit,
+      'OA: '+ctx.oas.map(o=>o.code+' · '+o.text).join(' | '),
+      '',
+      'FOCO PEDAGÓGICO',
+      profile.action+'.',
+      '',
+      'DURACIÓN: '+idea.duration,
+      'ORGANIZACIÓN: '+idea.grouping,
+      'EVIDENCIA ESPERADA: '+profile.evidence,
+      '',
+      'ANTES DE LA CLASE',
+      ...preparation075(profile,idea,ctx.g).map(x=>'• '+x),
+      '',
+      'MATERIALES',
+      materials075(profile,idea),
+      '',
+      'CÓMO PRESENTARLA',
+      teacherScript075(profile,idea),
+      '',
+      'SECUENCIA',
+      ...timeline075(profile,idea,ctx.g).map(x=>'• '+x[0]+': '+x[1]),
+      '',
+      'PREGUNTAS DOCENTES',
+      ...profile.prompts.map(x=>'• '+x),
+      '',
+      'EJEMPLOS LISTOS PARA USAR',
+      readyExamples075(profile,ctx.g).map(x=>'• '+x).join('\n'),
+      '',
+      'CRITERIOS DE ÉXITO',
+      ...ass.criteria.map(x=>'• '+x),
+      '',
+      'ERRORES O CONFUSIONES A OBSERVAR',
+      ...profile.confusions.map(x=>'• '+x),
+      '',
+      'APOYO',
+      dif.support,
+      '',
+      'DESAFÍO ADICIONAL',
+      dif.challenge,
+      '',
+      'SI QUIERES CREAR UN RECURSO',
+      resourceRecipe075(profile,idea,ctx.g)
+    ];
+    return lines.join('\n');
+  }
+
+  function guideHtml075(profile,idea,idx,ctx){
+    const dif=differentiation075(profile,ctx.g), ass=assessment075(profile);
+    const tl=timeline075(profile,idea,ctx.g);
+    return '<div class="resource075-detail hidden" id="resourceIdeaDetail075_'+idx+'">'+
+      '<div class="resource075-guide-head"><div><h4>Guía pedagógica completa</h4><p>No es una ficha genérica: esta propuesta se construye desde el contenido del OA seleccionado.</p></div>'+
+      '<button class="ghost resource075-copy" type="button" data-copyfull075="'+idx+'">Copiar guía completa</button></div>'+
+      '<div class="resource075-columns">'+
+        '<div class="resource075-section"><h5>🎯 Qué deben aprender o demostrar</h5><p>'+E(profile.action)+'.</p></div>'+
+        '<div class="resource075-section resource075-assess"><h5>✅ Evidencia que buscarás</h5><p>'+E(profile.evidence)+'.</p></div>'+
+      '</div>'+
+      '<div class="resource075-section"><h5>🧰 Antes de la clase</h5><ol>'+preparation075(profile,idea,ctx.g).map(x=>'<li>'+E(x)+'</li>').join('')+'</ol></div>'+
+      '<div class="resource075-section"><h5>📦 Materiales concretos</h5><p>'+E(materials075(profile,idea))+'</p></div>'+
+      '<div class="resource075-section resource075-script"><h5>💬 Una forma de presentarlo al curso</h5><p>'+E(teacherScript075(profile,idea))+'</p></div>'+
+      '<div class="resource075-section"><h5>🧭 Paso a paso con tiempos</h5><div class="resource075-timeline">'+
+        tl.map(x=>'<div class="resource075-phase"><div class="resource075-phase-label">'+E(x[0])+'</div><div class="resource075-phase-body">'+E(x[1])+'</div></div>').join('')+
+      '</div></div>'+
+      '<div class="resource075-columns">'+
+        '<div class="resource075-section"><h5>❓ Preguntas que ayudan a pensar</h5><ul>'+profile.prompts.map(x=>'<li>'+E(x)+'</li>').join('')+'</ul></div>'+
+        '<div class="resource075-section resource075-ready"><h5>🧩 Ejemplos listos para usar</h5><ul>'+readyExamples075(profile,ctx.g).map(x=>'<li>'+E(x)+'</li>').join('')+'</ul></div>'+
+      '</div>'+
+      '<div class="resource075-section resource075-assess"><h5>📋 Criterios de éxito / evaluación formativa</h5><ul>'+ass.criteria.map(x=>'<li>'+E(x)+'</li>').join('')+'</ul><p style="margin-top:7px">'+E(ass.observe)+' '+E(ass.next)+'</p></div>'+
+      '<div class="resource075-section resource075-warning"><h5>⚠️ Errores o confusiones que conviene anticipar</h5><ul>'+profile.confusions.map(x=>'<li>'+E(x)+'</li>').join('')+'</ul></div>'+
+      '<div class="resource075-columns">'+
+        '<div class="resource075-section resource075-support"><h5>🤝 Si alguien necesita más apoyo</h5><p>'+E(dif.support)+'</p></div>'+
+        '<div class="resource075-section"><h5>🚀 Para quienes necesitan mayor desafío</h5><p>'+E(dif.challenge)+'</p></div>'+
+      '</div>'+
+      '<div class="resource075-section resource075-ready"><h5>🖍️ Si quieres crear un recurso para acompañar la actividad</h5><p>'+E(resourceRecipe075(profile,idea,ctx.g))+'</p></div>'+
+    '</div>';
+  }
+
+  function render075(){
     const grade=document.getElementById('resourceGrade060')?.value||'';
     const subject=document.getElementById('resourceSubject060')?.value||'';
     const unit=document.getElementById('resourceUnit060')?.value||'';
     const type=document.getElementById('resourceType060')?.value||'Varias ideas';
     const topic=(document.getElementById('resourceTopic060')?.value||'').trim();
-    const oas=selectedOA073();
-    if(!grade||!subject||!unit){
-      alert('Selecciona Curso, Asignatura y Unidad para recibir ideas.');
-      return;
-    }
-    if(!oas.length){
-      alert('Selecciona al menos un OA que quieras trabajar.');
-      return;
-    }
-    const g=grade073();
-    let ideas=filterType073(pool073(subject,topic),type);
-    const focus=topic||oas.map(o=>o.code).join(', ');
-    const oaText=oas.map(o=>o.code+' · '+o.text).join(' | ');
+    const oas=selectedOA075();
+
+    if(!grade||!subject||!unit)return alert('Selecciona Curso, Asignatura y Unidad.');
+    if(!oas.length)return alert('Selecciona al menos un OA.');
+
+    const g=grade075();
+    /* Cuando hay varios OA, el primero guía la actividad y los demás quedan visibles
+       como objetivos integrados. Evita fingir especificidad mezclando textos incompatibles. */
+    const primaryOA=oas[0];
+    const profile=profile075(subject,primaryOA.text,g,topic);
+    const ideas=ideaSet075(profile,type,g);
+    const ctx={grade,subject,unit,type,topic,oas,g};
 
     results.innerHTML=
-      '<div class="resource073-results-head"><div><h3>Ideas para '+esc073(focus)+'</h3>'+
-      '<div class="resource073-context">'+esc073(grade)+' · '+esc073(subject)+' · '+esc073(unit)+'<br>'+esc073(oas.map(o=>o.code).join(' · '))+'</div></div>'+
+      '<div class="resource073-results-head"><div><h3>Propuestas para '+E(profile.focus)+'</h3>'+
+      '<div class="resource073-context">'+E(grade)+' · '+E(subject)+' · '+E(unit)+'</div></div>'+
       '<button id="resourceIdeaUpload073" class="secondary" type="button">⬆️ Ya tengo mi recurso: subirlo</button></div>'+
-      '<div class="resource073-grid">'+ideas.map((idea,idx)=>
-        '<article class="resource073-card">'+
-          '<div class="resource073-card-top"><div class="resource073-icon">'+idea.icon+'</div><div><h4>'+esc073(idea.title)+'</h4><div class="resource073-format">'+esc073(idea.format)+'</div></div></div>'+
-          '<div class="resource073-block"><b>Cómo hacerlo</b><ol class="resource073-steps">'+idea.steps.map(s=>'<li>'+esc073(s)+'</li>').join('')+'</ol></div>'+
-          '<div class="resource073-block"><b>Materiales</b><p>'+esc073(materials073(idea.format))+'</p></div>'+
-          '<div class="resource073-block"><b>Para hacerlo más lúdico</b><p>'+esc073(idea.ludic)+'</p></div>'+
-          '<div class="resource073-block"><b>Ajuste para '+esc073(grade)+'</b><p>'+esc073(ageSupport073(g))+'</p></div>'+
-          '<div class="resource073-actions"><button class="ghost" type="button" data-copy-idea073="'+idx+'">Copiar idea</button></div>'+
-        '</article>'
-      ).join('')+'</div>'+
-      '<div class="resource073-note"><b>OA seleccionados:</b> '+esc073(oaText)+'<br><br>AulaNexo no genera el archivo. Puedes crear esta propuesta en Canva, Word, PowerPoint, con material concreto o de la forma que prefieras y luego subirla a Recursos guardados.</div>';
+      '<div class="resource075-intro"><strong>El OA guía la propuesta</strong>'+
+      '<p>AulaNexo toma el contenido del objetivo seleccionado y lo transforma en acciones, ejemplos, preguntas y evidencias observables. La idea no termina en “haz una clasificación”: debe indicarte qué preparar, qué decir, qué mirar y cómo cerrar.</p>'+
+      '<div class="resource075-oa-focus"><b>'+E(primaryOA.code)+':</b> '+E(primaryOA.text)+
+      (oas.length>1?'<div class="resource075-empty-note">Seleccionaste '+oas.length+' OA. La propuesta se desarrolla desde '+E(primaryOA.code)+' para mantener un foco claro; los demás quedan como OA complementarios.</div>':'')+
+      '</div></div>'+
+      '<div class="resource075-list">'+ideas.map((idea,idx)=>{
+        const ass=assessment075(profile);
+        return '<article class="resource075-card">'+
+          '<div class="resource075-card-head"><div class="resource075-icon">'+idea.icon+'</div><div>'+
+            '<div class="resource075-kicker">'+E(idea.kind)+'</div><h4>'+E(idea.title)+'</h4><p class="resource075-promise">'+E(idea.promise)+'</p>'+
+          '</div></div>'+
+          '<div class="resource075-quick">'+
+            '<div class="resource075-stat"><b>Duración</b><span>⏱ '+E(idea.duration)+'</span></div>'+
+            '<div class="resource075-stat"><b>Organización</b><span>👥 '+E(idea.grouping)+'</span></div>'+
+            '<div class="resource075-stat"><b>Foco real</b><span>'+E(clip075(profile.action,70))+'</span></div>'+
+            '<div class="resource075-stat"><b>Evidencia</b><span>'+E(clip075(profile.evidence,70))+'</span></div>'+
+          '</div>'+
+          '<div class="resource075-preview">'+
+            '<div class="resource075-previewbox"><h5>Qué hará el curso</h5><p>'+E(profile.action)+'.</p></div>'+
+            '<div class="resource075-previewbox"><h5>Qué necesitas preparar</h5><p>'+E(clip075(materials075(profile,idea),230))+'</p></div>'+
+          '</div>'+
+          '<div class="resource075-actions">'+
+            '<button class="resource075-develop" type="button" data-develop075="'+idx+'">✨ Ver guía completa</button>'+
+            '<button class="ghost" type="button" data-copyquick075="'+idx+'">Copiar idea breve</button>'+
+          '</div>'+
+          guideHtml075(profile,idea,idx,ctx)+
+        '</article>';
+      }).join('')+'</div>';
 
     results.classList.remove('hidden');
 
-    results.querySelectorAll('[data-copy-idea073]').forEach(b=>b.addEventListener('click',async()=>{
-      const idea=ideas[Number(b.dataset.copyIdea073)];
-      if(!idea)return;
-      const plain=idea.title+'\nFormato: '+idea.format+'\n\nCómo hacerlo:\n- '+idea.steps.join('\n- ')+'\n\nMateriales: '+materials073(idea.format)+'\n\nPara hacerlo más lúdico: '+idea.ludic+'\n\nAjuste para '+grade+': '+ageSupport073(g)+'\n\nOA: '+oas.map(o=>o.code+' '+o.text).join(' | ');
-      try{await navigator.clipboard.writeText(plain);b.textContent='✓ Copiado';setTimeout(()=>b.textContent='Copiar idea',1200)}
+    results.querySelectorAll('[data-develop075]').forEach(b=>b.addEventListener('click',()=>{
+      const idx=Number(b.dataset.develop075), panel=document.getElementById('resourceIdeaDetail075_'+idx);
+      if(!panel)return;
+      const open=panel.classList.contains('hidden');
+      panel.classList.toggle('hidden');
+      b.textContent=open?'↑ Ocultar guía completa':'✨ Ver guía completa';
+      if(open)setTimeout(()=>panel.scrollIntoView({behavior:'smooth',block:'nearest'}),70);
+    }));
+
+    results.querySelectorAll('[data-copyquick075]').forEach(b=>b.addEventListener('click',async()=>{
+      const idea=ideas[Number(b.dataset.copyquick075)];
+      const plain=idea.title+'\n\n'+idea.promise+'\n\nFoco: '+profile.action+'.\nEvidencia: '+profile.evidence+'.\nDuración: '+idea.duration+'\nOrganización: '+idea.grouping;
+      try{await navigator.clipboard.writeText(plain);b.textContent='✓ Copiado';setTimeout(()=>b.textContent='Copiar idea breve',1200)}
       catch(e){prompt('Copia la idea:',plain)}
+    }));
+
+    results.querySelectorAll('[data-copyfull075]').forEach(b=>b.addEventListener('click',async()=>{
+      const idea=ideas[Number(b.dataset.copyfull075)];
+      const plain=buildGuideText075(profile,idea,ctx);
+      try{await navigator.clipboard.writeText(plain);b.textContent='✓ Guía copiada';setTimeout(()=>b.textContent='Copiar guía completa',1300)}
+      catch(e){prompt('Copia la guía:',plain)}
     }));
 
     document.getElementById('resourceIdeaUpload073')?.addEventListener('click',()=>{
@@ -6430,10 +7147,10 @@ function close(){document.getElementById('libModal059').classList.add('hidden')}
       setTimeout(()=>document.getElementById('resourceUpload060')?.click(),80);
     });
 
-    if(typeof window.nexoCelebrate==='function')setTimeout(()=>window.nexoCelebrate('generic'),200);
+    if(typeof window.nexoCelebrate==='function')setTimeout(()=>window.nexoCelebrate('generic'),180);
   }
 
-  btn.addEventListener('click',render073);
+  btn.addEventListener('click',render075);
 })();
 </script>
 
