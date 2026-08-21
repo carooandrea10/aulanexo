@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>AulaNexo · Prototipo 0.0.87</title>
+<title>AulaNexo · Prototipo 0.0.96</title>
 <style>
 :root{
   --bg:#f5f7fb;--card:#fff;--text:#1f2937;--muted:#6b7280;--line:#e5e7eb;
@@ -1887,12 +1887,106 @@ nav.app-nav button[data-view].active{background:var(--primary-soft);color:#3730a
 @media(max-width:880px){.planning087-materials{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:620px){.planning087-materials{grid-template-columns:1fr}}
 
+
+/* ===== AULANEXO 0.0.88 · ACTITUD Y DUA SIN REDACTAR ===== */
+.planning088-hidden{display:none!important}
+.planning088-generated{
+  border-left:4px solid #6366f1;border-radius:10px;background:#f5f3ff;padding:9px 11px
+}
+.planning088-generated-label{
+  font-size:8.5px;font-weight:900;letter-spacing:.045em;color:#5b21b6;text-transform:uppercase
+}
+.planning088-generated-text{
+  margin-top:4px;font-size:11.5px;line-height:1.5;color:#374151;white-space:pre-wrap
+}
+.planning088-dua-application{
+  border-top:1px solid #eef2f7;margin-top:9px;padding-top:8px
+}
+.planning088-dua-application label{
+  display:block;font-size:9px!important;color:#64748b!important;font-weight:900!important;
+  text-transform:uppercase;letter-spacing:.035em
+}
+.planning088-dua-text{
+  margin-top:5px;border-radius:9px;background:#f8fafc;border:1px solid #e5e7eb;
+  padding:7px 8px;font-size:10.2px;line-height:1.45;color:#475569
+}
+
+
+/* ===== AULANEXO 0.0.89 · PROPÓSITO + OBJETIVO DE CLASE ===== */
+.planning089-hidden{display:none!important}
+.planning089-purpose-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px;margin-top:9px}
+.planning089-purpose-card{display:block;cursor:pointer;min-width:0}
+.planning089-purpose-card input{position:absolute;opacity:0;pointer-events:none}
+.planning089-purpose-card>span{display:block;height:100%;min-height:112px;padding:10px;border:1px solid #e2e8f0;border-radius:12px;background:#fff;transition:.15s ease}
+.planning089-purpose-card:hover>span{border-color:#a5b4fc;background:#fafaff;transform:translateY(-1px)}
+.planning089-purpose-card input:checked+span{border-color:#6366f1;background:#eef2ff;box-shadow:0 0 0 1px #c7d2fe inset}
+.planning089-purpose-card input:focus-visible+span{outline:3px solid rgba(99,102,241,.18);outline-offset:2px}
+.planning089-purpose-card strong{display:block;font-size:10.5px;line-height:1.3;color:#312e81}
+.planning089-purpose-card small{display:block;margin-top:5px;font-size:9px;line-height:1.35;color:#64748b}
+.planning089-purpose-card em{display:block;margin-top:6px;font-size:7.8px;line-height:1.3;color:#64748b;font-style:normal}
+.planning089-purpose-card.is-recommended>span:before{content:'AulaNexo recomienda';display:inline-flex;margin-bottom:6px;padding:2px 5px;border-radius:999px;background:#dcfce7;color:#166534;font-size:7px;font-weight:900}
+.planning089-purpose-card input:disabled+span{opacity:.5;cursor:not-allowed;transform:none}
+
+.planning089-class-objective{border:1px solid #c7d2fe;border-radius:14px;padding:12px;background:linear-gradient(135deg,#f8faff,#fff)}
+.planning089-objective-head{display:flex;justify-content:space-between;align-items:flex-start;gap:10px;margin-top:7px}
+.planning089-objective-head b{display:block;font-size:11.5px;color:#312e81}
+.planning089-objective-head span:not(.planning089-objective-badge){display:block;margin-top:2px;font-size:10px;color:#64748b;line-height:1.4}
+.planning089-objective-badge{flex:none;padding:4px 8px;border-radius:999px;background:#eef2ff;color:#4338ca;border:1px solid #c7d2fe;font-size:8.5px;font-weight:900}
+.planning089-dimensions{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:7px;margin-top:10px}
+.planning089-dimensions>div{padding:8px 9px;border:1px solid #e5e7eb;border-radius:10px;background:#fff}
+.planning089-dimensions span{display:block;font-size:7.5px;font-weight:900;letter-spacing:.05em;color:#6366f1}
+.planning089-dimensions strong{display:block;margin-top:4px;font-size:9.5px;line-height:1.35;color:#475569;font-weight:800}
+.planning089-objective-output{margin-top:9px;padding:10px 11px;border-left:4px solid #4f46e5;border-radius:10px;background:#eef2ff}
+.planning089-objective-label{font-size:8px;font-weight:900;letter-spacing:.05em;color:#4338ca}
+#planningClassObjectivePreview089{margin-top:4px;font-size:12px;line-height:1.5;color:#312e81;font-weight:800}
+@media(max-width:980px){.planning089-purpose-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:680px){.planning089-purpose-grid,.planning089-dimensions{grid-template-columns:1fr}}
+
+
+/* ===== AULANEXO 0.0.90 · CONTENIDO ESPECÍFICO + OBJETIVO REAL ===== */
+.planning090-content-box{border:1px solid #e2e8f0;border-radius:12px;padding:11px;background:#fff}
+.planning090-optional{display:inline-flex;margin-left:5px;padding:2px 6px;border-radius:999px;background:#f1f5f9;color:#64748b;font-size:8px;font-weight:900;vertical-align:middle}
+.planning090-content-help{margin-top:5px;font-size:10px;line-height:1.4;color:#64748b}
+.planning090-content-input{width:100%;margin-top:8px;padding:9px 10px;border:1px solid #cbd5e1;border-radius:10px;background:#fff;color:#334155;font-size:11px}
+.planning090-content-input:focus{outline:3px solid rgba(99,102,241,.14);border-color:#818cf8}
+.planning090-content-source{margin-top:5px;font-size:8.8px;line-height:1.35;color:#64748b}
+
+
+/* ===== AULANEXO 0.0.96 · APOYOS CON BOTONES REALES ===== */
+.planning096-supports{
+  display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:7px;margin-top:9px
+}
+.planning096-support{
+  display:grid;grid-template-columns:24px 1fr;gap:7px;align-items:start;
+  width:100%;min-height:82px;padding:9px;text-align:left;
+  border:1px solid #e2e8f0;border-radius:11px;background:#fff;
+  color:#334155;font-family:inherit;cursor:pointer
+}
+.planning096-support:hover{border-color:#a5b4fc;background:#fafaff}
+.planning096-support.is-selected,
+.planning096-support[aria-pressed="true"]{
+  border-color:#6366f1;background:#eef2ff;
+  box-shadow:0 0 0 1px #c7d2fe inset
+}
+.planning096-support:focus-visible{
+  outline:3px solid rgba(99,102,241,.18);outline-offset:2px
+}
+.planning096-support-icon{font-size:17px}
+.planning096-support b{display:block;font-size:10px;line-height:1.3;color:#334155}
+.planning096-support small{display:block;margin-top:2px;font-size:8.8px;line-height:1.35;color:#64748b}
+.planning096-support em{
+  display:inline-flex;margin-top:4px;padding:2px 5px;border-radius:999px;
+  background:#dcfce7;color:#166534;font-size:7px;font-style:normal;font-weight:900
+}
+@media(max-width:880px){.planning096-supports{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:620px){.planning096-supports{grid-template-columns:1fr}}
+
 </style>
 </head>
 <body>
 <header>
   <div class="header-wrap">
-    <div><h1>AulaNexo</h1><div class="subtitle">Prototipo 0.0.87 · Planificación casi sin escribir</div></div>
+    <div><h1>AulaNexo</h1><div class="subtitle">Prototipo 0.0.96 · Apoyos diferenciados con botones</div></div>
     <div class="header-actions"><button id="menuToggle" class="menu-toggle">☰ Menú</button><span class="current-section-pill">Sección: <strong id="currentSectionLabel">Curso</strong></span><span class="active-course-pill">Curso activo: <strong id="headerCourseName">Sin curso</strong></span><span id="cloudStatus" class="cloud-pill" data-state="offline">☁️ Sin conectar</span><button id="cloudConnectBtn" class="secondary">👤 Mi cuenta</button><button id="downloadBackup">⬇ Respaldo</button><button id="loadBackupBtn">⬆ Cargar respaldo</button><input id="backupFile" type="file" accept="application/json" hidden></div>
   </div>
 </header>
@@ -2242,14 +2336,41 @@ nav.app-nav button[data-view].active{background:var(--primary-soft);color:#3730a
                 <div><b>Escoge el foco de la clase</b><span>AulaNexo recomienda uno según el OA; tú solo eliges.</span></div>
                 <span id="planningObjectiveBadge086" class="planning086-badge">Recomendado</span>
               </div>
-              <select id="planningObjectiveMode086" class="planning086-select">
-                <option value="core">🎯 Aprendizaje central del OA</option>
-                <option value="apply">🧩 Aplicar lo aprendido</option>
-                <option value="explain">💬 Explicar o demostrar</option>
-                <option value="transfer">🚀 Transferir a un caso nuevo</option>
+              <div id="planningPurposeOptions089" class="planning089-purpose-grid">
+                <label class="planning089-purpose-card"><input type="radio" name="planningPurpose089" value="core"><span><strong>🎯 Aprendizaje central</strong><small>Trabajar directamente el aprendizaje principal del OA.</small><em>Recomendado cuando se introduce o consolida el contenido.</em></span></label>
+                <label class="planning089-purpose-card"><input type="radio" name="planningPurpose089" value="apply"><span><strong>🧩 Aplicar lo aprendido</strong><small>Usar el aprendizaje en una tarea o situación concreta.</small><em>Ideal para práctica y uso del conocimiento.</em></span></label>
+                <label class="planning089-purpose-card"><input type="radio" name="planningPurpose089" value="explain"><span><strong>💬 Explicar o demostrar</strong><small>Comunicar, mostrar o justificar lo aprendido.</small><em>Útil cuando importa evidenciar comprensión.</em></span></label>
+                <label class="planning089-purpose-card"><input type="radio" name="planningPurpose089" value="transfer"><span><strong>🚀 Transferir a un caso nuevo</strong><small>Usar el aprendizaje en una situación diferente.</small><em>Ideal para profundización y transferencia.</em></span></label>
+              </div>
+              <select id="planningObjectiveMode086" class="planning089-hidden" aria-hidden="true" tabindex="-1">
+                <option value="core">Aprendizaje central</option><option value="apply">Aplicar</option><option value="explain">Explicar</option><option value="transfer">Transferir</option>
               </select>
               <div class="planning086-output"><div class="planning086-output-label">✨ Propósito generado</div><div id="planningObjectivePreview086" class="planning086-output-text"></div></div>
               <textarea id="planningObjective" class="planning086-hidden" tabindex="-1" aria-hidden="true"></textarea>
+            </div>
+
+            <div class="field section-gap planning090-content-box">
+              <label>Contenido específico de esta clase <span class="planning090-optional">Opcional</span></label>
+              <div class="planning090-content-help">
+                Si quieres trabajar una parte específica del OA, escríbela aquí. AulaNexo la usará para construir el objetivo de la clase.
+              </div>
+              <input id="planningClassContentCustom090" type="text" class="planning090-content-input" placeholder="Ej.: partes de una planta y función de la raíz, tallo y hojas">
+              <div id="planningClassContentSource090" class="planning090-content-source">Si lo dejas vacío, AulaNexo usará el contenido detectado en el OA.</div>
+            </div>
+
+            <div class="field section-gap planning089-class-objective">
+              <label>Objetivo de la clase</label>
+              <div class="planning089-objective-head">
+                <div><b>AulaNexo lo construye automáticamente</b><span>Integra las tres dimensiones: habilidad + contenido + actitud.</span></div>
+                <span class="planning089-objective-badge">✨ Generado</span>
+              </div>
+              <div class="planning089-dimensions">
+                <div><span>HABILIDAD</span><strong id="planningClassSkill089">—</strong></div>
+                <div><span>CONTENIDO</span><strong id="planningClassContent089">—</strong></div>
+                <div><span>ACTITUD</span><strong id="planningClassAttitude089">—</strong></div>
+              </div>
+              <div class="planning089-objective-output"><div class="planning089-objective-label">OBJETIVO DE LA CLASE</div><div id="planningClassObjectivePreview089"></div></div>
+              <textarea id="planningClassObjective089" class="planning089-hidden" tabindex="-1" aria-hidden="true"></textarea>
             </div>
 
             <div class="planning-framework">
@@ -2276,7 +2397,11 @@ nav.app-nav button[data-view].active{background:var(--primary-soft);color:#3730a
                     </div>
                     <button id="planningChooseAttitude080" type="button" class="secondary">🎯 Elegir objetivo</button>
                   </div>
-                  <textarea id="planningAttitudeObjective" class="section-gap" placeholder="El objetivo actitudinal seleccionado aparecerá aquí y podrás adaptarlo."></textarea>
+                  <div class="planning088-generated section-gap">
+                    <div class="planning088-generated-label">✨ Objetivo actitudinal seleccionado</div>
+                    <div id="planningAttitudePreview088" class="planning088-generated-text"></div>
+                  </div>
+                  <textarea id="planningAttitudeObjective" class="planning088-hidden" tabindex="-1" aria-hidden="true"></textarea>
                   <div id="planningAttitudeNote" class="planning-source-note"></div>
                 </div>
               </div>
@@ -2286,7 +2411,7 @@ nav.app-nav button[data-view].active{background:var(--primary-soft);color:#3730a
                 <div class="planning080-dua-intro">
                   <div>
                     <b>DUA 3.0 completo, sin recargar la planificación</b>
-                    <span>AulaNexo selecciona automáticamente consideraciones pertinentes al OA. Puedes abrir cada área solo si quieres revisar o cambiar la selección.</span>
+                    <span>AulaNexo selecciona consideraciones pertinentes al OA y genera su aplicación concreta. Abre cada área solo si quieres cambiar la selección.</span>
                   </div>
                   <button id="planningConfigureDua080" type="button" class="secondary">⚙️ Configurar DUA</button>
                 </div>
@@ -2303,9 +2428,10 @@ nav.app-nav button[data-view].active{background:var(--primary-soft);color:#3730a
                       <span>9 · Capacidad emocional</span>
                     </div>
                     <button type="button" class="planning080-link" data-open-dua080="engagement">Ver y seleccionar pautas →</button>
-                    <div class="planning080-application">
-                      <label>Aplicación concreta en esta clase</label>
-                      <textarea id="planningDuaEngagement"></textarea>
+                    <div class="planning080-application planning088-dua-application">
+                      <label>Aplicación concreta generada por AulaNexo</label>
+                      <div id="planningDuaEngagementPreview088" class="planning088-dua-text"></div>
+                      <textarea id="planningDuaEngagement" class="planning088-hidden" tabindex="-1" aria-hidden="true"></textarea>
                     </div>
                   </div>
 
@@ -2320,9 +2446,10 @@ nav.app-nav button[data-view].active{background:var(--primary-soft);color:#3730a
                       <span>3 · Construcción del conocimiento</span>
                     </div>
                     <button type="button" class="planning080-link" data-open-dua080="representation">Ver y seleccionar pautas →</button>
-                    <div class="planning080-application">
-                      <label>Aplicación concreta en esta clase</label>
-                      <textarea id="planningDuaRepresentation"></textarea>
+                    <div class="planning080-application planning088-dua-application">
+                      <label>Aplicación concreta generada por AulaNexo</label>
+                      <div id="planningDuaRepresentationPreview088" class="planning088-dua-text"></div>
+                      <textarea id="planningDuaRepresentation" class="planning088-hidden" tabindex="-1" aria-hidden="true"></textarea>
                     </div>
                   </div>
 
@@ -2337,14 +2464,15 @@ nav.app-nav button[data-view].active{background:var(--primary-soft);color:#3730a
                       <span>6 · Desarrollo de estrategias</span>
                     </div>
                     <button type="button" class="planning080-link" data-open-dua080="action">Ver y seleccionar pautas →</button>
-                    <div class="planning080-application">
-                      <label>Aplicación concreta en esta clase</label>
-                      <textarea id="planningDuaAction"></textarea>
+                    <div class="planning080-application planning088-dua-application">
+                      <label>Aplicación concreta generada por AulaNexo</label>
+                      <div id="planningDuaActionPreview088" class="planning088-dua-text"></div>
+                      <textarea id="planningDuaAction" class="planning088-hidden" tabindex="-1" aria-hidden="true"></textarea>
                     </div>
                   </div>
                 </div>
 
-                <div class="planning-source-note">AulaNexo ya deja una selección DUA preparada según el OA. Las 36 consideraciones siguen disponibles para revisar o modificar, sin tener que escribirlas.</div>
+                <div class="planning-source-note">AulaNexo selecciona consideraciones según el OA y redacta automáticamente cómo aplicarlas en la clase. Puedes revisar o cambiar las pautas, pero no necesitas escribir su aplicación.</div>
               </div>
             </div>
 
@@ -2433,7 +2561,7 @@ nav.app-nav button[data-view].active{background:var(--primary-soft);color:#3730a
                 <div><b>Selecciona los apoyos</b><span>AulaNexo deja algunos marcados automáticamente; puedes activar o quitar.</span></div>
                 <span id="planningSupportCount086" class="planning086-badge">0 seleccionados</span>
               </div>
-              <div id="planningSupportOptions086" class="planning086-supports"><label class="planning086-support" data-supportcard086="visual"><input type="checkbox" data-support086="visual"><span class="planning086-support-icon">👁️</span><span><b>Apoyo visual</b><small>Imágenes, ejemplos, organizadores o claves visibles.</small><em data-supportsuggested086="visual" class="hidden">AulaNexo sugiere</em></span></label><label class="planning086-support" data-supportcard086="concrete"><input type="checkbox" data-support086="concrete"><span class="planning086-support-icon">🧩</span><span><b>Material concreto</b><small>Objetos, fichas, tarjetas o recursos manipulables.</small><em data-supportsuggested086="concrete" class="hidden">AulaNexo sugiere</em></span></label><label class="planning086-support" data-supportcard086="model"><input type="checkbox" data-support086="model"><span class="planning086-support-icon">👩‍🏫</span><span><b>Modelado adicional</b><small>Mostrar un ejemplo extra antes del trabajo autónomo.</small><em data-supportsuggested086="model" class="hidden">AulaNexo sugiere</em></span></label><label class="planning086-support" data-supportcard086="steps"><input type="checkbox" data-support086="steps"><span class="planning086-support-icon">1️⃣</span><span><b>Instrucciones por pasos</b><small>Una indicación a la vez y lenguaje directo.</small><em data-supportsuggested086="steps" class="hidden">AulaNexo sugiere</em></span></label><label class="planning086-support" data-supportcard086="reduced"><input type="checkbox" data-support086="reduced"><span class="planning086-support-icon">✂️</span><span><b>Menor cantidad</b><small>Menos ejercicios manteniendo el mismo OA.</small><em data-supportsuggested086="reduced" class="hidden">AulaNexo sugiere</em></span></label><label class="planning086-support" data-supportcard086="time"><input type="checkbox" data-support086="time"><span class="planning086-support-icon">⏱️</span><span><b>Más tiempo</b><small>Ampliar el tiempo de respuesta o ejecución.</small><em data-supportsuggested086="time" class="hidden">AulaNexo sugiere</em></span></label><label class="planning086-support" data-supportcard086="alternate"><input type="checkbox" data-support086="alternate"><span class="planning086-support-icon">💬</span><span><b>Respuesta alternativa</b><small>Responder oralmente, señalando, dibujando o manipulando.</small><em data-supportsuggested086="alternate" class="hidden">AulaNexo sugiere</em></span></label><label class="planning086-support" data-supportcard086="peer"><input type="checkbox" data-support086="peer"><span class="planning086-support-icon">🤝</span><span><b>Apoyo entre pares</b><small>Pareja de apoyo o colaboración intencionada.</small><em data-supportsuggested086="peer" class="hidden">AulaNexo sugiere</em></span></label><label class="planning086-support" data-supportcard086="guided"><input type="checkbox" data-support086="guided"><span class="planning086-support-icon">🧑‍🏫</span><span><b>Grupo guiado</b><small>Trabajo breve y cercano con el docente.</small><em data-supportsuggested086="guided" class="hidden">AulaNexo sugiere</em></span></label><label class="planning086-support" data-supportcard086="feedback"><input type="checkbox" data-support086="feedback"><span class="planning086-support-icon">✅</span><span><b>Retroalimentación inmediata</b><small>Orientar durante la tarea, no solo al final.</small><em data-supportsuggested086="feedback" class="hidden">AulaNexo sugiere</em></span></label><label class="planning086-support" data-supportcard086="challenge"><input type="checkbox" data-support086="challenge"><span class="planning086-support-icon">🚀</span><span><b>Desafío adicional</b><small>Caso nuevo o profundización para quienes avanzan.</small><em data-supportsuggested086="challenge" class="hidden">AulaNexo sugiere</em></span></label><label class="planning086-support" data-supportcard086="explain"><input type="checkbox" data-support086="explain"><span class="planning086-support-icon">🗣️</span><span><b>Explicar el procedimiento</b><small>Justificar o comunicar cómo resolvió.</small><em data-supportsuggested086="explain" class="hidden">AulaNexo sugiere</em></span></label></div>
+              <div id="planningSupportOptions086" class="planning096-supports"><button type="button" class="planning096-support" data-support096="visual" aria-pressed="false" onclick="planningSupportToggle096('visual')"><span class="planning096-support-icon">👁️</span><span><b>Apoyo visual</b><small>Imágenes, ejemplos, organizadores o claves visibles.</small><em data-supportsuggested096="visual" class="hidden">AulaNexo sugiere</em></span></button><button type="button" class="planning096-support" data-support096="concrete" aria-pressed="false" onclick="planningSupportToggle096('concrete')"><span class="planning096-support-icon">🧩</span><span><b>Material concreto</b><small>Objetos, fichas, tarjetas o recursos manipulables.</small><em data-supportsuggested096="concrete" class="hidden">AulaNexo sugiere</em></span></button><button type="button" class="planning096-support" data-support096="model" aria-pressed="false" onclick="planningSupportToggle096('model')"><span class="planning096-support-icon">👩‍🏫</span><span><b>Modelado adicional</b><small>Mostrar un ejemplo extra antes del trabajo autónomo.</small><em data-supportsuggested096="model" class="hidden">AulaNexo sugiere</em></span></button><button type="button" class="planning096-support" data-support096="steps" aria-pressed="false" onclick="planningSupportToggle096('steps')"><span class="planning096-support-icon">1️⃣</span><span><b>Instrucciones por pasos</b><small>Una indicación a la vez y lenguaje directo.</small><em data-supportsuggested096="steps" class="hidden">AulaNexo sugiere</em></span></button><button type="button" class="planning096-support" data-support096="reduced" aria-pressed="false" onclick="planningSupportToggle096('reduced')"><span class="planning096-support-icon">✂️</span><span><b>Menor cantidad</b><small>Menos ejercicios manteniendo el mismo OA.</small><em data-supportsuggested096="reduced" class="hidden">AulaNexo sugiere</em></span></button><button type="button" class="planning096-support" data-support096="time" aria-pressed="false" onclick="planningSupportToggle096('time')"><span class="planning096-support-icon">⏱️</span><span><b>Más tiempo</b><small>Ampliar el tiempo de respuesta o ejecución.</small><em data-supportsuggested096="time" class="hidden">AulaNexo sugiere</em></span></button><button type="button" class="planning096-support" data-support096="alternate" aria-pressed="false" onclick="planningSupportToggle096('alternate')"><span class="planning096-support-icon">💬</span><span><b>Respuesta alternativa</b><small>Responder oralmente, señalando, dibujando o manipulando.</small><em data-supportsuggested096="alternate" class="hidden">AulaNexo sugiere</em></span></button><button type="button" class="planning096-support" data-support096="peer" aria-pressed="false" onclick="planningSupportToggle096('peer')"><span class="planning096-support-icon">🤝</span><span><b>Apoyo entre pares</b><small>Pareja de apoyo o colaboración intencionada.</small><em data-supportsuggested096="peer" class="hidden">AulaNexo sugiere</em></span></button><button type="button" class="planning096-support" data-support096="guided" aria-pressed="false" onclick="planningSupportToggle096('guided')"><span class="planning096-support-icon">🧑‍🏫</span><span><b>Grupo guiado</b><small>Trabajo breve y cercano con el docente.</small><em data-supportsuggested096="guided" class="hidden">AulaNexo sugiere</em></span></button><button type="button" class="planning096-support" data-support096="feedback" aria-pressed="false" onclick="planningSupportToggle096('feedback')"><span class="planning096-support-icon">✅</span><span><b>Retroalimentación inmediata</b><small>Orientar durante la tarea, no solo al final.</small><em data-supportsuggested096="feedback" class="hidden">AulaNexo sugiere</em></span></button><button type="button" class="planning096-support" data-support096="challenge" aria-pressed="false" onclick="planningSupportToggle096('challenge')"><span class="planning096-support-icon">🚀</span><span><b>Desafío adicional</b><small>Caso nuevo o profundización para quienes avanzan.</small><em data-supportsuggested096="challenge" class="hidden">AulaNexo sugiere</em></span></button><button type="button" class="planning096-support" data-support096="explain" aria-pressed="false" onclick="planningSupportToggle096('explain')"><span class="planning096-support-icon">🗣️</span><span><b>Explicar el procedimiento</b><small>Justificar o comunicar cómo resolvió.</small><em data-supportsuggested096="explain" class="hidden">AulaNexo sugiere</em></span></button></div>
               <div class="planning086-output planning086-output-blue"><div class="planning086-output-label">✨ Apoyos generados</div><div id="planningDifferentiationPreview086" class="planning086-output-text"></div></div>
               <textarea id="planningDifferentiation" class="planning086-hidden" tabindex="-1" aria-hidden="true"></textarea>
             </div>
@@ -2730,13 +2858,13 @@ nav.app-nav button[data-view].active{background:var(--primary-soft);color:#3730a
       <div>
         <div class="planning080-modal-kicker">OBJETIVO ACTITUDINAL</div>
         <h2>Elige una actitud para la clase</h2>
-        <div class="small">Aquí sí puedes leer las opciones completas antes de seleccionar.</div>
+        <div class="small">Lee las opciones completas y selecciona la que mejor acompañe esta clase.</div>
       </div>
       <button id="planningAttitudeClose080" type="button" class="ghost">Cerrar</button>
     </div>
     <div id="planningAttitudeSource080" class="planning080-source"></div>
     <div id="planningAttitudeList080" class="planning080-attitude-list"></div>
-    <button id="planningAttitudeCustom080" type="button" class="planning080-custom">
+    <button id="planningAttitudeCustom080" type="button" class="planning080-custom planning088-hidden" aria-hidden="true" tabindex="-1">
       ✎ Escribir o adaptar un objetivo actitudinal propio
     </button>
   </div>
@@ -2818,7 +2946,7 @@ let interventionDraft={key:'',date:'',duration:'20',focus:'',activity:'',evidenc
 let selectedPlanningSubject=null;
 let selectedPlanningUnit='';
 let selectedPlanningOA='';
-let planningDraft={key:'',date:'',duration:'45',objectiveMode:'',objective:'',bloomLevel:'Comprender',bloomVerbs:'',attitudeCode:'',attitudeObjective:'',duaEngagementEnabled:true,duaEngagement:'',duaRepresentationEnabled:true,duaRepresentation:'',duaActionEnabled:true,duaAction:'',start:'',development:'',closing:'',assessmentMode:'',assessment:'',supportOptions:[],differentiation:'',materialOptions:[],materials:''};
+let planningDraft={key:'',date:'',duration:'45',objectiveMode:'',objective:'',classContentCustom:'',classObjective:'',bloomLevel:'Comprender',bloomVerbs:'',attitudeCode:'',attitudeObjective:'',duaEngagementEnabled:true,duaEngagement:'',duaRepresentationEnabled:true,duaRepresentation:'',duaActionEnabled:true,duaAction:'',start:'',development:'',closing:'',assessmentMode:'',assessment:'',supportOptions:[],supportTouched096:false,differentiation:'',materialOptions:[],materials:''};
 let editingPlanningId=null;
 let planningMode='class';
 let selectedSimceApplicationId=null;
@@ -2913,7 +3041,7 @@ function normalizeState(x){
   if(!Array.isArray(x.interventions))x.interventions=[];
   x.interventions=x.interventions.filter(i=>i&&i.courseId).map(i=>({id:i.id||'int_'+uid(),courseId:i.courseId,grade:Number(i.grade)||null,subject:i.subject||'',unitId:String(i.unitId||''),unitName:i.unitName||'',oaNumber:Number(i.oaNumber)||null,oaText:i.oaText||'',groupKey:i.groupKey||'support',studentIds:Array.isArray(i.studentIds)?i.studentIds:[],studentNames:Array.isArray(i.studentNames)?i.studentNames:[],date:i.date||localDate(),duration:String(i.duration||'20'),focus:i.focus||'',activity:i.activity||'',evidence:i.evidence||'',materials:i.materials||'',baselineByStudent:(i.baselineByStudent&&typeof i.baselineByStudent==='object'&&!Array.isArray(i.baselineByStudent))?i.baselineByStudent:{},completed:!!i.completed,completedDate:i.completedDate||'',completedAt:i.completedAt||'',createdAt:i.createdAt||new Date().toISOString()}));
   if(!Array.isArray(x.classPlans))x.classPlans=[];
-  x.classPlans=x.classPlans.filter(p=>p&&p.courseId).map(p=>({id:p.id||'plan_'+uid(),courseId:p.courseId,grade:Number(p.grade)||null,subject:p.subject||'',unitId:String(p.unitId||''),unitName:p.unitName||'',oaNumber:Number(p.oaNumber)||null,oaText:p.oaText||'',date:p.date||localDate(),duration:String(p.duration||'45'),objectiveMode:p.objectiveMode||'',objective:p.objective||'',bloomLevel:p.bloomLevel||'',bloomVerbs:p.bloomVerbs||'',attitudeCode:p.attitudeCode??'custom',attitudeObjective:p.attitudeObjective||'',duaEngagementEnabled:p.duaEngagementEnabled!==false,duaEngagement:p.duaEngagement||'',duaRepresentationEnabled:p.duaRepresentationEnabled!==false,duaRepresentation:p.duaRepresentation||'',duaActionEnabled:p.duaActionEnabled!==false,duaAction:p.duaAction||'',duaConsiderations:Array.isArray(p.duaConsiderations)?p.duaConsiderations.map(String):[],startMode:p.startMode||'',developmentMode:p.developmentMode||'',closingMode:p.closingMode||'',start:p.start||'',development:p.development||'',closing:p.closing||'',assessmentMode:p.assessmentMode||'',assessment:p.assessment||'',supportOptions:Array.isArray(p.supportOptions)?p.supportOptions.map(String):[],differentiation:p.differentiation||'',materialOptions:Array.isArray(p.materialOptions)?p.materialOptions.map(String):[],materials:p.materials||'',createdAt:p.createdAt||new Date().toISOString(),updatedAt:p.updatedAt||p.createdAt||new Date().toISOString()}));
+  x.classPlans=x.classPlans.filter(p=>p&&p.courseId).map(p=>({id:p.id||'plan_'+uid(),courseId:p.courseId,grade:Number(p.grade)||null,subject:p.subject||'',unitId:String(p.unitId||''),unitName:p.unitName||'',oaNumber:Number(p.oaNumber)||null,oaText:p.oaText||'',date:p.date||localDate(),duration:String(p.duration||'45'),objectiveMode:p.objectiveMode||'',objective:p.objective||'',classContentCustom:p.classContentCustom||'',classObjective:p.classObjective||'',bloomLevel:p.bloomLevel||'',bloomVerbs:p.bloomVerbs||'',attitudeCode:p.attitudeCode??'custom',attitudeObjective:p.attitudeObjective||'',duaEngagementEnabled:p.duaEngagementEnabled!==false,duaEngagement:p.duaEngagement||'',duaRepresentationEnabled:p.duaRepresentationEnabled!==false,duaRepresentation:p.duaRepresentation||'',duaActionEnabled:p.duaActionEnabled!==false,duaAction:p.duaAction||'',duaConsiderations:Array.isArray(p.duaConsiderations)?p.duaConsiderations.map(String):[],startMode:p.startMode||'',developmentMode:p.developmentMode||'',closingMode:p.closingMode||'',start:p.start||'',development:p.development||'',closing:p.closing||'',assessmentMode:p.assessmentMode||'',assessment:p.assessment||'',supportOptions:Array.isArray(p.supportOptions)?p.supportOptions.map(String):[],supportTouched096:!!p.supportTouched096,differentiation:p.differentiation||'',materialOptions:Array.isArray(p.materialOptions)?p.materialOptions.map(String):[],materials:p.materials||'',createdAt:p.createdAt||new Date().toISOString(),updatedAt:p.updatedAt||p.createdAt||new Date().toISOString()}));
   if(!Array.isArray(x.resources))x.resources=[];
   x.resources=x.resources.filter(r=>r&&r.title).map(r=>({id:r.id||'res_'+uid(),grade:Number(r.grade)||null,subject:r.subject||'',unitId:String(r.unitId||''),unitName:r.unitName||'',oaNumber:r.oaNumber==null||r.oaNumber===''?null:Number(r.oaNumber),oaText:r.oaText||'',type:r.type||'Otro',audience:r.audience||'all',title:r.title||'',url:r.url||'',notes:r.notes||'',fileName:r.fileName||'',filePath:r.filePath||'',fileType:r.fileType||'',fileSize:Number(r.fileSize)||0,createdAt:r.createdAt||new Date().toISOString(),updatedAt:r.updatedAt||r.createdAt||new Date().toISOString()}));
   if(!x.unitSequences||typeof x.unitSequences!=='object'||Array.isArray(x.unitSequences))x.unitSequences={};
@@ -4426,6 +4554,8 @@ function planningEnsureComplete081(course,subject,unit,oa,force=false){
   planningEnsureModes082(d,subject,oa,course.level,force);
   planningEnsureChoices086(d,course,subject,oa,planningContextFor(course,subject,unit,oa),force);
   planningEnsureChoices087(d,subject,oa,course.level,force);
+  planningSyncPurpose089(d,subject,oa,course.level);
+  planningSyncClassObjective089(d,subject,oa,course.level);
   return d;
 }
 
@@ -5012,12 +5142,78 @@ function planningSyncBloom086(draft,oa,reset=false){
   const sum=document.getElementById('planningBloomVerbSummary086'),hid=document.getElementById('planningBloomVerbs');if(sum)sum.textContent=selected.join(', ');if(hid)hid.value=draft.bloomVerbs;
 }
 const SUPPORT_TEXT_086={steps:'Entregar instrucciones breves y de un paso a la vez.',visual:'Mantener apoyos visuales, ejemplos o claves visibles durante la actividad.',concrete:'Permitir el uso de material concreto o manipulativo para representar el aprendizaje.',model:'Modelar un ejemplo adicional antes del trabajo autónomo.',guided:'Organizar un momento breve de trabajo guiado con quienes necesiten mayor apoyo.',reduced:'Reducir la cantidad de ejercicios o casos, manteniendo el mismo objetivo de aprendizaje.',time:'Ofrecer tiempo adicional cuando la dificultad esté en el ritmo y no en el objetivo.',alternate:'Permitir formas alternativas de responder, como oralmente, señalando, dibujando o manipulando material.',peer:'Utilizar apoyo entre pares o trabajo colaborativo intencionado.',feedback:'Entregar retroalimentación inmediata y específica durante la tarea.',challenge:'Para quienes avanzan con facilidad, incorporar un caso nuevo de transferencia o profundización.',explain:'Pedir a quienes estén preparados que expliquen o justifiquen su procedimiento.'};
+
+function planningSupportContext096(){
+  const c=activeCourse();
+  if(!c)return null;
+  const unit=unitById(c.level,selectedPlanningSubject,selectedPlanningUnit);
+  const oa=unitObjectivesFor(c.level,selectedPlanningSubject,selectedPlanningUnit)
+    .find(o=>String(o.number)===String(selectedPlanningOA));
+  return (unit&&oa)?planningContextFor(c,selectedPlanningSubject,unit,oa):null;
+}
+
+function planningSupportRender096(draft,course=null,subject='',ctx=null){
+  const selected=Array.isArray(draft?.supportOptions)
+    ? [...new Set(draft.supportOptions.filter(id=>SUPPORT_TEXT_086[id]))]
+    : [];
+
+  const suggested=course?planningSuggestedSupports086(course,subject,ctx):[];
+
+  document.querySelectorAll('[data-support096]').forEach(btn=>{
+    const on=selected.includes(btn.dataset.support096);
+    btn.classList.toggle('is-selected',on);
+    btn.setAttribute('aria-pressed',on?'true':'false');
+    // Nunca permitir que el bloqueo general desactive esta sección.
+    btn.disabled=false;
+  });
+
+  document.querySelectorAll('[data-supportsuggested096]').forEach(el=>{
+    el.classList.toggle('hidden',!suggested.includes(el.dataset.supportsuggested096));
+  });
+
+  draft.supportOptions=[...selected];
+  draft.differentiation=planningSupportParagraph086(selected,ctx);
+
+  const count=document.getElementById('planningSupportCount086');
+  const pre=document.getElementById('planningDifferentiationPreview086');
+  const hid=document.getElementById('planningDifferentiation');
+
+  if(count)count.textContent=`${selected.length} seleccionado${selected.length===1?'':'s'}`;
+  if(pre)pre.textContent=selected.length?draft.differentiation:'Sin apoyos diferenciados seleccionados.';
+  if(hid)hid.value=draft.differentiation||'';
+}
+
+function planningSupportToggle096(id){
+  if(!planningDraft||!SUPPORT_TEXT_086[id])return;
+
+  const set=new Set(Array.isArray(planningDraft.supportOptions)?planningDraft.supportOptions:[]);
+  if(set.has(id))set.delete(id);else set.add(id);
+
+  planningDraft.supportOptions=[...set];
+  planningDraft.supportTouched096=true;
+
+  const c=activeCourse();
+  const ctx=planningSupportContext096();
+  planningSupportRender096(planningDraft,c,selectedPlanningSubject,ctx);
+}
+
+function planningCaptureSupports096(){
+  if(!planningDraft)return;
+  const c=activeCourse();
+  const ctx=planningSupportContext096();
+  planningSupportRender096(planningDraft,c,selectedPlanningSubject,ctx);
+}
+
 function planningSuggestedSupports086(course,subject,ctx){const g=Number(course?.level)||0,k=planningSubjectKind(subject),s=new Set(['steps','model','feedback']);if(g<=2){s.add('visual');s.add('concrete');s.add('alternate')}if(k==='math'||k==='science'){s.add('visual');s.add('concrete')}if(k==='language'){s.add('visual');s.add('alternate')}if(ctx?.groups?.support?.length){s.add('guided');s.add('reduced');s.add('time')}if(ctx?.groups?.process?.length)s.add('peer');if(ctx?.groups?.achieved?.length){s.add('challenge');s.add('explain')}if(!ctx?.withEvidence)s.add('challenge');return [...s]}
 function planningSupportParagraph086(list,ctx){const parts=[];(list||[]).forEach(id=>{if(SUPPORT_TEXT_086[id])parts.push(SUPPORT_TEXT_086[id])});if(ctx?.groups?.support?.length)parts.unshift(`Apoyo prioritario: considerar especialmente a ${ctx.groups.support.length} estudiante${ctx.groups.support.length===1?'':'s'} que requieren apoyo en este OA.`);return parts.join(' ')}
 function planningSyncSupports086(draft,course,subject,ctx,reset=false){
-  const suggested=planningSuggestedSupports086(course,subject,ctx);let selected=reset?[]:(Array.isArray(draft.supportOptions)?draft.supportOptions.filter(x=>SUPPORT_TEXT_086[x]):[]);if(!selected.length)selected=[...suggested];draft.supportOptions=selected;draft.differentiation=planningSupportParagraph086(selected,ctx);
-  document.querySelectorAll('[data-support086]').forEach(cb=>{cb.checked=selected.includes(cb.dataset.support086);cb.closest('.planning086-support')?.classList.toggle('is-selected',cb.checked)});document.querySelectorAll('[data-supportsuggested086]').forEach(el=>el.classList.toggle('hidden',!suggested.includes(el.dataset.supportsuggested086)));
-  const count=document.getElementById('planningSupportCount086'),pre=document.getElementById('planningDifferentiationPreview086'),hid=document.getElementById('planningDifferentiation');if(count)count.textContent=`${selected.length} seleccionado${selected.length===1?'':'s'}`;if(pre)pre.textContent=draft.differentiation;if(hid)hid.value=draft.differentiation;
+  const suggested=planningSuggestedSupports086(course,subject,ctx);
+  let selected=reset?[]:(Array.isArray(draft.supportOptions)?draft.supportOptions.filter(id=>SUPPORT_TEXT_086[id]):[]);
+
+  if(!selected.length&&!draft.supportTouched096)selected=[...suggested];
+
+  draft.supportOptions=[...selected];
+  planningSupportRender096(draft,course,subject,ctx);
 }
 function planningEnsureChoices086(draft,course,subject,oa,ctx,force=false){if(force){draft.objectiveMode='';draft.supportOptions=[];draft.bloomVerbs=''}planningSyncPurpose086(draft,subject,oa,course.level);planningSyncBloom086(draft,oa,force);planningSyncSupports086(draft,course,subject,ctx,force);return draft}
 
@@ -5108,6 +5304,103 @@ function planningEnsureChoices087(draft,subject,oa,grade,force=false){
   return draft;
 }
 
+
+/* ===== 0.0.89 · OBJETIVO DE CLASE: HABILIDAD + CONTENIDO + ACTITUD ===== */
+function planningContentPhrase089(subject,oa,grade,draft=null){
+  const custom=String(draft?.classContentCustom||'').trim();
+  if(custom)return custom.replace(/[.!?]+$/,'');
+
+  const k=planningSubjectKind(subject),t=normalizeText(oa?.text||''),raw=String(oa?.text||'').trim();
+  if(k==='science'){
+    if(/seres vivos|vivo|no vivo/.test(t))return 'las diferencias entre seres vivos y elementos no vivos a partir de características observables';
+    if(/sentido|audicion|vision|olfato|gusto|tacto/.test(t))return 'los órganos de los sentidos, sus funciones y acciones para cuidarlos';
+    if(/animal/.test(t))return 'las características observables de los animales y criterios para agruparlos';
+    if(/planta|raiz|tallo|hoja|flor/.test(t))return 'las estructuras principales de las plantas y sus funciones';
+    if(/material|propiedad|flexib|imperme|transpar/.test(t))return 'las propiedades observables de distintos materiales y sus posibles usos';
+    if(/salud|higiene|aliment|actividad fisica/.test(t))return 'acciones y hábitos que favorecen el cuidado de la salud';
+  }
+  if(k==='math'){
+    if(/numero|contar|cantidad|comparar/.test(t))return 'números, cantidades y sus distintas representaciones';
+    if(/adicion|sustraccion|sumar|restar/.test(t))return 'situaciones de adición y sustracción mediante estrategias acordes al nivel';
+    if(/multiplic|division|grupos iguales/.test(t))return 'situaciones de agrupamiento, multiplicación o división';
+    if(/fraccion/.test(t))return 'fracciones y sus representaciones en situaciones concretas';
+    if(/figura|cuerpo geometr|geometr/.test(t))return 'figuras, cuerpos y relaciones geométricas';
+  }
+  if(k==='language'){
+    if(/sonido|silab|fonema|conciencia fonologica/.test(t))return 'sonidos, sílabas y unidades sonoras de palabras conocidas';
+    if(/fluidez|decod|leer palabras|lectura oral/.test(t))return 'la lectura y decodificación de palabras o textos acordes al nivel';
+    if(/comprend|informacion explicita|infer/.test(t))return 'información e ideas de un texto para construir comprensión';
+    if(/escribir|produci|redact/.test(t))return 'la producción de un texto breve con un propósito comunicativo';
+  }
+  if(k==='history'){
+    if(/mapa|plano|ubic|localiz/.test(t))return 'la ubicación espacial utilizando referencias, planos o mapas';
+    if(/pueblo origin|indigena/.test(t))return 'características y aportes de los pueblos originarios estudiados';
+    if(/derecho|deber|conviv|ciudadan/.test(t))return 'derechos, deberes y acciones de convivencia responsable';
+  }
+  if(k==='arts')return 'recursos visuales, materiales y formas de expresión trabajadas en la clase';
+  if(k==='music')return 'elementos musicales y formas de expresión trabajadas en la clase';
+  if(k==='pe')return 'habilidades motrices y acciones corporales trabajadas en la clase';
+  if(k==='technology')return 'procedimientos, herramientas y soluciones tecnológicas trabajadas en la clase';
+  if(k==='english')return 'vocabulario y estructuras comunicativas trabajadas en la clase';
+
+  if(raw){
+    let s=raw
+      .replace(/^\s*(?:OA\s*\d+\s*[:.-]?\s*)/i,'')
+      .replace(/^\s*(reconocer|identificar|describir|explicar|demostrar|comprender|observar|comparar|clasificar|analizar|aplicar|resolver|representar|leer|escribir|crear|elaborar|utilizar|usar|distinguir|relacionar|explorar|comunicar)\s+(?:y\s+\w+\s+)?/i,'')
+      .replace(/^[Qq]ue\s+/,'')
+      .replace(/[.!?]+$/,'')
+      .trim();
+    if(s.length>10)return s.charAt(0).toLowerCase()+s.slice(1);
+  }
+  return 'el contenido central seleccionado para esta clase';
+}
+function planningAttitudePhrase089(text){
+  const t=normalizeText(text||'');
+  if(/curios|interes|explor/.test(t))return 'demostrando curiosidad e interés por aprender';
+  if(/persever|esfuerzo|error/.test(t))return 'trabajando con esfuerzo y perseverancia';
+  if(/respeto|escuch|divers|opinion/.test(t))return 'participando con respeto y valoración de las ideas de otros';
+  if(/responsab|cuidado|entorno|material/.test(t))return 'actuando con responsabilidad y cuidado';
+  if(/confianza|capacidad|apoyo/.test(t))return 'demostrando confianza y disposición a solicitar apoyo cuando sea necesario';
+  return 'participando de manera responsable y respetuosa';
+}
+function planningVerbForObjective089(draft){
+  const chosen=String(draft?.bloomVerbs||'').split(',').map(x=>x.trim()).filter(Boolean);
+  return chosen[0]||'aplicar';
+}
+function planningClassObjectiveText089(draft,subject,oa,grade){
+  const verb=planningVerbForObjective089(draft);
+  const content=planningContentPhrase089(subject,oa,grade,draft);
+  const attitude=planningAttitudePhrase089(draft?.attitudeObjective||'');
+  const v=normalizeText(verb);
+  let body='';
+  if(['explicar','describir','interpretar','analizar','comparar','distinguir','relacionar','reconocer','identificar','nombrar','clasificar','evaluar','justificar'].includes(v)){
+    body=`${verb.charAt(0).toUpperCase()+verb.slice(1)} ${content}`;
+  }else if(['aplicar','usar','utilizar','demostrar','representar','resolver','crear','diseñar','elaborar','producir','construir'].includes(v)){
+    body=`${verb.charAt(0).toUpperCase()+verb.slice(1)} conocimientos y estrategias relacionadas con ${content}`;
+  }else{
+    body=`${verb.charAt(0).toUpperCase()+verb.slice(1)} ${content}`;
+  }
+  return `${body}, ${attitude}.`;
+}
+function planningSyncClassObjective089(draft,subject,oa,grade){
+  if(!draft||!oa)return;
+  const skill=planningVerbForObjective089(draft),content=planningContentPhrase089(subject,oa,grade,draft),attitude=planningAttitudePhrase089(draft.attitudeObjective||'');
+  draft.classObjective=planningClassObjectiveText089(draft,subject,oa,grade);
+  const s=document.getElementById('planningClassSkill089'),c=document.getElementById('planningClassContent089'),a=document.getElementById('planningClassAttitude089'),p=document.getElementById('planningClassObjectivePreview089'),h=document.getElementById('planningClassObjective089');
+  if(s)s.textContent=skill;if(c)c.textContent=content;if(a)a.textContent=attitude;if(p)p.textContent=draft.classObjective;if(h)h.value=draft.classObjective;
+}
+function planningSyncPurpose089(draft,subject,oa,grade){
+  const rec=planningRecommendedPurpose086(oa);
+  if(!draft.objectiveMode)draft.objectiveMode=rec;
+  document.querySelectorAll('input[name="planningPurpose089"]').forEach(r=>{
+    r.checked=r.value===draft.objectiveMode;
+    const card=r.closest('.planning089-purpose-card');
+    card?.classList.toggle('is-recommended',r.value===rec);
+  });
+  const hidden=document.getElementById('planningObjectiveMode086');if(hidden)hidden.value=draft.objectiveMode;
+  planningSyncPurpose086(draft,subject,oa,grade);
+}
+
 function planningContextFor(course,subject,unit,oa){
   const groups=supportDataFor(course.id,course.level,subject,oa.number,unit.id);
   return {groups,withEvidence:groups.support.length+groups.process.length+groups.achieved.length};
@@ -5127,7 +5420,7 @@ function ensurePlanningDraft(course,subject,unit,oa,force=false){
   const key=planningDraftId(course,subject,unit,oa);
   if(force||planningDraft.key!==key){
     const t=planningBaseTemplate(subject,oa,course.level),ctx=planningContextFor(course,subject,unit,oa),bloomLevel=bloomForOA(oa.text),attInfo=planningAttitudeInfo081(course.level,subject),bank=attInfo.bank,attIdx=attitudeSuggestionIndex(subject,oa.text,bank),dua=duaDefaults(subject,oa);
-    planningDraft={key,date:localDate(),duration:'45',objectiveMode:'',objective:t.objective,bloomLevel,bloomVerbs:planningSuggestedVerbs086(bloomLevel,oa.text).join(', '),attitudeCode:attIdx>=0?String(attIdx):'custom',attitudeObjective:attIdx>=0?bank[attIdx]:'',duaEngagementEnabled:true,duaEngagement:dua.engagement,duaRepresentationEnabled:true,duaRepresentation:dua.representation,duaActionEnabled:true,duaAction:dua.action,duaConsiderations:duaSuggested080(subject,oa,course.level),startMode:'',developmentMode:'',closingMode:'',start:t.start,development:t.development,closing:t.closing,assessmentMode:'',assessment:t.assessment,supportOptions:planningSuggestedSupports086(course,subject,ctx),differentiation:planningDifferentiationText(ctx),materialOptions:[],materials:t.materials};editingPlanningId=null
+    planningDraft={key,date:localDate(),duration:'45',objectiveMode:'',objective:t.objective,classContentCustom:'',classObjective:'',bloomLevel,bloomVerbs:planningSuggestedVerbs086(bloomLevel,oa.text).join(', '),attitudeCode:attIdx>=0?String(attIdx):'custom',attitudeObjective:attIdx>=0?bank[attIdx]:'',duaEngagementEnabled:true,duaEngagement:dua.engagement,duaRepresentationEnabled:true,duaRepresentation:dua.representation,duaActionEnabled:true,duaAction:dua.action,duaConsiderations:duaSuggested080(subject,oa,course.level),startMode:'',developmentMode:'',closingMode:'',start:t.start,development:t.development,closing:t.closing,assessmentMode:'',assessment:t.assessment,supportOptions:planningSuggestedSupports086(course,subject,ctx),supportTouched096:false,differentiation:planningDifferentiationText(ctx),materialOptions:[],materials:t.materials};editingPlanningId=null
   }
   return planningDraft;
 }
@@ -5145,7 +5438,7 @@ function planningCopyText(course,subject,unit,oa,draft){
     const s=duaSelectedText080(draft,'action');if(s)dua.push(`Acción y expresión · pautas seleccionadas: ${s}`);
     if(draft.duaAction)dua.push(`Aplicación: ${draft.duaAction}`);
   }
-  return [`AulaNexo · Planificación de clase`,`Curso: ${course.name}`,`Asignatura: ${subject}`,`${unit.name} · OA ${String(oa.number).padStart(2,'0')}`,`Fecha: ${formatDate(draft.date)}`,`Duración: ${draft.duration} minutos`,'',`Propósito de la clase:`,draft.objective,'',`Taxonomía de Bloom: ${draft.bloomLevel||''}`,`Verbos / habilidades: ${draft.bloomVerbs||''}`,'',`Objetivo actitudinal:`,draft.attitudeObjective||'—','',`Principios DUA:`,...(dua.length?dua:['—']),'',`Inicio:`,draft.start,'',`Desarrollo:`,draft.development,'',`Cierre:`,draft.closing,'',`Evidencia / evaluación:`,draft.assessment,'',`Apoyos y diferenciación:`,draft.differentiation,'',`Materiales y recursos:`,draft.materials].join('\n')
+  return [`AulaNexo · Planificación de clase`,`Curso: ${course.name}`,`Asignatura: ${subject}`,`${unit.name} · OA ${String(oa.number).padStart(2,'0')}`,`Fecha: ${formatDate(draft.date)}`,`Duración: ${draft.duration} minutos`,'',`Propósito de la clase:`,draft.objective,'',`Objetivo de la clase:`,draft.classObjective||planningClassObjectiveText089(draft,subject,oa,course.level),'',...(draft.classContentCustom?[`Contenido específico de la clase:`,draft.classContentCustom,'']:[]),`Taxonomía de Bloom: ${draft.bloomLevel||''}`,`Verbos / habilidades: ${draft.bloomVerbs||''}`,'',`Objetivo actitudinal:`,draft.attitudeObjective||'—','',`Principios DUA:`,...(dua.length?dua:['—']),'',`Inicio:`,draft.start,'',`Desarrollo:`,draft.development,'',`Cierre:`,draft.closing,'',`Evidencia / evaluación:`,draft.assessment,'',`Apoyos y diferenciación:`,draft.differentiation,'',`Materiales y recursos:`,draft.materials].join('\n')
 }
 
 function planningFileName(course,subject,oa,draft){
@@ -5184,6 +5477,8 @@ function planningDocxXml(course,subject,unit,oa,draft){
   body.push(docxParagraph(oa.text,{size:22,after:150}));
   const section=(title,text)=>{body.push(docxParagraph(title,{bold:true,size:24,before:100,after:60,keep:true}));body.push(docxParagraph(text||'—',{size:22,after:130}))};
   section('Propósito de la clase',draft.objective);
+  section('Objetivo de la clase',draft.classObjective||planningClassObjectiveText089(draft,subject,oa,course.level));
+  if(draft.classContentCustom)section('Contenido específico de la clase',draft.classContentCustom);
   body.push(docxParagraph('Marco pedagógico',{bold:true,size:26,before:120,after:80,keep:true}));
   body.push(docxParagraph(`Taxonomía de Bloom: ${draft.bloomLevel||'—'}`,{bold:true,size:22,after:40}));
   body.push(docxParagraph(`Verbos / habilidades: ${draft.bloomVerbs||'—'}`,{size:22,after:90}));
@@ -5225,11 +5520,12 @@ function downloadPlanningWord(course,subject,unit,oa,draft){
   const blob=planningDocxBlob(course,subject,unit,oa,draft);downloadBlob(blob,'application/vnd.openxmlformats-officedocument.wordprocessingml.document',planningFileName(course,subject,oa,draft));
 }
 function setPlanningFormDisabled(disabled){
-  ['planningDate','planningDuration','planningObjective','planningObjectiveMode086','planningBloomLevel','planningBloomVerbs','planningAttitudeSelect','planningAttitudeObjective','planningAssessmentMode087','planningDuaEngagementEnabled','planningDuaEngagement','planningDuaRepresentationEnabled','planningDuaRepresentation','planningDuaActionEnabled','planningDuaAction','planningStart','planningDevelopment','planningClosing','planningAssessment','planningDifferentiation','planningMaterials'].forEach(id=>{const el=document.getElementById(id);if(el)el.disabled=disabled});
+  ['planningDate','planningDuration','planningObjective','planningObjectiveMode086','planningClassContentCustom090','planningBloomLevel','planningBloomVerbs','planningAttitudeSelect','planningAttitudeObjective','planningAssessmentMode087','planningDuaEngagementEnabled','planningDuaEngagement','planningDuaRepresentationEnabled','planningDuaRepresentation','planningDuaActionEnabled','planningDuaAction','planningStart','planningDevelopment','planningClosing','planningAssessment','planningDifferentiation','planningMaterials'].forEach(id=>{const el=document.getElementById(id);if(el)el.disabled=disabled});
   ['savePlanning','downloadPlanningDocx','copyPlanning','resetPlanningDraft','planningRegenerate078','planningChooseAttitude080','planningConfigureDua080'].forEach(id=>{const el=document.getElementById(id);if(el)el.disabled=disabled});
   document.querySelectorAll('[data-open-dua080]').forEach(el=>el.disabled=disabled);
   ['planningStartMode084','planningDevelopmentMode084','planningClosingMode084'].forEach(id=>{const el=document.getElementById(id);if(el)el.disabled=disabled});
-  document.querySelectorAll('[data-bloomverb086],[data-support086],[data-material087]').forEach(el=>el.disabled=disabled);
+  document.querySelectorAll('[data-bloomverb086],[data-material087],input[name="planningPurpose089"]').forEach(el=>el.disabled=disabled);
+  document.querySelectorAll('[data-support096]').forEach(el=>el.disabled=false);
 }
 
 function unitSequenceKey(course,subject,unit){return `${course.id}|${subject}|${unit.id}`}
@@ -5321,14 +5617,14 @@ function openAttitudeModal080(){
 
   source.textContent=info.official
     ?`Mostrando ${info.bank.length} objetivos actitudinales disponibles para ${selectedPlanningSubject}.`
-    :'No hay un banco separado de actitudes disponible aquí para esta asignatura. Puedes escribir una redacción propia.';
+    :'Esta asignatura usa sugerencias actitudinales transversales preparadas por AulaNexo.';
 
   root.innerHTML=info.bank.length
     ?info.bank.map((txt,i)=>`<button type="button" class="planning080-attitude-option ${String(planningDraft.attitudeCode)===String(i)?'is-selected':''}" data-att080="${i}">
         <span class="planning080-attitude-number">${i+1}</span>
         <span class="planning080-attitude-text">${esc(txt)}</span>
       </button>`).join('')
-    :'<div class="empty">No hay objetivos actitudinales específicos disponibles para esta asignatura.</div>';
+    :'<div class="empty">AulaNexo no encontró opciones actitudinales para esta asignatura.</div>';
 
   root.querySelectorAll('[data-att080]').forEach(btn=>btn.onclick=()=>{
     const i=Number(btn.dataset.att080),txt=info.bank[i];
@@ -5337,7 +5633,11 @@ function openAttitudeModal080(){
     const hidden=document.getElementById('planningAttitudeSelect');
     if(hidden)hidden.value=String(i);
     document.getElementById('planningAttitudeObjective').value=planningDraft.attitudeObjective;
+    const attitudePreview088=document.getElementById('planningAttitudePreview088');
+    if(attitudePreview088)attitudePreview088.textContent=planningDraft.attitudeObjective;
     updateAttitudeSummary080();
+    const c089=activeCourse(),oa089=unitObjectivesFor(c089?.level,selectedPlanningSubject,selectedPlanningUnit).find(o=>String(o.number)===String(selectedPlanningOA));
+    if(c089&&oa089)planningSyncClassObjective089(planningDraft,selectedPlanningSubject,oa089,c089.level);
     closeAttitudeModal080();
   });
 
@@ -5373,6 +5673,88 @@ function updateDuaSummary080(){
     total.textContent=`${n} consideración${n===1?'':'es'} seleccionada${n===1?'':'s'}`;
   }
 }
+
+/* ===== 0.0.88 · APLICACIÓN DUA GENERADA ===== */
+const DUA_ACTIONS_088={
+  '7.1':'Ofrecer una elección acotada sobre cómo participar o con qué ejemplo comenzar.',
+  '7.2':'Vincular la tarea con una situación cercana, útil o significativa para el curso.',
+  '7.3':'Incorporar un momento breve de juego, descubrimiento o desafío que favorezca la participación.',
+  '7.4':'Reducir distractores y presentar un entorno de trabajo claro, predecible y seguro.',
+  '8.1':'Explicitar la meta de la clase en lenguaje simple y retomarla al cierre.',
+  '8.2':'Ajustar el nivel de desafío y entregar apoyos graduales sin cambiar el OA.',
+  '8.3':'Incluir colaboración con roles o responsabilidades simples y claras.',
+  '8.4':'Favorecer pertenencia y participación, procurando que todas las voces tengan espacio.',
+  '8.5':'Entregar retroalimentación breve, específica y orientada a la siguiente acción.',
+  '9.1':'Ayudar a reconocer qué se espera, qué puede resultar desafiante y qué estrategias pueden usar.',
+  '9.2':'Incorporar una breve instancia para reconocer el propio avance y el de otros.',
+  '9.3':'Cerrar con una reflexión breve sobre qué ayudó a aprender y qué podría mejorarse.',
+  '9.4':'Modelar escucha, empatía y formas respetuosas de resolver dificultades.',
+  '1.1':'Permitir pequeños ajustes en la forma de presentar o acceder a la información cuando sea necesario.',
+  '1.2':'Presentar la información en más de una modalidad: oral, visual, concreta o mediante ejemplos.',
+  '1.3':'Incluir ejemplos y representaciones que reflejen distintas experiencias y perspectivas.',
+  '2.1':'Anticipar y aclarar vocabulario, símbolos o estructuras clave antes de la tarea.',
+  '2.2':'Apoyar la lectura o decodificación de textos, números y símbolos con modelado y ejemplos.',
+  '2.3':'Aceptar y apoyar distintas formas lingüísticas cuando no cambien el objetivo de aprendizaje.',
+  '2.4':'Revisar el lenguaje utilizado para evitar expresiones o ejemplos sesgados.',
+  '2.5':'Acompañar la explicación con imágenes, diagramas, objetos, gestos u otros medios.',
+  '3.1':'Activar conocimientos previos antes de introducir el aprendizaje nuevo.',
+  '3.2':'Destacar explícitamente ideas principales, patrones, relaciones o características críticas.',
+  '3.3':'Permitir construir significado mediante observación, conversación, manipulación y explicación.',
+  '3.4':'Incluir un ejemplo nuevo para favorecer transferencia y generalización.',
+  '4.1':'Permitir distintas formas pertinentes de responder, desplazarse o interactuar con la actividad.',
+  '4.2':'Asegurar acceso a materiales, herramientas y apoyos necesarios para participar.',
+  '5.1':'Permitir comunicar el aprendizaje oralmente, por escrito, señalando, dibujando o demostrando.',
+  '5.2':'Ofrecer herramientas o materiales variados para construir o crear la respuesta.',
+  '5.3':'Usar modelado, práctica guiada y retiro gradual del apoyo.',
+  '5.4':'Valorar diferentes formas de expresión sin privilegiar una sola cuando el OA no lo exige.',
+  '6.1':'Presentar una meta clara y comprensible para la actividad.',
+  '6.2':'Anticipar los pasos o dificultades principales antes de comenzar.',
+  '6.3':'Organizar materiales e información de manera visible y fácil de seguir.',
+  '6.4':'Incluir una comprobación breve para que el estudiante reconozca su progreso.',
+  '6.5':'Revisar barreras de participación y ajustar la actividad cuando una forma de trabajo excluya innecesariamente.'
+};
+
+function planningDuaApplication088(area,draft,subject,oa,grade){
+  const selected=new Set((draft?.duaConsiderations||[]).map(String));
+  const items=duaItems080().filter(x=>x.area===area && selected.has(x.code));
+  const base=duaDefaults(subject,oa||{text:''});
+  const fallback=area==='engagement'?base.engagement:area==='representation'?base.representation:base.action;
+
+  if(!items.length)return fallback;
+
+  // Priorizamos hasta 4 acciones concretas para que la planificación no quede recargada.
+  const actions=items.map(x=>DUA_ACTIONS_088[x.code]).filter(Boolean);
+  const unique=[...new Set(actions)].slice(0,4);
+  if(!unique.length)return fallback;
+
+  let intro='';
+  if(area==='engagement')intro='Para favorecer el compromiso: ';
+  if(area==='representation')intro='Para facilitar el acceso y la comprensión: ';
+  if(area==='action')intro='Para facilitar la participación y la expresión del aprendizaje: ';
+
+  return intro+unique.join(' ');
+}
+
+function planningSyncDuaApplications088(draft,subject,oa,grade){
+  if(!draft)return;
+  const map=[
+    ['engagement','duaEngagement','planningDuaEngagementPreview088'],
+    ['representation','duaRepresentation','planningDuaRepresentationPreview088'],
+    ['action','duaAction','planningDuaActionPreview088']
+  ];
+  map.forEach(([area,fieldId,previewId])=>{
+    const value=planningDuaApplication088(area,draft,subject,oa,grade);
+    draft[fieldId.replace('dua','dua')]=value;
+    // Asignación explícita por compatibilidad con el estado antiguo.
+    if(area==='engagement')draft.duaEngagement=value;
+    if(area==='representation')draft.duaRepresentation=value;
+    if(area==='action')draft.duaAction=value;
+    const field=document.getElementById(fieldId),preview=document.getElementById(previewId);
+    if(field)field.value=value;
+    if(preview)preview.textContent=value;
+  });
+}
+
 function renderDuaModal080(){
   const body=document.getElementById('planningDuaModalBody080');if(!body)return;
   const area=planningDuaTab080,data=DUA_3_0_080[area];
@@ -5404,6 +5786,9 @@ function renderDuaModal080(){
     if(cb.checked)set.add(cb.dataset.duaCons080);else set.delete(cb.dataset.duaCons080);
     planningDraft.duaConsiderations=[...set];
     updateDuaSummary080();
+    const c=activeCourse();
+    const oaNow=unitObjectivesFor(c?.level,selectedPlanningSubject,selectedPlanningUnit).find(o=>String(o.number)===String(selectedPlanningOA));
+    if(c&&oaNow)planningSyncDuaApplications088(planningDraft,selectedPlanningSubject,oaNow,c.level);
   });
   document.querySelectorAll('[data-dua-tab080]').forEach(b=>b.classList.toggle('active',b.dataset.duaTab080===area));
   updateDuaSummary080();
@@ -5435,7 +5820,14 @@ function renderPlanning(){
   const oa=oas.find(o=>String(o.number)===String(selectedPlanningOA))||oas[0],ctx=planningContextFor(course,selectedPlanningSubject,unit,oa);oaBox.innerHTML=`<div class="support-oa-code">OA ${String(oa.number).padStart(2,'0')}</div><div class="support-unit">${esc(unit.name)}</div><div class="support-oa-text">${esc(oa.text)}</div>`;
   const g=ctx.groups;ctxBox.innerHTML=`<div class="planning-context-title">Contexto actual del OA</div><div class="planning-context-text">${ctx.withEvidence?`AulaNexo encontró evidencia previa de ${ctx.withEvidence} estudiante${ctx.withEvidence===1?'':'s'} y la usa solamente para sugerir apoyos.`:'Todavía no hay evidencia estándar previa de este OA. La planificación puede prepararse igualmente.'}</div><div class="planning-context-grid"><div class="planning-context-mini"><strong>${g.support.length}</strong><span>Apoyo prioritario</span></div><div class="planning-context-mini"><strong>${g.process.length}</strong><span>En proceso</span></div><div class="planning-context-mini"><strong>${g.achieved.length}</strong><span>Consolidado</span></div><div class="planning-context-mini"><strong>${g.pending.length}</strong><span>Sin evidencia</span></div></div>`;
   const draft=planningEnsureComplete081(course,selectedPlanningSubject,unit,oa);setPlanningFormDisabled(false);
-  document.getElementById('planningDate').value=draft.date;document.getElementById('planningDuration').value=draft.duration;planningSyncPurpose086(draft,selectedPlanningSubject,oa,course.level);
+  document.getElementById('planningDate').value=draft.date;document.getElementById('planningDuration').value=draft.duration;planningSyncPurpose089(draft,selectedPlanningSubject,oa,course.level);
+  const customContent090=document.getElementById('planningClassContentCustom090');
+  if(customContent090)customContent090.value=draft.classContentCustom||'';
+  const contentSource090=document.getElementById('planningClassContentSource090');
+  if(contentSource090)contentSource090.textContent=draft.classContentCustom
+    ?'✓ AulaNexo está usando el contenido específico que escribiste.'
+    :'AulaNexo está usando el contenido detectado en el OA.';
+  planningSyncClassObjective089(draft,selectedPlanningSubject,oa,course.level);
   const bloomEl=document.getElementById('planningBloomLevel'),bloomHintEl=document.getElementById('planningBloomHint');bloomEl.value=draft.bloomLevel||'Comprender';bloomHintEl.textContent=bloomHint(bloomEl.value);planningSyncBloom086(draft,oa,false);
   const attInfo081=planningAttitudeInfo081(course.level,selectedPlanningSubject),attBank=attInfo081.bank,attSelect=document.getElementById('planningAttitudeSelect'),attNote=document.getElementById('planningAttitudeNote');
   if(attBank.length){
@@ -5447,18 +5839,21 @@ function renderPlanning(){
     attNote.textContent='No hay un banco separado de actitudes disponible para esta asignatura; puedes escribir una redacción propia.';
   }
   document.getElementById('planningAttitudeObjective').value=draft.attitudeObjective||'';
+  const attitudePreview088=document.getElementById('planningAttitudePreview088');
+  if(attitudePreview088)attitudePreview088.textContent=draft.attitudeObjective||'';
   updateAttitudeSummary080();
 
   if(!Array.isArray(draft.duaConsiderations)||!draft.duaConsiderations.length){
     draft.duaConsiderations=duaSuggested080(selectedPlanningSubject,oa,course.level);
   }
-  document.getElementById('planningDuaEngagementEnabled').checked=draft.duaEngagementEnabled!==false;document.getElementById('planningDuaEngagement').value=draft.duaEngagement||'';
-  document.getElementById('planningDuaRepresentationEnabled').checked=draft.duaRepresentationEnabled!==false;document.getElementById('planningDuaRepresentation').value=draft.duaRepresentation||'';
-  document.getElementById('planningDuaActionEnabled').checked=draft.duaActionEnabled!==false;document.getElementById('planningDuaAction').value=draft.duaAction||'';
+  document.getElementById('planningDuaEngagementEnabled').checked=draft.duaEngagementEnabled!==false;
+  document.getElementById('planningDuaRepresentationEnabled').checked=draft.duaRepresentationEnabled!==false;
+  document.getElementById('planningDuaActionEnabled').checked=draft.duaActionEnabled!==false;
+  planningSyncDuaApplications088(draft,selectedPlanningSubject,oa,course.level);
   updateDuaSummary080();
   document.getElementById('planningStart').value=draft.start;document.getElementById('planningDevelopment').value=draft.development;document.getElementById('planningClosing').value=draft.closing;planningSyncAssessment087(draft,selectedPlanningSubject,oa,course.level,false);planningSyncSupports086(draft,course,selectedPlanningSubject,ctx,false);planningSyncMaterials087(draft,selectedPlanningSubject,course.level,false);
   planningRenderPhaseOptions082(draft,selectedPlanningSubject,oa,course.level);
-  const autoFields=[draft.objective,draft.bloomLevel,draft.bloomVerbs,draft.attitudeObjective,draft.duaEngagement,draft.duaRepresentation,draft.duaAction,draft.start,draft.development,draft.closing,draft.assessment,draft.differentiation,draft.materials];const autoDone=autoFields.filter(x=>String(x||'').trim()).length;const autoStatus=document.getElementById('planningAutoStatus081');if(autoStatus)autoStatus.textContent=autoDone===autoFields.length?'✓ Completa':`${autoDone}/${autoFields.length} secciones`;
+  const autoFields=[draft.objective,draft.classObjective,draft.bloomLevel,draft.bloomVerbs,draft.attitudeObjective,draft.duaEngagement,draft.duaRepresentation,draft.duaAction,draft.start,draft.development,draft.closing,draft.assessment,draft.differentiation,draft.materials];const autoDone=autoFields.filter(x=>String(x||'').trim()).length;const autoStatus=document.getElementById('planningAutoStatus081');if(autoStatus)autoStatus.textContent=autoDone===autoFields.length?'✓ Completa':`${autoDone}/${autoFields.length} secciones`;
   editBadge.classList.toggle('hidden',!editingPlanningId);cancelBtn.classList.toggle('hidden',!editingPlanningId);document.getElementById('savePlanning').textContent=editingPlanningId?'Guardar cambios':'Guardar planificación';
   renderSavedPlanning(course);
   renderPlanningSequence(course,selectedPlanningSubject,unit,oas);
@@ -5467,7 +5862,7 @@ function renderPlanning(){
 function renderSavedPlanning(course){
   const root=document.getElementById('planningSavedList'),count=document.getElementById('planningSavedCount');if(!root||!count)return;const plans=course?(state.classPlans||[]).filter(p=>p.courseId===course.id).sort((a,b)=>(b.date||'').localeCompare(a.date||'')||(b.updatedAt||'').localeCompare(a.updatedAt||'')):[];count.textContent=`${plans.length} plan${plans.length===1?'':'es'}`;
   if(!course){root.innerHTML='<div class="empty">Primero selecciona un curso.</div>';return}if(!plans.length){root.innerHTML='<div class="empty">Todavía no has guardado planificaciones para este curso.</div>';return}
-  root.innerHTML=plans.map(p=>`<div class="planning-saved-card"><div class="planning-saved-head"><div><div class="planning-saved-title">${esc(p.subject)} · OA ${String(p.oaNumber).padStart(2,'0')}</div><div class="planning-saved-meta">${esc(p.unitName)} · ${formatDate(p.date)} · ${esc(p.duration)} min</div></div><div class="planning-actions"><button class="ghost" data-edit-plan="${p.id}">Editar</button><button class="ghost" data-download-plan="${p.id}">Descargar</button><button class="ghost" data-copy-plan="${p.id}">Copiar</button><button class="ghost" data-duplicate-plan="${p.id}">Duplicar</button><button class="danger" data-delete-plan="${p.id}">Eliminar</button></div></div><div class="planning-saved-preview"><strong>Propósito:</strong> ${esc(p.objective)}${p.bloomLevel?`<br><strong>Bloom:</strong> ${esc(p.bloomLevel)}`:''}${p.attitudeObjective?`<br><strong>Actitud:</strong> ${esc(p.attitudeObjective)}`:''}</div></div>`).join('');
+  root.innerHTML=plans.map(p=>`<div class="planning-saved-card"><div class="planning-saved-head"><div><div class="planning-saved-title">${esc(p.subject)} · OA ${String(p.oaNumber).padStart(2,'0')}</div><div class="planning-saved-meta">${esc(p.unitName)} · ${formatDate(p.date)} · ${esc(p.duration)} min</div></div><div class="planning-actions"><button class="ghost" data-edit-plan="${p.id}">Editar</button><button class="ghost" data-download-plan="${p.id}">Descargar</button><button class="ghost" data-copy-plan="${p.id}">Copiar</button><button class="ghost" data-duplicate-plan="${p.id}">Duplicar</button><button class="danger" data-delete-plan="${p.id}">Eliminar</button></div></div><div class="planning-saved-preview"><strong>Propósito:</strong> ${esc(p.objective)}${p.classObjective?`<br><strong>Objetivo de clase:</strong> ${esc(p.classObjective)}`:''}${p.classContentCustom?`<br><strong>Contenido específico:</strong> ${esc(p.classContentCustom)}`:''}${p.bloomLevel?`<br><strong>Bloom:</strong> ${esc(p.bloomLevel)}`:''}${p.attitudeObjective?`<br><strong>Actitud:</strong> ${esc(p.attitudeObjective)}`:''}</div></div>`).join('');
   root.querySelectorAll('[data-edit-plan]').forEach(b=>b.onclick=()=>loadPlanningForEdit(b.dataset.editPlan));
   root.querySelectorAll('[data-download-plan]').forEach(b=>b.onclick=()=>{const p=state.classPlans.find(x=>x.id===b.dataset.downloadPlan);if(!p)return;const unit=unitById(p.grade,p.subject,p.unitId)||{id:p.unitId,name:p.unitName||`Unidad ${p.unitId}`},oa=objectivesFor(p.grade,p.subject).find(o=>Number(o.number)===Number(p.oaNumber))||{number:p.oaNumber,text:p.oaText||''};downloadPlanningWord(course,p.subject,unit,oa,p)});
   root.querySelectorAll('[data-copy-plan]').forEach(b=>b.onclick=()=>{const p=state.classPlans.find(x=>x.id===b.dataset.copyPlan),unit=unitById(p.grade,p.subject,p.unitId),oa=objectivesFor(p.grade,p.subject).find(o=>Number(o.number)===Number(p.oaNumber));if(!p||!unit||!oa)return;copyTextWithFallback(planningCopyText(course,p.subject,unit,oa,p),'Planificación copiada.');});
@@ -5476,7 +5871,7 @@ function renderSavedPlanning(course){
 }
 function copyTextWithFallback(text,success='Copiado.'){const fallback=()=>{const ta=document.createElement('textarea');ta.value=text;ta.style.position='fixed';ta.style.opacity='0';document.body.appendChild(ta);ta.select();let ok=false;try{ok=document.execCommand('copy')}catch(e){}ta.remove();alert(ok?success:'No pude copiar automáticamente. Puedes seleccionar el contenido desde esta pantalla.')};if(navigator.clipboard?.writeText)navigator.clipboard.writeText(text).then(()=>alert(success)).catch(fallback);else fallback()}
 function loadPlanningForEdit(id){
-  const p=state.classPlans.find(x=>x.id===id),course=activeCourse();if(!p||!course||p.courseId!==course.id)return;selectedPlanningSubject=p.subject;selectedPlanningUnit=String(p.unitId);selectedPlanningOA=String(p.oaNumber);editingPlanningId=p.id;planningDraft={key:planningDraftId(course,p.subject,{id:p.unitId},{number:p.oaNumber}),date:p.date,duration:String(p.duration||'45'),objectiveMode:p.objectiveMode||'',objective:p.objective,bloomLevel:p.bloomLevel||bloomForOA(p.oaText||''),bloomVerbs:p.bloomVerbs||BLOOM_BANK[p.bloomLevel||bloomForOA(p.oaText||'')].join(', '),attitudeCode:p.attitudeCode??'custom',attitudeObjective:p.attitudeObjective||'',duaEngagementEnabled:p.duaEngagementEnabled!==false,duaEngagement:p.duaEngagement||duaDefaults(p.subject,{text:p.oaText||''}).engagement,duaRepresentationEnabled:p.duaRepresentationEnabled!==false,duaRepresentation:p.duaRepresentation||duaDefaults(p.subject,{text:p.oaText||''}).representation,duaActionEnabled:p.duaActionEnabled!==false,duaAction:p.duaAction||duaDefaults(p.subject,{text:p.oaText||''}).action,duaConsiderations:Array.isArray(p.duaConsiderations)&&p.duaConsiderations.length?p.duaConsiderations.map(String):duaSuggested080(p.subject,{text:p.oaText||''},p.grade),startMode:p.startMode||'',developmentMode:p.developmentMode||'',closingMode:p.closingMode||'',start:p.start,development:p.development,closing:p.closing,assessmentMode:p.assessmentMode||'',assessment:p.assessment,supportOptions:Array.isArray(p.supportOptions)?p.supportOptions.map(String):[],differentiation:p.differentiation,materialOptions:Array.isArray(p.materialOptions)?p.materialOptions.map(String):[],materials:p.materials};renderPlanning();window.scrollTo({top:0,behavior:'smooth'});
+  const p=state.classPlans.find(x=>x.id===id),course=activeCourse();if(!p||!course||p.courseId!==course.id)return;selectedPlanningSubject=p.subject;selectedPlanningUnit=String(p.unitId);selectedPlanningOA=String(p.oaNumber);editingPlanningId=p.id;planningDraft={key:planningDraftId(course,p.subject,{id:p.unitId},{number:p.oaNumber}),date:p.date,duration:String(p.duration||'45'),objectiveMode:p.objectiveMode||'',objective:p.objective,classContentCustom:p.classContentCustom||'',classObjective:p.classObjective||'',bloomLevel:p.bloomLevel||bloomForOA(p.oaText||''),bloomVerbs:p.bloomVerbs||BLOOM_BANK[p.bloomLevel||bloomForOA(p.oaText||'')].join(', '),attitudeCode:p.attitudeCode??'custom',attitudeObjective:p.attitudeObjective||'',duaEngagementEnabled:p.duaEngagementEnabled!==false,duaEngagement:p.duaEngagement||duaDefaults(p.subject,{text:p.oaText||''}).engagement,duaRepresentationEnabled:p.duaRepresentationEnabled!==false,duaRepresentation:p.duaRepresentation||duaDefaults(p.subject,{text:p.oaText||''}).representation,duaActionEnabled:p.duaActionEnabled!==false,duaAction:p.duaAction||duaDefaults(p.subject,{text:p.oaText||''}).action,duaConsiderations:Array.isArray(p.duaConsiderations)&&p.duaConsiderations.length?p.duaConsiderations.map(String):duaSuggested080(p.subject,{text:p.oaText||''},p.grade),startMode:p.startMode||'',developmentMode:p.developmentMode||'',closingMode:p.closingMode||'',start:p.start,development:p.development,closing:p.closing,assessmentMode:p.assessmentMode||'',assessment:p.assessment,supportOptions:Array.isArray(p.supportOptions)?p.supportOptions.map(String):[],supportTouched096:!!p.supportTouched096,differentiation:p.differentiation,materialOptions:Array.isArray(p.materialOptions)?p.materialOptions.map(String):[],materials:p.materials};renderPlanning();window.scrollTo({top:0,behavior:'smooth'});
 }
 function savePlanningFromForm(){
   const course=activeCourse(),unit=unitById(course?.level,selectedPlanningSubject,selectedPlanningUnit),oa=unitObjectivesFor(course?.level,selectedPlanningSubject,selectedPlanningUnit).find(o=>String(o.number)===String(selectedPlanningOA));if(!course||!unit||!oa)return alert('Selecciona curso, unidad y OA.');
@@ -5484,7 +5879,17 @@ function savePlanningFromForm(){
   planningApplyModes084(planningDraft,selectedPlanningSubject,oa,course.level);
   planningEnsureChoices086(planningDraft,course,selectedPlanningSubject,oa,planningContextFor(course,selectedPlanningSubject,unit,oa),false);
   planningEnsureChoices087(planningDraft,selectedPlanningSubject,oa,course.level,false);
-  const p={courseId:course.id,grade:course.level,subject:selectedPlanningSubject,unitId:String(unit.id),unitName:unit.name,oaNumber:Number(oa.number),oaText:oa.text,date:planningDraft.date,duration:String(planningDraft.duration||'45'),objectiveMode:planningDraft.objectiveMode||'',objective:planningDraft.objective.trim(),bloomLevel:planningDraft.bloomLevel||'Comprender',bloomVerbs:(planningDraft.bloomVerbs||'').trim(),attitudeCode:planningDraft.attitudeCode??'custom',attitudeObjective:(planningDraft.attitudeObjective||'').trim(),duaEngagementEnabled:planningDraft.duaEngagementEnabled!==false,duaEngagement:(planningDraft.duaEngagement||'').trim(),duaRepresentationEnabled:planningDraft.duaRepresentationEnabled!==false,duaRepresentation:(planningDraft.duaRepresentation||'').trim(),duaActionEnabled:planningDraft.duaActionEnabled!==false,duaAction:(planningDraft.duaAction||'').trim(),duaConsiderations:Array.isArray(planningDraft.duaConsiderations)?planningDraft.duaConsiderations.map(String):[],startMode:planningDraft.startMode||'',developmentMode:planningDraft.developmentMode||'',closingMode:planningDraft.closingMode||'',start:planningDraft.start.trim(),development:planningDraft.development.trim(),closing:planningDraft.closing.trim(),assessmentMode:planningDraft.assessmentMode||'',assessment:planningDraft.assessment.trim(),supportOptions:Array.isArray(planningDraft.supportOptions)?planningDraft.supportOptions.map(String):[],differentiation:planningDraft.differentiation.trim(),materialOptions:Array.isArray(planningDraft.materialOptions)?planningDraft.materialOptions.map(String):[],materials:planningDraft.materials.trim()};if(!p.date)return alert('Selecciona una fecha.');if(!p.objective)return alert('No pude generar el propósito de la clase. Vuelve a seleccionar el OA.');if(!p.development){planningApplyModes084(planningDraft,selectedPlanningSubject,oa,course.level);p.development=planningDraft.development||'';}if(!p.development)return alert('No pude generar el desarrollo automáticamente. Vuelve a seleccionar la forma de trabajo.');
+  planningSyncDuaApplications088(planningDraft,selectedPlanningSubject,oa,course.level);
+  planningSyncPurpose089(planningDraft,selectedPlanningSubject,oa,course.level);
+  planningSyncClassObjective089(planningDraft,selectedPlanningSubject,oa,course.level);
+  const attInfo088=planningAttitudeInfo081(course.level,selectedPlanningSubject);
+  if(!String(planningDraft.attitudeObjective||'').trim()){
+    const ai=attitudeSuggestionIndex(selectedPlanningSubject,oa.text,attInfo088.bank);
+    planningDraft.attitudeCode=String(ai>=0?ai:0);
+    planningDraft.attitudeObjective=attInfo088.bank[ai>=0?ai:0]||ATTITUDE_FALLBACK_081[0];
+  }
+  planningSyncClassObjective089(planningDraft,selectedPlanningSubject,oa,course.level);
+  const p={courseId:course.id,grade:course.level,subject:selectedPlanningSubject,unitId:String(unit.id),unitName:unit.name,oaNumber:Number(oa.number),oaText:oa.text,date:planningDraft.date,duration:String(planningDraft.duration||'45'),objectiveMode:planningDraft.objectiveMode||'',objective:planningDraft.objective.trim(),classContentCustom:(planningDraft.classContentCustom||'').trim(),classObjective:(planningDraft.classObjective||'').trim(),bloomLevel:planningDraft.bloomLevel||'Comprender',bloomVerbs:(planningDraft.bloomVerbs||'').trim(),attitudeCode:planningDraft.attitudeCode??'custom',attitudeObjective:(planningDraft.attitudeObjective||'').trim(),duaEngagementEnabled:planningDraft.duaEngagementEnabled!==false,duaEngagement:(planningDraft.duaEngagement||'').trim(),duaRepresentationEnabled:planningDraft.duaRepresentationEnabled!==false,duaRepresentation:(planningDraft.duaRepresentation||'').trim(),duaActionEnabled:planningDraft.duaActionEnabled!==false,duaAction:(planningDraft.duaAction||'').trim(),duaConsiderations:Array.isArray(planningDraft.duaConsiderations)?planningDraft.duaConsiderations.map(String):[],startMode:planningDraft.startMode||'',developmentMode:planningDraft.developmentMode||'',closingMode:planningDraft.closingMode||'',start:planningDraft.start.trim(),development:planningDraft.development.trim(),closing:planningDraft.closing.trim(),assessmentMode:planningDraft.assessmentMode||'',assessment:planningDraft.assessment.trim(),supportOptions:Array.isArray(planningDraft.supportOptions)?planningDraft.supportOptions.map(String):[],supportTouched096:!!planningDraft.supportTouched096,differentiation:planningDraft.differentiation.trim(),materialOptions:Array.isArray(planningDraft.materialOptions)?planningDraft.materialOptions.map(String):[],materials:planningDraft.materials.trim()};if(!p.date)return alert('Selecciona una fecha.');if(!p.objective)return alert('No pude generar el propósito de la clase. Vuelve a seleccionar el OA.');if(!p.classObjective)return alert('No pude generar el objetivo de la clase. Vuelve a seleccionar el OA.');if(!p.development){planningApplyModes084(planningDraft,selectedPlanningSubject,oa,course.level);p.development=planningDraft.development||'';}if(!p.development)return alert('No pude generar el desarrollo automáticamente. Vuelve a seleccionar la forma de trabajo.');
   if(editingPlanningId){const idx=state.classPlans.findIndex(x=>x.id===editingPlanningId);if(idx>=0)state.classPlans[idx]={...state.classPlans[idx],...p,updatedAt:new Date().toISOString()};editingPlanningId=null}else state.classPlans.push({...p,id:'plan_'+uid(),createdAt:new Date().toISOString(),updatedAt:new Date().toISOString()});save();planningDraft.key='';renderPlanning();alert('Planificación guardada.')
 }
 
@@ -5728,11 +6133,28 @@ document.getElementById('planningSubjectSelect').onchange=e=>{selectedPlanningSu
 document.getElementById('planningUnitSelect').onchange=e=>{selectedPlanningUnit=e.target.value;selectedPlanningOA='';planningDraft.key='';editingPlanningId=null;renderPlanning()};
 document.getElementById('planningOASelect').onchange=e=>{selectedPlanningOA=e.target.value;planningDraft.key='';editingPlanningId=null;renderPlanning()};
 document.getElementById('planningDate').onchange=e=>planningDraft.date=e.target.value;document.getElementById('planningDuration').onchange=e=>planningDraft.duration=e.target.value;
-document.getElementById('planningObjectiveMode086').addEventListener('change',e=>{const c=activeCourse(),oa=unitObjectivesFor(c?.level,selectedPlanningSubject,selectedPlanningUnit).find(o=>String(o.number)===String(selectedPlanningOA));if(!c||!oa)return;planningDraft.objectiveMode=e.target.value;planningSyncPurpose086(planningDraft,selectedPlanningSubject,oa,c.level)});
-document.getElementById('planningBloomLevel').onchange=e=>{const c=activeCourse(),oa=unitObjectivesFor(c?.level,selectedPlanningSubject,selectedPlanningUnit).find(o=>String(o.number)===String(selectedPlanningOA));planningDraft.bloomLevel=e.target.value;planningDraft.bloomVerbs='';document.getElementById('planningBloomHint').textContent=bloomHint(e.target.value);planningSyncBloom086(planningDraft,oa,true)};
-document.querySelectorAll('[data-bloomverb086]').forEach(cb=>cb.addEventListener('change',()=>{const level=planningDraft.bloomLevel||'Comprender';const chosen=[...document.querySelectorAll(`[data-bloomverb086][data-bloomlevel086="${level}"]:checked`)].map(x=>x.dataset.bloomverb086);if(!chosen.length){cb.checked=true;return;}planningDraft.bloomVerbs=chosen.join(', ');planningSyncBloom086(planningDraft,{text:''},false)}));
-document.querySelectorAll('[data-support086]').forEach(cb=>cb.addEventListener('change',()=>{const c=activeCourse(),u=unitById(c?.level,selectedPlanningSubject,selectedPlanningUnit),oa=unitObjectivesFor(c?.level,selectedPlanningSubject,selectedPlanningUnit).find(o=>String(o.number)===String(selectedPlanningOA));if(!c||!u||!oa)return;planningDraft.supportOptions=[...document.querySelectorAll('[data-support086]:checked')].map(x=>x.dataset.support086);planningSyncSupports086(planningDraft,c,selectedPlanningSubject,planningContextFor(c,selectedPlanningSubject,u,oa),false)}));
-document.getElementById('planningAttitudeSelect').onchange=e=>{planningDraft.attitudeCode=e.target.value;const course=activeCourse(),bank=planningAttitudeInfo081(course?.level,selectedPlanningSubject).bank;if(e.target.value!=='custom'&&bank[Number(e.target.value)]){planningDraft.attitudeObjective=bank[Number(e.target.value)];document.getElementById('planningAttitudeObjective').value=planningDraft.attitudeObjective;updateAttitudeSummary080()}};document.getElementById('planningAttitudeObjective').oninput=e=>planningDraft.attitudeObjective=e.target.value;
+document.getElementById('planningClassContentCustom090').addEventListener('input',e=>{
+  planningDraft.classContentCustom=e.target.value;
+  const c=activeCourse(),oa=unitObjectivesFor(c?.level,selectedPlanningSubject,selectedPlanningUnit).find(o=>String(o.number)===String(selectedPlanningOA));
+  if(!c||!oa)return;
+  const source=document.getElementById('planningClassContentSource090');
+  if(source)source.textContent=String(e.target.value||'').trim()
+    ?'✓ AulaNexo está usando el contenido específico que escribiste.'
+    :'AulaNexo está usando el contenido detectado en el OA.';
+  planningSyncClassObjective089(planningDraft,selectedPlanningSubject,oa,c.level);
+});
+
+document.querySelectorAll('input[name="planningPurpose089"]').forEach(r=>r.addEventListener('change',()=>{
+  if(!r.checked)return;
+  const c=activeCourse(),oa=unitObjectivesFor(c?.level,selectedPlanningSubject,selectedPlanningUnit).find(o=>String(o.number)===String(selectedPlanningOA));if(!c||!oa)return;
+  planningDraft.objectiveMode=r.value;
+  planningSyncPurpose089(planningDraft,selectedPlanningSubject,oa,c.level);
+  planningSyncClassObjective089(planningDraft,selectedPlanningSubject,oa,c.level);
+}));
+document.getElementById('planningBloomLevel').onchange=e=>{const c=activeCourse(),oa=unitObjectivesFor(c?.level,selectedPlanningSubject,selectedPlanningUnit).find(o=>String(o.number)===String(selectedPlanningOA));planningDraft.bloomLevel=e.target.value;planningDraft.bloomVerbs='';document.getElementById('planningBloomHint').textContent=bloomHint(e.target.value);planningSyncBloom086(planningDraft,oa,true);if(c&&oa)planningSyncClassObjective089(planningDraft,selectedPlanningSubject,oa,c.level)};
+document.querySelectorAll('[data-bloomverb086]').forEach(cb=>cb.addEventListener('change',()=>{const level=planningDraft.bloomLevel||'Comprender';const chosen=[...document.querySelectorAll(`[data-bloomverb086][data-bloomlevel086="${level}"]:checked`)].map(x=>x.dataset.bloomverb086);if(!chosen.length){cb.checked=true;return;}planningDraft.bloomVerbs=chosen.join(', ');planningSyncBloom086(planningDraft,{text:''},false);const c=activeCourse(),oa=unitObjectivesFor(c?.level,selectedPlanningSubject,selectedPlanningUnit).find(o=>String(o.number)===String(selectedPlanningOA));if(c&&oa)planningSyncClassObjective089(planningDraft,selectedPlanningSubject,oa,c.level)}));
+/* 0.0.96: los apoyos son botones independientes. */
+document.getElementById('planningAttitudeSelect').onchange=e=>{planningDraft.attitudeCode=e.target.value;const course=activeCourse(),bank=planningAttitudeInfo081(course?.level,selectedPlanningSubject).bank;if(e.target.value!=='custom'&&bank[Number(e.target.value)]){planningDraft.attitudeObjective=bank[Number(e.target.value)];document.getElementById('planningAttitudeObjective').value=planningDraft.attitudeObjective;updateAttitudeSummary080();const oa=unitObjectivesFor(course?.level,selectedPlanningSubject,selectedPlanningUnit).find(o=>String(o.number)===String(selectedPlanningOA));if(course&&oa)planningSyncClassObjective089(planningDraft,selectedPlanningSubject,oa,course.level)}};
 document.getElementById('planningAttitudeObjective').addEventListener('input',updateAttitudeSummary080);
 document.getElementById('planningChooseAttitude080').onclick=openAttitudeModal080;
 document.getElementById('planningAttitudeClose080')?.addEventListener('click',closeAttitudeModal080);
@@ -5765,7 +6187,6 @@ document.getElementById('planningDuaModal080')?.addEventListener('click',e=>{if(
 function bindDuaToggle(kind,cardId,textId){
   const cb=document.getElementById('planningDua'+kind+'Enabled'),card=document.getElementById(cardId);
   cb.onchange=e=>{planningDraft['dua'+kind+'Enabled']=e.target.checked;card.classList.toggle('is-disabled',!e.target.checked);updateDuaSummary080()};
-  document.getElementById(textId).oninput=e=>planningDraft['dua'+kind]=e.target.value
 }
 bindDuaToggle('Engagement','duaEngagementCard','planningDuaEngagement');bindDuaToggle('Representation','duaRepresentationCard','planningDuaRepresentation');bindDuaToggle('Action','duaActionCard','planningDuaAction');
 document.getElementById('planningAssessmentMode087').addEventListener('change',e=>{
@@ -5783,9 +6204,9 @@ document.querySelectorAll('[data-material087]').forEach(cb=>cb.addEventListener(
 document.getElementById('resetPlanningDraft').onclick=()=>{const course=activeCourse(),unit=unitById(course?.level,selectedPlanningSubject,selectedPlanningUnit),oa=unitObjectivesFor(course?.level,selectedPlanningSubject,selectedPlanningUnit).find(o=>String(o.number)===String(selectedPlanningOA));if(!course||!unit||!oa)return;editingPlanningId=null;planningEnsureComplete081(course,selectedPlanningSubject,unit,oa,true);renderPlanning()};
  document.getElementById('planningRegenerate078').onclick=()=>{const course=activeCourse(),unit=unitById(course?.level,selectedPlanningSubject,selectedPlanningUnit),oa=unitObjectivesFor(course?.level,selectedPlanningSubject,selectedPlanningUnit).find(o=>String(o.number)===String(selectedPlanningOA));if(!course||!unit||!oa)return alert('Selecciona una unidad y un OA para generar la planificación.');if(editingPlanningId&&!confirm('Estás editando una planificación guardada. ¿Quieres reemplazar el borrador actual por una nueva planificación completa?'))return;editingPlanningId=null;planningEnsureComplete081(course,selectedPlanningSubject,unit,oa,true);renderPlanning();};
 document.getElementById('cancelPlanningEdit').onclick=()=>{editingPlanningId=null;planningDraft.key='';renderPlanning()};
-document.getElementById('savePlanning').onclick=savePlanningFromForm;
-document.getElementById('downloadPlanningDocx').onclick=()=>{const course=activeCourse(),unit=unitById(course?.level,selectedPlanningSubject,selectedPlanningUnit),oa=unitObjectivesFor(course?.level,selectedPlanningSubject,selectedPlanningUnit).find(o=>String(o.number)===String(selectedPlanningOA));if(!course||!unit||!oa)return;downloadPlanningWord(course,selectedPlanningSubject,unit,oa,planningDraft)};
-document.getElementById('copyPlanning').onclick=()=>{const course=activeCourse(),unit=unitById(course?.level,selectedPlanningSubject,selectedPlanningUnit),oa=unitObjectivesFor(course?.level,selectedPlanningSubject,selectedPlanningUnit).find(o=>String(o.number)===String(selectedPlanningOA));if(!course||!unit||!oa)return;copyTextWithFallback(planningCopyText(course,selectedPlanningSubject,unit,oa,planningDraft),'Planificación copiada.')};
+document.getElementById('savePlanning').onclick=()=>{planningCaptureSupports096();savePlanningFromForm()};
+document.getElementById('downloadPlanningDocx').onclick=()=>{planningCaptureSupports096();const course=activeCourse(),unit=unitById(course?.level,selectedPlanningSubject,selectedPlanningUnit),oa=unitObjectivesFor(course?.level,selectedPlanningSubject,selectedPlanningUnit).find(o=>String(o.number)===String(selectedPlanningOA));if(!course||!unit||!oa)return;downloadPlanningWord(course,selectedPlanningSubject,unit,oa,planningDraft)};
+document.getElementById('copyPlanning').onclick=()=>{planningCaptureSupports096();const course=activeCourse(),unit=unitById(course?.level,selectedPlanningSubject,selectedPlanningUnit),oa=unitObjectivesFor(course?.level,selectedPlanningSubject,selectedPlanningUnit).find(o=>String(o.number)===String(selectedPlanningOA));if(!course||!unit||!oa)return;copyTextWithFallback(planningCopyText(course,selectedPlanningSubject,unit,oa,planningDraft),'Planificación copiada.')};
 
 
 document.getElementById('resourceSubjectSelect').onchange=e=>{selectedResourceSubject=e.target.value;selectedResourceUnit='';selectedResourceOA='';editingResourceId=null;resetResourceForm();renderResources()};
@@ -8587,7 +9008,7 @@ function close(){document.getElementById('libModal059').classList.add('hidden')}
       focus:topic||clip075(oaText,120),
       action:'aplicar el aprendizaje del OA en una situación concreta',
       examples:['un ejemplo trabajado por el docente','un ejemplo para resolver en parejas','un caso nuevo para comprobar comprensión'],
-      success:['Responde de acuerdo con el aprendizaje central del OA.','Explica al menos una decisión o procedimiento.','Aplica lo aprendido en un ejemplo nuevo.'],
+      success:['Responde de acuerdo con el aprendizaje trabajado en la clase.','Explica al menos una decisión o procedimiento.','Aplica lo aprendido en un ejemplo nuevo.'],
       confusions:['Responder por intuición sin usar el criterio trabajado.','Repetir el ejemplo del docente sin poder aplicarlo a un caso nuevo.'],
       prompts:['¿Qué te hace pensar eso?','¿Qué evidencia o pista usaste?','¿Cómo lo explicarías con tus palabras?','¿Qué cambiaría en otro ejemplo?'],
       evidence:'una respuesta observable y una explicación breve',
