@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>AulaNexo · Prototipo 0.0.100</title>
+<title>AulaNexo · Prototipo 0.0.101</title>
 <style>
 :root{
   --bg:#f5f7fb;--card:#fff;--text:#1f2937;--muted:#6b7280;--line:#e5e7eb;
@@ -2013,6 +2013,14 @@ nav.app-nav button[data-view].active{background:var(--primary-soft);color:#3730a
 @media(max-width:880px){.planning100-options{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:620px){.planning100-options{grid-template-columns:1fr}}
 
+
+/* ===== AULANEXO 0.0.101 · MATERIALES SEGÚN ORGANIZACIÓN ===== */
+.planning101-material-hint{
+  margin-top:7px;padding:7px 9px;border-radius:9px;
+  border:1px dashed #bbf7d0;background:#f7fff9;
+  color:#166534;font-size:8.7px;line-height:1.4
+}
+
 </style>
 </head>
 <body>
@@ -2024,7 +2032,7 @@ nav.app-nav button[data-view].active{background:var(--primary-soft);color:#3730a
 
 <header>
   <div class="header-wrap">
-    <div><h1>AulaNexo</h1><div class="subtitle">Prototipo 0.0.100 · Organización de la clase</div></div>
+    <div><h1>AulaNexo</h1><div class="subtitle">Prototipo 0.0.101 · Materiales según organización</div></div>
     <div class="header-actions"><button id="menuToggle" class="menu-toggle">☰ Menú</button><span class="current-section-pill">Sección: <strong id="currentSectionLabel">Curso</strong></span><span class="active-course-pill">Curso activo: <strong id="headerCourseName">Sin curso</strong></span><span id="cloudStatus" class="cloud-pill" data-state="offline">☁️ Sin conectar</span><button id="cloudConnectBtn" class="secondary">👤 Mi cuenta</button><button id="downloadBackup">⬇ Respaldo</button><button id="loadBackupBtn">⬆ Cargar respaldo</button><input id="backupFile" type="file" accept="application/json" hidden></div>
   </div>
 </header>
@@ -2638,10 +2646,11 @@ nav.app-nav button[data-view].active{background:var(--primary-soft);color:#3730a
             <div class="field section-gap">
               <label>Materiales y recursos</label>
               <div class="planning087-head">
-                <div><b>Selecciona lo que necesitarás</b><span>AulaNexo ya marca los materiales coherentes con las actividades elegidas.</span></div>
+                <div><b>Selecciona lo que necesitarás</b><span>AulaNexo marca materiales coherentes con el OA, las actividades y la organización de la clase. Las sugerencias no cambian tus elecciones.</span></div>
                 <span id="planningMaterialCount087" class="planning087-badge">0 seleccionados</span>
               </div>
               <div id="planningMaterialOptions087" class="planning087-materials"><label class="planning087-material"><input type="checkbox" data-material087="board"><span class="planning087-material-icon">🧑‍🏫</span><span><b>Pizarra / plumones</b><small>Para modelar, registrar ideas o sintetizar.</small><em data-materialsuggested087="board" class="hidden">AulaNexo sugiere</em></span></label><label class="planning087-material"><input type="checkbox" data-material087="notebook"><span class="planning087-material-icon">✏️</span><span><b>Cuaderno y lápiz</b><small>Registro individual cuando corresponda.</small><em data-materialsuggested087="notebook" class="hidden">AulaNexo sugiere</em></span></label><label class="planning087-material"><input type="checkbox" data-material087="images"><span class="planning087-material-icon">🖼️</span><span><b>Imágenes / apoyos visuales</b><small>Fotografías, ilustraciones, ejemplos o pictogramas.</small><em data-materialsuggested087="images" class="hidden">AulaNexo sugiere</em></span></label><label class="planning087-material"><input type="checkbox" data-material087="cards"><span class="planning087-material-icon">🃏</span><span><b>Tarjetas</b><small>Palabras, números, conceptos, consignas o clasificación.</small><em data-materialsuggested087="cards" class="hidden">AulaNexo sugiere</em></span></label><label class="planning087-material"><input type="checkbox" data-material087="concrete"><span class="planning087-material-icon">🧩</span><span><b>Material concreto</b><small>Objetos, fichas, bloques u otros manipulativos.</small><em data-materialsuggested087="concrete" class="hidden">AulaNexo sugiere</em></span></label><label class="planning087-material"><input type="checkbox" data-material087="printed"><span class="planning087-material-icon">📄</span><span><b>Material impreso</b><small>Guía breve, lectura, organizador o actividad.</small><em data-materialsuggested087="printed" class="hidden">AulaNexo sugiere</em></span></label><label class="planning087-material"><input type="checkbox" data-material087="projector"><span class="planning087-material-icon">🖥️</span><span><b>Proyector / recurso digital</b><small>Presentación, imagen, audio o recurso interactivo.</small><em data-materialsuggested087="projector" class="hidden">AulaNexo sugiere</em></span></label><label class="planning087-material"><input type="checkbox" data-material087="stations"><span class="planning087-material-icon">🚏</span><span><b>Material para estaciones</b><small>Recursos separados para cada estación de trabajo.</small><em data-materialsuggested087="stations" class="hidden">AulaNexo sugiere</em></span></label><label class="planning087-material"><input type="checkbox" data-material087="group"><span class="planning087-material-icon">🤝</span><span><b>Material por grupo</b><small>Una consigna o set de materiales por equipo.</small><em data-materialsuggested087="group" class="hidden">AulaNexo sugiere</em></span></label><label class="planning087-material"><input type="checkbox" data-material087="exit"><span class="planning087-material-icon">🎫</span><span><b>Ticket de salida</b><small>Tarjeta o formato breve para recoger evidencia final.</small><em data-materialsuggested087="exit" class="hidden">AulaNexo sugiere</em></span></label></div>
+              <div id="planningMaterialOrganizationHint101" class="planning101-material-hint">💡 Las etiquetas verdes se actualizan cuando cambias la organización de la clase.</div>
               <div class="planning087-output planning087-output-green">
                 <div class="planning087-output-label">✨ Materiales preparados</div>
                 <div id="planningMaterialsPreview087" class="planning087-output-text"></div>
@@ -5371,6 +5380,8 @@ function planningSyncAssessment087(draft,subject,oa,grade,force=false){
 function planningSuggestedMaterials087(draft,subject,grade){
   const s=new Set(['board']);
   const young=Number(grade)<=2,kind=planningSubjectKind(subject);
+
+  // Sugerencias pedagógicas base.
   if(young){s.add('images');s.add('cards')}
   else s.add('notebook');
   if(kind==='math'||kind==='science')s.add('concrete');
@@ -5381,6 +5392,32 @@ function planningSuggestedMaterials087(draft,subject,grade){
   if(draft?.developmentMode==='stations')s.add('stations');
   if(draft?.developmentMode==='collaborative')s.add('group');
   if(draft?.closingMode==='ticket'||draft?.assessmentMode==='ticket')s.add('exit');
+
+  // 0.0.101: sugerencias según la organización escogida por el docente.
+  const org=new Set(Array.isArray(draft?.organizationOptions)?draft.organizationOptions:[]);
+  if(org.has('individual')){
+    s.add('notebook');
+    if(young)s.add('printed');
+  }
+  if(org.has('pairs')){
+    s.add('cards');
+    s.add('printed');
+  }
+  if(org.has('groups')){
+    s.add('group');
+    if(kind==='math'||kind==='science')s.add('concrete');
+  }
+  if(org.has('stations')){
+    s.add('stations');
+    s.add('cards');
+    if(young)s.add('images');
+  }
+  if(org.has('guided')){
+    s.add('images');
+    s.add('cards');
+    if(kind==='math'||kind==='science')s.add('concrete');
+  }
+
   return [...s];
 }
 function planningMaterialsText087(list){
@@ -5616,6 +5653,10 @@ function planningOrganizationToggle100(id){
   const ctx=(unit&&oa)?planningContextFor(course,selectedPlanningSubject,unit,oa):null;
 
   planningSyncOrganization100(planningDraft,course,ctx,false);
+
+  // 0.0.101: refrescar las etiquetas "AulaNexo sugiere" de Materiales.
+  // No reemplaza lo que el docente ya seleccionó.
+  planningSyncMaterials087(planningDraft,selectedPlanningSubject,course.level,false);
 }
 
 function planningCaptureOrganization100(){
