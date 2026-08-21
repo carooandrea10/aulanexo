@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>AulaNexo · Prototipo 0.0.99</title>
+<title>AulaNexo · Prototipo 0.0.100</title>
 <style>
 :root{
   --bg:#f5f7fb;--card:#fff;--text:#1f2937;--muted:#6b7280;--line:#e5e7eb;
@@ -1990,6 +1990,29 @@ nav.app-nav button[data-view].active{background:var(--primary-soft);color:#3730a
 }
 .local-preview-banner099 span{color:#a16207;margin-left:4px}
 
+
+/* ===== AULANEXO 0.0.100 · ORGANIZACIÓN DE LA CLASE ===== */
+.planning100-head{display:flex;align-items:flex-start;justify-content:space-between;gap:12px;margin-top:7px}
+.planning100-head>div{display:flex;flex-direction:column;gap:2px}
+.planning100-head b{font-size:10px;color:#334155}
+.planning100-head span{font-size:8.7px;line-height:1.35;color:#64748b}
+.planning100-badge{flex:0 0 auto;padding:4px 7px;border-radius:999px;background:#eef2ff;color:#4338ca;font-size:8px!important;font-weight:900}
+.planning100-options{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:7px;margin-top:9px}
+.planning100-option{display:grid;grid-template-columns:25px 1fr;gap:7px;align-items:start;width:100%;min-height:88px;padding:9px;text-align:left;border:1px solid #e2e8f0;border-radius:11px;background:#fff;color:#334155;font-family:inherit;cursor:pointer}
+.planning100-option:hover{border-color:#a5b4fc;background:#fafaff}
+.planning100-option.is-selected,.planning100-option[aria-pressed="true"]{border-color:#6366f1;background:#eef2ff;box-shadow:0 0 0 1px #c7d2fe inset}
+.planning100-option:focus-visible{outline:3px solid rgba(99,102,241,.18);outline-offset:2px}
+.planning100-icon{font-size:17px}
+.planning100-option b{display:block;font-size:10px;line-height:1.3}
+.planning100-option small{display:block;margin-top:2px;font-size:8.7px;line-height:1.35;color:#64748b}
+.planning100-option em{display:inline-flex;margin-top:4px;padding:2px 5px;border-radius:999px;background:#dcfce7;color:#166534;font-size:7px;font-style:normal;font-weight:900}
+.planning100-output{margin-top:8px;padding:10px 11px;border-radius:11px;border:1px solid #c7d2fe;background:#f5f7ff}
+.planning100-output-label{font-size:8px;font-weight:900;color:#4f46e5;text-transform:uppercase;letter-spacing:.04em}
+.planning100-output-text{margin-top:4px;font-size:10px;line-height:1.5;color:#334155}
+.planning100-hidden{display:none!important}
+@media(max-width:880px){.planning100-options{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:620px){.planning100-options{grid-template-columns:1fr}}
+
 </style>
 </head>
 <body>
@@ -2001,7 +2024,7 @@ nav.app-nav button[data-view].active{background:var(--primary-soft);color:#3730a
 
 <header>
   <div class="header-wrap">
-    <div><h1>AulaNexo</h1><div class="subtitle">Prototipo 0.0.99 · Modo de prueba local</div></div>
+    <div><h1>AulaNexo</h1><div class="subtitle">Prototipo 0.0.100 · Organización de la clase</div></div>
     <div class="header-actions"><button id="menuToggle" class="menu-toggle">☰ Menú</button><span class="current-section-pill">Sección: <strong id="currentSectionLabel">Curso</strong></span><span class="active-course-pill">Curso activo: <strong id="headerCourseName">Sin curso</strong></span><span id="cloudStatus" class="cloud-pill" data-state="offline">☁️ Sin conectar</span><button id="cloudConnectBtn" class="secondary">👤 Mi cuenta</button><button id="downloadBackup">⬇ Respaldo</button><button id="loadBackupBtn">⬆ Cargar respaldo</button><input id="backupFile" type="file" accept="application/json" hidden></div>
   </div>
 </header>
@@ -2552,6 +2575,38 @@ nav.app-nav button[data-view].active{background:var(--primary-soft);color:#3730a
               <textarea id="planningClosing" class="planning082-hidden-field" tabindex="-1" aria-hidden="true"></textarea>
             </div>
             <div class="field section-gap">
+              <label>Organización de la clase</label>
+              <div class="planning100-head">
+                <div><b>¿Cómo se organizarán los estudiantes?</b><span>Puedes elegir una o varias opciones. AulaNexo propone las más coherentes con la actividad.</span></div>
+                <span id="planningOrganizationCount100" class="planning100-badge">0 seleccionados</span>
+              </div>
+              <div id="planningOrganizationOptions100" class="planning100-options">
+                <button type="button" class="planning100-option" data-org100="whole" aria-pressed="false" onclick="planningOrganizationToggle100('whole')">
+                  <span class="planning100-icon">👩‍🏫</span><span><b>Curso completo</b><small>Explicación, modelado, conversación o síntesis conjunta.</small><em data-orgsuggested100="whole" class="hidden">AulaNexo sugiere</em></span>
+                </button>
+                <button type="button" class="planning100-option" data-org100="individual" aria-pressed="false" onclick="planningOrganizationToggle100('individual')">
+                  <span class="planning100-icon">✏️</span><span><b>Trabajo individual</b><small>Cada estudiante resuelve, produce o demuestra por sí mismo.</small><em data-orgsuggested100="individual" class="hidden">AulaNexo sugiere</em></span>
+                </button>
+                <button type="button" class="planning100-option" data-org100="pairs" aria-pressed="false" onclick="planningOrganizationToggle100('pairs')">
+                  <span class="planning100-icon">👥</span><span><b>Parejas</b><small>Conversar, comparar respuestas, practicar o resolver juntos.</small><em data-orgsuggested100="pairs" class="hidden">AulaNexo sugiere</em></span>
+                </button>
+                <button type="button" class="planning100-option" data-org100="groups" aria-pressed="false" onclick="planningOrganizationToggle100('groups')">
+                  <span class="planning100-icon">🤝</span><span><b>Grupos pequeños</b><small>Resolver una tarea común distribuyendo participación y roles.</small><em data-orgsuggested100="groups" class="hidden">AulaNexo sugiere</em></span>
+                </button>
+                <button type="button" class="planning100-option" data-org100="stations" aria-pressed="false" onclick="planningOrganizationToggle100('stations')">
+                  <span class="planning100-icon">🚏</span><span><b>Estaciones</b><small>Rotar por tareas breves con consignas o materiales diferentes.</small><em data-orgsuggested100="stations" class="hidden">AulaNexo sugiere</em></span>
+                </button>
+                <button type="button" class="planning100-option" data-org100="guided" aria-pressed="false" onclick="planningOrganizationToggle100('guided')">
+                  <span class="planning100-icon">🧑‍🏫</span><span><b>Grupo guiado con docente</b><small>Apoyo cercano a un grupo mientras el resto continúa trabajando.</small><em data-orgsuggested100="guided" class="hidden">AulaNexo sugiere</em></span>
+                </button>
+              </div>
+              <div class="planning100-output">
+                <div class="planning100-output-label">✨ Organización redactada por AulaNexo</div>
+                <div id="planningOrganizationPreview100" class="planning100-output-text"></div>
+              </div>
+              <textarea id="planningOrganization100" class="planning100-hidden" tabindex="-1" aria-hidden="true"></textarea>
+            </div>
+            <div class="field section-gap">
               <label>Evidencia / evaluación de la clase</label>
               <div class="planning087-head">
                 <div><b>Escoge cómo recogerás la evidencia</b><span>AulaNexo recomienda una opción según el cierre y el OA.</span></div>
@@ -2961,7 +3016,7 @@ let interventionDraft={key:'',date:'',duration:'20',focus:'',activity:'',evidenc
 let selectedPlanningSubject=null;
 let selectedPlanningUnit='';
 let selectedPlanningOA='';
-let planningDraft={key:'',date:'',duration:'45',objectiveMode:'',objective:'',classContentCustom:'',classObjective:'',bloomLevel:'Comprender',bloomVerbs:'',attitudeCode:'',attitudeObjective:'',duaEngagementEnabled:true,duaEngagement:'',duaRepresentationEnabled:true,duaRepresentation:'',duaActionEnabled:true,duaAction:'',start:'',development:'',closing:'',assessmentMode:'',assessment:'',supportOptions:[],supportTouched096:false,differentiation:'',materialOptions:[],materials:''};
+let planningDraft={key:'',date:'',duration:'45',objectiveMode:'',objective:'',classContentCustom:'',classObjective:'',bloomLevel:'Comprender',bloomVerbs:'',attitudeCode:'',attitudeObjective:'',duaEngagementEnabled:true,duaEngagement:'',duaRepresentationEnabled:true,duaRepresentation:'',duaActionEnabled:true,duaAction:'',start:'',development:'',closing:'',assessmentMode:'',assessment:'',supportOptions:[],supportTouched096:false,differentiation:'',organizationOptions:[],organizationTouched100:false,organizationText:'',materialOptions:[],materials:''};
 let editingPlanningId=null;
 let planningMode='class';
 let selectedSimceApplicationId=null;
@@ -3056,7 +3111,7 @@ function normalizeState(x){
   if(!Array.isArray(x.interventions))x.interventions=[];
   x.interventions=x.interventions.filter(i=>i&&i.courseId).map(i=>({id:i.id||'int_'+uid(),courseId:i.courseId,grade:Number(i.grade)||null,subject:i.subject||'',unitId:String(i.unitId||''),unitName:i.unitName||'',oaNumber:Number(i.oaNumber)||null,oaText:i.oaText||'',groupKey:i.groupKey||'support',studentIds:Array.isArray(i.studentIds)?i.studentIds:[],studentNames:Array.isArray(i.studentNames)?i.studentNames:[],date:i.date||localDate(),duration:String(i.duration||'20'),focus:i.focus||'',activity:i.activity||'',evidence:i.evidence||'',materials:i.materials||'',baselineByStudent:(i.baselineByStudent&&typeof i.baselineByStudent==='object'&&!Array.isArray(i.baselineByStudent))?i.baselineByStudent:{},completed:!!i.completed,completedDate:i.completedDate||'',completedAt:i.completedAt||'',createdAt:i.createdAt||new Date().toISOString()}));
   if(!Array.isArray(x.classPlans))x.classPlans=[];
-  x.classPlans=x.classPlans.filter(p=>p&&p.courseId).map(p=>({id:p.id||'plan_'+uid(),courseId:p.courseId,grade:Number(p.grade)||null,subject:p.subject||'',unitId:String(p.unitId||''),unitName:p.unitName||'',oaNumber:Number(p.oaNumber)||null,oaText:p.oaText||'',date:p.date||localDate(),duration:String(p.duration||'45'),objectiveMode:p.objectiveMode||'',objective:p.objective||'',classContentCustom:p.classContentCustom||'',classObjective:p.classObjective||'',bloomLevel:p.bloomLevel||'',bloomVerbs:p.bloomVerbs||'',attitudeCode:p.attitudeCode??'custom',attitudeObjective:p.attitudeObjective||'',duaEngagementEnabled:p.duaEngagementEnabled!==false,duaEngagement:p.duaEngagement||'',duaRepresentationEnabled:p.duaRepresentationEnabled!==false,duaRepresentation:p.duaRepresentation||'',duaActionEnabled:p.duaActionEnabled!==false,duaAction:p.duaAction||'',duaConsiderations:Array.isArray(p.duaConsiderations)?p.duaConsiderations.map(String):[],startMode:p.startMode||'',developmentMode:p.developmentMode||'',closingMode:p.closingMode||'',start:p.start||'',development:p.development||'',closing:p.closing||'',assessmentMode:p.assessmentMode||'',assessment:p.assessment||'',supportOptions:Array.isArray(p.supportOptions)?p.supportOptions.map(String):[],supportTouched096:!!p.supportTouched096,differentiation:p.differentiation||'',materialOptions:Array.isArray(p.materialOptions)?p.materialOptions.map(String):[],materials:p.materials||'',createdAt:p.createdAt||new Date().toISOString(),updatedAt:p.updatedAt||p.createdAt||new Date().toISOString()}));
+  x.classPlans=x.classPlans.filter(p=>p&&p.courseId).map(p=>({id:p.id||'plan_'+uid(),courseId:p.courseId,grade:Number(p.grade)||null,subject:p.subject||'',unitId:String(p.unitId||''),unitName:p.unitName||'',oaNumber:Number(p.oaNumber)||null,oaText:p.oaText||'',date:p.date||localDate(),duration:String(p.duration||'45'),objectiveMode:p.objectiveMode||'',objective:p.objective||'',classContentCustom:p.classContentCustom||'',classObjective:p.classObjective||'',bloomLevel:p.bloomLevel||'',bloomVerbs:p.bloomVerbs||'',attitudeCode:p.attitudeCode??'custom',attitudeObjective:p.attitudeObjective||'',duaEngagementEnabled:p.duaEngagementEnabled!==false,duaEngagement:p.duaEngagement||'',duaRepresentationEnabled:p.duaRepresentationEnabled!==false,duaRepresentation:p.duaRepresentation||'',duaActionEnabled:p.duaActionEnabled!==false,duaAction:p.duaAction||'',duaConsiderations:Array.isArray(p.duaConsiderations)?p.duaConsiderations.map(String):[],startMode:p.startMode||'',developmentMode:p.developmentMode||'',closingMode:p.closingMode||'',start:p.start||'',development:p.development||'',closing:p.closing||'',assessmentMode:p.assessmentMode||'',assessment:p.assessment||'',supportOptions:Array.isArray(p.supportOptions)?p.supportOptions.map(String):[],supportTouched096:!!p.supportTouched096,differentiation:p.differentiation||'',organizationOptions:Array.isArray(p.organizationOptions)?p.organizationOptions.map(String):[],organizationTouched100:!!p.organizationTouched100,organizationText:p.organizationText||'',materialOptions:Array.isArray(p.materialOptions)?p.materialOptions.map(String):[],materials:p.materials||'',createdAt:p.createdAt||new Date().toISOString(),updatedAt:p.updatedAt||p.createdAt||new Date().toISOString()}));
   if(!Array.isArray(x.resources))x.resources=[];
   x.resources=x.resources.filter(r=>r&&r.title).map(r=>({id:r.id||'res_'+uid(),grade:Number(r.grade)||null,subject:r.subject||'',unitId:String(r.unitId||''),unitName:r.unitName||'',oaNumber:r.oaNumber==null||r.oaNumber===''?null:Number(r.oaNumber),oaText:r.oaText||'',type:r.type||'Otro',audience:r.audience||'all',title:r.title||'',url:r.url||'',notes:r.notes||'',fileName:r.fileName||'',filePath:r.filePath||'',fileType:r.fileType||'',fileSize:Number(r.fileSize)||0,createdAt:r.createdAt||new Date().toISOString(),updatedAt:r.updatedAt||r.createdAt||new Date().toISOString()}));
   if(!x.unitSequences||typeof x.unitSequences!=='object'||Array.isArray(x.unitSequences))x.unitSequences={};
@@ -5134,6 +5189,16 @@ function planningApplyModes084(draft,subject,oa,grade){
 
   planningSyncAssessment087(draft,subject,oa,grade,false);
   planningSyncMaterials087(draft,subject,grade,false);
+  if(typeof planningSyncOrganization100==='function'){
+    const c=activeCourse();
+    if(c){
+      const u=unitById(c.level,selectedPlanningSubject,selectedPlanningUnit);
+      const currentOA=unitObjectivesFor(c.level,selectedPlanningSubject,selectedPlanningUnit)
+        .find(o=>String(o.number)===String(selectedPlanningOA));
+      const currentCtx=(u&&currentOA)?planningContextFor(c,selectedPlanningSubject,u,currentOA):null;
+      planningSyncOrganization100(draft,c,currentCtx,false);
+    }
+  }
   return draft;
 }
 
@@ -5444,6 +5509,127 @@ function planningSyncPurpose089(draft,subject,oa,grade){
   planningSyncPurpose086(draft,subject,oa,grade);
 }
 
+
+/* ===== 0.0.100 · ORGANIZACIÓN DE LA CLASE ===== */
+const ORGANIZATION_TEXT_100={
+  whole:'curso completo',
+  individual:'trabajo individual',
+  pairs:'parejas',
+  groups:'grupos pequeños',
+  stations:'estaciones',
+  guided:'grupo guiado con docente'
+};
+
+function planningSuggestedOrganization100(course,draft,ctx){
+  const suggested=new Set(['whole']);
+  const grade=Number(course?.level||0);
+  const dev=String(draft?.developmentMode||'');
+  const close=String(draft?.closingMode||'');
+
+  if(dev==='stations')suggested.add('stations');
+  else if(dev==='collaborative')suggested.add(grade<=2?'pairs':'groups');
+  else if(dev==='hands')suggested.add(grade<=2?'pairs':'groups');
+  else if(dev==='challenge'||dev==='model')suggested.add('individual');
+
+  if(close==='ticket'||close==='finalChallenge')suggested.add('individual');
+  if(ctx?.groups?.support?.length)suggested.add('guided');
+
+  return [...suggested];
+}
+
+function planningOrganizationText100(list){
+  const selected=(list||[]).filter(id=>ORGANIZATION_TEXT_100[id]);
+  if(!selected.length)return 'Sin una organización específica seleccionada.';
+
+  const parts=[];
+  if(selected.includes('whole')){
+    parts.push('La clase contempla momentos con el curso completo para presentar, modelar, conversar o sintetizar el aprendizaje.');
+  }
+  if(selected.includes('stations')){
+    parts.push('Durante el trabajo central, los estudiantes se organizan en estaciones y rotan por tareas breves con consignas o materiales diferenciados.');
+  }
+  if(selected.includes('pairs')){
+    parts.push('Se incorporan instancias en parejas para conversar, comparar respuestas, practicar y apoyarse durante la tarea.');
+  }
+  if(selected.includes('groups')){
+    parts.push('También se consideran grupos pequeños para resolver una tarea común, favorecer la participación y compartir procedimientos o conclusiones.');
+  }
+  if(selected.includes('guided')){
+    parts.push('El docente puede reunir temporalmente a un grupo pequeño para brindar modelado, acompañamiento o retroalimentación más cercana mientras el resto continúa trabajando.');
+  }
+  if(selected.includes('individual')){
+    parts.push('Se reserva una instancia de trabajo individual para que cada estudiante produzca una respuesta o evidencia propia del aprendizaje.');
+  }
+  return parts.join(' ');
+}
+
+function planningSyncOrganization100(draft,course,ctx,force=false){
+  const suggested=planningSuggestedOrganization100(course,draft,ctx);
+  let selected=Array.isArray(draft.organizationOptions)
+    ? draft.organizationOptions.filter(id=>ORGANIZATION_TEXT_100[id])
+    : [];
+
+  if(force){
+    selected=[...suggested];
+    draft.organizationTouched100=false;
+  }else if(!selected.length&&!draft.organizationTouched100){
+    selected=[...suggested];
+  }
+
+  draft.organizationOptions=[...new Set(selected)];
+  draft.organizationText=planningOrganizationText100(draft.organizationOptions);
+
+  document.querySelectorAll('[data-org100]').forEach(btn=>{
+    const on=draft.organizationOptions.includes(btn.dataset.org100);
+    btn.classList.toggle('is-selected',on);
+    btn.setAttribute('aria-pressed',on?'true':'false');
+  });
+
+  document.querySelectorAll('[data-orgsuggested100]').forEach(el=>{
+    el.classList.toggle('hidden',!suggested.includes(el.dataset.orgsuggested100));
+  });
+
+  const count=document.getElementById('planningOrganizationCount100');
+  const preview=document.getElementById('planningOrganizationPreview100');
+  const hidden=document.getElementById('planningOrganization100');
+  const n=draft.organizationOptions.length;
+
+  if(count)count.textContent=`${n} seleccionado${n===1?'':'s'}`;
+  if(preview)preview.textContent=draft.organizationText;
+  if(hidden)hidden.value=draft.organizationText;
+}
+
+function planningOrganizationToggle100(id){
+  if(!planningDraft||!ORGANIZATION_TEXT_100[id])return;
+
+  const set=new Set(Array.isArray(planningDraft.organizationOptions)?planningDraft.organizationOptions:[]);
+  if(set.has(id))set.delete(id);else set.add(id);
+
+  planningDraft.organizationOptions=[...set];
+  planningDraft.organizationTouched100=true;
+
+  const course=activeCourse();
+  if(!course)return;
+  const unit=unitById(course.level,selectedPlanningSubject,selectedPlanningUnit);
+  const oa=unitObjectivesFor(course.level,selectedPlanningSubject,selectedPlanningUnit)
+    .find(o=>String(o.number)===String(selectedPlanningOA));
+  const ctx=(unit&&oa)?planningContextFor(course,selectedPlanningSubject,unit,oa):null;
+
+  planningSyncOrganization100(planningDraft,course,ctx,false);
+}
+
+function planningCaptureOrganization100(){
+  const course=activeCourse();
+  if(!course||!planningDraft)return;
+
+  const unit=unitById(course.level,selectedPlanningSubject,selectedPlanningUnit);
+  const oa=unitObjectivesFor(course.level,selectedPlanningSubject,selectedPlanningUnit)
+    .find(o=>String(o.number)===String(selectedPlanningOA));
+  const ctx=(unit&&oa)?planningContextFor(course,selectedPlanningSubject,unit,oa):null;
+
+  planningSyncOrganization100(planningDraft,course,ctx,false);
+}
+
 function planningContextFor(course,subject,unit,oa){
   const groups=supportDataFor(course.id,course.level,subject,oa.number,unit.id);
   return {groups,withEvidence:groups.support.length+groups.process.length+groups.achieved.length};
@@ -5463,7 +5649,7 @@ function ensurePlanningDraft(course,subject,unit,oa,force=false){
   const key=planningDraftId(course,subject,unit,oa);
   if(force||planningDraft.key!==key){
     const t=planningBaseTemplate(subject,oa,course.level),ctx=planningContextFor(course,subject,unit,oa),bloomLevel=bloomForOA(oa.text),attInfo=planningAttitudeInfo081(course.level,subject),bank=attInfo.bank,attIdx=attitudeSuggestionIndex(subject,oa.text,bank),dua=duaDefaults(subject,oa);
-    planningDraft={key,date:localDate(),duration:'45',objectiveMode:'',objective:t.objective,classContentCustom:'',classObjective:'',bloomLevel,bloomVerbs:planningSuggestedVerbs086(bloomLevel,oa.text).join(', '),attitudeCode:attIdx>=0?String(attIdx):'custom',attitudeObjective:attIdx>=0?bank[attIdx]:'',duaEngagementEnabled:true,duaEngagement:dua.engagement,duaRepresentationEnabled:true,duaRepresentation:dua.representation,duaActionEnabled:true,duaAction:dua.action,duaConsiderations:duaSuggested080(subject,oa,course.level),startMode:'',developmentMode:'',closingMode:'',start:t.start,development:t.development,closing:t.closing,assessmentMode:'',assessment:t.assessment,supportOptions:planningSuggestedSupports086(course,subject,ctx),supportTouched096:false,differentiation:planningDifferentiationText(ctx),materialOptions:[],materials:t.materials};editingPlanningId=null
+    planningDraft={key,date:localDate(),duration:'45',objectiveMode:'',objective:t.objective,classContentCustom:'',classObjective:'',bloomLevel,bloomVerbs:planningSuggestedVerbs086(bloomLevel,oa.text).join(', '),attitudeCode:attIdx>=0?String(attIdx):'custom',attitudeObjective:attIdx>=0?bank[attIdx]:'',duaEngagementEnabled:true,duaEngagement:dua.engagement,duaRepresentationEnabled:true,duaRepresentation:dua.representation,duaActionEnabled:true,duaAction:dua.action,duaConsiderations:duaSuggested080(subject,oa,course.level),startMode:'',developmentMode:'',closingMode:'',start:t.start,development:t.development,closing:t.closing,assessmentMode:'',assessment:t.assessment,supportOptions:planningSuggestedSupports086(course,subject,ctx),supportTouched096:false,differentiation:planningDifferentiationText(ctx),organizationOptions:[],organizationTouched100:false,organizationText:'',materialOptions:[],materials:t.materials};planningSyncOrganization100(planningDraft,course,ctx,false);editingPlanningId=null
   }
   return planningDraft;
 }
@@ -5481,7 +5667,7 @@ function planningCopyText(course,subject,unit,oa,draft){
     const s=duaSelectedText080(draft,'action');if(s)dua.push(`Acción y expresión · pautas seleccionadas: ${s}`);
     if(draft.duaAction)dua.push(`Aplicación: ${draft.duaAction}`);
   }
-  return [`AulaNexo · Planificación de clase`,`Curso: ${course.name}`,`Asignatura: ${subject}`,`${unit.name} · OA ${String(oa.number).padStart(2,'0')}`,`Fecha: ${formatDate(draft.date)}`,`Duración: ${draft.duration} minutos`,'',`Propósito de la clase:`,draft.objective,'',`Objetivo de la clase:`,draft.classObjective||planningClassObjectiveText089(draft,subject,oa,course.level),'',...(draft.classContentCustom?[`Contenido específico de la clase:`,draft.classContentCustom,'']:[]),`Taxonomía de Bloom: ${draft.bloomLevel||''}`,`Verbos / habilidades: ${draft.bloomVerbs||''}`,'',`Objetivo actitudinal:`,draft.attitudeObjective||'—','',`Principios DUA:`,...(dua.length?dua:['—']),'',`Inicio:`,draft.start,'',`Desarrollo:`,draft.development,'',`Cierre:`,draft.closing,'',`Evidencia / evaluación:`,draft.assessment,'',`Apoyos y diferenciación:`,draft.differentiation,'',`Materiales y recursos:`,draft.materials].join('\n')
+  return [`AulaNexo · Planificación de clase`,`Curso: ${course.name}`,`Asignatura: ${subject}`,`${unit.name} · OA ${String(oa.number).padStart(2,'0')}`,`Fecha: ${formatDate(draft.date)}`,`Duración: ${draft.duration} minutos`,'',`Propósito de la clase:`,draft.objective,'',`Objetivo de la clase:`,draft.classObjective||planningClassObjectiveText089(draft,subject,oa,course.level),'',...(draft.classContentCustom?[`Contenido específico de la clase:`,draft.classContentCustom,'']:[]),`Taxonomía de Bloom: ${draft.bloomLevel||''}`,`Verbos / habilidades: ${draft.bloomVerbs||''}`,'',`Objetivo actitudinal:`,draft.attitudeObjective||'—','',`Principios DUA:`,...(dua.length?dua:['—']),'',`Inicio:`,draft.start,'',`Desarrollo:`,draft.development,'',`Cierre:`,draft.closing,'',`Organización de la clase:`,draft.organizationText||planningOrganizationText100(draft.organizationOptions||[]),'',`Evidencia / evaluación:`,draft.assessment,'',`Apoyos y diferenciación:`,draft.differentiation,'',`Materiales y recursos:`,draft.materials].join('\n')
 }
 
 function planningFileName(course,subject,oa,draft){
@@ -5533,6 +5719,7 @@ function planningDocxXml(course,subject,unit,oa,draft){
   section('Inicio',draft.start);
   section('Desarrollo',draft.development);
   section('Cierre',draft.closing);
+  section('Organización de la clase',draft.organizationText||planningOrganizationText100(draft.organizationOptions||[]));
   section('Evidencia / evaluación de la clase',draft.assessment);
   section('Apoyos y diferenciación',draft.differentiation);
   section('Materiales y recursos',draft.materials);
@@ -5569,6 +5756,7 @@ function setPlanningFormDisabled(disabled){
   ['planningStartMode084','planningDevelopmentMode084','planningClosingMode084'].forEach(id=>{const el=document.getElementById(id);if(el)el.disabled=disabled});
   document.querySelectorAll('[data-bloomverb086],[data-material087],input[name="planningPurpose089"]').forEach(el=>el.disabled=disabled);
   document.querySelectorAll('[data-support096]').forEach(el=>el.disabled=false);
+  document.querySelectorAll('[data-org100]').forEach(el=>el.disabled=disabled);
 }
 
 function unitSequenceKey(course,subject,unit){return `${course.id}|${subject}|${unit.id}`}
@@ -5894,9 +6082,9 @@ function renderPlanning(){
   document.getElementById('planningDuaActionEnabled').checked=draft.duaActionEnabled!==false;
   planningSyncDuaApplications088(draft,selectedPlanningSubject,oa,course.level);
   updateDuaSummary080();
-  document.getElementById('planningStart').value=draft.start;document.getElementById('planningDevelopment').value=draft.development;document.getElementById('planningClosing').value=draft.closing;planningSyncAssessment087(draft,selectedPlanningSubject,oa,course.level,false);planningSyncSupports086(draft,course,selectedPlanningSubject,ctx,false);planningSyncMaterials087(draft,selectedPlanningSubject,course.level,false);
+  document.getElementById('planningStart').value=draft.start;document.getElementById('planningDevelopment').value=draft.development;document.getElementById('planningClosing').value=draft.closing;planningSyncAssessment087(draft,selectedPlanningSubject,oa,course.level,false);planningSyncOrganization100(draft,course,ctx,false);planningSyncSupports086(draft,course,selectedPlanningSubject,ctx,false);planningSyncMaterials087(draft,selectedPlanningSubject,course.level,false);
   planningRenderPhaseOptions082(draft,selectedPlanningSubject,oa,course.level);
-  const autoFields=[draft.objective,draft.classObjective,draft.bloomLevel,draft.bloomVerbs,draft.attitudeObjective,draft.duaEngagement,draft.duaRepresentation,draft.duaAction,draft.start,draft.development,draft.closing,draft.assessment,draft.differentiation,draft.materials];const autoDone=autoFields.filter(x=>String(x||'').trim()).length;const autoStatus=document.getElementById('planningAutoStatus081');if(autoStatus)autoStatus.textContent=autoDone===autoFields.length?'✓ Completa':`${autoDone}/${autoFields.length} secciones`;
+  const autoFields=[draft.objective,draft.classObjective,draft.bloomLevel,draft.bloomVerbs,draft.attitudeObjective,draft.duaEngagement,draft.duaRepresentation,draft.duaAction,draft.start,draft.development,draft.closing,draft.organizationText,draft.assessment,draft.differentiation,draft.materials];const autoDone=autoFields.filter(x=>String(x||'').trim()).length;const autoStatus=document.getElementById('planningAutoStatus081');if(autoStatus)autoStatus.textContent=autoDone===autoFields.length?'✓ Completa':`${autoDone}/${autoFields.length} secciones`;
   editBadge.classList.toggle('hidden',!editingPlanningId);cancelBtn.classList.toggle('hidden',!editingPlanningId);document.getElementById('savePlanning').textContent=editingPlanningId?'Guardar cambios':'Guardar planificación';
   renderSavedPlanning(course);
   renderPlanningSequence(course,selectedPlanningSubject,unit,oas);
@@ -5905,7 +6093,7 @@ function renderPlanning(){
 function renderSavedPlanning(course){
   const root=document.getElementById('planningSavedList'),count=document.getElementById('planningSavedCount');if(!root||!count)return;const plans=course?(state.classPlans||[]).filter(p=>p.courseId===course.id).sort((a,b)=>(b.date||'').localeCompare(a.date||'')||(b.updatedAt||'').localeCompare(a.updatedAt||'')):[];count.textContent=`${plans.length} plan${plans.length===1?'':'es'}`;
   if(!course){root.innerHTML='<div class="empty">Primero selecciona un curso.</div>';return}if(!plans.length){root.innerHTML='<div class="empty">Todavía no has guardado planificaciones para este curso.</div>';return}
-  root.innerHTML=plans.map(p=>`<div class="planning-saved-card"><div class="planning-saved-head"><div><div class="planning-saved-title">${esc(p.subject)} · OA ${String(p.oaNumber).padStart(2,'0')}</div><div class="planning-saved-meta">${esc(p.unitName)} · ${formatDate(p.date)} · ${esc(p.duration)} min</div></div><div class="planning-actions"><button class="ghost" data-edit-plan="${p.id}">Editar</button><button class="ghost" data-download-plan="${p.id}">Descargar</button><button class="ghost" data-copy-plan="${p.id}">Copiar</button><button class="ghost" data-duplicate-plan="${p.id}">Duplicar</button><button class="danger" data-delete-plan="${p.id}">Eliminar</button></div></div><div class="planning-saved-preview"><strong>Propósito:</strong> ${esc(p.objective)}${p.classObjective?`<br><strong>Objetivo de clase:</strong> ${esc(p.classObjective)}`:''}${p.classContentCustom?`<br><strong>Contenido específico:</strong> ${esc(p.classContentCustom)}`:''}${p.bloomLevel?`<br><strong>Bloom:</strong> ${esc(p.bloomLevel)}`:''}${p.attitudeObjective?`<br><strong>Actitud:</strong> ${esc(p.attitudeObjective)}`:''}</div></div>`).join('');
+  root.innerHTML=plans.map(p=>`<div class="planning-saved-card"><div class="planning-saved-head"><div><div class="planning-saved-title">${esc(p.subject)} · OA ${String(p.oaNumber).padStart(2,'0')}</div><div class="planning-saved-meta">${esc(p.unitName)} · ${formatDate(p.date)} · ${esc(p.duration)} min</div></div><div class="planning-actions"><button class="ghost" data-edit-plan="${p.id}">Editar</button><button class="ghost" data-download-plan="${p.id}">Descargar</button><button class="ghost" data-copy-plan="${p.id}">Copiar</button><button class="ghost" data-duplicate-plan="${p.id}">Duplicar</button><button class="danger" data-delete-plan="${p.id}">Eliminar</button></div></div><div class="planning-saved-preview"><strong>Propósito:</strong> ${esc(p.objective)}${p.classObjective?`<br><strong>Objetivo de clase:</strong> ${esc(p.classObjective)}`:''}${p.classContentCustom?`<br><strong>Contenido específico:</strong> ${esc(p.classContentCustom)}`:''}${p.bloomLevel?`<br><strong>Bloom:</strong> ${esc(p.bloomLevel)}`:''}${p.attitudeObjective?`<br><strong>Actitud:</strong> ${esc(p.attitudeObjective)}`:''}${p.organizationText?`<br><strong>Organización:</strong> ${esc(p.organizationText)}`:''}</div></div>`).join('');
   root.querySelectorAll('[data-edit-plan]').forEach(b=>b.onclick=()=>loadPlanningForEdit(b.dataset.editPlan));
   root.querySelectorAll('[data-download-plan]').forEach(b=>b.onclick=()=>{const p=state.classPlans.find(x=>x.id===b.dataset.downloadPlan);if(!p)return;const unit=unitById(p.grade,p.subject,p.unitId)||{id:p.unitId,name:p.unitName||`Unidad ${p.unitId}`},oa=objectivesFor(p.grade,p.subject).find(o=>Number(o.number)===Number(p.oaNumber))||{number:p.oaNumber,text:p.oaText||''};downloadPlanningWord(course,p.subject,unit,oa,p)});
   root.querySelectorAll('[data-copy-plan]').forEach(b=>b.onclick=()=>{const p=state.classPlans.find(x=>x.id===b.dataset.copyPlan),unit=unitById(p.grade,p.subject,p.unitId),oa=objectivesFor(p.grade,p.subject).find(o=>Number(o.number)===Number(p.oaNumber));if(!p||!unit||!oa)return;copyTextWithFallback(planningCopyText(course,p.subject,unit,oa,p),'Planificación copiada.');});
@@ -5914,7 +6102,7 @@ function renderSavedPlanning(course){
 }
 function copyTextWithFallback(text,success='Copiado.'){const fallback=()=>{const ta=document.createElement('textarea');ta.value=text;ta.style.position='fixed';ta.style.opacity='0';document.body.appendChild(ta);ta.select();let ok=false;try{ok=document.execCommand('copy')}catch(e){}ta.remove();alert(ok?success:'No pude copiar automáticamente. Puedes seleccionar el contenido desde esta pantalla.')};if(navigator.clipboard?.writeText)navigator.clipboard.writeText(text).then(()=>alert(success)).catch(fallback);else fallback()}
 function loadPlanningForEdit(id){
-  const p=state.classPlans.find(x=>x.id===id),course=activeCourse();if(!p||!course||p.courseId!==course.id)return;selectedPlanningSubject=p.subject;selectedPlanningUnit=String(p.unitId);selectedPlanningOA=String(p.oaNumber);editingPlanningId=p.id;planningDraft={key:planningDraftId(course,p.subject,{id:p.unitId},{number:p.oaNumber}),date:p.date,duration:String(p.duration||'45'),objectiveMode:p.objectiveMode||'',objective:p.objective,classContentCustom:p.classContentCustom||'',classObjective:p.classObjective||'',bloomLevel:p.bloomLevel||bloomForOA(p.oaText||''),bloomVerbs:p.bloomVerbs||BLOOM_BANK[p.bloomLevel||bloomForOA(p.oaText||'')].join(', '),attitudeCode:p.attitudeCode??'custom',attitudeObjective:p.attitudeObjective||'',duaEngagementEnabled:p.duaEngagementEnabled!==false,duaEngagement:p.duaEngagement||duaDefaults(p.subject,{text:p.oaText||''}).engagement,duaRepresentationEnabled:p.duaRepresentationEnabled!==false,duaRepresentation:p.duaRepresentation||duaDefaults(p.subject,{text:p.oaText||''}).representation,duaActionEnabled:p.duaActionEnabled!==false,duaAction:p.duaAction||duaDefaults(p.subject,{text:p.oaText||''}).action,duaConsiderations:Array.isArray(p.duaConsiderations)&&p.duaConsiderations.length?p.duaConsiderations.map(String):duaSuggested080(p.subject,{text:p.oaText||''},p.grade),startMode:p.startMode||'',developmentMode:p.developmentMode||'',closingMode:p.closingMode||'',start:p.start,development:p.development,closing:p.closing,assessmentMode:p.assessmentMode||'',assessment:p.assessment,supportOptions:Array.isArray(p.supportOptions)?p.supportOptions.map(String):[],supportTouched096:!!p.supportTouched096,differentiation:p.differentiation,materialOptions:Array.isArray(p.materialOptions)?p.materialOptions.map(String):[],materials:p.materials};renderPlanning();window.scrollTo({top:0,behavior:'smooth'});
+  const p=state.classPlans.find(x=>x.id===id),course=activeCourse();if(!p||!course||p.courseId!==course.id)return;selectedPlanningSubject=p.subject;selectedPlanningUnit=String(p.unitId);selectedPlanningOA=String(p.oaNumber);editingPlanningId=p.id;planningDraft={key:planningDraftId(course,p.subject,{id:p.unitId},{number:p.oaNumber}),date:p.date,duration:String(p.duration||'45'),objectiveMode:p.objectiveMode||'',objective:p.objective,classContentCustom:p.classContentCustom||'',classObjective:p.classObjective||'',bloomLevel:p.bloomLevel||bloomForOA(p.oaText||''),bloomVerbs:p.bloomVerbs||BLOOM_BANK[p.bloomLevel||bloomForOA(p.oaText||'')].join(', '),attitudeCode:p.attitudeCode??'custom',attitudeObjective:p.attitudeObjective||'',duaEngagementEnabled:p.duaEngagementEnabled!==false,duaEngagement:p.duaEngagement||duaDefaults(p.subject,{text:p.oaText||''}).engagement,duaRepresentationEnabled:p.duaRepresentationEnabled!==false,duaRepresentation:p.duaRepresentation||duaDefaults(p.subject,{text:p.oaText||''}).representation,duaActionEnabled:p.duaActionEnabled!==false,duaAction:p.duaAction||duaDefaults(p.subject,{text:p.oaText||''}).action,duaConsiderations:Array.isArray(p.duaConsiderations)&&p.duaConsiderations.length?p.duaConsiderations.map(String):duaSuggested080(p.subject,{text:p.oaText||''},p.grade),startMode:p.startMode||'',developmentMode:p.developmentMode||'',closingMode:p.closingMode||'',start:p.start,development:p.development,closing:p.closing,assessmentMode:p.assessmentMode||'',assessment:p.assessment,supportOptions:Array.isArray(p.supportOptions)?p.supportOptions.map(String):[],supportTouched096:!!p.supportTouched096,differentiation:p.differentiation,organizationOptions:Array.isArray(p.organizationOptions)?p.organizationOptions.map(String):[],organizationTouched100:!!p.organizationTouched100,organizationText:p.organizationText||'',materialOptions:Array.isArray(p.materialOptions)?p.materialOptions.map(String):[],materials:p.materials};renderPlanning();window.scrollTo({top:0,behavior:'smooth'});
 }
 function savePlanningFromForm(){
   const course=activeCourse(),unit=unitById(course?.level,selectedPlanningSubject,selectedPlanningUnit),oa=unitObjectivesFor(course?.level,selectedPlanningSubject,selectedPlanningUnit).find(o=>String(o.number)===String(selectedPlanningOA));if(!course||!unit||!oa)return alert('Selecciona curso, unidad y OA.');
@@ -5925,6 +6113,7 @@ function savePlanningFromForm(){
   planningSyncDuaApplications088(planningDraft,selectedPlanningSubject,oa,course.level);
   planningSyncPurpose089(planningDraft,selectedPlanningSubject,oa,course.level);
   planningSyncClassObjective089(planningDraft,selectedPlanningSubject,oa,course.level);
+  planningSyncOrganization100(planningDraft,course,planningContextFor(course,selectedPlanningSubject,unit,oa),false);
   const attInfo088=planningAttitudeInfo081(course.level,selectedPlanningSubject);
   if(!String(planningDraft.attitudeObjective||'').trim()){
     const ai=attitudeSuggestionIndex(selectedPlanningSubject,oa.text,attInfo088.bank);
@@ -5932,7 +6121,7 @@ function savePlanningFromForm(){
     planningDraft.attitudeObjective=attInfo088.bank[ai>=0?ai:0]||ATTITUDE_FALLBACK_081[0];
   }
   planningSyncClassObjective089(planningDraft,selectedPlanningSubject,oa,course.level);
-  const p={courseId:course.id,grade:course.level,subject:selectedPlanningSubject,unitId:String(unit.id),unitName:unit.name,oaNumber:Number(oa.number),oaText:oa.text,date:planningDraft.date,duration:String(planningDraft.duration||'45'),objectiveMode:planningDraft.objectiveMode||'',objective:planningDraft.objective.trim(),classContentCustom:(planningDraft.classContentCustom||'').trim(),classObjective:(planningDraft.classObjective||'').trim(),bloomLevel:planningDraft.bloomLevel||'Comprender',bloomVerbs:(planningDraft.bloomVerbs||'').trim(),attitudeCode:planningDraft.attitudeCode??'custom',attitudeObjective:(planningDraft.attitudeObjective||'').trim(),duaEngagementEnabled:planningDraft.duaEngagementEnabled!==false,duaEngagement:(planningDraft.duaEngagement||'').trim(),duaRepresentationEnabled:planningDraft.duaRepresentationEnabled!==false,duaRepresentation:(planningDraft.duaRepresentation||'').trim(),duaActionEnabled:planningDraft.duaActionEnabled!==false,duaAction:(planningDraft.duaAction||'').trim(),duaConsiderations:Array.isArray(planningDraft.duaConsiderations)?planningDraft.duaConsiderations.map(String):[],startMode:planningDraft.startMode||'',developmentMode:planningDraft.developmentMode||'',closingMode:planningDraft.closingMode||'',start:planningDraft.start.trim(),development:planningDraft.development.trim(),closing:planningDraft.closing.trim(),assessmentMode:planningDraft.assessmentMode||'',assessment:planningDraft.assessment.trim(),supportOptions:Array.isArray(planningDraft.supportOptions)?planningDraft.supportOptions.map(String):[],supportTouched096:!!planningDraft.supportTouched096,differentiation:planningDraft.differentiation.trim(),materialOptions:Array.isArray(planningDraft.materialOptions)?planningDraft.materialOptions.map(String):[],materials:planningDraft.materials.trim()};if(!p.date)return alert('Selecciona una fecha.');if(!p.objective)return alert('No pude generar el propósito de la clase. Vuelve a seleccionar el OA.');if(!p.classObjective)return alert('No pude generar el objetivo de la clase. Vuelve a seleccionar el OA.');if(!p.development){planningApplyModes084(planningDraft,selectedPlanningSubject,oa,course.level);p.development=planningDraft.development||'';}if(!p.development)return alert('No pude generar el desarrollo automáticamente. Vuelve a seleccionar la forma de trabajo.');
+  const p={courseId:course.id,grade:course.level,subject:selectedPlanningSubject,unitId:String(unit.id),unitName:unit.name,oaNumber:Number(oa.number),oaText:oa.text,date:planningDraft.date,duration:String(planningDraft.duration||'45'),objectiveMode:planningDraft.objectiveMode||'',objective:planningDraft.objective.trim(),classContentCustom:(planningDraft.classContentCustom||'').trim(),classObjective:(planningDraft.classObjective||'').trim(),bloomLevel:planningDraft.bloomLevel||'Comprender',bloomVerbs:(planningDraft.bloomVerbs||'').trim(),attitudeCode:planningDraft.attitudeCode??'custom',attitudeObjective:(planningDraft.attitudeObjective||'').trim(),duaEngagementEnabled:planningDraft.duaEngagementEnabled!==false,duaEngagement:(planningDraft.duaEngagement||'').trim(),duaRepresentationEnabled:planningDraft.duaRepresentationEnabled!==false,duaRepresentation:(planningDraft.duaRepresentation||'').trim(),duaActionEnabled:planningDraft.duaActionEnabled!==false,duaAction:(planningDraft.duaAction||'').trim(),duaConsiderations:Array.isArray(planningDraft.duaConsiderations)?planningDraft.duaConsiderations.map(String):[],startMode:planningDraft.startMode||'',developmentMode:planningDraft.developmentMode||'',closingMode:planningDraft.closingMode||'',start:planningDraft.start.trim(),development:planningDraft.development.trim(),closing:planningDraft.closing.trim(),assessmentMode:planningDraft.assessmentMode||'',assessment:planningDraft.assessment.trim(),supportOptions:Array.isArray(planningDraft.supportOptions)?planningDraft.supportOptions.map(String):[],supportTouched096:!!planningDraft.supportTouched096,differentiation:planningDraft.differentiation.trim(),organizationOptions:Array.isArray(planningDraft.organizationOptions)?planningDraft.organizationOptions.map(String):[],organizationTouched100:!!planningDraft.organizationTouched100,organizationText:(planningDraft.organizationText||'').trim(),materialOptions:Array.isArray(planningDraft.materialOptions)?planningDraft.materialOptions.map(String):[],materials:planningDraft.materials.trim()};if(!p.date)return alert('Selecciona una fecha.');if(!p.objective)return alert('No pude generar el propósito de la clase. Vuelve a seleccionar el OA.');if(!p.classObjective)return alert('No pude generar el objetivo de la clase. Vuelve a seleccionar el OA.');if(!p.development){planningApplyModes084(planningDraft,selectedPlanningSubject,oa,course.level);p.development=planningDraft.development||'';}if(!p.development)return alert('No pude generar el desarrollo automáticamente. Vuelve a seleccionar la forma de trabajo.');
   if(editingPlanningId){const idx=state.classPlans.findIndex(x=>x.id===editingPlanningId);if(idx>=0)state.classPlans[idx]={...state.classPlans[idx],...p,updatedAt:new Date().toISOString()};editingPlanningId=null}else state.classPlans.push({...p,id:'plan_'+uid(),createdAt:new Date().toISOString(),updatedAt:new Date().toISOString()});save();planningDraft.key='';renderPlanning();alert('Planificación guardada.')
 }
 
@@ -6247,9 +6436,9 @@ document.querySelectorAll('[data-material087]').forEach(cb=>cb.addEventListener(
 document.getElementById('resetPlanningDraft').onclick=()=>{const course=activeCourse(),unit=unitById(course?.level,selectedPlanningSubject,selectedPlanningUnit),oa=unitObjectivesFor(course?.level,selectedPlanningSubject,selectedPlanningUnit).find(o=>String(o.number)===String(selectedPlanningOA));if(!course||!unit||!oa)return;editingPlanningId=null;planningEnsureComplete081(course,selectedPlanningSubject,unit,oa,true);renderPlanning()};
  document.getElementById('planningRegenerate078').onclick=()=>{const course=activeCourse(),unit=unitById(course?.level,selectedPlanningSubject,selectedPlanningUnit),oa=unitObjectivesFor(course?.level,selectedPlanningSubject,selectedPlanningUnit).find(o=>String(o.number)===String(selectedPlanningOA));if(!course||!unit||!oa)return alert('Selecciona una unidad y un OA para generar la planificación.');if(editingPlanningId&&!confirm('Estás editando una planificación guardada. ¿Quieres reemplazar el borrador actual por una nueva planificación completa?'))return;editingPlanningId=null;planningEnsureComplete081(course,selectedPlanningSubject,unit,oa,true);renderPlanning();};
 document.getElementById('cancelPlanningEdit').onclick=()=>{editingPlanningId=null;planningDraft.key='';renderPlanning()};
-document.getElementById('savePlanning').onclick=()=>{planningCaptureSupports096();savePlanningFromForm()};
-document.getElementById('downloadPlanningDocx').onclick=()=>{planningCaptureSupports096();const course=activeCourse(),unit=unitById(course?.level,selectedPlanningSubject,selectedPlanningUnit),oa=unitObjectivesFor(course?.level,selectedPlanningSubject,selectedPlanningUnit).find(o=>String(o.number)===String(selectedPlanningOA));if(!course||!unit||!oa)return;downloadPlanningWord(course,selectedPlanningSubject,unit,oa,planningDraft)};
-document.getElementById('copyPlanning').onclick=()=>{planningCaptureSupports096();const course=activeCourse(),unit=unitById(course?.level,selectedPlanningSubject,selectedPlanningUnit),oa=unitObjectivesFor(course?.level,selectedPlanningSubject,selectedPlanningUnit).find(o=>String(o.number)===String(selectedPlanningOA));if(!course||!unit||!oa)return;copyTextWithFallback(planningCopyText(course,selectedPlanningSubject,unit,oa,planningDraft),'Planificación copiada.')};
+document.getElementById('savePlanning').onclick=()=>{planningCaptureSupports096();planningCaptureOrganization100();savePlanningFromForm()};
+document.getElementById('downloadPlanningDocx').onclick=()=>{planningCaptureSupports096();planningCaptureOrganization100();const course=activeCourse(),unit=unitById(course?.level,selectedPlanningSubject,selectedPlanningUnit),oa=unitObjectivesFor(course?.level,selectedPlanningSubject,selectedPlanningUnit).find(o=>String(o.number)===String(selectedPlanningOA));if(!course||!unit||!oa)return;downloadPlanningWord(course,selectedPlanningSubject,unit,oa,planningDraft)};
+document.getElementById('copyPlanning').onclick=()=>{planningCaptureSupports096();planningCaptureOrganization100();const course=activeCourse(),unit=unitById(course?.level,selectedPlanningSubject,selectedPlanningUnit),oa=unitObjectivesFor(course?.level,selectedPlanningSubject,selectedPlanningUnit).find(o=>String(o.number)===String(selectedPlanningOA));if(!course||!unit||!oa)return;copyTextWithFallback(planningCopyText(course,selectedPlanningSubject,unit,oa,planningDraft),'Planificación copiada.')};
 
 
 document.getElementById('resourceSubjectSelect').onchange=e=>{selectedResourceSubject=e.target.value;selectedResourceUnit='';selectedResourceOA='';editingResourceId=null;resetResourceForm();renderResources()};
