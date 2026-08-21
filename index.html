@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>AulaNexo · Prototipo 0.0.102</title>
+<title>AulaNexo · Prototipo 0.0.103</title>
 <style>
 :root{
   --bg:#f5f7fb;--card:#fff;--text:#1f2937;--muted:#6b7280;--line:#e5e7eb;
@@ -2085,7 +2085,7 @@ nav.app-nav button[data-view].active{background:var(--primary-soft);color:#3730a
 
 <header>
   <div class="header-wrap">
-    <div><h1>AulaNexo</h1><div class="subtitle">Prototipo 0.0.102 · Revisión final de planificación</div></div>
+    <div><h1>AulaNexo</h1><div class="subtitle">Prototipo 0.0.103 · Duplicar planificación</div></div>
     <div class="header-actions"><button id="menuToggle" class="menu-toggle">☰ Menú</button><span class="current-section-pill">Sección: <strong id="currentSectionLabel">Curso</strong></span><span class="active-course-pill">Curso activo: <strong id="headerCourseName">Sin curso</strong></span><span id="cloudStatus" class="cloud-pill" data-state="offline">☁️ Sin conectar</span><button id="cloudConnectBtn" class="secondary">👤 Mi cuenta</button><button id="downloadBackup">⬇ Respaldo</button><button id="loadBackupBtn">⬆ Cargar respaldo</button><input id="backupFile" type="file" accept="application/json" hidden></div>
   </div>
 </header>
@@ -2730,7 +2730,7 @@ nav.app-nav button[data-view].active{background:var(--primary-soft);color:#3730a
 <div class="row section-gap"><button id="savePlanning" class="primary">Guardar planificación</button><button id="downloadPlanningDocx" class="secondary">Descargar Word</button><button id="copyPlanning" class="ghost">Copiar planificación</button><button id="cancelPlanningEdit" class="ghost hidden">Cancelar edición</button></div><div class="tiny section-gap">La descarga se genera como archivo <strong>.docx editable</strong>, listo para abrir en Microsoft Word o aplicaciones compatibles.</div>
           </div>
           <div class="card section-gap">
-            <div class="row between"><div><h2>Planificaciones guardadas</h2><div class="small">Se guardan dentro del curso y se sincronizan con tus otros dispositivos.</div></div><span id="planningSavedCount" class="curriculum-badge">0 planes</span></div>
+            <div class="row between"><div><h2>Planificaciones guardadas</h2><div class="small">Se guardan dentro del curso y se sincronizan con tus otros dispositivos. <strong>Duplicar</strong> abre una copia editable y conserva intacta la planificación original.</div></div><span id="planningSavedCount" class="curriculum-badge">0 planes</span></div>
             <div id="planningSavedList" class="planning-saved-list section-gap"></div>
           </div>
         </div>
@@ -6338,14 +6338,62 @@ function renderPlanning(){
 function renderSavedPlanning(course){
   const root=document.getElementById('planningSavedList'),count=document.getElementById('planningSavedCount');if(!root||!count)return;const plans=course?(state.classPlans||[]).filter(p=>p.courseId===course.id).sort((a,b)=>(b.date||'').localeCompare(a.date||'')||(b.updatedAt||'').localeCompare(a.updatedAt||'')):[];count.textContent=`${plans.length} plan${plans.length===1?'':'es'}`;
   if(!course){root.innerHTML='<div class="empty">Primero selecciona un curso.</div>';return}if(!plans.length){root.innerHTML='<div class="empty">Todavía no has guardado planificaciones para este curso.</div>';return}
-  root.innerHTML=plans.map(p=>`<div class="planning-saved-card"><div class="planning-saved-head"><div><div class="planning-saved-title">${esc(p.subject)} · OA ${String(p.oaNumber).padStart(2,'0')}</div><div class="planning-saved-meta">${esc(p.unitName)} · ${formatDate(p.date)} · ${esc(p.duration)} min</div></div><div class="planning-actions"><button class="ghost" data-edit-plan="${p.id}">Editar</button><button class="ghost" data-download-plan="${p.id}">Descargar</button><button class="ghost" data-copy-plan="${p.id}">Copiar</button><button class="ghost" data-duplicate-plan="${p.id}">Duplicar</button><button class="danger" data-delete-plan="${p.id}">Eliminar</button></div></div><div class="planning-saved-preview"><strong>Propósito:</strong> ${esc(p.objective)}${p.classObjective?`<br><strong>Objetivo de clase:</strong> ${esc(p.classObjective)}`:''}${p.classContentCustom?`<br><strong>Contenido específico:</strong> ${esc(p.classContentCustom)}`:''}${p.bloomLevel?`<br><strong>Bloom:</strong> ${esc(p.bloomLevel)}`:''}${p.attitudeObjective?`<br><strong>Actitud:</strong> ${esc(p.attitudeObjective)}`:''}${p.organizationText?`<br><strong>Organización:</strong> ${esc(p.organizationText)}`:''}</div></div>`).join('');
+  root.innerHTML=plans.map(p=>`<div class="planning-saved-card"><div class="planning-saved-head"><div><div class="planning-saved-title">${esc(p.subject)} · OA ${String(p.oaNumber).padStart(2,'0')}</div><div class="planning-saved-meta">${esc(p.unitName)} · ${formatDate(p.date)} · ${esc(p.duration)} min</div></div><div class="planning-actions"><button class="ghost" data-edit-plan="${p.id}">Editar</button><button class="ghost" data-download-plan="${p.id}">Descargar</button><button class="ghost" data-copy-plan="${p.id}">Copiar</button><button class="ghost" data-duplicate-plan="${p.id}">📄 Duplicar</button><button class="danger" data-delete-plan="${p.id}">Eliminar</button></div></div><div class="planning-saved-preview"><strong>Propósito:</strong> ${esc(p.objective)}${p.classObjective?`<br><strong>Objetivo de clase:</strong> ${esc(p.classObjective)}`:''}${p.classContentCustom?`<br><strong>Contenido específico:</strong> ${esc(p.classContentCustom)}`:''}${p.bloomLevel?`<br><strong>Bloom:</strong> ${esc(p.bloomLevel)}`:''}${p.attitudeObjective?`<br><strong>Actitud:</strong> ${esc(p.attitudeObjective)}`:''}${p.organizationText?`<br><strong>Organización:</strong> ${esc(p.organizationText)}`:''}</div></div>`).join('');
   root.querySelectorAll('[data-edit-plan]').forEach(b=>b.onclick=()=>loadPlanningForEdit(b.dataset.editPlan));
   root.querySelectorAll('[data-download-plan]').forEach(b=>b.onclick=()=>{const p=state.classPlans.find(x=>x.id===b.dataset.downloadPlan);if(!p)return;const unit=unitById(p.grade,p.subject,p.unitId)||{id:p.unitId,name:p.unitName||`Unidad ${p.unitId}`},oa=objectivesFor(p.grade,p.subject).find(o=>Number(o.number)===Number(p.oaNumber))||{number:p.oaNumber,text:p.oaText||''};downloadPlanningWord(course,p.subject,unit,oa,p)});
   root.querySelectorAll('[data-copy-plan]').forEach(b=>b.onclick=()=>{const p=state.classPlans.find(x=>x.id===b.dataset.copyPlan),unit=unitById(p.grade,p.subject,p.unitId),oa=objectivesFor(p.grade,p.subject).find(o=>Number(o.number)===Number(p.oaNumber));if(!p||!unit||!oa)return;copyTextWithFallback(planningCopyText(course,p.subject,unit,oa,p),'Planificación copiada.');});
-  root.querySelectorAll('[data-duplicate-plan]').forEach(b=>b.onclick=()=>{const p=state.classPlans.find(x=>x.id===b.dataset.duplicatePlan);if(!p)return;const clone={...JSON.parse(JSON.stringify(p)),id:'plan_'+uid(),date:localDate(),createdAt:new Date().toISOString(),updatedAt:new Date().toISOString()};state.classPlans.push(clone);save();renderSavedPlanning(course)});
+  root.querySelectorAll('[data-duplicate-plan]').forEach(b=>b.onclick=()=>duplicatePlanningForEdit103(b.dataset.duplicatePlan));
   root.querySelectorAll('[data-delete-plan]').forEach(b=>b.onclick=()=>{const p=state.classPlans.find(x=>x.id===b.dataset.deletePlan);if(!p||!confirm('¿Eliminar esta planificación guardada?'))return;state.classPlans=state.classPlans.filter(x=>x.id!==p.id);if(editingPlanningId===p.id){editingPlanningId=null;planningDraft.key=''}save();renderPlanning()});
 }
 function copyTextWithFallback(text,success='Copiado.'){const fallback=()=>{const ta=document.createElement('textarea');ta.value=text;ta.style.position='fixed';ta.style.opacity='0';document.body.appendChild(ta);ta.select();let ok=false;try{ok=document.execCommand('copy')}catch(e){}ta.remove();alert(ok?success:'No pude copiar automáticamente. Puedes seleccionar el contenido desde esta pantalla.')};if(navigator.clipboard?.writeText)navigator.clipboard.writeText(text).then(()=>alert(success)).catch(fallback);else fallback()}
+
+/* ===== 0.0.103 · DUPLICAR PLANIFICACIÓN SIN ALTERAR LA ORIGINAL ===== */
+function duplicatePlanningForEdit103(id){
+  const original=state.classPlans.find(x=>x.id===id);
+  const course=activeCourse();
+
+  if(!original||!course||original.courseId!==course.id)return;
+
+  // Copia profunda para evitar compartir arreglos u objetos con la planificación original.
+  const copy=JSON.parse(JSON.stringify(original));
+
+  selectedPlanningSubject=copy.subject;
+  selectedPlanningUnit=String(copy.unitId);
+  selectedPlanningOA=String(copy.oaNumber);
+
+  // editingPlanningId queda en null:
+  // al guardar, AulaNexo creará una planificación NUEVA y no reemplazará la original.
+  editingPlanningId=null;
+
+  planningDraft={
+    ...copy,
+    key:planningDraftId(course,copy.subject,{id:copy.unitId},{number:copy.oaNumber}),
+    date:localDate(),
+    duration:String(copy.duration||'45'),
+
+    // Estos campos internos pertenecen al registro guardado, no al borrador nuevo.
+    id:undefined,
+    courseId:undefined,
+    grade:undefined,
+    unitName:undefined,
+    oaText:undefined,
+    createdAt:undefined,
+    updatedAt:undefined
+  };
+
+  planningMode='class';
+  renderPlanning();
+
+  const dateInput=document.getElementById('planningDate');
+  if(dateInput){
+    dateInput.value=planningDraft.date;
+    dateInput.focus();
+  }
+
+  window.scrollTo({top:0,behavior:'smooth'});
+  alert('Copia preparada. La planificación original sigue intacta. AulaNexo dejó la fecha en hoy; puedes cambiarla antes de guardar.');
+}
+
 function loadPlanningForEdit(id){
   const p=state.classPlans.find(x=>x.id===id),course=activeCourse();if(!p||!course||p.courseId!==course.id)return;selectedPlanningSubject=p.subject;selectedPlanningUnit=String(p.unitId);selectedPlanningOA=String(p.oaNumber);editingPlanningId=p.id;planningDraft={key:planningDraftId(course,p.subject,{id:p.unitId},{number:p.oaNumber}),date:p.date,duration:String(p.duration||'45'),objectiveMode:p.objectiveMode||'',objective:p.objective,classContentCustom:p.classContentCustom||'',classObjective:p.classObjective||'',bloomLevel:p.bloomLevel||bloomForOA(p.oaText||''),bloomVerbs:p.bloomVerbs||BLOOM_BANK[p.bloomLevel||bloomForOA(p.oaText||'')].join(', '),attitudeCode:p.attitudeCode??'custom',attitudeObjective:p.attitudeObjective||'',duaEngagementEnabled:p.duaEngagementEnabled!==false,duaEngagement:p.duaEngagement||duaDefaults(p.subject,{text:p.oaText||''}).engagement,duaRepresentationEnabled:p.duaRepresentationEnabled!==false,duaRepresentation:p.duaRepresentation||duaDefaults(p.subject,{text:p.oaText||''}).representation,duaActionEnabled:p.duaActionEnabled!==false,duaAction:p.duaAction||duaDefaults(p.subject,{text:p.oaText||''}).action,duaConsiderations:Array.isArray(p.duaConsiderations)&&p.duaConsiderations.length?p.duaConsiderations.map(String):duaSuggested080(p.subject,{text:p.oaText||''},p.grade),startMode:p.startMode||'',developmentMode:p.developmentMode||'',closingMode:p.closingMode||'',start:p.start,development:p.development,closing:p.closing,assessmentMode:p.assessmentMode||'',assessment:p.assessment,supportOptions:Array.isArray(p.supportOptions)?p.supportOptions.map(String):[],supportTouched096:!!p.supportTouched096,differentiation:p.differentiation,organizationOptions:Array.isArray(p.organizationOptions)?p.organizationOptions.map(String):[],organizationTouched100:!!p.organizationTouched100,organizationText:p.organizationText||'',materialOptions:Array.isArray(p.materialOptions)?p.materialOptions.map(String):[],materials:p.materials};renderPlanning();window.scrollTo({top:0,behavior:'smooth'});
 }
