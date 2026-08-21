@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>AulaNexo · Prototipo 0.0.96</title>
+<title>AulaNexo · Prototipo 0.0.99</title>
 <style>
 :root{
   --bg:#f5f7fb;--card:#fff;--text:#1f2937;--muted:#6b7280;--line:#e5e7eb;
@@ -1981,12 +1981,27 @@ nav.app-nav button[data-view].active{background:var(--primary-soft);color:#3730a
 @media(max-width:880px){.planning096-supports{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:620px){.planning096-supports{grid-template-columns:1fr}}
 
+
+/* ===== AULANEXO 0.0.99 · MODO DE PRUEBA LOCAL ===== */
+.local-preview-banner099{
+  margin:8px auto 0;max-width:1180px;padding:8px 11px;
+  border:1px solid #fde68a;border-radius:10px;background:#fffbeb;
+  color:#92400e;font-size:9.5px;line-height:1.4
+}
+.local-preview-banner099 span{color:#a16207;margin-left:4px}
+
 </style>
 </head>
 <body>
+
+<div id="localPreviewBanner099" class="local-preview-banner099 hidden">
+  🧪 <strong>Modo de prueba local:</strong> AulaNexo creó temporalmente un 1° Básico A para que puedas probar toda la planificación.
+  <span>Este curso no se crea en tu AulaNexo publicado.</span>
+</div>
+
 <header>
   <div class="header-wrap">
-    <div><h1>AulaNexo</h1><div class="subtitle">Prototipo 0.0.96 · Apoyos diferenciados con botones</div></div>
+    <div><h1>AulaNexo</h1><div class="subtitle">Prototipo 0.0.99 · Modo de prueba local</div></div>
     <div class="header-actions"><button id="menuToggle" class="menu-toggle">☰ Menú</button><span class="current-section-pill">Sección: <strong id="currentSectionLabel">Curso</strong></span><span class="active-course-pill">Curso activo: <strong id="headerCourseName">Sin curso</strong></span><span id="cloudStatus" class="cloud-pill" data-state="offline">☁️ Sin conectar</span><button id="cloudConnectBtn" class="secondary">👤 Mi cuenta</button><button id="downloadBackup">⬇ Respaldo</button><button id="loadBackupBtn">⬆ Cargar respaldo</button><input id="backupFile" type="file" accept="application/json" hidden></div>
   </div>
 </header>
@@ -3093,7 +3108,35 @@ function loadState(){
 
 // Estado principal del programa. En 0.0.9 faltaba esta línea y por eso
 // el botón “Guardar evaluación” podía dejar de responder.
+
 let state=loadState();
+
+/* ===== 0.0.99 · CURSO TEMPORAL SOLO PARA PROBAR ARCHIVOS LOCALES ===== */
+let localPreviewCourse099=false;
+function ensureLocalPreviewCourse099(){
+  try{
+    const isLocalPreview=window.location.protocol==='file:';
+    if(!isLocalPreview)return false;
+    if(Array.isArray(state.courses)&&state.courses.length)return false;
+
+    const demo={
+      id:'course_local_preview_099',
+      level:1,
+      section:'A',
+      name:'1° Básico A · Prueba',
+      students:[]
+    };
+
+    state.courses=[demo];
+    state.activeCourseId=demo.id;
+    localPreviewCourse099=true;
+    return true;
+  }catch(e){
+    return false;
+  }
+}
+ensureLocalPreviewCourse099();
+
 
 function save(){
   try{
@@ -6252,6 +6295,8 @@ document.getElementById('loadBackupBtn').onclick=()=>document.getElementById('ba
 initCloud();
 try{
   renderAll();
+  const localBanner099=document.getElementById('localPreviewBanner099');
+  if(localBanner099)localBanner099.classList.toggle('hidden',!localPreviewCourse099);
 }catch(err){
   console.error('AulaNexo: error durante el render inicial', err);
 }
