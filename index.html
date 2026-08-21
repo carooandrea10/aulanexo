@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>AulaNexo · Prototipo 0.0.101</title>
+<title>AulaNexo · Prototipo 0.0.102</title>
 <style>
 :root{
   --bg:#f5f7fb;--card:#fff;--text:#1f2937;--muted:#6b7280;--line:#e5e7eb;
@@ -2021,6 +2021,59 @@ nav.app-nav button[data-view].active{background:var(--primary-soft);color:#3730a
   color:#166534;font-size:8.7px;line-height:1.4
 }
 
+
+/* ===== AULANEXO 0.0.102 · REVISIÓN FINAL INLINE ===== */
+.planning102-review{
+  padding:12px;border:1px solid #dbeafe;border-radius:13px;
+  background:linear-gradient(135deg,#f8fbff,#ffffff)
+}
+.planning102-review-head{
+  display:flex;justify-content:space-between;align-items:flex-start;gap:12px
+}
+.planning102-review-head>div{display:flex;flex-direction:column;gap:2px}
+.planning102-kicker{
+  font-size:7.5px;font-weight:900;text-transform:uppercase;
+  letter-spacing:.06em;color:#4f46e5
+}
+.planning102-review-head b{font-size:11px;color:#1e293b}
+.planning102-review-head span{font-size:8.8px;line-height:1.4;color:#64748b}
+.planning102-summary{
+  margin-top:8px;padding:8px 9px;border-radius:9px;
+  background:#f8fafc;border:1px solid #e2e8f0;
+  color:#475569;font-size:9px;line-height:1.4
+}
+.planning102-summary.is-complete{
+  background:#f0fdf4;border-color:#bbf7d0;color:#166534
+}
+.planning102-summary.has-pending{
+  background:#fffbeb;border-color:#fde68a;color:#92400e
+}
+.planning102-checks{
+  display:grid;grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:6px;margin-top:8px
+}
+.planning102-check{
+  display:flex;align-items:flex-start;gap:7px;padding:7px 8px;
+  border-radius:9px;border:1px solid #e5e7eb;background:#fff
+}
+.planning102-check-icon{
+  width:20px;height:20px;display:flex;align-items:center;justify-content:center;
+  flex:0 0 auto;border-radius:999px;font-size:10px;font-weight:900
+}
+.planning102-check.is-ok .planning102-check-icon{
+  background:#dcfce7;color:#166534
+}
+.planning102-check.is-missing .planning102-check-icon{
+  background:#fef3c7;color:#92400e
+}
+.planning102-check b{display:block;font-size:9px;color:#334155}
+.planning102-check small{display:block;margin-top:1px;font-size:8px;line-height:1.35;color:#64748b}
+@media(max-width:700px){
+  .planning102-review-head{flex-direction:column}
+  .planning102-review-head button{width:100%}
+  .planning102-checks{grid-template-columns:1fr}
+}
+
 </style>
 </head>
 <body>
@@ -2032,7 +2085,7 @@ nav.app-nav button[data-view].active{background:var(--primary-soft);color:#3730a
 
 <header>
   <div class="header-wrap">
-    <div><h1>AulaNexo</h1><div class="subtitle">Prototipo 0.0.101 · Materiales según organización</div></div>
+    <div><h1>AulaNexo</h1><div class="subtitle">Prototipo 0.0.102 · Revisión final de planificación</div></div>
     <div class="header-actions"><button id="menuToggle" class="menu-toggle">☰ Menú</button><span class="current-section-pill">Sección: <strong id="currentSectionLabel">Curso</strong></span><span class="active-course-pill">Curso activo: <strong id="headerCourseName">Sin curso</strong></span><span id="cloudStatus" class="cloud-pill" data-state="offline">☁️ Sin conectar</span><button id="cloudConnectBtn" class="secondary">👤 Mi cuenta</button><button id="downloadBackup">⬇ Respaldo</button><button id="loadBackupBtn">⬆ Cargar respaldo</button><input id="backupFile" type="file" accept="application/json" hidden></div>
   </div>
 </header>
@@ -2657,7 +2710,24 @@ nav.app-nav button[data-view].active{background:var(--primary-soft);color:#3730a
               </div>
               <textarea id="planningMaterials" class="planning087-hidden" tabindex="-1" aria-hidden="true"></textarea>
             </div>
-            <div class="row section-gap"><button id="savePlanning" class="primary">Guardar planificación</button><button id="downloadPlanningDocx" class="secondary">Descargar Word</button><button id="copyPlanning" class="ghost">Copiar planificación</button><button id="cancelPlanningEdit" class="ghost hidden">Cancelar edición</button></div><div class="tiny section-gap">La descarga se genera como archivo <strong>.docx editable</strong>, listo para abrir en Microsoft Word o aplicaciones compatibles.</div>
+            
+            <div class="planning102-review section-gap">
+              <div class="planning102-review-head">
+                <div>
+                  <div class="planning102-kicker">Antes de terminar</div>
+                  <b>Revisión final de la planificación</b>
+                  <span>AulaNexo revisa si están presentes las partes principales. No cambia ni bloquea tus elecciones.</span>
+                </div>
+                <button id="reviewPlanning102" type="button" class="secondary">🔎 Revisar planificación</button>
+              </div>
+
+              <div id="planningReviewSummary102" class="planning102-summary">
+                Presiona “Revisar planificación” cuando quieras comprobarla.
+              </div>
+
+              <div id="planningReviewChecks102" class="planning102-checks hidden"></div>
+            </div>
+<div class="row section-gap"><button id="savePlanning" class="primary">Guardar planificación</button><button id="downloadPlanningDocx" class="secondary">Descargar Word</button><button id="copyPlanning" class="ghost">Copiar planificación</button><button id="cancelPlanningEdit" class="ghost hidden">Cancelar edición</button></div><div class="tiny section-gap">La descarga se genera como archivo <strong>.docx editable</strong>, listo para abrir en Microsoft Word o aplicaciones compatibles.</div>
           </div>
           <div class="card section-gap">
             <div class="row between"><div><h2>Planificaciones guardadas</h2><div class="small">Se guardan dentro del curso y se sincronizan con tus otros dispositivos.</div></div><span id="planningSavedCount" class="curriculum-badge">0 planes</span></div>
@@ -5671,6 +5741,140 @@ function planningCaptureOrganization100(){
   planningSyncOrganization100(planningDraft,course,ctx,false);
 }
 
+
+/* ===== 0.0.102 · REVISIÓN FINAL INLINE ===== */
+function planningReviewItem102(label,ok,detailOk,detailMissing){
+  return {
+    label,
+    ok:!!ok,
+    detail:ok?detailOk:detailMissing
+  };
+}
+
+function planningReviewData102(){
+  const course=activeCourse();
+  const unit=unitById(course?.level,selectedPlanningSubject,selectedPlanningUnit);
+  const oa=unitObjectivesFor(course?.level,selectedPlanningSubject,selectedPlanningUnit)
+    .find(o=>String(o.number)===String(selectedPlanningOA));
+
+  if(!course||!unit||!oa){
+    return {
+      ready:false,
+      items:[],
+      message:'Primero selecciona curso, asignatura, unidad y OA.'
+    };
+  }
+
+  // Sincronizar únicamente los datos que ya existen en las versiones estables.
+  planningCaptureSupports096();
+  planningCaptureOrganization100();
+
+  const d=planningDraft||{};
+  const checks=[
+    planningReviewItem102(
+      'Objetivo de la clase',
+      String(d.classObjective||'').trim(),
+      'Objetivo generado.',
+      'Falta generar el objetivo de la clase.'
+    ),
+    planningReviewItem102(
+      'Habilidad',
+      String(d.bloomVerbs||d.bloomLevel||'').trim(),
+      'Habilidad seleccionada.',
+      'Falta seleccionar la habilidad cognitiva.'
+    ),
+    planningReviewItem102(
+      'Actitud',
+      String(d.attitudeObjective||'').trim(),
+      'Objetivo actitudinal incorporado.',
+      'Falta seleccionar el objetivo actitudinal.'
+    ),
+    planningReviewItem102(
+      'DUA',
+      String(d.duaEngagement||d.duaRepresentation||d.duaAction||'').trim(),
+      'Aplicaciones DUA incorporadas.',
+      'Falta incorporar una aplicación DUA.'
+    ),
+    planningReviewItem102(
+      'Momentos de la clase',
+      String(d.start||'').trim()&&String(d.development||'').trim()&&String(d.closing||'').trim(),
+      'Inicio, desarrollo y cierre están preparados.',
+      'Falta completar Inicio, Desarrollo o Cierre.'
+    ),
+    planningReviewItem102(
+      'Organización',
+      Array.isArray(d.organizationOptions)&&d.organizationOptions.length>0,
+      'Organización de la clase definida.',
+      'Falta seleccionar cómo se organizarán los estudiantes.'
+    ),
+    planningReviewItem102(
+      'Evaluación',
+      String(d.assessment||'').trim(),
+      'Evidencia o evaluación definida.',
+      'Falta definir la evidencia o evaluación.'
+    ),
+    planningReviewItem102(
+      'Materiales',
+      Array.isArray(d.materialOptions)&&d.materialOptions.length>0,
+      'Materiales seleccionados.',
+      'Falta seleccionar los materiales principales.'
+    )
+  ];
+
+  return {
+    ready:true,
+    items:checks,
+    complete:checks.filter(x=>x.ok).length,
+    total:checks.length
+  };
+}
+
+function renderPlanningReview102(){
+  const summary=document.getElementById('planningReviewSummary102');
+  const box=document.getElementById('planningReviewChecks102');
+  if(!summary||!box)return;
+
+  const result=planningReviewData102();
+
+  if(!result.ready){
+    summary.classList.remove('is-complete','has-pending');
+    summary.classList.add('has-pending');
+    summary.textContent=result.message;
+    box.innerHTML='';
+    box.classList.add('hidden');
+    return;
+  }
+
+  const pending=result.total-result.complete;
+
+  summary.classList.remove('is-complete','has-pending');
+  if(pending===0){
+    summary.classList.add('is-complete');
+    summary.textContent=`✅ Planificación completa: ${result.complete} de ${result.total} aspectos principales listos. Ya puedes guardar o descargar.`;
+  }else{
+    summary.classList.add('has-pending');
+    summary.textContent=`🟡 Revisión: ${result.complete} de ${result.total} aspectos listos. Quedan ${pending} por revisar.`;
+  }
+
+  box.innerHTML=result.items.map(item=>`
+    <div class="planning102-check ${item.ok?'is-ok':'is-missing'}">
+      <span class="planning102-check-icon">${item.ok?'✓':'!'}</span>
+      <span><b>${esc(item.label)}</b><small>${esc(item.detail)}</small></span>
+    </div>
+  `).join('');
+
+  box.classList.remove('hidden');
+}
+function planningMarkReviewPending102(){
+  const summary=document.getElementById('planningReviewSummary102');
+  const box=document.getElementById('planningReviewChecks102');
+  if(!summary||!box||box.classList.contains('hidden'))return;
+  summary.classList.remove('is-complete');
+  summary.classList.add('has-pending');
+  summary.textContent='🔄 Hiciste cambios. Presiona “Revisar planificación” para actualizar el checklist.';
+}
+
+
 function planningContextFor(course,subject,unit,oa){
   const groups=supportDataFor(course.id,course.level,subject,oa.number,unit.id);
   return {groups,withEvidence:groups.support.length+groups.process.length+groups.achieved.length};
@@ -6477,6 +6681,12 @@ document.querySelectorAll('[data-material087]').forEach(cb=>cb.addEventListener(
 document.getElementById('resetPlanningDraft').onclick=()=>{const course=activeCourse(),unit=unitById(course?.level,selectedPlanningSubject,selectedPlanningUnit),oa=unitObjectivesFor(course?.level,selectedPlanningSubject,selectedPlanningUnit).find(o=>String(o.number)===String(selectedPlanningOA));if(!course||!unit||!oa)return;editingPlanningId=null;planningEnsureComplete081(course,selectedPlanningSubject,unit,oa,true);renderPlanning()};
  document.getElementById('planningRegenerate078').onclick=()=>{const course=activeCourse(),unit=unitById(course?.level,selectedPlanningSubject,selectedPlanningUnit),oa=unitObjectivesFor(course?.level,selectedPlanningSubject,selectedPlanningUnit).find(o=>String(o.number)===String(selectedPlanningOA));if(!course||!unit||!oa)return alert('Selecciona una unidad y un OA para generar la planificación.');if(editingPlanningId&&!confirm('Estás editando una planificación guardada. ¿Quieres reemplazar el borrador actual por una nueva planificación completa?'))return;editingPlanningId=null;planningEnsureComplete081(course,selectedPlanningSubject,unit,oa,true);renderPlanning();};
 document.getElementById('cancelPlanningEdit').onclick=()=>{editingPlanningId=null;planningDraft.key='';renderPlanning()};
+
+document.getElementById('reviewPlanning102')?.addEventListener('click',renderPlanningReview102);
+document.getElementById('planningForm')?.addEventListener('change',planningMarkReviewPending102);
+document.getElementById('planningForm')?.addEventListener('input',planningMarkReviewPending102);
+
+
 document.getElementById('savePlanning').onclick=()=>{planningCaptureSupports096();planningCaptureOrganization100();savePlanningFromForm()};
 document.getElementById('downloadPlanningDocx').onclick=()=>{planningCaptureSupports096();planningCaptureOrganization100();const course=activeCourse(),unit=unitById(course?.level,selectedPlanningSubject,selectedPlanningUnit),oa=unitObjectivesFor(course?.level,selectedPlanningSubject,selectedPlanningUnit).find(o=>String(o.number)===String(selectedPlanningOA));if(!course||!unit||!oa)return;downloadPlanningWord(course,selectedPlanningSubject,unit,oa,planningDraft)};
 document.getElementById('copyPlanning').onclick=()=>{planningCaptureSupports096();planningCaptureOrganization100();const course=activeCourse(),unit=unitById(course?.level,selectedPlanningSubject,selectedPlanningUnit),oa=unitObjectivesFor(course?.level,selectedPlanningSubject,selectedPlanningUnit).find(o=>String(o.number)===String(selectedPlanningOA));if(!course||!unit||!oa)return;copyTextWithFallback(planningCopyText(course,selectedPlanningSubject,unit,oa,planningDraft),'Planificación copiada.')};
