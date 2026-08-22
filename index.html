@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>AulaNexo · Prototipo 0.0.104</title>
+<title>AulaNexo · Prototipo 0.0.105</title>
 <style>
 :root{
   --bg:#f5f7fb;--card:#fff;--text:#1f2937;--muted:#6b7280;--line:#e5e7eb;
@@ -2111,6 +2111,99 @@ nav.app-nav button[data-view].active{background:var(--primary-soft);color:#3730a
   .planning104-filter-foot button{width:100%}
 }
 
+
+/* ===== AULANEXO 0.0.105 · DISTRIBUCIÓN INTELIGENTE DEL TIEMPO ===== */
+.planning105-time-card{
+  border:1px solid #dbeafe;
+  border-radius:14px;
+  padding:12px;
+  background:linear-gradient(180deg,#f8fbff 0%,#ffffff 100%)
+}
+.planning105-time-head{
+  display:flex;
+  align-items:flex-start;
+  justify-content:space-between;
+  gap:12px
+}
+.planning105-time-head>div{
+  display:flex;
+  flex-direction:column;
+  gap:3px
+}
+.planning105-time-head b{
+  font-size:11px;
+  color:#1e3a5f
+}
+.planning105-time-head span{
+  font-size:9px;
+  color:#64748b;
+  line-height:1.4
+}
+.planning105-time-head button{
+  flex:0 0 auto;
+  white-space:nowrap
+}
+.planning105-time-grid{
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:9px;
+  margin-top:10px
+}
+.planning105-time-phase{
+  display:block;
+  border:1px solid #e2e8f0;
+  border-radius:11px;
+  padding:9px;
+  background:#fff
+}
+.planning105-time-phase>span{
+  display:block;
+  margin-bottom:6px;
+  font-size:9px;
+  font-weight:800;
+  color:#334155
+}
+.planning105-time-phase>div{
+  display:flex;
+  align-items:center;
+  gap:6px
+}
+.planning105-time-phase input{
+  width:100%;
+  min-width:0;
+  font-size:11px!important;
+  font-weight:800
+}
+.planning105-time-phase em{
+  font-size:8px;
+  font-style:normal;
+  color:#64748b
+}
+.planning105-time-status{
+  margin-top:9px;
+  padding:7px 9px;
+  border-radius:9px;
+  font-size:9px;
+  line-height:1.35;
+  background:#ecfdf5;
+  color:#166534;
+  border:1px solid #bbf7d0
+}
+.planning105-time-status.warning{
+  background:#fffbeb;
+  color:#92400e;
+  border-color:#fde68a
+}
+.planning105-saved-time{
+  margin-top:3px;
+  color:#475569
+}
+@media(max-width:620px){
+  .planning105-time-head{flex-direction:column}
+  .planning105-time-head button{width:100%}
+  .planning105-time-grid{grid-template-columns:1fr}
+}
+
 </style>
 </head>
 <body>
@@ -2122,7 +2215,7 @@ nav.app-nav button[data-view].active{background:var(--primary-soft);color:#3730a
 
 <header>
   <div class="header-wrap">
-    <div><h1>AulaNexo</h1><div class="subtitle">Prototipo 0.0.104 · Buscar planificaciones guardadas</div></div>
+    <div><h1>AulaNexo</h1><div class="subtitle">Prototipo 0.0.105 · Distribución inteligente del tiempo</div></div>
     <div class="header-actions"><button id="menuToggle" class="menu-toggle">☰ Menú</button><span class="current-section-pill">Sección: <strong id="currentSectionLabel">Curso</strong></span><span class="active-course-pill">Curso activo: <strong id="headerCourseName">Sin curso</strong></span><span id="cloudStatus" class="cloud-pill" data-state="offline">☁️ Sin conectar</span><button id="cloudConnectBtn" class="secondary">👤 Mi cuenta</button><button id="downloadBackup">⬇ Respaldo</button><button id="loadBackupBtn">⬆ Cargar respaldo</button><input id="backupFile" type="file" accept="application/json" hidden></div>
   </div>
 </header>
@@ -2465,6 +2558,33 @@ nav.app-nav button[data-view].active{background:var(--primary-soft);color:#3730a
             <div class="planning-form-grid section-gap">
               <div class="field"><label>Fecha</label><input id="planningDate" type="date"></div>
               <div class="field"><label>Duración aproximada</label><select id="planningDuration"><option value="45">45 minutos</option><option value="60">60 minutos</option><option value="90">90 minutos</option></select></div>
+            </div>
+
+            <div class="planning105-time-card section-gap">
+              <div class="planning105-time-head">
+                <div>
+                  <b>⏱️ Distribución sugerida por AulaNexo</b>
+                  <span id="planningTimeHint105">AulaNexo reparte el tiempo entre Inicio, Desarrollo y Cierre según la duración y el nivel.</span>
+                </div>
+                <button id="planningTimeSuggest105" type="button" class="ghost">✨ Usar sugerencia</button>
+              </div>
+
+              <div class="planning105-time-grid">
+                <label class="planning105-time-phase">
+                  <span>🌱 Inicio</span>
+                  <div><input id="planningTimeStart105" type="number" min="1" max="180" step="1"><em>min</em></div>
+                </label>
+                <label class="planning105-time-phase">
+                  <span>🧩 Desarrollo</span>
+                  <div><input id="planningTimeDevelopment105" type="number" min="1" max="180" step="1"><em>min</em></div>
+                </label>
+                <label class="planning105-time-phase">
+                  <span>✅ Cierre</span>
+                  <div><input id="planningTimeClosing105" type="number" min="1" max="180" step="1"><em>min</em></div>
+                </label>
+              </div>
+
+              <div id="planningTimeStatus105" class="planning105-time-status"></div>
             </div>
             <div class="field section-gap">
               <label>Propósito de la clase</label>
@@ -3180,7 +3300,7 @@ let interventionDraft={key:'',date:'',duration:'20',focus:'',activity:'',evidenc
 let selectedPlanningSubject=null;
 let selectedPlanningUnit='';
 let selectedPlanningOA='';
-let planningDraft={key:'',date:'',duration:'45',objectiveMode:'',objective:'',classContentCustom:'',classObjective:'',bloomLevel:'Comprender',bloomVerbs:'',attitudeCode:'',attitudeObjective:'',duaEngagementEnabled:true,duaEngagement:'',duaRepresentationEnabled:true,duaRepresentation:'',duaActionEnabled:true,duaAction:'',start:'',development:'',closing:'',assessmentMode:'',assessment:'',supportOptions:[],supportTouched096:false,differentiation:'',organizationOptions:[],organizationTouched100:false,organizationText:'',materialOptions:[],materials:''};
+let planningDraft={key:'',date:'',duration:'45',timeStart105:'',timeDevelopment105:'',timeClosing105:'',timeTouched105:false,objectiveMode:'',objective:'',classContentCustom:'',classObjective:'',bloomLevel:'Comprender',bloomVerbs:'',attitudeCode:'',attitudeObjective:'',duaEngagementEnabled:true,duaEngagement:'',duaRepresentationEnabled:true,duaRepresentation:'',duaActionEnabled:true,duaAction:'',start:'',development:'',closing:'',assessmentMode:'',assessment:'',supportOptions:[],supportTouched096:false,differentiation:'',organizationOptions:[],organizationTouched100:false,organizationText:'',materialOptions:[],materials:''};
 let editingPlanningId=null;
 let planningMode='class';
 let selectedSimceApplicationId=null;
@@ -3275,7 +3395,7 @@ function normalizeState(x){
   if(!Array.isArray(x.interventions))x.interventions=[];
   x.interventions=x.interventions.filter(i=>i&&i.courseId).map(i=>({id:i.id||'int_'+uid(),courseId:i.courseId,grade:Number(i.grade)||null,subject:i.subject||'',unitId:String(i.unitId||''),unitName:i.unitName||'',oaNumber:Number(i.oaNumber)||null,oaText:i.oaText||'',groupKey:i.groupKey||'support',studentIds:Array.isArray(i.studentIds)?i.studentIds:[],studentNames:Array.isArray(i.studentNames)?i.studentNames:[],date:i.date||localDate(),duration:String(i.duration||'20'),focus:i.focus||'',activity:i.activity||'',evidence:i.evidence||'',materials:i.materials||'',baselineByStudent:(i.baselineByStudent&&typeof i.baselineByStudent==='object'&&!Array.isArray(i.baselineByStudent))?i.baselineByStudent:{},completed:!!i.completed,completedDate:i.completedDate||'',completedAt:i.completedAt||'',createdAt:i.createdAt||new Date().toISOString()}));
   if(!Array.isArray(x.classPlans))x.classPlans=[];
-  x.classPlans=x.classPlans.filter(p=>p&&p.courseId).map(p=>({id:p.id||'plan_'+uid(),courseId:p.courseId,grade:Number(p.grade)||null,subject:p.subject||'',unitId:String(p.unitId||''),unitName:p.unitName||'',oaNumber:Number(p.oaNumber)||null,oaText:p.oaText||'',date:p.date||localDate(),duration:String(p.duration||'45'),objectiveMode:p.objectiveMode||'',objective:p.objective||'',classContentCustom:p.classContentCustom||'',classObjective:p.classObjective||'',bloomLevel:p.bloomLevel||'',bloomVerbs:p.bloomVerbs||'',attitudeCode:p.attitudeCode??'custom',attitudeObjective:p.attitudeObjective||'',duaEngagementEnabled:p.duaEngagementEnabled!==false,duaEngagement:p.duaEngagement||'',duaRepresentationEnabled:p.duaRepresentationEnabled!==false,duaRepresentation:p.duaRepresentation||'',duaActionEnabled:p.duaActionEnabled!==false,duaAction:p.duaAction||'',duaConsiderations:Array.isArray(p.duaConsiderations)?p.duaConsiderations.map(String):[],startMode:p.startMode||'',developmentMode:p.developmentMode||'',closingMode:p.closingMode||'',start:p.start||'',development:p.development||'',closing:p.closing||'',assessmentMode:p.assessmentMode||'',assessment:p.assessment||'',supportOptions:Array.isArray(p.supportOptions)?p.supportOptions.map(String):[],supportTouched096:!!p.supportTouched096,differentiation:p.differentiation||'',organizationOptions:Array.isArray(p.organizationOptions)?p.organizationOptions.map(String):[],organizationTouched100:!!p.organizationTouched100,organizationText:p.organizationText||'',materialOptions:Array.isArray(p.materialOptions)?p.materialOptions.map(String):[],materials:p.materials||'',createdAt:p.createdAt||new Date().toISOString(),updatedAt:p.updatedAt||p.createdAt||new Date().toISOString()}));
+  x.classPlans=x.classPlans.filter(p=>p&&p.courseId).map(p=>({id:p.id||'plan_'+uid(),courseId:p.courseId,grade:Number(p.grade)||null,subject:p.subject||'',unitId:String(p.unitId||''),unitName:p.unitName||'',oaNumber:Number(p.oaNumber)||null,oaText:p.oaText||'',date:p.date||localDate(),duration:String(p.duration||'45'),timeStart105:String(p.timeStart105??''),timeDevelopment105:String(p.timeDevelopment105??''),timeClosing105:String(p.timeClosing105??''),timeTouched105:!!p.timeTouched105,objectiveMode:p.objectiveMode||'',objective:p.objective||'',classContentCustom:p.classContentCustom||'',classObjective:p.classObjective||'',bloomLevel:p.bloomLevel||'',bloomVerbs:p.bloomVerbs||'',attitudeCode:p.attitudeCode??'custom',attitudeObjective:p.attitudeObjective||'',duaEngagementEnabled:p.duaEngagementEnabled!==false,duaEngagement:p.duaEngagement||'',duaRepresentationEnabled:p.duaRepresentationEnabled!==false,duaRepresentation:p.duaRepresentation||'',duaActionEnabled:p.duaActionEnabled!==false,duaAction:p.duaAction||'',duaConsiderations:Array.isArray(p.duaConsiderations)?p.duaConsiderations.map(String):[],startMode:p.startMode||'',developmentMode:p.developmentMode||'',closingMode:p.closingMode||'',start:p.start||'',development:p.development||'',closing:p.closing||'',assessmentMode:p.assessmentMode||'',assessment:p.assessment||'',supportOptions:Array.isArray(p.supportOptions)?p.supportOptions.map(String):[],supportTouched096:!!p.supportTouched096,differentiation:p.differentiation||'',organizationOptions:Array.isArray(p.organizationOptions)?p.organizationOptions.map(String):[],organizationTouched100:!!p.organizationTouched100,organizationText:p.organizationText||'',materialOptions:Array.isArray(p.materialOptions)?p.materialOptions.map(String):[],materials:p.materials||'',createdAt:p.createdAt||new Date().toISOString(),updatedAt:p.updatedAt||p.createdAt||new Date().toISOString()}));
   if(!Array.isArray(x.resources))x.resources=[];
   x.resources=x.resources.filter(r=>r&&r.title).map(r=>({id:r.id||'res_'+uid(),grade:Number(r.grade)||null,subject:r.subject||'',unitId:String(r.unitId||''),unitName:r.unitName||'',oaNumber:r.oaNumber==null||r.oaNumber===''?null:Number(r.oaNumber),oaText:r.oaText||'',type:r.type||'Otro',audience:r.audience||'all',title:r.title||'',url:r.url||'',notes:r.notes||'',fileName:r.fileName||'',filePath:r.filePath||'',fileType:r.fileType||'',fileSize:Number(r.fileSize)||0,createdAt:r.createdAt||new Date().toISOString(),updatedAt:r.updatedAt||r.createdAt||new Date().toISOString()}));
   if(!x.unitSequences||typeof x.unitSequences!=='object'||Array.isArray(x.unitSequences))x.unitSequences={};
@@ -3805,7 +3925,7 @@ async function initCloud(){
 function esc(v){return String(v??'').replace(/[&<>'"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;',"'":'&#039;','"':'&quot;'}[c]))}
 function activeCourse(){return state.courses.find(c=>c.id===state.activeCourseId)||state.courses[0]||null}
 function activeApplications(){return state.applications.filter(a=>a.courseId===state.activeCourseId)}
-function resetCourseSelections(){selectedApplicationId=null;selectedStudentId=null;selectedReportStudentId=null;selectedHistoryStudentId=null;selectedSimceApplicationId=null;selectedProgressStudentId=null;selectedProgressSubject=null;selectedProgressUnit='';selectedCoverageSubject=null;selectedSupportSubject=null;selectedSupportKey='';selectedInterventionSubject=null;selectedInterventionKey='';selectedInterventionGroup='support';interventionDraft={key:'',date:'',duration:'20',focus:'',activity:'',evidence:'',materials:''};selectedPlanningSubject=null;selectedPlanningUnit='';selectedPlanningOA='';planningDraft={key:'',date:'',duration:'45',objective:'',bloomLevel:'Comprender',bloomVerbs:'',attitudeCode:'',attitudeObjective:'',duaEngagementEnabled:true,duaEngagement:'',duaRepresentationEnabled:true,duaRepresentation:'',duaActionEnabled:true,duaAction:'',start:'',development:'',closing:'',assessment:'',differentiation:'',materials:''};editingPlanningId=null;planningMode='class';selectedResourceSubject=null;selectedResourceUnit='';selectedResourceOA='';editingResourceId=null}
+function resetCourseSelections(){selectedApplicationId=null;selectedStudentId=null;selectedReportStudentId=null;selectedHistoryStudentId=null;selectedSimceApplicationId=null;selectedProgressStudentId=null;selectedProgressSubject=null;selectedProgressUnit='';selectedCoverageSubject=null;selectedSupportSubject=null;selectedSupportKey='';selectedInterventionSubject=null;selectedInterventionKey='';selectedInterventionGroup='support';interventionDraft={key:'',date:'',duration:'20',focus:'',activity:'',evidence:'',materials:''};selectedPlanningSubject=null;selectedPlanningUnit='';selectedPlanningOA='';planningDraft={key:'',date:'',duration:'45',timeStart105:'',timeDevelopment105:'',timeClosing105:'',timeTouched105:false,objective:'',bloomLevel:'Comprender',bloomVerbs:'',attitudeCode:'',attitudeObjective:'',duaEngagementEnabled:true,duaEngagement:'',duaRepresentationEnabled:true,duaRepresentation:'',duaActionEnabled:true,duaAction:'',start:'',development:'',closing:'',assessment:'',differentiation:'',materials:''};editingPlanningId=null;planningMode='class';selectedResourceSubject=null;selectedResourceUnit='';selectedResourceOA='';editingResourceId=null}
 function evalById(id){return state.evaluations.find(e=>e.id===id)}
 function appById(id){return state.applications.find(a=>a.id===id)}
 function studentById(id){return state.students.find(s=>s.id===id)}
@@ -5979,11 +6099,129 @@ function ensurePlanningDraft(course,subject,unit,oa,force=false){
   const key=planningDraftId(course,subject,unit,oa);
   if(force||planningDraft.key!==key){
     const t=planningBaseTemplate(subject,oa,course.level),ctx=planningContextFor(course,subject,unit,oa),bloomLevel=bloomForOA(oa.text),attInfo=planningAttitudeInfo081(course.level,subject),bank=attInfo.bank,attIdx=attitudeSuggestionIndex(subject,oa.text,bank),dua=duaDefaults(subject,oa);
-    planningDraft={key,date:localDate(),duration:'45',objectiveMode:'',objective:t.objective,classContentCustom:'',classObjective:'',bloomLevel,bloomVerbs:planningSuggestedVerbs086(bloomLevel,oa.text).join(', '),attitudeCode:attIdx>=0?String(attIdx):'custom',attitudeObjective:attIdx>=0?bank[attIdx]:'',duaEngagementEnabled:true,duaEngagement:dua.engagement,duaRepresentationEnabled:true,duaRepresentation:dua.representation,duaActionEnabled:true,duaAction:dua.action,duaConsiderations:duaSuggested080(subject,oa,course.level),startMode:'',developmentMode:'',closingMode:'',start:t.start,development:t.development,closing:t.closing,assessmentMode:'',assessment:t.assessment,supportOptions:planningSuggestedSupports086(course,subject,ctx),supportTouched096:false,differentiation:planningDifferentiationText(ctx),organizationOptions:[],organizationTouched100:false,organizationText:'',materialOptions:[],materials:t.materials};planningSyncOrganization100(planningDraft,course,ctx,false);editingPlanningId=null
+    planningDraft={key,date:localDate(),duration:'45',objectiveMode:'',objective:t.objective,classContentCustom:'',classObjective:'',bloomLevel,bloomVerbs:planningSuggestedVerbs086(bloomLevel,oa.text).join(', '),attitudeCode:attIdx>=0?String(attIdx):'custom',attitudeObjective:attIdx>=0?bank[attIdx]:'',duaEngagementEnabled:true,duaEngagement:dua.engagement,duaRepresentationEnabled:true,duaRepresentation:dua.representation,duaActionEnabled:true,duaAction:dua.action,duaConsiderations:duaSuggested080(subject,oa,course.level),startMode:'',developmentMode:'',closingMode:'',start:t.start,development:t.development,closing:t.closing,assessmentMode:'',assessment:t.assessment,supportOptions:planningSuggestedSupports086(course,subject,ctx),supportTouched096:false,differentiation:planningDifferentiationText(ctx),organizationOptions:[],organizationTouched100:false,organizationText:'',materialOptions:[],materials:t.materials};planningEnsureTime105(planningDraft,course.level,true);planningSyncOrganization100(planningDraft,course,ctx,false);editingPlanningId=null
   }
   return planningDraft;
 }
+
+/* ===== 0.0.105 · DISTRIBUCIÓN INTELIGENTE DEL TIEMPO ===== */
+function planningTimeSuggestion105(duration,grade){
+  const total=Math.max(1,Math.round(Number(duration)||45));
+  const g=Number(grade)||1;
+
+  // En 1° y 2° se reserva proporcionalmente más tiempo para activar,
+  // modelar y cerrar. En cursos mayores el desarrollo puede ocupar más.
+  let edgeRatio=g<=2?0.20:(g<=4?0.17:0.15);
+  let edge=Math.max(5,Math.round((total*edgeRatio)/5)*5);
+
+  // Evitar que Inicio + Cierre consuman demasiado en clases breves.
+  if(edge*2>=total)edge=Math.max(1,Math.floor(total/4));
+
+  const development=Math.max(1,total-edge*2);
+  return {
+    start:edge,
+    development,
+    closing:edge,
+    total
+  };
+}
+
+function planningTimeValues105(draft,grade){
+  const suggested=planningTimeSuggestion105(draft?.duration,grade);
+  const read=value=>{
+    const n=Number(value);
+    return Number.isFinite(n)&&n>0?Math.round(n):null;
+  };
+  return {
+    start:read(draft?.timeStart105)??suggested.start,
+    development:read(draft?.timeDevelopment105)??suggested.development,
+    closing:read(draft?.timeClosing105)??suggested.closing,
+    total:suggested.total
+  };
+}
+
+function planningEnsureTime105(draft,grade,force=false){
+  if(!draft)return null;
+  const current=planningTimeValues105(draft,grade);
+  const missing=
+    !(Number(draft.timeStart105)>0) ||
+    !(Number(draft.timeDevelopment105)>0) ||
+    !(Number(draft.timeClosing105)>0);
+
+  if(force||missing){
+    const s=planningTimeSuggestion105(draft.duration,grade);
+    draft.timeStart105=String(s.start);
+    draft.timeDevelopment105=String(s.development);
+    draft.timeClosing105=String(s.closing);
+    draft.timeTouched105=false;
+    return s;
+  }
+  return current;
+}
+
+function planningTimeStatusText105(draft,grade){
+  const v=planningTimeValues105(draft,grade);
+  const sum=v.start+v.development+v.closing;
+  const diff=sum-v.total;
+  if(diff===0){
+    return {
+      ok:true,
+      text:`✓ La distribución suma exactamente ${v.total} minutos.`
+    };
+  }
+  return {
+    ok:false,
+    text:`⚠️ Los tres momentos suman ${sum} min, pero la clase dura ${v.total} min. ${diff>0?`Hay ${diff} min de más.`:`Faltan ${Math.abs(diff)} min.`}`
+  };
+}
+
+function planningTimeRender105(draft,grade){
+  if(!draft)return;
+  planningEnsureTime105(draft,grade,false);
+
+  const start=document.getElementById('planningTimeStart105');
+  const development=document.getElementById('planningTimeDevelopment105');
+  const closing=document.getElementById('planningTimeClosing105');
+  const status=document.getElementById('planningTimeStatus105');
+  const hint=document.getElementById('planningTimeHint105');
+
+  if(start)start.value=String(draft.timeStart105||'');
+  if(development)development.value=String(draft.timeDevelopment105||'');
+  if(closing)closing.value=String(draft.timeClosing105||'');
+
+  if(hint){
+    hint.textContent=Number(grade)<=2
+      ?'Para 1° y 2° básico AulaNexo reserva un poco más de tiempo para activación, modelado y cierre.'
+      :'AulaNexo reparte el tiempo según la duración total y deja la mayor parte para el desarrollo.';
+  }
+
+  if(status){
+    const info=planningTimeStatusText105(draft,grade);
+    status.textContent=info.text;
+    status.classList.toggle('warning',!info.ok);
+  }
+}
+
+function planningCaptureTime105(draft,grade){
+  if(!draft)return;
+  const start=document.getElementById('planningTimeStart105');
+  const development=document.getElementById('planningTimeDevelopment105');
+  const closing=document.getElementById('planningTimeClosing105');
+
+  if(start&&Number(start.value)>0)draft.timeStart105=String(Math.round(Number(start.value)));
+  if(development&&Number(development.value)>0)draft.timeDevelopment105=String(Math.round(Number(development.value)));
+  if(closing&&Number(closing.value)>0)draft.timeClosing105=String(Math.round(Number(closing.value)));
+
+  planningEnsureTime105(draft,grade,false);
+}
+
+function planningTimeSavedLabel105(plan){
+  const v=planningTimeValues105(plan,plan?.grade);
+  return `⏱️ Inicio ${v.start} min · Desarrollo ${v.development} min · Cierre ${v.closing} min`;
+}
+
 function planningCopyText(course,subject,unit,oa,draft){
+  const time=planningTimeValues105(draft,course.level);
   const dua=[];
   if(draft.duaEngagementEnabled){
     const s=duaSelectedText080(draft,'engagement');if(s)dua.push(`Compromiso · pautas seleccionadas: ${s}`);
@@ -5997,7 +6235,7 @@ function planningCopyText(course,subject,unit,oa,draft){
     const s=duaSelectedText080(draft,'action');if(s)dua.push(`Acción y expresión · pautas seleccionadas: ${s}`);
     if(draft.duaAction)dua.push(`Aplicación: ${draft.duaAction}`);
   }
-  return [`AulaNexo · Planificación de clase`,`Curso: ${course.name}`,`Asignatura: ${subject}`,`${unit.name} · OA ${String(oa.number).padStart(2,'0')}`,`Fecha: ${formatDate(draft.date)}`,`Duración: ${draft.duration} minutos`,'',`Propósito de la clase:`,draft.objective,'',`Objetivo de la clase:`,draft.classObjective||planningClassObjectiveText089(draft,subject,oa,course.level),'',...(draft.classContentCustom?[`Contenido específico de la clase:`,draft.classContentCustom,'']:[]),`Taxonomía de Bloom: ${draft.bloomLevel||''}`,`Verbos / habilidades: ${draft.bloomVerbs||''}`,'',`Objetivo actitudinal:`,draft.attitudeObjective||'—','',`Principios DUA:`,...(dua.length?dua:['—']),'',`Inicio:`,draft.start,'',`Desarrollo:`,draft.development,'',`Cierre:`,draft.closing,'',`Organización de la clase:`,draft.organizationText||planningOrganizationText100(draft.organizationOptions||[]),'',`Evidencia / evaluación:`,draft.assessment,'',`Apoyos y diferenciación:`,draft.differentiation,'',`Materiales y recursos:`,draft.materials].join('\n')
+  return [`AulaNexo · Planificación de clase`,`Curso: ${course.name}`,`Asignatura: ${subject}`,`${unit.name} · OA ${String(oa.number).padStart(2,'0')}`,`Fecha: ${formatDate(draft.date)}`,`Duración: ${draft.duration} minutos`,'',`Propósito de la clase:`,draft.objective,'',`Objetivo de la clase:`,draft.classObjective||planningClassObjectiveText089(draft,subject,oa,course.level),'',...(draft.classContentCustom?[`Contenido específico de la clase:`,draft.classContentCustom,'']:[]),`Taxonomía de Bloom: ${draft.bloomLevel||''}`,`Verbos / habilidades: ${draft.bloomVerbs||''}`,'',`Objetivo actitudinal:`,draft.attitudeObjective||'—','',`Principios DUA:`,...(dua.length?dua:['—']),'',`Distribución del tiempo: ${time.start} min · ${time.development} min · ${time.closing} min`,'',`Inicio — ${time.start} minutos:`,draft.start,'',`Desarrollo — ${time.development} minutos:`,draft.development,'',`Cierre — ${time.closing} minutos:`,draft.closing,'',`Organización de la clase:`,draft.organizationText||planningOrganizationText100(draft.organizationOptions||[]),'',`Evidencia / evaluación:`,draft.assessment,'',`Apoyos y diferenciación:`,draft.differentiation,'',`Materiales y recursos:`,draft.materials].join('\n')
 }
 
 function planningFileName(course,subject,oa,draft){
@@ -6013,6 +6251,7 @@ function docxParagraph(text,{bold=false,size=22,before=0,after=100,keep=false}={
   return `<w:p><w:pPr><w:spacing w:before="${before}" w:after="${after}"/>${keep?'<w:keepNext/>':''}</w:pPr>${docxRuns(text,bold,size)}</w:p>`;
 }
 function planningDocxXml(course,subject,unit,oa,draft){
+  const time=planningTimeValues105(draft,course.level);
   const dua=[];
   if(draft.duaEngagementEnabled){
     const s=duaSelectedText080(draft,'engagement');
@@ -6046,9 +6285,9 @@ function planningDocxXml(course,subject,unit,oa,draft){
   body.push(docxParagraph('Principios DUA',{bold:true,size:22,after:50,keep:true}));
   if(dua.length)dua.forEach(([name,text])=>{body.push(docxParagraph(name,{bold:true,size:21,after:30}));body.push(docxParagraph(text,{size:21,after:80}))});
   else body.push(docxParagraph('—',{size:22,after:100}));
-  section('Inicio',draft.start);
-  section('Desarrollo',draft.development);
-  section('Cierre',draft.closing);
+  section(`Inicio — ${time.start} minutos`,draft.start);
+  section(`Desarrollo — ${time.development} minutos`,draft.development);
+  section(`Cierre — ${time.closing} minutos`,draft.closing);
   section('Organización de la clase',draft.organizationText||planningOrganizationText100(draft.organizationOptions||[]));
   section('Evidencia / evaluación de la clase',draft.assessment);
   section('Apoyos y diferenciación',draft.differentiation);
@@ -6080,8 +6319,8 @@ function downloadPlanningWord(course,subject,unit,oa,draft){
   const blob=planningDocxBlob(course,subject,unit,oa,draft);downloadBlob(blob,'application/vnd.openxmlformats-officedocument.wordprocessingml.document',planningFileName(course,subject,oa,draft));
 }
 function setPlanningFormDisabled(disabled){
-  ['planningDate','planningDuration','planningObjective','planningObjectiveMode086','planningClassContentCustom090','planningBloomLevel','planningBloomVerbs','planningAttitudeSelect','planningAttitudeObjective','planningAssessmentMode087','planningDuaEngagementEnabled','planningDuaEngagement','planningDuaRepresentationEnabled','planningDuaRepresentation','planningDuaActionEnabled','planningDuaAction','planningStart','planningDevelopment','planningClosing','planningAssessment','planningDifferentiation','planningMaterials'].forEach(id=>{const el=document.getElementById(id);if(el)el.disabled=disabled});
-  ['savePlanning','downloadPlanningDocx','copyPlanning','resetPlanningDraft','planningRegenerate078','planningChooseAttitude080','planningConfigureDua080'].forEach(id=>{const el=document.getElementById(id);if(el)el.disabled=disabled});
+  ['planningDate','planningDuration','planningTimeStart105','planningTimeDevelopment105','planningTimeClosing105','planningObjective','planningObjectiveMode086','planningClassContentCustom090','planningBloomLevel','planningBloomVerbs','planningAttitudeSelect','planningAttitudeObjective','planningAssessmentMode087','planningDuaEngagementEnabled','planningDuaEngagement','planningDuaRepresentationEnabled','planningDuaRepresentation','planningDuaActionEnabled','planningDuaAction','planningStart','planningDevelopment','planningClosing','planningAssessment','planningDifferentiation','planningMaterials'].forEach(id=>{const el=document.getElementById(id);if(el)el.disabled=disabled});
+  ['savePlanning','downloadPlanningDocx','copyPlanning','resetPlanningDraft','planningTimeSuggest105','planningRegenerate078','planningChooseAttitude080','planningConfigureDua080'].forEach(id=>{const el=document.getElementById(id);if(el)el.disabled=disabled});
   document.querySelectorAll('[data-open-dua080]').forEach(el=>el.disabled=disabled);
   ['planningStartMode084','planningDevelopmentMode084','planningClosingMode084'].forEach(id=>{const el=document.getElementById(id);if(el)el.disabled=disabled});
   document.querySelectorAll('[data-bloomverb086],[data-material087],input[name="planningPurpose089"]').forEach(el=>el.disabled=disabled);
@@ -6381,7 +6620,7 @@ function renderPlanning(){
   const oa=oas.find(o=>String(o.number)===String(selectedPlanningOA))||oas[0],ctx=planningContextFor(course,selectedPlanningSubject,unit,oa);oaBox.innerHTML=`<div class="support-oa-code">OA ${String(oa.number).padStart(2,'0')}</div><div class="support-unit">${esc(unit.name)}</div><div class="support-oa-text">${esc(oa.text)}</div>`;
   const g=ctx.groups;ctxBox.innerHTML=`<div class="planning-context-title">Contexto actual del OA</div><div class="planning-context-text">${ctx.withEvidence?`AulaNexo encontró evidencia previa de ${ctx.withEvidence} estudiante${ctx.withEvidence===1?'':'s'} y la usa solamente para sugerir apoyos.`:'Todavía no hay evidencia estándar previa de este OA. La planificación puede prepararse igualmente.'}</div><div class="planning-context-grid"><div class="planning-context-mini"><strong>${g.support.length}</strong><span>Apoyo prioritario</span></div><div class="planning-context-mini"><strong>${g.process.length}</strong><span>En proceso</span></div><div class="planning-context-mini"><strong>${g.achieved.length}</strong><span>Consolidado</span></div><div class="planning-context-mini"><strong>${g.pending.length}</strong><span>Sin evidencia</span></div></div>`;
   const draft=planningEnsureComplete081(course,selectedPlanningSubject,unit,oa);setPlanningFormDisabled(false);
-  document.getElementById('planningDate').value=draft.date;document.getElementById('planningDuration').value=draft.duration;planningSyncPurpose089(draft,selectedPlanningSubject,oa,course.level);
+  document.getElementById('planningDate').value=draft.date;document.getElementById('planningDuration').value=draft.duration;planningTimeRender105(draft,course.level);planningSyncPurpose089(draft,selectedPlanningSubject,oa,course.level);
   const customContent090=document.getElementById('planningClassContentCustom090');
   if(customContent090)customContent090.value=draft.classContentCustom||'';
   const contentSource090=document.getElementById('planningClassContentSource090');
@@ -6666,7 +6905,7 @@ function renderSavedPlanning(course){
       <div class="planning-saved-head">
         <div>
           <div class="planning-saved-title">${esc(p.subject)} · OA ${String(p.oaNumber).padStart(2,'0')}</div>
-          <div class="planning-saved-meta">${esc(p.unitName)} · ${formatDate(p.date)} · ${esc(p.duration)} min</div>
+          <div class="planning-saved-meta">${esc(p.unitName)} · ${formatDate(p.date)} · ${esc(p.duration)} min</div><div class="planning-saved-meta planning105-saved-time">${planningTimeSavedLabel105(p)}</div>
         </div>
         <div class="planning-actions">
           <button class="ghost" data-edit-plan="${p.id}">Editar</button>
@@ -6789,7 +7028,7 @@ function duplicatePlanningForEdit103(id){
 }
 
 function loadPlanningForEdit(id){
-  const p=state.classPlans.find(x=>x.id===id),course=activeCourse();if(!p||!course||p.courseId!==course.id)return;selectedPlanningSubject=p.subject;selectedPlanningUnit=String(p.unitId);selectedPlanningOA=String(p.oaNumber);editingPlanningId=p.id;planningDraft={key:planningDraftId(course,p.subject,{id:p.unitId},{number:p.oaNumber}),date:p.date,duration:String(p.duration||'45'),objectiveMode:p.objectiveMode||'',objective:p.objective,classContentCustom:p.classContentCustom||'',classObjective:p.classObjective||'',bloomLevel:p.bloomLevel||bloomForOA(p.oaText||''),bloomVerbs:p.bloomVerbs||BLOOM_BANK[p.bloomLevel||bloomForOA(p.oaText||'')].join(', '),attitudeCode:p.attitudeCode??'custom',attitudeObjective:p.attitudeObjective||'',duaEngagementEnabled:p.duaEngagementEnabled!==false,duaEngagement:p.duaEngagement||duaDefaults(p.subject,{text:p.oaText||''}).engagement,duaRepresentationEnabled:p.duaRepresentationEnabled!==false,duaRepresentation:p.duaRepresentation||duaDefaults(p.subject,{text:p.oaText||''}).representation,duaActionEnabled:p.duaActionEnabled!==false,duaAction:p.duaAction||duaDefaults(p.subject,{text:p.oaText||''}).action,duaConsiderations:Array.isArray(p.duaConsiderations)&&p.duaConsiderations.length?p.duaConsiderations.map(String):duaSuggested080(p.subject,{text:p.oaText||''},p.grade),startMode:p.startMode||'',developmentMode:p.developmentMode||'',closingMode:p.closingMode||'',start:p.start,development:p.development,closing:p.closing,assessmentMode:p.assessmentMode||'',assessment:p.assessment,supportOptions:Array.isArray(p.supportOptions)?p.supportOptions.map(String):[],supportTouched096:!!p.supportTouched096,differentiation:p.differentiation,organizationOptions:Array.isArray(p.organizationOptions)?p.organizationOptions.map(String):[],organizationTouched100:!!p.organizationTouched100,organizationText:p.organizationText||'',materialOptions:Array.isArray(p.materialOptions)?p.materialOptions.map(String):[],materials:p.materials};renderPlanning();window.scrollTo({top:0,behavior:'smooth'});
+  const p=state.classPlans.find(x=>x.id===id),course=activeCourse();if(!p||!course||p.courseId!==course.id)return;selectedPlanningSubject=p.subject;selectedPlanningUnit=String(p.unitId);selectedPlanningOA=String(p.oaNumber);editingPlanningId=p.id;planningDraft={key:planningDraftId(course,p.subject,{id:p.unitId},{number:p.oaNumber}),date:p.date,duration:String(p.duration||'45'),timeStart105:String(p.timeStart105??''),timeDevelopment105:String(p.timeDevelopment105??''),timeClosing105:String(p.timeClosing105??''),timeTouched105:!!p.timeTouched105,objectiveMode:p.objectiveMode||'',objective:p.objective,classContentCustom:p.classContentCustom||'',classObjective:p.classObjective||'',bloomLevel:p.bloomLevel||bloomForOA(p.oaText||''),bloomVerbs:p.bloomVerbs||BLOOM_BANK[p.bloomLevel||bloomForOA(p.oaText||'')].join(', '),attitudeCode:p.attitudeCode??'custom',attitudeObjective:p.attitudeObjective||'',duaEngagementEnabled:p.duaEngagementEnabled!==false,duaEngagement:p.duaEngagement||duaDefaults(p.subject,{text:p.oaText||''}).engagement,duaRepresentationEnabled:p.duaRepresentationEnabled!==false,duaRepresentation:p.duaRepresentation||duaDefaults(p.subject,{text:p.oaText||''}).representation,duaActionEnabled:p.duaActionEnabled!==false,duaAction:p.duaAction||duaDefaults(p.subject,{text:p.oaText||''}).action,duaConsiderations:Array.isArray(p.duaConsiderations)&&p.duaConsiderations.length?p.duaConsiderations.map(String):duaSuggested080(p.subject,{text:p.oaText||''},p.grade),startMode:p.startMode||'',developmentMode:p.developmentMode||'',closingMode:p.closingMode||'',start:p.start,development:p.development,closing:p.closing,assessmentMode:p.assessmentMode||'',assessment:p.assessment,supportOptions:Array.isArray(p.supportOptions)?p.supportOptions.map(String):[],supportTouched096:!!p.supportTouched096,differentiation:p.differentiation,organizationOptions:Array.isArray(p.organizationOptions)?p.organizationOptions.map(String):[],organizationTouched100:!!p.organizationTouched100,organizationText:p.organizationText||'',materialOptions:Array.isArray(p.materialOptions)?p.materialOptions.map(String):[],materials:p.materials};renderPlanning();window.scrollTo({top:0,behavior:'smooth'});
 }
 function savePlanningFromForm(){
   const course=activeCourse(),unit=unitById(course?.level,selectedPlanningSubject,selectedPlanningUnit),oa=unitObjectivesFor(course?.level,selectedPlanningSubject,selectedPlanningUnit).find(o=>String(o.number)===String(selectedPlanningOA));if(!course||!unit||!oa)return alert('Selecciona curso, unidad y OA.');
@@ -6801,6 +7040,7 @@ function savePlanningFromForm(){
   planningSyncPurpose089(planningDraft,selectedPlanningSubject,oa,course.level);
   planningSyncClassObjective089(planningDraft,selectedPlanningSubject,oa,course.level);
   planningSyncOrganization100(planningDraft,course,planningContextFor(course,selectedPlanningSubject,unit,oa),false);
+  planningCaptureTime105(planningDraft,course.level);
   const attInfo088=planningAttitudeInfo081(course.level,selectedPlanningSubject);
   if(!String(planningDraft.attitudeObjective||'').trim()){
     const ai=attitudeSuggestionIndex(selectedPlanningSubject,oa.text,attInfo088.bank);
@@ -6808,7 +7048,7 @@ function savePlanningFromForm(){
     planningDraft.attitudeObjective=attInfo088.bank[ai>=0?ai:0]||ATTITUDE_FALLBACK_081[0];
   }
   planningSyncClassObjective089(planningDraft,selectedPlanningSubject,oa,course.level);
-  const p={courseId:course.id,grade:course.level,subject:selectedPlanningSubject,unitId:String(unit.id),unitName:unit.name,oaNumber:Number(oa.number),oaText:oa.text,date:planningDraft.date,duration:String(planningDraft.duration||'45'),objectiveMode:planningDraft.objectiveMode||'',objective:planningDraft.objective.trim(),classContentCustom:(planningDraft.classContentCustom||'').trim(),classObjective:(planningDraft.classObjective||'').trim(),bloomLevel:planningDraft.bloomLevel||'Comprender',bloomVerbs:(planningDraft.bloomVerbs||'').trim(),attitudeCode:planningDraft.attitudeCode??'custom',attitudeObjective:(planningDraft.attitudeObjective||'').trim(),duaEngagementEnabled:planningDraft.duaEngagementEnabled!==false,duaEngagement:(planningDraft.duaEngagement||'').trim(),duaRepresentationEnabled:planningDraft.duaRepresentationEnabled!==false,duaRepresentation:(planningDraft.duaRepresentation||'').trim(),duaActionEnabled:planningDraft.duaActionEnabled!==false,duaAction:(planningDraft.duaAction||'').trim(),duaConsiderations:Array.isArray(planningDraft.duaConsiderations)?planningDraft.duaConsiderations.map(String):[],startMode:planningDraft.startMode||'',developmentMode:planningDraft.developmentMode||'',closingMode:planningDraft.closingMode||'',start:planningDraft.start.trim(),development:planningDraft.development.trim(),closing:planningDraft.closing.trim(),assessmentMode:planningDraft.assessmentMode||'',assessment:planningDraft.assessment.trim(),supportOptions:Array.isArray(planningDraft.supportOptions)?planningDraft.supportOptions.map(String):[],supportTouched096:!!planningDraft.supportTouched096,differentiation:planningDraft.differentiation.trim(),organizationOptions:Array.isArray(planningDraft.organizationOptions)?planningDraft.organizationOptions.map(String):[],organizationTouched100:!!planningDraft.organizationTouched100,organizationText:(planningDraft.organizationText||'').trim(),materialOptions:Array.isArray(planningDraft.materialOptions)?planningDraft.materialOptions.map(String):[],materials:planningDraft.materials.trim()};if(!p.date)return alert('Selecciona una fecha.');if(!p.objective)return alert('No pude generar el propósito de la clase. Vuelve a seleccionar el OA.');if(!p.classObjective)return alert('No pude generar el objetivo de la clase. Vuelve a seleccionar el OA.');if(!p.development){planningApplyModes084(planningDraft,selectedPlanningSubject,oa,course.level);p.development=planningDraft.development||'';}if(!p.development)return alert('No pude generar el desarrollo automáticamente. Vuelve a seleccionar la forma de trabajo.');
+  const p={courseId:course.id,grade:course.level,subject:selectedPlanningSubject,unitId:String(unit.id),unitName:unit.name,oaNumber:Number(oa.number),oaText:oa.text,date:planningDraft.date,duration:String(planningDraft.duration||'45'),timeStart105:String(planningDraft.timeStart105||''),timeDevelopment105:String(planningDraft.timeDevelopment105||''),timeClosing105:String(planningDraft.timeClosing105||''),timeTouched105:!!planningDraft.timeTouched105,objectiveMode:planningDraft.objectiveMode||'',objective:planningDraft.objective.trim(),classContentCustom:(planningDraft.classContentCustom||'').trim(),classObjective:(planningDraft.classObjective||'').trim(),bloomLevel:planningDraft.bloomLevel||'Comprender',bloomVerbs:(planningDraft.bloomVerbs||'').trim(),attitudeCode:planningDraft.attitudeCode??'custom',attitudeObjective:(planningDraft.attitudeObjective||'').trim(),duaEngagementEnabled:planningDraft.duaEngagementEnabled!==false,duaEngagement:(planningDraft.duaEngagement||'').trim(),duaRepresentationEnabled:planningDraft.duaRepresentationEnabled!==false,duaRepresentation:(planningDraft.duaRepresentation||'').trim(),duaActionEnabled:planningDraft.duaActionEnabled!==false,duaAction:(planningDraft.duaAction||'').trim(),duaConsiderations:Array.isArray(planningDraft.duaConsiderations)?planningDraft.duaConsiderations.map(String):[],startMode:planningDraft.startMode||'',developmentMode:planningDraft.developmentMode||'',closingMode:planningDraft.closingMode||'',start:planningDraft.start.trim(),development:planningDraft.development.trim(),closing:planningDraft.closing.trim(),assessmentMode:planningDraft.assessmentMode||'',assessment:planningDraft.assessment.trim(),supportOptions:Array.isArray(planningDraft.supportOptions)?planningDraft.supportOptions.map(String):[],supportTouched096:!!planningDraft.supportTouched096,differentiation:planningDraft.differentiation.trim(),organizationOptions:Array.isArray(planningDraft.organizationOptions)?planningDraft.organizationOptions.map(String):[],organizationTouched100:!!planningDraft.organizationTouched100,organizationText:(planningDraft.organizationText||'').trim(),materialOptions:Array.isArray(planningDraft.materialOptions)?planningDraft.materialOptions.map(String):[],materials:planningDraft.materials.trim()};if(!p.date)return alert('Selecciona una fecha.');if(!p.objective)return alert('No pude generar el propósito de la clase. Vuelve a seleccionar el OA.');if(!p.classObjective)return alert('No pude generar el objetivo de la clase. Vuelve a seleccionar el OA.');if(!p.development){planningApplyModes084(planningDraft,selectedPlanningSubject,oa,course.level);p.development=planningDraft.development||'';}if(!p.development)return alert('No pude generar el desarrollo automáticamente. Vuelve a seleccionar la forma de trabajo.');
   if(editingPlanningId){const idx=state.classPlans.findIndex(x=>x.id===editingPlanningId);if(idx>=0)state.classPlans[idx]={...state.classPlans[idx],...p,updatedAt:new Date().toISOString()};editingPlanningId=null}else state.classPlans.push({...p,id:'plan_'+uid(),createdAt:new Date().toISOString(),updatedAt:new Date().toISOString()});save();planningDraft.key='';renderPlanning();alert('Planificación guardada.')
 }
 
@@ -7051,7 +7291,34 @@ document.getElementById('copyAnnualPlan').onclick=()=>{const course=activeCourse
 document.getElementById('planningSubjectSelect').onchange=e=>{selectedPlanningSubject=e.target.value;selectedPlanningUnit='';selectedPlanningOA='';planningDraft.key='';editingPlanningId=null;renderPlanning()};
 document.getElementById('planningUnitSelect').onchange=e=>{selectedPlanningUnit=e.target.value;selectedPlanningOA='';planningDraft.key='';editingPlanningId=null;renderPlanning()};
 document.getElementById('planningOASelect').onchange=e=>{selectedPlanningOA=e.target.value;planningDraft.key='';editingPlanningId=null;renderPlanning()};
-document.getElementById('planningDate').onchange=e=>planningDraft.date=e.target.value;document.getElementById('planningDuration').onchange=e=>planningDraft.duration=e.target.value;
+document.getElementById('planningDate').onchange=e=>planningDraft.date=e.target.value;document.getElementById('planningDuration').onchange=e=>{
+  planningDraft.duration=e.target.value;
+  const c=activeCourse();
+  planningEnsureTime105(planningDraft,c?.level,true);
+  planningTimeRender105(planningDraft,c?.level);
+};
+
+['planningTimeStart105','planningTimeDevelopment105','planningTimeClosing105'].forEach(id=>{
+  document.getElementById(id)?.addEventListener('input',()=>{
+    const c=activeCourse();
+    planningDraft.timeStart105=document.getElementById('planningTimeStart105')?.value||'';
+    planningDraft.timeDevelopment105=document.getElementById('planningTimeDevelopment105')?.value||'';
+    planningDraft.timeClosing105=document.getElementById('planningTimeClosing105')?.value||'';
+    planningDraft.timeTouched105=true;
+    const status=document.getElementById('planningTimeStatus105');
+    if(status){
+      const info=planningTimeStatusText105(planningDraft,c?.level);
+      status.textContent=info.text;
+      status.classList.toggle('warning',!info.ok);
+    }
+  });
+});
+
+document.getElementById('planningTimeSuggest105')?.addEventListener('click',()=>{
+  const c=activeCourse();
+  planningEnsureTime105(planningDraft,c?.level,true);
+  planningTimeRender105(planningDraft,c?.level);
+});
 document.getElementById('planningClassContentCustom090').addEventListener('input',e=>{
   planningDraft.classContentCustom=e.target.value;
   const c=activeCourse(),oa=unitObjectivesFor(c?.level,selectedPlanningSubject,selectedPlanningUnit).find(o=>String(o.number)===String(selectedPlanningOA));
@@ -7130,8 +7397,8 @@ document.getElementById('planningForm')?.addEventListener('input',planningMarkRe
 
 
 document.getElementById('savePlanning').onclick=()=>{planningCaptureSupports096();planningCaptureOrganization100();savePlanningFromForm()};
-document.getElementById('downloadPlanningDocx').onclick=()=>{planningCaptureSupports096();planningCaptureOrganization100();const course=activeCourse(),unit=unitById(course?.level,selectedPlanningSubject,selectedPlanningUnit),oa=unitObjectivesFor(course?.level,selectedPlanningSubject,selectedPlanningUnit).find(o=>String(o.number)===String(selectedPlanningOA));if(!course||!unit||!oa)return;downloadPlanningWord(course,selectedPlanningSubject,unit,oa,planningDraft)};
-document.getElementById('copyPlanning').onclick=()=>{planningCaptureSupports096();planningCaptureOrganization100();const course=activeCourse(),unit=unitById(course?.level,selectedPlanningSubject,selectedPlanningUnit),oa=unitObjectivesFor(course?.level,selectedPlanningSubject,selectedPlanningUnit).find(o=>String(o.number)===String(selectedPlanningOA));if(!course||!unit||!oa)return;copyTextWithFallback(planningCopyText(course,selectedPlanningSubject,unit,oa,planningDraft),'Planificación copiada.')};
+document.getElementById('downloadPlanningDocx').onclick=()=>{planningCaptureSupports096();planningCaptureOrganization100();const course=activeCourse(),unit=unitById(course?.level,selectedPlanningSubject,selectedPlanningUnit),oa=unitObjectivesFor(course?.level,selectedPlanningSubject,selectedPlanningUnit).find(o=>String(o.number)===String(selectedPlanningOA));if(!course||!unit||!oa)return;planningCaptureTime105(planningDraft,course.level);downloadPlanningWord(course,selectedPlanningSubject,unit,oa,planningDraft)};
+document.getElementById('copyPlanning').onclick=()=>{planningCaptureSupports096();planningCaptureOrganization100();const course=activeCourse(),unit=unitById(course?.level,selectedPlanningSubject,selectedPlanningUnit),oa=unitObjectivesFor(course?.level,selectedPlanningSubject,selectedPlanningUnit).find(o=>String(o.number)===String(selectedPlanningOA));if(!course||!unit||!oa)return;planningCaptureTime105(planningDraft,course.level);copyTextWithFallback(planningCopyText(course,selectedPlanningSubject,unit,oa,planningDraft),'Planificación copiada.')};
 
 
 document.getElementById('resourceSubjectSelect').onchange=e=>{selectedResourceSubject=e.target.value;selectedResourceUnit='';selectedResourceOA='';editingResourceId=null;resetResourceForm();renderResources()};
@@ -7170,7 +7437,7 @@ window.addEventListener('focus',()=>{if(cloudSession)cloudCheckForRemoteChanges(
 document.addEventListener('visibilitychange',()=>{if(document.visibilityState==='visible'&&cloudSession)cloudCheckForRemoteChanges({force:true});else if(document.visibilityState==='hidden'&&cloudDirty&&cloudSession&&navigator.onLine)cloudUploadState()});
 window.addEventListener('pagehide',()=>{if(cloudDirty&&cloudSession&&navigator.onLine)cloudUploadState()});
 
-document.getElementById('loadBackupBtn').onclick=()=>document.getElementById('backupFile').click();document.getElementById('backupFile').onchange=e=>{const f=e.target.files[0];if(!f)return;const reader=new FileReader();reader.onload=()=>{try{let data=JSON.parse(reader.result);const normalized=normalizeState(data);if(!normalized)throw new Error('Formato no reconocido');data=normalized;if(confirm('¿Cargar este respaldo? Reemplazará los datos actuales de este prototipo.')){state=attachCourseAliases(data);selectedApplicationId=null;selectedStudentId=null;selectedReportStudentId=null;selectedHistoryStudentId=null;selectedSimceApplicationId=null;selectedProgressStudentId=null;selectedProgressSubject=null;selectedProgressUnit='';selectedCoverageSubject=null;selectedSupportSubject=null;selectedSupportKey='';selectedInterventionSubject=null;selectedInterventionKey='';selectedInterventionGroup='support';interventionDraft={key:'',date:'',duration:'20',focus:'',activity:'',evidence:'',materials:''};selectedPlanningSubject=null;selectedPlanningUnit='';selectedPlanningOA='';planningDraft={key:'',date:'',duration:'45',objective:'',bloomLevel:'Comprender',bloomVerbs:'',attitudeCode:'',attitudeObjective:'',duaEngagementEnabled:true,duaEngagement:'',duaRepresentationEnabled:true,duaRepresentation:'',duaActionEnabled:true,duaAction:'',start:'',development:'',closing:'',assessment:'',differentiation:'',materials:''};editingPlanningId=null;planningMode='class';selectedResourceSubject=null;selectedResourceUnit='';selectedResourceOA='';editingResourceId=null;save();renderAll();alert('Respaldo cargado correctamente.')}}catch(err){alert('No pude cargar ese archivo como respaldo de AulaNexo 0.0.47.')}e.target.value=''};reader.readAsText(f)};
+document.getElementById('loadBackupBtn').onclick=()=>document.getElementById('backupFile').click();document.getElementById('backupFile').onchange=e=>{const f=e.target.files[0];if(!f)return;const reader=new FileReader();reader.onload=()=>{try{let data=JSON.parse(reader.result);const normalized=normalizeState(data);if(!normalized)throw new Error('Formato no reconocido');data=normalized;if(confirm('¿Cargar este respaldo? Reemplazará los datos actuales de este prototipo.')){state=attachCourseAliases(data);selectedApplicationId=null;selectedStudentId=null;selectedReportStudentId=null;selectedHistoryStudentId=null;selectedSimceApplicationId=null;selectedProgressStudentId=null;selectedProgressSubject=null;selectedProgressUnit='';selectedCoverageSubject=null;selectedSupportSubject=null;selectedSupportKey='';selectedInterventionSubject=null;selectedInterventionKey='';selectedInterventionGroup='support';interventionDraft={key:'',date:'',duration:'20',focus:'',activity:'',evidence:'',materials:''};selectedPlanningSubject=null;selectedPlanningUnit='';selectedPlanningOA='';planningDraft={key:'',date:'',duration:'45',timeStart105:'',timeDevelopment105:'',timeClosing105:'',timeTouched105:false,objective:'',bloomLevel:'Comprender',bloomVerbs:'',attitudeCode:'',attitudeObjective:'',duaEngagementEnabled:true,duaEngagement:'',duaRepresentationEnabled:true,duaRepresentation:'',duaActionEnabled:true,duaAction:'',start:'',development:'',closing:'',assessment:'',differentiation:'',materials:''};editingPlanningId=null;planningMode='class';selectedResourceSubject=null;selectedResourceUnit='';selectedResourceOA='';editingResourceId=null;save();renderAll();alert('Respaldo cargado correctamente.')}}catch(err){alert('No pude cargar ese archivo como respaldo de AulaNexo 0.0.47.')}e.target.value=''};reader.readAsText(f)};
 
 // 0.0.70: mantiene el inicio de sesión y añade una biblioteca visual infantil de ilustraciones lineales.
 // Esto evita que un error de render deje el token de Google sin procesar.
