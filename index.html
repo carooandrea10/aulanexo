@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>AulaNexo · Prototipo 0.0.103</title>
+<title>AulaNexo · Prototipo 0.0.104</title>
 <style>
 :root{
   --bg:#f5f7fb;--card:#fff;--text:#1f2937;--muted:#6b7280;--line:#e5e7eb;
@@ -2074,6 +2074,43 @@ nav.app-nav button[data-view].active{background:var(--primary-soft);color:#3730a
   .planning102-checks{grid-template-columns:1fr}
 }
 
+
+/* ===== AULANEXO 0.0.104 · FILTROS DE PLANIFICACIONES ===== */
+.planning104-filters{
+  padding:11px;border:1px solid #e2e8f0;border-radius:13px;background:#fbfdff
+}
+.planning104-search{
+  display:flex;align-items:center;gap:7px;padding:0 10px;
+  border:1px solid #cbd5e1;border-radius:10px;background:#fff
+}
+.planning104-search span{font-size:14px}
+.planning104-search input{
+  width:100%;border:0!important;box-shadow:none!important;background:transparent!important;
+  padding:10px 0!important;font-size:10px!important
+}
+.planning104-search input:focus{outline:none}
+.planning104-filter-grid{
+  display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px;margin-top:8px
+}
+.planning104-filter-grid .field label{font-size:8px}
+.planning104-filter-grid select{font-size:9px;min-height:34px}
+.planning104-filter-foot{
+  display:flex;align-items:center;justify-content:space-between;gap:10px;margin-top:8px
+}
+.planning104-filter-foot .small{color:#64748b}
+.planning104-filter-foot .ghost{white-space:nowrap}
+.planning104-no-results{
+  padding:18px;border:1px dashed #cbd5e1;border-radius:12px;
+  background:#f8fafc;text-align:center;color:#64748b
+}
+.planning104-no-results b{display:block;margin-bottom:4px;color:#334155}
+@media(max-width:900px){.planning104-filter-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:620px){
+  .planning104-filter-grid{grid-template-columns:1fr}
+  .planning104-filter-foot{align-items:stretch;flex-direction:column}
+  .planning104-filter-foot button{width:100%}
+}
+
 </style>
 </head>
 <body>
@@ -2085,7 +2122,7 @@ nav.app-nav button[data-view].active{background:var(--primary-soft);color:#3730a
 
 <header>
   <div class="header-wrap">
-    <div><h1>AulaNexo</h1><div class="subtitle">Prototipo 0.0.103 · Duplicar planificación</div></div>
+    <div><h1>AulaNexo</h1><div class="subtitle">Prototipo 0.0.104 · Buscar planificaciones guardadas</div></div>
     <div class="header-actions"><button id="menuToggle" class="menu-toggle">☰ Menú</button><span class="current-section-pill">Sección: <strong id="currentSectionLabel">Curso</strong></span><span class="active-course-pill">Curso activo: <strong id="headerCourseName">Sin curso</strong></span><span id="cloudStatus" class="cloud-pill" data-state="offline">☁️ Sin conectar</span><button id="cloudConnectBtn" class="secondary">👤 Mi cuenta</button><button id="downloadBackup">⬇ Respaldo</button><button id="loadBackupBtn">⬆ Cargar respaldo</button><input id="backupFile" type="file" accept="application/json" hidden></div>
   </div>
 </header>
@@ -2730,7 +2767,55 @@ nav.app-nav button[data-view].active{background:var(--primary-soft);color:#3730a
 <div class="row section-gap"><button id="savePlanning" class="primary">Guardar planificación</button><button id="downloadPlanningDocx" class="secondary">Descargar Word</button><button id="copyPlanning" class="ghost">Copiar planificación</button><button id="cancelPlanningEdit" class="ghost hidden">Cancelar edición</button></div><div class="tiny section-gap">La descarga se genera como archivo <strong>.docx editable</strong>, listo para abrir en Microsoft Word o aplicaciones compatibles.</div>
           </div>
           <div class="card section-gap">
-            <div class="row between"><div><h2>Planificaciones guardadas</h2><div class="small">Se guardan dentro del curso y se sincronizan con tus otros dispositivos. <strong>Duplicar</strong> abre una copia editable y conserva intacta la planificación original.</div></div><span id="planningSavedCount" class="curriculum-badge">0 planes</span></div>
+            <div class="row between"><div><h2>Planificaciones guardadas</h2><div class="small">Busca rápidamente por OA, asignatura, contenido o fecha. <strong>Duplicar</strong> sigue abriendo una copia editable sin modificar la original.</div></div><span id="planningSavedCount" class="curriculum-badge">0 planes</span></div>
+
+            <div class="planning104-filters section-gap">
+              <div class="planning104-search">
+                <span>🔎</span>
+                <input id="planningSavedSearch104" type="search" placeholder="Buscar OA, contenido, objetivo, unidad...">
+              </div>
+
+              <div class="planning104-filter-grid">
+                <div class="field">
+                  <label>Asignatura</label>
+                  <select id="planningSavedSubject104">
+                    <option value="">Todas las asignaturas</option>
+                  </select>
+                </div>
+
+                <div class="field">
+                  <label>OA</label>
+                  <select id="planningSavedOA104">
+                    <option value="">Todos los OA</option>
+                  </select>
+                </div>
+
+                <div class="field">
+                  <label>Fecha</label>
+                  <select id="planningSavedDate104">
+                    <option value="">Todas las fechas</option>
+                    <option value="7">Últimos 7 días</option>
+                    <option value="30">Últimos 30 días</option>
+                    <option value="month">Este mes</option>
+                  </select>
+                </div>
+
+                <div class="field">
+                  <label>Orden</label>
+                  <select id="planningSavedOrder104">
+                    <option value="newest">Más recientes primero</option>
+                    <option value="oldest">Más antiguas primero</option>
+                    <option value="updated">Últimas modificadas</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="planning104-filter-foot">
+                <div id="planningSavedFilterStatus104" class="small">Mostrando todas las planificaciones.</div>
+                <button id="planningSavedClear104" type="button" class="ghost">Limpiar filtros</button>
+              </div>
+            </div>
+
             <div id="planningSavedList" class="planning-saved-list section-gap"></div>
           </div>
         </div>
@@ -6335,15 +6420,324 @@ function renderPlanning(){
   renderPlanningSequence(course,selectedPlanningSubject,unit,oas);
   renderPlanningAnnual(course,selectedPlanningSubject);
 }
+
+/* ===== 0.0.104 · BUSCADOR Y FILTROS DE PLANIFICACIONES GUARDADAS ===== */
+const planningSavedFilters104={
+  courseId:'',
+  search:'',
+  subject:'',
+  oa:'',
+  date:'',
+  order:'newest'
+};
+
+function planningNormalizeSearch104(value){
+  return String(value??'')
+    .normalize('NFD')
+    .replace(/[\u0300-\u036f]/g,'')
+    .toLowerCase()
+    .replace(/\s+/g,' ')
+    .trim();
+}
+
+function planningSavedHaystack104(p){
+  return planningNormalizeSearch104([
+    p.subject,
+    `OA ${p.oaNumber}`,
+    `OA${p.oaNumber}`,
+    p.oaText,
+    p.unitName,
+    p.objective,
+    p.classObjective,
+    p.classContentCustom,
+    p.attitudeObjective,
+    p.organizationText,
+    p.date
+  ].filter(Boolean).join(' '));
+}
+
+function planningDateCutoff104(days){
+  const d=new Date();
+  d.setHours(12,0,0,0);
+  d.setDate(d.getDate()-Number(days||0));
+  const y=d.getFullYear();
+  const m=String(d.getMonth()+1).padStart(2,'0');
+  const day=String(d.getDate()).padStart(2,'0');
+  return `${y}-${m}-${day}`;
+}
+
+function planningMatchesDate104(dateValue,filter){
+  const value=String(dateValue||'');
+  if(!filter)return true;
+  if(!value)return false;
+
+  if(filter==='month'){
+    const now=new Date();
+    const month=`${now.getFullYear()}-${String(now.getMonth()+1).padStart(2,'0')}`;
+    return value.startsWith(month);
+  }
+
+  const cutoff=planningDateCutoff104(Number(filter));
+  return value>=cutoff;
+}
+
+function planningSortSaved104(plans,order){
+  const copy=[...plans];
+  if(order==='oldest'){
+    return copy.sort((a,b)=>
+      (a.date||'').localeCompare(b.date||'') ||
+      (a.updatedAt||'').localeCompare(b.updatedAt||'')
+    );
+  }
+  if(order==='updated'){
+    return copy.sort((a,b)=>
+      (b.updatedAt||'').localeCompare(a.updatedAt||'') ||
+      (b.date||'').localeCompare(a.date||'')
+    );
+  }
+  return copy.sort((a,b)=>
+    (b.date||'').localeCompare(a.date||'') ||
+    (b.updatedAt||'').localeCompare(a.updatedAt||'')
+  );
+}
+
+function planningFilteredSaved104(plans){
+  const f=planningSavedFilters104;
+  const search=planningNormalizeSearch104(f.search);
+
+  return planningSortSaved104(
+    plans.filter(p=>{
+      if(f.subject&&String(p.subject)!==f.subject)return false;
+      if(f.oa&&String(p.oaNumber)!==String(f.oa))return false;
+      if(!planningMatchesDate104(p.date,f.date))return false;
+      if(search&&!planningSavedHaystack104(p).includes(search))return false;
+      return true;
+    }),
+    f.order
+  );
+}
+
+function planningSavedFiltersActive104(){
+  const f=planningSavedFilters104;
+  return !!(f.search||f.subject||f.oa||f.date||f.order!=='newest');
+}
+
+function planningPopulateSavedFilters104(plans){
+  const searchEl=document.getElementById('planningSavedSearch104');
+  const subjectEl=document.getElementById('planningSavedSubject104');
+  const oaEl=document.getElementById('planningSavedOA104');
+  const dateEl=document.getElementById('planningSavedDate104');
+  const orderEl=document.getElementById('planningSavedOrder104');
+  const clearEl=document.getElementById('planningSavedClear104');
+
+  if(!searchEl||!subjectEl||!oaEl||!dateEl||!orderEl||!clearEl)return;
+
+  const subjects=[...new Set(plans.map(p=>String(p.subject||'')).filter(Boolean))]
+    .sort((a,b)=>a.localeCompare(b,'es'));
+
+  if(planningSavedFilters104.subject&&!subjects.includes(planningSavedFilters104.subject)){
+    planningSavedFilters104.subject='';
+    planningSavedFilters104.oa='';
+  }
+
+  subjectEl.innerHTML='<option value="">Todas las asignaturas</option>'+
+    subjects.map(s=>`<option value="${esc(s)}">${esc(s)}</option>`).join('');
+  subjectEl.value=planningSavedFilters104.subject;
+
+  const oaBase=planningSavedFilters104.subject
+    ? plans.filter(p=>String(p.subject)===planningSavedFilters104.subject)
+    : plans;
+
+  const oas=[...new Set(oaBase.map(p=>String(p.oaNumber??'')).filter(Boolean))]
+    .sort((a,b)=>{
+      const na=Number(a),nb=Number(b);
+      if(Number.isFinite(na)&&Number.isFinite(nb))return na-nb;
+      return a.localeCompare(b,'es');
+    });
+
+  if(planningSavedFilters104.oa&&!oas.includes(String(planningSavedFilters104.oa))){
+    planningSavedFilters104.oa='';
+  }
+
+  oaEl.innerHTML='<option value="">Todos los OA</option>'+
+    oas.map(oa=>`<option value="${esc(oa)}">OA ${esc(String(oa).padStart(2,'0'))}</option>`).join('');
+  oaEl.value=planningSavedFilters104.oa;
+
+  searchEl.value=planningSavedFilters104.search;
+  dateEl.value=planningSavedFilters104.date;
+  orderEl.value=planningSavedFilters104.order;
+
+  searchEl.oninput=()=>{
+    planningSavedFilters104.search=searchEl.value;
+    renderSavedPlanning(activeCourse());
+  };
+
+  subjectEl.onchange=()=>{
+    planningSavedFilters104.subject=subjectEl.value;
+    planningSavedFilters104.oa='';
+    renderSavedPlanning(activeCourse());
+  };
+
+  oaEl.onchange=()=>{
+    planningSavedFilters104.oa=oaEl.value;
+    renderSavedPlanning(activeCourse());
+  };
+
+  dateEl.onchange=()=>{
+    planningSavedFilters104.date=dateEl.value;
+    renderSavedPlanning(activeCourse());
+  };
+
+  orderEl.onchange=()=>{
+    planningSavedFilters104.order=orderEl.value||'newest';
+    renderSavedPlanning(activeCourse());
+  };
+
+  clearEl.onclick=()=>{
+    planningSavedFilters104.search='';
+    planningSavedFilters104.subject='';
+    planningSavedFilters104.oa='';
+    planningSavedFilters104.date='';
+    planningSavedFilters104.order='newest';
+    renderSavedPlanning(activeCourse());
+    document.getElementById('planningSavedSearch104')?.focus();
+  };
+}
+
 function renderSavedPlanning(course){
-  const root=document.getElementById('planningSavedList'),count=document.getElementById('planningSavedCount');if(!root||!count)return;const plans=course?(state.classPlans||[]).filter(p=>p.courseId===course.id).sort((a,b)=>(b.date||'').localeCompare(a.date||'')||(b.updatedAt||'').localeCompare(a.updatedAt||'')):[];count.textContent=`${plans.length} plan${plans.length===1?'':'es'}`;
-  if(!course){root.innerHTML='<div class="empty">Primero selecciona un curso.</div>';return}if(!plans.length){root.innerHTML='<div class="empty">Todavía no has guardado planificaciones para este curso.</div>';return}
-  root.innerHTML=plans.map(p=>`<div class="planning-saved-card"><div class="planning-saved-head"><div><div class="planning-saved-title">${esc(p.subject)} · OA ${String(p.oaNumber).padStart(2,'0')}</div><div class="planning-saved-meta">${esc(p.unitName)} · ${formatDate(p.date)} · ${esc(p.duration)} min</div></div><div class="planning-actions"><button class="ghost" data-edit-plan="${p.id}">Editar</button><button class="ghost" data-download-plan="${p.id}">Descargar</button><button class="ghost" data-copy-plan="${p.id}">Copiar</button><button class="ghost" data-duplicate-plan="${p.id}">📄 Duplicar</button><button class="danger" data-delete-plan="${p.id}">Eliminar</button></div></div><div class="planning-saved-preview"><strong>Propósito:</strong> ${esc(p.objective)}${p.classObjective?`<br><strong>Objetivo de clase:</strong> ${esc(p.classObjective)}`:''}${p.classContentCustom?`<br><strong>Contenido específico:</strong> ${esc(p.classContentCustom)}`:''}${p.bloomLevel?`<br><strong>Bloom:</strong> ${esc(p.bloomLevel)}`:''}${p.attitudeObjective?`<br><strong>Actitud:</strong> ${esc(p.attitudeObjective)}`:''}${p.organizationText?`<br><strong>Organización:</strong> ${esc(p.organizationText)}`:''}</div></div>`).join('');
-  root.querySelectorAll('[data-edit-plan]').forEach(b=>b.onclick=()=>loadPlanningForEdit(b.dataset.editPlan));
-  root.querySelectorAll('[data-download-plan]').forEach(b=>b.onclick=()=>{const p=state.classPlans.find(x=>x.id===b.dataset.downloadPlan);if(!p)return;const unit=unitById(p.grade,p.subject,p.unitId)||{id:p.unitId,name:p.unitName||`Unidad ${p.unitId}`},oa=objectivesFor(p.grade,p.subject).find(o=>Number(o.number)===Number(p.oaNumber))||{number:p.oaNumber,text:p.oaText||''};downloadPlanningWord(course,p.subject,unit,oa,p)});
-  root.querySelectorAll('[data-copy-plan]').forEach(b=>b.onclick=()=>{const p=state.classPlans.find(x=>x.id===b.dataset.copyPlan),unit=unitById(p.grade,p.subject,p.unitId),oa=objectivesFor(p.grade,p.subject).find(o=>Number(o.number)===Number(p.oaNumber));if(!p||!unit||!oa)return;copyTextWithFallback(planningCopyText(course,p.subject,unit,oa,p),'Planificación copiada.');});
-  root.querySelectorAll('[data-duplicate-plan]').forEach(b=>b.onclick=()=>duplicatePlanningForEdit103(b.dataset.duplicatePlan));
-  root.querySelectorAll('[data-delete-plan]').forEach(b=>b.onclick=()=>{const p=state.classPlans.find(x=>x.id===b.dataset.deletePlan);if(!p||!confirm('¿Eliminar esta planificación guardada?'))return;state.classPlans=state.classPlans.filter(x=>x.id!==p.id);if(editingPlanningId===p.id){editingPlanningId=null;planningDraft.key=''}save();renderPlanning()});
+  const root=document.getElementById('planningSavedList');
+  const count=document.getElementById('planningSavedCount');
+  const status=document.getElementById('planningSavedFilterStatus104');
+  if(!root||!count)return;
+
+  // Al cambiar de curso, los filtros vuelven a su estado limpio.
+  const currentCourseId=course?.id||'';
+  if(planningSavedFilters104.courseId!==currentCourseId){
+    planningSavedFilters104.courseId=currentCourseId;
+    planningSavedFilters104.search='';
+    planningSavedFilters104.subject='';
+    planningSavedFilters104.oa='';
+    planningSavedFilters104.date='';
+    planningSavedFilters104.order='newest';
+  }
+
+  const allPlans=course
+    ? (state.classPlans||[]).filter(p=>p.courseId===course.id)
+    : [];
+
+  planningPopulateSavedFilters104(allPlans);
+
+  if(!course){
+    count.textContent='0 planes';
+    if(status)status.textContent='Selecciona un curso para ver sus planificaciones.';
+    root.innerHTML='<div class="empty">Primero selecciona un curso.</div>';
+    return;
+  }
+
+  if(!allPlans.length){
+    count.textContent='0 planes';
+    if(status)status.textContent='Aún no hay planificaciones guardadas en este curso.';
+    root.innerHTML='<div class="empty">Todavía no has guardado planificaciones para este curso.</div>';
+    return;
+  }
+
+  const plans=planningFilteredSaved104(allPlans);
+  const filtered=planningSavedFiltersActive104();
+
+  count.textContent=filtered
+    ? `${plans.length} de ${allPlans.length}`
+    : `${allPlans.length} plan${allPlans.length===1?'':'es'}`;
+
+  if(status){
+    if(filtered){
+      status.textContent=`Mostrando ${plans.length} de ${allPlans.length} planificación${allPlans.length===1?'':'es'}.`;
+    }else{
+      status.textContent=`Mostrando las ${allPlans.length} planificación${allPlans.length===1?'':'es'} del curso.`;
+    }
+  }
+
+  if(!plans.length){
+    root.innerHTML=`<div class="planning104-no-results"><b>No encontré planificaciones con esos filtros.</b><span>Prueba otra búsqueda o usa “Limpiar filtros”.</span></div>`;
+    return;
+  }
+
+  root.innerHTML=plans.map(p=>`
+    <div class="planning-saved-card">
+      <div class="planning-saved-head">
+        <div>
+          <div class="planning-saved-title">${esc(p.subject)} · OA ${String(p.oaNumber).padStart(2,'0')}</div>
+          <div class="planning-saved-meta">${esc(p.unitName)} · ${formatDate(p.date)} · ${esc(p.duration)} min</div>
+        </div>
+        <div class="planning-actions">
+          <button class="ghost" data-edit-plan="${p.id}">Editar</button>
+          <button class="ghost" data-download-plan="${p.id}">Descargar</button>
+          <button class="ghost" data-copy-plan="${p.id}">Copiar</button>
+          <button class="ghost" data-duplicate-plan="${p.id}">📄 Duplicar</button>
+          <button class="danger" data-delete-plan="${p.id}">Eliminar</button>
+        </div>
+      </div>
+      <div class="planning-saved-preview">
+        <strong>Propósito:</strong> ${esc(p.objective)}
+        ${p.classObjective?`<br><strong>Objetivo de clase:</strong> ${esc(p.classObjective)}`:''}
+        ${p.classContentCustom?`<br><strong>Contenido específico:</strong> ${esc(p.classContentCustom)}`:''}
+        ${p.bloomLevel?`<br><strong>Bloom:</strong> ${esc(p.bloomLevel)}`:''}
+        ${p.attitudeObjective?`<br><strong>Actitud:</strong> ${esc(p.attitudeObjective)}`:''}
+        ${p.organizationText?`<br><strong>Organización:</strong> ${esc(p.organizationText)}`:''}
+      </div>
+    </div>
+  `).join('');
+
+  root.querySelectorAll('[data-edit-plan]').forEach(b=>
+    b.onclick=()=>loadPlanningForEdit(b.dataset.editPlan)
+  );
+
+  root.querySelectorAll('[data-download-plan]').forEach(b=>
+    b.onclick=()=>{
+      const p=state.classPlans.find(x=>x.id===b.dataset.downloadPlan);
+      if(!p)return;
+      const unit=unitById(p.grade,p.subject,p.unitId)||{
+        id:p.unitId,
+        name:p.unitName||`Unidad ${p.unitId}`
+      };
+      const oa=objectivesFor(p.grade,p.subject).find(o=>Number(o.number)===Number(p.oaNumber))||{
+        number:p.oaNumber,
+        text:p.oaText||''
+      };
+      downloadPlanningWord(course,p.subject,unit,oa,p);
+    }
+  );
+
+  root.querySelectorAll('[data-copy-plan]').forEach(b=>
+    b.onclick=()=>{
+      const p=state.classPlans.find(x=>x.id===b.dataset.copyPlan);
+      if(!p)return;
+      const unit=unitById(p.grade,p.subject,p.unitId);
+      const oa=objectivesFor(p.grade,p.subject).find(o=>Number(o.number)===Number(p.oaNumber));
+      if(!unit||!oa)return;
+      copyTextWithFallback(
+        planningCopyText(course,p.subject,unit,oa,p),
+        'Planificación copiada.'
+      );
+    }
+  );
+
+  root.querySelectorAll('[data-duplicate-plan]').forEach(b=>
+    b.onclick=()=>duplicatePlanningForEdit103(b.dataset.duplicatePlan)
+  );
+
+  root.querySelectorAll('[data-delete-plan]').forEach(b=>
+    b.onclick=()=>{
+      const p=state.classPlans.find(x=>x.id===b.dataset.deletePlan);
+      if(!p||!confirm('¿Eliminar esta planificación guardada?'))return;
+      state.classPlans=state.classPlans.filter(x=>x.id!==p.id);
+      if(editingPlanningId===p.id){
+        editingPlanningId=null;
+        planningDraft.key='';
+      }
+      save();
+      renderPlanning();
+    }
+  );
 }
 function copyTextWithFallback(text,success='Copiado.'){const fallback=()=>{const ta=document.createElement('textarea');ta.value=text;ta.style.position='fixed';ta.style.opacity='0';document.body.appendChild(ta);ta.select();let ok=false;try{ok=document.execCommand('copy')}catch(e){}ta.remove();alert(ok?success:'No pude copiar automáticamente. Puedes seleccionar el contenido desde esta pantalla.')};if(navigator.clipboard?.writeText)navigator.clipboard.writeText(text).then(()=>alert(success)).catch(fallback);else fallback()}
 
