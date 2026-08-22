@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>AulaNexo · Prototipo 0.0.109</title>
+<title>AulaNexo · Prototipo 0.0.110</title>
 <style>
 :root{
   --bg:#f5f7fb;--card:#fff;--text:#1f2937;--muted:#6b7280;--line:#e5e7eb;
@@ -2296,7 +2296,7 @@ nav.app-nav button[data-view].active{background:var(--primary-soft);color:#3730a
 
 <header>
   <div class="header-wrap">
-    <div><h1>AulaNexo</h1><div class="subtitle">Prototipo 0.0.109 · Pauta de observación corregida</div></div>
+    <div><h1>AulaNexo</h1><div class="subtitle">Prototipo 0.0.110 · Instrumentos en Word</div></div>
     <div class="header-actions"><button id="menuToggle" class="menu-toggle">☰ Menú</button><span class="current-section-pill">Sección: <strong id="currentSectionLabel">Curso</strong></span><span class="active-course-pill">Curso activo: <strong id="headerCourseName">Sin curso</strong></span><span id="cloudStatus" class="cloud-pill" data-state="offline">☁️ Sin conectar</span><button id="cloudConnectBtn" class="secondary">👤 Mi cuenta</button><button id="downloadBackup">⬇ Respaldo</button><button id="loadBackupBtn">⬆ Cargar respaldo</button><input id="backupFile" type="file" accept="application/json" hidden></div>
   </div>
 </header>
@@ -4595,12 +4595,292 @@ function renderInstrumentTemplates(){
   root.innerHTML=rows.map(t=>{const rubric=t.type!=='points',appreciation=isAppreciationScale107(t),checklist=isChecklist108(t),observation=isObservationGuide109(t),typeLabel=!rubric?`Prueba · ${formatPoints(t.maxPoints)} puntos`:checklist?`Lista de Cotejo · ${(t.criteria||[]).length} indicador(es)`:observation?`Pauta de Observación · ${(t.criteria||[]).length} indicador(es)`:appreciation?`Escala de Apreciación · ${(t.criteria||[]).length} indicador(es)`:`${t.libraryKind||'Rúbrica'} · ${(t.criteria||[]).length} criterio(s)`,oa=(t.oaNumbers||[]).length?`${t.curriculumGrade||''}° · ${esc(t.curriculumSubject||t.subject||'')} · ${(t.oaNumbers||[]).map(n=>'OA '+String(n).padStart(2,'0')).join(', ')}`:'Sin vínculo curricular',scale=appreciation?appreciationScaleFor107(t):null,check=checklist?checklistScaleFor108(t):null,obs=observation?observationScaleFor109(t):null,grade=t.gradeScale?.enabled?gradeConfigLabel(t):checklist?`${check[1]} · ${check[0]}`:observation?`${obs[3]} · ${obs[2]} · ${obs[1]}`:appreciation?`${scale[3]} · ${scale[2]} · ${scale[1]}`:(rubric?'3 · 2 · 1':'Solo puntaje'),icon=checklist?'☑':observation?'👁':appreciation?'◉':rubric?'▦':'#';return `<div class="template-card"><div class="template-top"><div class="template-icon">${icon}</div><div class="template-main"><div class="template-name">${esc(t.name)}</div><div class="template-meta">${esc(t.subject||'Sin asignatura')} · ${typeLabel}</div><div class="template-stats"><span class="template-stat">${esc(grade)}</span><span class="template-stat">${oa}</span>${t.simce?.enabled?'<span class="template-stat">🎯 SIMCE</span>':''}</div>${t.description?`<div class="small" style="margin-top:8px">${esc(t.description)}</div>`:''}</div></div><div class="eval-actions"><button class="secondary" data-use-template="${t.id}">Usar plantilla</button><button class="ghost" data-duplicate-template="${t.id}">Duplicar</button><button class="danger" data-delete-template="${t.id}">Eliminar</button></div></div>`}).join('');
   root.querySelectorAll('[data-use-template]').forEach(b=>b.onclick=()=>useInstrumentTemplate(b.dataset.useTemplate));root.querySelectorAll('[data-duplicate-template]').forEach(b=>b.onclick=()=>duplicateInstrumentTemplate(b.dataset.duplicateTemplate));root.querySelectorAll('[data-delete-template]').forEach(b=>b.onclick=()=>{const t=all.find(x=>x.id===b.dataset.deleteTemplate);if(t&&confirm(`¿Eliminar la plantilla “${t.name}”? Tus evaluaciones ya creadas no se eliminarán.`)){state.instrumentTemplates=all.filter(x=>x.id!==t.id);save();renderEvaluations()}})
 }
+
+/* ===== 0.0.110 · INSTRUMENTOS IMPRIMIBLES EN WORD ===== */
+function instrumentWordClean110(value){
+  return String(value||'')
+    .normalize('NFD')
+    .replace(/[\u0300-\u036f]/g,'')
+    .replace(/[^a-zA-Z0-9_-]+/g,'_')
+    .replace(/^_+|_+$/g,'')
+    .slice(0,70)||'Instrumento';
+}
+
+function instrumentWordFileName110(ev){
+  return `${instrumentWordClean110(evaluationTypeLabel107(ev))}_${instrumentWordClean110(ev?.name)}_${localDate()}.docx`;
+}
+
+function instrumentWordCourse110(ev){
+  const course=activeCourse();
+  if(course)return course;
+  const grade=Number(ev?.curriculumGrade);
+  return {
+    name:Number.isFinite(grade)?`${grade}° Básico`:'Curso: ____________________',
+    level:Number.isFinite(grade)?grade:null
+  };
+}
+
+function instrumentWordOA110(ev){
+  const nums=oaKeyList(ev);
+  if(!nums.length)return {label:'Sin OA vinculado',text:''};
+
+  const grade=Number(ev?.curriculumGrade||instrumentWordCourse110(ev)?.level);
+  const subject=String(ev?.curriculumSubject||ev?.subject||'');
+  const bank=Number.isFinite(grade)&&subject?objectivesFor(grade,subject):[];
+
+  const texts=nums.map(n=>{
+    const oa=bank.find(o=>Number(o.number)===Number(n));
+    return {
+      number:Number(n),
+      text:String(oa?.text||'').trim()
+    };
+  });
+
+  return {
+    label:texts.map(x=>`OA ${String(x.number).padStart(2,'0')}`).join(' · '),
+    text:texts.filter(x=>x.text).map(x=>`OA ${String(x.number).padStart(2,'0')}: ${x.text}`).join('\n')
+  };
+}
+
+function instrumentDocxCell110(text,{bold=false,align='left',width=2200,shade='',size=19}={}){
+  const shading=shade?`<w:shd w:val="clear" w:color="auto" w:fill="${shade}"/>`:'';
+  return `<w:tc><w:tcPr><w:tcW w:w="${width}" w:type="dxa"/>${shading}<w:vAlign w:val="center"/></w:tcPr><w:p><w:pPr><w:jc w:val="${align}"/><w:spacing w:before="35" w:after="35"/></w:pPr>${docxRuns(text,bold,size)}</w:p></w:tc>`;
+}
+
+function instrumentDocxRow110(cells,{header=false}={}){
+  const trPr=header?'<w:trPr><w:tblHeader/></w:trPr>':'';
+  return `<w:tr>${trPr}${cells.join('')}</w:tr>`;
+}
+
+function instrumentDocxTable110(rows,widths=[]){
+  const grid=widths.length?`<w:tblGrid>${widths.map(w=>`<w:gridCol w:w="${w}"/>`).join('')}</w:tblGrid>`:'';
+  return `<w:tbl><w:tblPr><w:tblW w:w="0" w:type="auto"/><w:tblLayout w:type="fixed"/><w:tblBorders><w:top w:val="single" w:sz="6" w:color="BFC7D5"/><w:left w:val="single" w:sz="6" w:color="BFC7D5"/><w:bottom w:val="single" w:sz="6" w:color="BFC7D5"/><w:right w:val="single" w:sz="6" w:color="BFC7D5"/><w:insideH w:val="single" w:sz="5" w:color="D7DCE5"/><w:insideV w:val="single" w:sz="5" w:color="D7DCE5"/></w:tblBorders><w:tblCellMar><w:top w:w="75" w:type="dxa"/><w:left w:w="75" w:type="dxa"/><w:bottom w:w="75" w:type="dxa"/><w:right w:w="75" w:type="dxa"/></w:tblCellMar></w:tblPr>${grid}${rows.join('')}</w:tbl>`;
+}
+
+function instrumentDocxBlankLine110(label){
+  return docxParagraph(`${label}: ______________________________________________________________`,{size:21,after:80});
+}
+
+function instrumentDocxCommonHeader110(ev,body){
+  const course=instrumentWordCourse110(ev);
+  const oa=instrumentWordOA110(ev);
+  const subject=String(ev?.curriculumSubject||ev?.subject||'Sin asignatura');
+
+  body.push(docxParagraph('AulaNexo · Instrumento de evaluación',{bold:true,size:32,after:120}));
+  body.push(docxParagraph(ev?.name||evaluationTypeLabel107(ev),{bold:true,size:28,after:80}));
+  body.push(docxParagraph(`Tipo de instrumento: ${evaluationTypeLabel107(ev)}`,{size:21,after:45}));
+  body.push(docxParagraph(`Curso: ${course?.name||'____________________'} · Asignatura: ${subject}`,{size:21,after:45}));
+  body.push(docxParagraph(`Objetivo(s) de Aprendizaje: ${oa.label}`,{size:21,after:80}));
+
+  if(oa.text){
+    body.push(docxParagraph(oa.text,{size:19,after:100}));
+  }
+  if(ev?.description){
+    body.push(docxParagraph(`Propósito / descripción: ${ev.description}`,{size:19,after:100}));
+  }
+
+  body.push(instrumentDocxBlankLine110('Nombre del estudiante'));
+  body.push(instrumentDocxBlankLine110('Fecha'));
+}
+
+function instrumentDocxChecklist110(ev,body){
+  const scale=checklistScaleFor108(ev);
+  body.push(docxParagraph('Lista de Cotejo',{bold:true,size:25,before:70,after:50,keep:true}));
+  body.push(docxParagraph(`Marca una sola opción por indicador: ${scale[1]} / ${scale[0]}. Puedes registrar una observación breve cuando sea necesario.`,{size:19,after:90}));
+
+  const widths=[5600,1200,1200,3100];
+  const rows=[
+    instrumentDocxRow110([
+      instrumentDocxCell110('Indicador observable',{bold:true,shade:'EEF2FF',width:widths[0]}),
+      instrumentDocxCell110(scale[1],{bold:true,align:'center',shade:'EEF2FF',width:widths[1]}),
+      instrumentDocxCell110(scale[0],{bold:true,align:'center',shade:'EEF2FF',width:widths[2]}),
+      instrumentDocxCell110('Observaciones',{bold:true,shade:'EEF2FF',width:widths[3]})
+    ],{header:true})
+  ];
+
+  (ev.criteria||[]).forEach(c=>{
+    rows.push(instrumentDocxRow110([
+      instrumentDocxCell110(c.name||'Indicador',{width:widths[0]}),
+      instrumentDocxCell110('☐',{align:'center',width:widths[1],size:24}),
+      instrumentDocxCell110('☐',{align:'center',width:widths[2],size:24}),
+      instrumentDocxCell110(' ',{width:widths[3]})
+    ]));
+  });
+
+  body.push(instrumentDocxTable110(rows,widths));
+}
+
+function instrumentDocxAppreciation110(ev,body){
+  const scale=appreciationScaleFor107(ev);
+  body.push(docxParagraph('Escala de Apreciación',{bold:true,size:25,before:70,after:50,keep:true}));
+  body.push(docxParagraph(`Escala común: ${scale[3]} · ${scale[2]} · ${scale[1]}. Marca una sola valoración por indicador.`,{size:19,after:90}));
+
+  const widths=[6100,1800,1800,1800];
+  const rows=[
+    instrumentDocxRow110([
+      instrumentDocxCell110('Indicador observable',{bold:true,shade:'F5F3FF',width:widths[0]}),
+      instrumentDocxCell110(scale[3],{bold:true,align:'center',shade:'F5F3FF',width:widths[1]}),
+      instrumentDocxCell110(scale[2],{bold:true,align:'center',shade:'F5F3FF',width:widths[2]}),
+      instrumentDocxCell110(scale[1],{bold:true,align:'center',shade:'F5F3FF',width:widths[3]})
+    ],{header:true})
+  ];
+
+  (ev.criteria||[]).forEach(c=>{
+    rows.push(instrumentDocxRow110([
+      instrumentDocxCell110(c.name||'Indicador',{width:widths[0]}),
+      instrumentDocxCell110('☐',{align:'center',width:widths[1],size:24}),
+      instrumentDocxCell110('☐',{align:'center',width:widths[2],size:24}),
+      instrumentDocxCell110('☐',{align:'center',width:widths[3],size:24})
+    ]));
+  });
+
+  body.push(instrumentDocxTable110(rows,widths));
+  body.push(docxParagraph('Observaciones generales: ____________________________________________________________',{size:19,before:100,after:50}));
+  body.push(docxParagraph('________________________________________________________________________________',{size:19,after:50}));
+}
+
+function instrumentDocxObservation110(ev,body){
+  const scale=observationScaleFor109(ev);
+  body.push(docxParagraph('Pauta de Observación',{bold:true,size:25,before:70,after:50,keep:true}));
+  body.push(docxParagraph(`Registra el nivel observado y anota evidencia concreta de lo que el estudiante hizo, dijo o mostró. Escala: ${scale[3]} · ${scale[2]} · ${scale[1]}.`,{size:19,after:90}));
+
+  const widths=[4800,1500,1750,1500,3450];
+  const rows=[
+    instrumentDocxRow110([
+      instrumentDocxCell110('Indicador observable',{bold:true,shade:'ECFDF5',width:widths[0]}),
+      instrumentDocxCell110(scale[3],{bold:true,align:'center',shade:'ECFDF5',width:widths[1]}),
+      instrumentDocxCell110(scale[2],{bold:true,align:'center',shade:'ECFDF5',width:widths[2]}),
+      instrumentDocxCell110(scale[1],{bold:true,align:'center',shade:'ECFDF5',width:widths[3]}),
+      instrumentDocxCell110('Evidencia / observación',{bold:true,shade:'ECFDF5',width:widths[4]})
+    ],{header:true})
+  ];
+
+  (ev.criteria||[]).forEach(c=>{
+    rows.push(instrumentDocxRow110([
+      instrumentDocxCell110(c.name||'Indicador',{width:widths[0]}),
+      instrumentDocxCell110('☐',{align:'center',width:widths[1],size:24}),
+      instrumentDocxCell110('☐',{align:'center',width:widths[2],size:24}),
+      instrumentDocxCell110('☐',{align:'center',width:widths[3],size:24}),
+      instrumentDocxCell110(' ',{width:widths[4]})
+    ]));
+  });
+
+  body.push(instrumentDocxTable110(rows,widths));
+}
+
+function instrumentDocxRubric110(ev,body){
+  body.push(docxParagraph('Rúbrica',{bold:true,size:25,before:70,after:50,keep:true}));
+  body.push(docxParagraph('Lee los descriptores de cada criterio y marca el nivel que mejor representa el desempeño observado.',{size:19,after:90}));
+
+  const widths=[2400,3500,3500,3500];
+  const rows=[
+    instrumentDocxRow110([
+      instrumentDocxCell110('Criterio',{bold:true,shade:'FFF7ED',width:widths[0]}),
+      instrumentDocxCell110('3 · Logrado',{bold:true,align:'center',shade:'FFF7ED',width:widths[1]}),
+      instrumentDocxCell110('2 · En proceso',{bold:true,align:'center',shade:'FFF7ED',width:widths[2]}),
+      instrumentDocxCell110('1 · Requiere apoyo',{bold:true,align:'center',shade:'FFF7ED',width:widths[3]})
+    ],{header:true})
+  ];
+
+  (ev.criteria||[]).forEach(c=>{
+    rows.push(instrumentDocxRow110([
+      instrumentDocxCell110(c.name||'Criterio',{bold:true,width:widths[0]}),
+      instrumentDocxCell110(`☐ ${c.d3||'Logrado'}`,{width:widths[1]}),
+      instrumentDocxCell110(`☐ ${c.d2||'En proceso'}`,{width:widths[2]}),
+      instrumentDocxCell110(`☐ ${c.d1||'Requiere apoyo'}`,{width:widths[3]})
+    ]));
+  });
+
+  body.push(instrumentDocxTable110(rows,widths));
+  body.push(docxParagraph('Observaciones generales: ____________________________________________________________',{size:19,before:100,after:50}));
+  body.push(docxParagraph('________________________________________________________________________________',{size:19,after:50}));
+}
+
+function instrumentDocxPoints110(ev,body){
+  body.push(docxParagraph('Registro de evaluación por puntaje',{bold:true,size:25,before:70,after:50,keep:true}));
+  body.push(docxParagraph(`Puntaje máximo: ${formatPoints(ev.maxPoints||0)} puntos`,{bold:true,size:21,after:80}));
+
+  const groups=pointOAGroups(ev);
+  if(groups.length){
+    const rows=[
+      instrumentDocxRow110([
+        instrumentDocxCell110('Objetivo de Aprendizaje',{bold:true,shade:'EFF6FF',width:6500}),
+        instrumentDocxCell110('Puntaje máximo',{bold:true,align:'center',shade:'EFF6FF',width:2500}),
+        instrumentDocxCell110('Puntaje obtenido',{bold:true,align:'center',shade:'EFF6FF',width:3000})
+      ],{header:true})
+    ];
+    groups.forEach(g=>{
+      rows.push(instrumentDocxRow110([
+        instrumentDocxCell110(`OA ${String(g.number).padStart(2,'0')}`,{width:6500}),
+        instrumentDocxCell110(formatPoints(g.max),{align:'center',width:2500}),
+        instrumentDocxCell110(' ',{align:'center',width:3000})
+      ]));
+    });
+    body.push(instrumentDocxTable110(rows,[6500,2500,3000]));
+  }else{
+    body.push(instrumentDocxBlankLine110('Puntaje obtenido'));
+  }
+
+  if(ev.gradeScale?.enabled){
+    body.push(docxParagraph(`Escala de nota configurada: nota mínima ${formatGrade(ev.gradeScale.min)} · aprobación ${formatGrade(ev.gradeScale.pass)} · nota máxima ${formatGrade(ev.gradeScale.max)} · exigencia ${ev.gradeScale.threshold}%`,{size:19,before:100,after:70}));
+  }
+
+  body.push(docxParagraph('Observaciones: ____________________________________________________________________',{size:19,before:100,after:50}));
+  body.push(docxParagraph('________________________________________________________________________________',{size:19,after:50}));
+}
+
+function instrumentDocxXml110(ev){
+  const body=[];
+  instrumentDocxCommonHeader110(ev,body);
+
+  if(isPointsEvaluation(ev)){
+    instrumentDocxPoints110(ev,body);
+  }else if(isChecklist108(ev)){
+    instrumentDocxChecklist110(ev,body);
+  }else if(isObservationGuide109(ev)){
+    instrumentDocxObservation110(ev,body);
+  }else if(isAppreciationScale107(ev)){
+    instrumentDocxAppreciation110(ev,body);
+  }else{
+    instrumentDocxRubric110(ev,body);
+  }
+
+  const landscape=!isPointsEvaluation(ev);
+  body.push(
+    landscape
+      ?'<w:sectPr><w:pgSz w:w="16838" w:h="11906" w:orient="landscape"/><w:pgMar w:top="850" w:right="720" w:bottom="850" w:left="720" w:header="500" w:footer="500" w:gutter="0"/></w:sectPr>'
+      :'<w:sectPr><w:pgSz w:w="11906" w:h="16838"/><w:pgMar w:top="900" w:right="850" w:bottom="900" w:left="850" w:header="500" w:footer="500" w:gutter="0"/></w:sectPr>'
+  );
+
+  return `<?xml version="1.0" encoding="UTF-8" standalone="yes"?><w:document xmlns:w="http://schemas.openxmlformats.org/wordprocessingml/2006/main"><w:body>${body.join('')}</w:body></w:document>`;
+}
+
+function instrumentDocxBlob110(ev){
+  const contentTypes=`<?xml version="1.0" encoding="UTF-8" standalone="yes"?><Types xmlns="http://schemas.openxmlformats.org/package/2006/content-types"><Default Extension="rels" ContentType="application/vnd.openxmlformats-package.relationships+xml"/><Default Extension="xml" ContentType="application/xml"/><Override PartName="/word/document.xml" ContentType="application/vnd.openxmlformats-officedocument.wordprocessingml.document.main+xml"/></Types>`;
+  const rels=`<?xml version="1.0" encoding="UTF-8" standalone="yes"?><Relationships xmlns="http://schemas.openxmlformats.org/package/2006/relationships"><Relationship Id="rId1" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/officeDocument" Target="word/document.xml"/></Relationships>`;
+  return docxZipStore([
+    {name:'[Content_Types].xml',data:contentTypes},
+    {name:'_rels/.rels',data:rels},
+    {name:'word/document.xml',data:instrumentDocxXml110(ev)}
+  ]);
+}
+
+function downloadInstrumentWord110(ev){
+  if(!ev)return;
+  const blob=instrumentDocxBlob110(ev);
+  downloadBlob(
+    blob,
+    'application/vnd.openxmlformats-officedocument.wordprocessingml.document',
+    instrumentWordFileName110(ev)
+  );
+}
+
 function renderEvaluations(){
   const el=document.getElementById('evaluationList');
   if(!state.evaluations.length)el.innerHTML='<div class="empty">No hay evaluaciones todavía.</div>';
   else{
-    el.innerHTML=state.evaluations.map(ev=>{const apps=activeApplications().filter(a=>a.evaluationId===ev.id).length,appreciation=isAppreciationScale107(ev),checklist=isChecklist108(ev),observation=isObservationGuide109(ev),typeLabel=isPointsEvaluation(ev)?`Prueba por puntaje · máximo ${formatPoints(ev.maxPoints)} puntos${pointOAGroups(ev).length>1?' · puntaje por OA':''}${isSimceEvaluation(ev)?' · 🎯 SIMCE automático':''}`:checklist?`Lista de Cotejo · ${ev.criteria.length} indicador(es)`:observation?`Pauta de Observación · ${ev.criteria.length} indicador(es)`:appreciation?`Escala de Apreciación · ${ev.criteria.length} indicador(es)`: `${ev.libraryKind||'Rúbrica'} · ${ev.criteria.length} criterio(s)${ev.criteria.some(c=>(c.oaNumbers||[]).length)?' · criterios vinculados a OA':''}`,scale=appreciation?appreciationScaleFor107(ev):null,check=checklist?checklistScaleFor108(ev):null,obs=observation?observationScaleFor109(ev):null,chip=ev.gradeScale?.enabled?gradeConfigLabel(ev):(isPointsEvaluation(ev)?'Solo puntaje':checklist?`${check[1]} · ${check[0]}`:observation?`${obs[3]} · ${obs[2]} · ${obs[1]}`:appreciation?`${scale[3]} · ${scale[2]} · ${scale[1]}`:'3 · 2 · 1'),curr=ev.curriculumGrade&&ev.curriculumSubject&&oaKeyList(ev).length?`<div style="margin-top:8px"><span class="curriculum-badge">${ev.curriculumGrade}° · ${esc(ev.curriculumSubject)} · ${oaKeyList(ev).map(n=>'OA '+n).join(', ')}</span></div>`:'';return `<div class="eval-card"><div class="row between"><div><div class="eval-title">${esc(ev.name)}</div><div class="eval-meta">${esc(ev.subject||'Sin asignatura')} · ${typeLabel} · ${apps} aplicación(es) en ${esc(state.courseName)}</div></div><span class="chip ${ev.gradeScale?.enabled?'chip-purple':'chip-blue'}">${esc(chip)}</span></div>${ev.description?`<div class="small" style="margin-top:8px">${esc(ev.description)}</div>`:''}${curr}<div class="eval-actions"><button class="secondary" data-apply="${ev.id}">Aplicar</button><button class="ghost" data-edit="${ev.id}">Editar</button><button class="ghost" data-save-template="${ev.id}">Guardar como plantilla</button><button class="ghost" data-duplicate="${ev.id}">Duplicar</button>${state.evaluations.length>1?`<button class="danger" data-delete="${ev.id}">Eliminar</button>`:''}</div></div>`}).join('');
-    el.querySelectorAll('[data-apply]').forEach(b=>b.onclick=()=>openApplicationModal(b.dataset.apply));el.querySelectorAll('[data-edit]').forEach(b=>b.onclick=()=>openEvaluationModal(b.dataset.edit));el.querySelectorAll('[data-save-template]').forEach(b=>b.onclick=()=>saveEvaluationAsTemplate(evalById(b.dataset.saveTemplate)));el.querySelectorAll('[data-duplicate]').forEach(b=>b.onclick=()=>{const ev=evalById(b.dataset.duplicate),copy=cloneInstrumentShape(ev);copy.name=ev.name+' · copia';state.evaluations.push(copy);save();renderAll()});el.querySelectorAll('[data-delete]').forEach(b=>b.onclick=()=>{const ev=evalById(b.dataset.delete),n=state.applications.filter(a=>a.evaluationId===ev.id).length;if(confirm(`¿Eliminar “${ev.name}”?${n?` También se eliminarán ${n} aplicación(es) de este prototipo.`:''}`)){state.evaluations=state.evaluations.filter(x=>x.id!==ev.id);state.applications=state.applications.filter(a=>a.evaluationId!==ev.id);if(selectedApplicationId&&!appById(selectedApplicationId))selectedApplicationId=null;save();renderAll()}})
+    el.innerHTML=state.evaluations.map(ev=>{const apps=activeApplications().filter(a=>a.evaluationId===ev.id).length,appreciation=isAppreciationScale107(ev),checklist=isChecklist108(ev),observation=isObservationGuide109(ev),typeLabel=isPointsEvaluation(ev)?`Prueba por puntaje · máximo ${formatPoints(ev.maxPoints)} puntos${pointOAGroups(ev).length>1?' · puntaje por OA':''}${isSimceEvaluation(ev)?' · 🎯 SIMCE automático':''}`:checklist?`Lista de Cotejo · ${ev.criteria.length} indicador(es)`:observation?`Pauta de Observación · ${ev.criteria.length} indicador(es)`:appreciation?`Escala de Apreciación · ${ev.criteria.length} indicador(es)`: `${ev.libraryKind||'Rúbrica'} · ${ev.criteria.length} criterio(s)${ev.criteria.some(c=>(c.oaNumbers||[]).length)?' · criterios vinculados a OA':''}`,scale=appreciation?appreciationScaleFor107(ev):null,check=checklist?checklistScaleFor108(ev):null,obs=observation?observationScaleFor109(ev):null,chip=ev.gradeScale?.enabled?gradeConfigLabel(ev):(isPointsEvaluation(ev)?'Solo puntaje':checklist?`${check[1]} · ${check[0]}`:observation?`${obs[3]} · ${obs[2]} · ${obs[1]}`:appreciation?`${scale[3]} · ${scale[2]} · ${scale[1]}`:'3 · 2 · 1'),curr=ev.curriculumGrade&&ev.curriculumSubject&&oaKeyList(ev).length?`<div style="margin-top:8px"><span class="curriculum-badge">${ev.curriculumGrade}° · ${esc(ev.curriculumSubject)} · ${oaKeyList(ev).map(n=>'OA '+n).join(', ')}</span></div>`:'';return `<div class="eval-card"><div class="row between"><div><div class="eval-title">${esc(ev.name)}</div><div class="eval-meta">${esc(ev.subject||'Sin asignatura')} · ${typeLabel} · ${apps} aplicación(es) en ${esc(state.courseName)}</div></div><span class="chip ${ev.gradeScale?.enabled?'chip-purple':'chip-blue'}">${esc(chip)}</span></div>${ev.description?`<div class="small" style="margin-top:8px">${esc(ev.description)}</div>`:''}${curr}<div class="eval-actions"><button class="secondary" data-apply="${ev.id}">Aplicar</button><button class="ghost" data-download-instrument110="${ev.id}">📄 Word</button><button class="ghost" data-edit="${ev.id}">Editar</button><button class="ghost" data-save-template="${ev.id}">Guardar como plantilla</button><button class="ghost" data-duplicate="${ev.id}">Duplicar</button>${state.evaluations.length>1?`<button class="danger" data-delete="${ev.id}">Eliminar</button>`:''}</div></div>`}).join('');
+    el.querySelectorAll('[data-apply]').forEach(b=>b.onclick=()=>openApplicationModal(b.dataset.apply));el.querySelectorAll('[data-download-instrument110]').forEach(b=>b.onclick=()=>downloadInstrumentWord110(evalById(b.dataset.downloadInstrument110)));el.querySelectorAll('[data-edit]').forEach(b=>b.onclick=()=>openEvaluationModal(b.dataset.edit));el.querySelectorAll('[data-save-template]').forEach(b=>b.onclick=()=>saveEvaluationAsTemplate(evalById(b.dataset.saveTemplate)));el.querySelectorAll('[data-duplicate]').forEach(b=>b.onclick=()=>{const ev=evalById(b.dataset.duplicate),copy=cloneInstrumentShape(ev);copy.name=ev.name+' · copia';state.evaluations.push(copy);save();renderAll()});el.querySelectorAll('[data-delete]').forEach(b=>b.onclick=()=>{const ev=evalById(b.dataset.delete),n=state.applications.filter(a=>a.evaluationId===ev.id).length;if(confirm(`¿Eliminar “${ev.name}”?${n?` También se eliminarán ${n} aplicación(es) de este prototipo.`:''}`)){state.evaluations=state.evaluations.filter(x=>x.id!==ev.id);state.applications=state.applications.filter(a=>a.evaluationId!==ev.id);if(selectedApplicationId&&!appById(selectedApplicationId))selectedApplicationId=null;save();renderAll()}})
   }
   renderInstrumentTemplates();
 }
