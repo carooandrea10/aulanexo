@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>AulaNexo · Prototipo 0.0.113</title>
+<title>AulaNexo · Prototipo 0.0.114</title>
 <style>
 :root{
   --bg:#f5f7fb;--card:#fff;--text:#1f2937;--muted:#6b7280;--line:#e5e7eb;
@@ -2335,6 +2335,28 @@ nav.app-nav button[data-view].active{background:var(--primary-soft);color:#3730a
   .planning113-linked-item button{width:100%}
 }
 
+
+/* ===== AULANEXO 0.0.114 · SEGUIMIENTO DE EVALUACIÓN DESDE PLANIFICACIÓN ===== */
+.planning114-progress{
+  margin-top:6px;padding:7px 8px;border-radius:9px;border:1px solid #e2e8f0;background:#f8fafc
+}
+.planning114-progress-top{
+  display:flex;align-items:center;justify-content:space-between;gap:8px;flex-wrap:wrap
+}
+.planning114-progress-main{font-size:8px;font-weight:850;color:#334155}
+.planning114-progress-detail{margin-top:3px;font-size:7.5px;color:#64748b;line-height:1.35}
+.planning114-status{
+  display:inline-flex;align-items:center;gap:4px;padding:3px 6px;border-radius:999px;font-size:7.5px;font-weight:900
+}
+.planning114-status.done{background:#dcfce7;color:#166534}
+.planning114-status.pending{background:#fff7ed;color:#9a3412}
+.planning114-status.empty{background:#eef2ff;color:#4338ca}
+.planning114-results-btn{padding:5px 7px!important;font-size:8px!important}
+@media(max-width:680px){
+  .planning114-progress-top{align-items:flex-start;flex-direction:column}
+  .planning114-results-btn{width:100%}
+}
+
 </style>
 </head>
 <body>
@@ -2346,7 +2368,7 @@ nav.app-nav button[data-view].active{background:var(--primary-soft);color:#3730a
 
 <header>
   <div class="header-wrap">
-    <div><h1>AulaNexo</h1><div class="subtitle">Prototipo 0.0.113 · Planificación e instrumento conectados</div></div>
+    <div><h1>AulaNexo</h1><div class="subtitle">Prototipo 0.0.114 · Seguimiento de evaluación desde la planificación</div></div>
     <div class="header-actions"><button id="menuToggle" class="menu-toggle">☰ Menú</button><span class="current-section-pill">Sección: <strong id="currentSectionLabel">Curso</strong></span><span class="active-course-pill">Curso activo: <strong id="headerCourseName">Sin curso</strong></span><span id="cloudStatus" class="cloud-pill" data-state="offline">☁️ Sin conectar</span><button id="cloudConnectBtn" class="secondary">👤 Mi cuenta</button><button id="downloadBackup">⬇ Respaldo</button><button id="loadBackupBtn">⬆ Cargar respaldo</button><input id="backupFile" type="file" accept="application/json" hidden></div>
   </div>
 </header>
@@ -7201,10 +7223,105 @@ function planningAssociatedInstruments113(planId){
   return (state.evaluations||[]).filter(ev=>String(ev.sourcePlanningId113||'')===String(planId||''));
 }
 
+
+/* ===== 0.0.114 · SEGUIMIENTO DE APLICACIÓN Y RESULTADOS ===== */
+function planningInstrumentApplications114(ev,courseId){
+  return (state.applications||[])
+    .filter(app=>app.evaluationId===ev?.id&&app.courseId===courseId)
+    .sort((a,b)=>{
+      const byDate=String(a.date||'').localeCompare(String(b.date||''));
+      if(byDate)return byDate;
+      return String(a.createdAt||'').localeCompare(String(b.createdAt||''));
+    });
+}
+
+function planningApplicationResolved114(app,studentId){
+  const record=app?.records?.[studentId];
+  if(!record)return false;
+  if(record.mode==='adapted'||record.mode==='absent')return true;
+  if(record.mode!=='standard')return false;
+  return completeRecord(app,studentId);
+}
+
+function planningApplicationProgress114(ev,courseId){
+  const course=(state.courses||[]).find(c=>c.id===courseId);
+  const apps=planningInstrumentApplications114(ev,courseId);
+  const latest=apps.length?apps[apps.length-1]:null;
+  const total=Array.isArray(course?.students)?course.students.length:0;
+
+  if(!latest){
+    return {course,apps,latest:null,total,resolved:0,missing:total,complete:false};
+  }
+
+  const resolved=(course?.students||[])
+    .filter(student=>planningApplicationResolved114(latest,student.id))
+    .length;
+
+  return {
+    course,
+    apps,
+    latest,
+    total,
+    resolved,
+    missing:Math.max(0,total-resolved),
+    complete:total>0&&resolved===total
+  };
+}
+
+function planningApplicationProgressMarkup114(ev,plan){
+  const info=planningApplicationProgress114(ev,plan?.courseId);
+
+  if(!info.latest){
+    return `<div class="planning114-progress">
+      <span class="planning114-status empty">○ Aún no aplicada</span>
+      <div class="planning114-progress-detail">Cuando apliques este instrumento, AulaNexo mostrará aquí el avance del curso.</div>
+    </div>`;
+  }
+
+  const latestLabel=info.latest.label?String(info.latest.label):'Aplicación';
+  const appsNote=info.apps.length>1?` · ${info.apps.length} aplicaciones registradas`:'';
+
+  let status='';
+  if(!info.total){
+    status='<span class="planning114-status empty">○ Curso sin estudiantes</span>';
+  }else if(info.complete){
+    status='<span class="planning114-status done">✅ Evaluación completada</span>';
+  }else if(info.missing===1){
+    status='<span class="planning114-status pending">⏳ Falta 1 estudiante por evaluar</span>';
+  }else{
+    status=`<span class="planning114-status pending">⏳ Faltan ${info.missing} estudiantes por evaluar</span>`;
+  }
+
+  return `<div class="planning114-progress">
+    <div class="planning114-progress-top">
+      <div>
+        <div class="planning114-progress-main">Aplicada a ${info.resolved} de ${info.total} estudiantes · ${info.resolved} registro${info.resolved===1?'':'s'}</div>
+        <div class="planning114-progress-detail">Última: ${esc(latestLabel)} · ${formatDate(info.latest.date)}${appsNote}</div>
+      </div>
+      <button class="ghost planning114-results-btn" type="button" data-view-planning-results114="${info.latest.id}">📊 Ver resultados</button>
+    </div>
+    <div style="margin-top:6px">${status}</div>
+  </div>`;
+}
+
+function planningViewResults114(appId){
+  const app=appById(appId);
+  if(!app)return alert('No encontré esa aplicación.');
+
+  if(app.courseId&&state.courses.some(c=>c.id===app.courseId)&&state.activeCourseId!==app.courseId){
+    state.activeCourseId=app.courseId;
+    resetCourseSelections();
+  }
+
+  selectedApplicationId=app.id;
+  save();
+  switchView('results');
+}
+
 function planningAssociatedMarkup113(plan){
   const linked=planningAssociatedInstruments113(plan?.id);
   const list=linked.length
-    ?`<div class="planning113-linked-list">${linked.map(ev=>`<div class="planning113-linked-item"><div><div class="planning113-linked-name">📝 ${esc(ev.name||evaluationTypeLabel107(ev))}</div><div class="planning113-linked-meta">${esc(evaluationTypeLabel107(ev))}${ev.curriculumSubject?' · '+esc(ev.curriculumSubject):''}</div></div><button class="ghost" type="button" data-view-linked-instrument113="${ev.id}">Ver instrumento</button></div>`).join('')}</div>`
+    ?`<div class="planning113-linked-list">${linked.map(ev=>`<div class="planning113-linked-item"><div style="flex:1;min-width:0"><div class="planning113-linked-name">📝 ${esc(ev.name||evaluationTypeLabel107(ev))}</div><div class="planning113-linked-meta">${esc(evaluationTypeLabel107(ev))}${ev.curriculumSubject?' · '+esc(ev.curriculumSubject):''}</div>${planningApplicationProgressMarkup114(ev,plan)}</div><button class="ghost" type="button" data-view-linked-instrument113="${ev.id}">Ver instrumento</button></div>`).join('')}</div>`
     :'<div class="tiny">Todavía no hay instrumentos asociados a esta planificación.</div>';
   return `<div class="planning113-linked"><div class="planning113-linked-head"><div class="planning113-linked-title">📘 Instrumentos asociados · ${linked.length}</div><button class="secondary" type="button" data-create-linked-instrument113="${plan.id}">${linked.length?'＋ Crear otro instrumento':'📝 Crear instrumento'}</button></div>${list}</div>`;
 }
@@ -8111,6 +8228,10 @@ function renderSavedPlanning(course){
 
   root.querySelectorAll('[data-view-linked-instrument113]').forEach(b=>
     b.onclick=()=>planningViewInstrument113(b.dataset.viewLinkedInstrument113)
+  );
+
+  root.querySelectorAll('[data-view-planning-results114]').forEach(b=>
+    b.onclick=()=>planningViewResults114(b.dataset.viewPlanningResults114)
   );
 
   root.querySelectorAll('[data-create-linked-instrument113]').forEach(b=>
